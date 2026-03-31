@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d9dadb",
+              "on-background": "#191c1d",
+              "primary": "#000a1e",
+              "inverse-on-surface": "#f0f1f2",
+              "primary-fixed-dim": "#aec7f6",
+              "on-surface": "#191c1d",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#465f88",
+              "error": "#ba1a1a",
+              "background": "#f8f9fa",
+              "on-primary-fixed": "#001b3d",
+              "outline": "#74777f",
+              "on-surface-variant": "#44474e",
+              "surface-container-low": "#f3f4f5",
+              "surface-container-high": "#e7e8e9",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#656464",
+              "tertiary-container": "#2b2006",
+              "surface-container": "#edeeef",
+              "tertiary-fixed": "#f6e0b8",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#e4e2e1",
+              "on-secondary-fixed-variant": "#474747",
+              "on-tertiary-fixed-variant": "#534528",
+              "tertiary-fixed-dim": "#d9c49e",
+              "outline-variant": "#c4c6cf",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#c8c6c6",
+              "secondary-container": "#e4e2e1",
+              "secondary": "#5f5e5e",
+              "primary-container": "#002147",
+              "on-tertiary-fixed": "#251a03",
+              "surface-container-highest": "#e1e3e4",
+              "primary-fixed": "#d6e3ff",
+              "tertiary": "#110a00",
+              "on-primary-fixed-variant": "#2d476f",
+              "inverse-primary": "#aec7f6",
+              "on-secondary-fixed": "#1b1c1c",
+              "surface-variant": "#e1e3e4",
+              "on-tertiary-container": "#998764",
+              "surface": "#f8f9fa",
+              "on-primary-container": "#708ab5",
+              "on-error": "#ffffff",
+              "surface-bright": "#f8f9fa",
+              "inverse-surface": "#2e3132"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background antialiased">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_24px_48px_rgba(0,33,71,0.06)]">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#000a1e] dark:text-white font-headline">
+                GLOBOSVN
+            </div>
+<div class="hidden md:flex space-x-10 items-center">
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label tracking-tight hover:text-[#002147] transition-colors duration-300" href="#">Systems</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label tracking-tight hover:text-[#002147] transition-colors duration-300" href="#">Operations</a>
+<a class="text-[#000a1e] dark:text-white font-semibold border-b-2 border-[#d9c49e] pb-1 font-label tracking-tight" href="#">Capability</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label tracking-tight hover:text-[#002147] transition-colors duration-300" href="#">Global</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label tracking-tight hover:text-[#002147] transition-colors duration-300" href="../contact.html">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-DEFAULT font-label font-semibold tracking-wide hover:scale-95 transition-transform duration-200">
+                Execute Platform
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Section 1: Page Hero -->
+<header class="relative w-full h-[819px] flex items-center overflow-hidden bg-primary-container">
+<div class="absolute inset-0 opacity-40">
+<img alt="Corporate architectural building with glass reflections" class="w-full h-full object-cover" data-alt="abstract architectural shot of a modern glass skyscraper reflecting a clear blue sky with sharp geometric lines and premium corporate aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAph6yWHA0KTYU-4Xj1CCpMl54rxXat0IsOPPOEcAipqVFnuKFj7BhH-XcBYJKlZLz-qFb5GYmOU9WRcHDHRdgcdC26hShBF-IVZhDTjay_debSZI0vsl7oipuWK8TSmOGrGcUlR66PyG9g3NbM7fbe3JE6hKuseLLFaAn2te_ak_Wo51lKRH99aLtnULOZg9nWMvB00a8W7LBmsnQneYdY4GQdgmS_4q82dKjhUVPVFxQRlej26pG2xgmRl3J3Vvicn_tLhr8Lq8c"/>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-12 w-full">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1 mb-6 bg-tertiary-fixed-dim text-primary text-[10px] uppercase tracking-[0.2em] font-bold">Infrastructural Authority</span>
+<h1 class="text-white font-headline text-5xl md:text-7xl font-light tracking-tight leading-[1.1] mb-8">
+                        IT Systems <br/><span class="font-extrabold">Development &amp; Operations</span>
+</h1>
+<p class="text-on-primary-container text-xl md:text-2xl font-light leading-relaxed max-w-2xl">
+                        Designing, developing, and operating systems that support business execution with surgical precision.
+                    </p>
+</div>
+</div>
+<div class="absolute bottom-12 right-12 hidden lg:block">
+<div class="w-24 h-24 border-t-2 border-r-2 border-tertiary-fixed-dim/30"></div>
+</div>
+</header>
+<!-- Section 2: Capability Definition -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-12">
+<div class="editorial-grid">
+<div class="col-span-12 md:col-span-10 md:col-start-2">
+<p class="font-headline text-3xl md:text-5xl text-primary leading-tight font-light">
+                            Systems transform execution into a more 
+                            <span class="font-bold border-b-[6px] border-tertiary-fixed-dim">stable</span>, 
+                            <span class="font-bold border-b-[6px] border-tertiary-fixed-dim">repeatable</span>, 
+                            and <span class="font-bold border-b-[6px] border-tertiary-fixed-dim">scalable</span> 
+                            operating structure.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3 & 4: What We Do & Support (Bento Style Grid) -->
+<section class="py-16 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- What We Do -->
+<div class="bg-surface-container-lowest p-12 shadow-sm">
+<h3 class="font-headline text-xs uppercase tracking-[0.3em] text-secondary mb-12 font-bold">01 / Scope of Services</h3>
+<div class="space-y-10">
+<div class="group">
+<span class="text-tertiary-fixed-dim text-4xl font-headline font-light">01</span>
+<h4 class="text-xl font-headline font-bold text-primary mt-2 group-hover:translate-x-2 transition-transform duration-300">Platform planning</h4>
+<p class="text-secondary mt-2 font-light">Strategic alignment of digital assets with long-term business trajectory.</p>
+</div>
+<div class="group">
+<span class="text-tertiary-fixed-dim text-4xl font-headline font-light">02</span>
+<h4 class="text-xl font-headline font-bold text-primary mt-2 group-hover:translate-x-2 transition-transform duration-300">System design</h4>
+<p class="text-secondary mt-2 font-light">Architectural blueprints prioritizing security, performance, and user utility.</p>
+</div>
+<div class="group">
+<span class="text-tertiary-fixed-dim text-4xl font-headline font-light">03</span>
+<h4 class="text-xl font-headline font-bold text-primary mt-2 group-hover:translate-x-2 transition-transform duration-300">Development</h4>
+<p class="text-secondary mt-2 font-light">High-integrity engineering cycles with rigorous quality assurance protocols.</p>
+</div>
+<div class="group">
+<span class="text-tertiary-fixed-dim text-4xl font-headline font-light">04</span>
+<h4 class="text-xl font-headline font-bold text-primary mt-2 group-hover:translate-x-2 transition-transform duration-300">Operation and maintenance</h4>
+<p class="text-secondary mt-2 font-light">Active monitoring and iterative updates to ensure 24/7 sovereign stability.</p>
+</div>
+</div>
+</div>
+<!-- What We Support -->
+<div class="flex flex-col justify-between">
+<div class="mb-12">
+<h3 class="font-headline text-xs uppercase tracking-[0.3em] text-secondary mb-8 font-bold">02 / Domains of Impact</h3>
+<div class="grid grid-cols-1 gap-4">
+<div class="p-6 bg-primary text-white flex items-center justify-between">
+<span class="font-headline font-semibold">Internal systems</span>
+<span class="material-symbols-outlined">lan</span>
+</div>
+<div class="p-6 bg-white border-l-4 border-primary flex items-center justify-between">
+<span class="font-headline font-semibold text-primary">Operating platforms</span>
+<span class="material-symbols-outlined">settings_input_component</span>
+</div>
+<div class="p-6 bg-white border-l-4 border-primary flex items-center justify-between">
+<span class="font-headline font-semibold text-primary">Workflow tools</span>
+<span class="material-symbols-outlined">dynamic_feed</span>
+</div>
+<div class="p-6 bg-white border-l-4 border-primary flex items-center justify-between">
+<span class="font-headline font-semibold text-primary">Ongoing operations support</span>
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+</div>
+</div>
+<div class="p-12 bg-tertiary-fixed text-primary">
+<h3 class="font-headline text-2xl font-bold mb-4">Integrity in execution.</h3>
+<p class="font-light leading-relaxed opacity-80">Our systems are not just software; they are the digital backbone of your organization's sovereign authority in its market.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Why It Matters -->
+<section class="py-32 bg-white">
+<div class="max-w-7xl mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-headline text-4xl font-bold text-primary mb-8 tracking-tight">Why It Matters</h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-primary mb-2">Process Transformation</h4>
+<p class="text-secondary leading-relaxed">Business execution improves exponentially when process is supported by systems designed for specific operational nuances.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="shrink-0 w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-primary mb-2">Operational Stability</h4>
+<p class="text-secondary leading-relaxed">Systems create repeatability. We eliminate the volatility of human manual error through automated, hardened infrastructures.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<img alt="Server room with blue lighting" class="w-full aspect-square object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="abstract view of blue server room lights reflecting on floor providing a sense of secure and sophisticated digital infrastructure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUzRNuT11DIkFav_DDHooAyIcodXqb-VSWPRGtogKw6euZbAwhzP1jpu1vm-vwC4CgaPh_6S3xaiRwvm_mOcmuXtUXJAYtQyKQWM8IdfyVL9JlNe6N5N05h-c-_6T2QLstl6pcQAcxqcPUhEj1drpGZJHx_xQ53gNqr0XWJQYzAhaEYKgaTnMxyy4lBcd9HZqtkjbau2RidwZ5arOXM6Jd2RWNmJK9OyVQrI_B99Ypm8OhCO7Fga6hUk4rjO4eCgE4XdciaBvI3qk"/>
+<div class="absolute -bottom-8 -left-8 p-8 bg-primary text-white max-w-[240px]">
+<p class="text-sm font-label tracking-wider uppercase opacity-60 mb-2">Metric of Trust</p>
+<p class="text-3xl font-headline font-bold">99.9%</p>
+<p class="text-sm font-light mt-1">Uptime reliability for core operating systems.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Visual Process Structure -->
+<section class="py-32 bg-primary">
+<div class="max-w-7xl mx-auto px-12 text-center">
+<h3 class="font-headline text-xs uppercase tracking-[0.5em] text-on-primary-container mb-16">The Lifecycle of Execution</h3>
+<div class="flex flex-col md:flex-row justify-between items-center relative space-y-12 md:space-y-0">
+<!-- Progress Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-on-primary-container/20 -translate-y-1/2"></div>
+<!-- Step 1 -->
+<div class="relative z-10 bg-primary px-8">
+<div class="w-20 h-20 bg-primary-container flex items-center justify-center mx-auto mb-6 outline outline-1 outline-tertiary-fixed-dim/30">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl">lightbulb</span>
+</div>
+<h5 class="text-white font-headline font-bold tracking-widest uppercase text-xs">Planning</h5>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 bg-primary px-8">
+<div class="w-20 h-20 bg-primary-container flex items-center justify-center mx-auto mb-6 outline outline-1 outline-tertiary-fixed-dim/30">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl">architecture</span>
+</div>
+<h5 class="text-white font-headline font-bold tracking-widest uppercase text-xs">System Design</h5>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 bg-primary px-8">
+<div class="w-20 h-20 bg-primary-container flex items-center justify-center mx-auto mb-6 outline outline-1 outline-tertiary-fixed-dim/30">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl">code_blocks</span>
+</div>
+<h5 class="text-white font-headline font-bold tracking-widest uppercase text-xs">Development</h5>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 bg-primary px-8">
+<div class="w-20 h-20 bg-primary-container flex items-center justify-center mx-auto mb-6 outline outline-1 outline-tertiary-fixed-dim/30">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl">precision_manufacturing</span>
+</div>
+<h5 class="text-white font-headline font-bold tracking-widest uppercase text-xs">Operations</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Related Capabilities -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-12">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h3 class="font-headline text-xs uppercase tracking-[0.3em] text-secondary mb-4 font-bold">Related</h3>
+<h2 class="font-headline text-4xl font-bold text-primary tracking-tight">Extended Capabilities</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container-high">
+<img alt="Business consulting meeting" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" data-alt="professional corporate consulting session with diverse group in a minimalist high-end meeting room with natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBHaf9ejJbVQOS7FboeLzGAx0bwyHIA-_URxUdcw-CmAEdl-QoGsK5zSNqV1IKqmWqYXvzp8NVqVvGEb0llcSkMWiv5VYAnYeiTMcDn4UMLFhW-ttYI5zEJm26X2WvtGrELVlwptqJNVgxw2cQn23Y-W1ED8l8Ov31befpNYE8W8VsGzlHcpv_PAifzC38b0gjptGDE17bLVuh-waS2Jotj-fqeyquBLUYZYN78GWb_VlRKWybXsInA39ks8rzU1ztIIIF56N3jpo"/>
+</div>
+<h4 class="text-xl font-headline font-bold text-primary mb-2">IT Market Entry Consulting</h4>
+<p class="text-secondary font-light mb-4">Strategic navigation for complex digital markets in Southeast Asia.</p>
+<a class="inline-block text-primary font-bold text-sm tracking-wider uppercase border-b-2 border-tertiary-fixed-dim pb-1" href="#">View Details</a>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container-high">
+<img alt="Modern warehouse logistics" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" data-alt="high-tech logistics center in Vietnam with clean organized structure and modern industrial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzP-hg_Nmo6lyI9StLeNsVyuoTDpEt9Hr1Ey4cgSyjNdiL_ZmtPcUgl0jxF6TT6XmBnJWj1c1Vztdj76J0rfUzgcB-lp9mk6lVrn6I03ZDL-smz_5X8_-kmtDQhuY2oqCtq5dABYuRpdWb4ilWYgI-MEymYBhKGft11JTVUF43ekMVhnxLxtEd6U3e3F-IzSNkk1-euffkjtx7tiUv3D2G8sgzIQPzMf8IT45VjyHxiV1i-6gWaeaX0XwDZHY50S6jNZ2wKwdPPNM"/>
+</div>
+<h4 class="text-xl font-headline font-bold text-primary mb-2">Vietnam Sourcing</h4>
+<p class="text-secondary font-light mb-4">Leveraging deep regional networks for infrastructure procurement.</p>
+<a class="inline-block text-primary font-bold text-sm tracking-wider uppercase border-b-2 border-tertiary-fixed-dim pb-1" href="#">View Details</a>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container-high">
+<img alt="Luxury boutique interior" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" data-alt="elegant minimalist boutique storefront with clean lines and premium branding reflecting high-end store operations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsOwmkxrfF7SQ8XWs0uiSj1QGi72kVdAWj75mh2GVSsEqjTebYE_dPPWGxMwdiDn8SJLyTpetLDj6PR3q9tn8MVdFH96eDTmWCJDHBKV0MQ9r2BKAdNSlFihSZwTfj47QonxQaxxrZe1S9KqzIXUezJy9BiOr9EV9TCiyK4cACDtxogAXU7eRSESYgK5jwoWPb5WmO-jxfo5mnh2kDhC331__bxintyFv3_KXxcYUmQr0X9cq_naoo1vY1OJXKoqyiHUsouvpPvl0"/>
+</div>
+<h4 class="text-xl font-headline font-bold text-primary mb-2">Direct Store Operations</h4>
+<p class="text-secondary font-light mb-4">End-to-end management of premium physical retail environments.</p>
+<a class="inline-block text-primary font-bold text-sm tracking-wider uppercase border-b-2 border-tertiary-fixed-dim pb-1" href="#">View Details</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Contact CTA -->
+<section class="py-40 bg-white border-t border-outline-variant/10">
+<div class="max-w-4xl mx-auto px-12 text-center">
+<span class="material-symbols-outlined text-5xl text-tertiary-fixed-dim mb-8">contact_support</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-primary mb-6">Initiate Strategic Consultation</h2>
+<p class="text-secondary text-lg font-light mb-12 leading-relaxed">
+                    Our team is ready to discuss the architecture of your next system. 
+                    Let’s build the stable foundation your business execution requires.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-white px-10 py-5 font-headline font-bold tracking-widest uppercase text-sm hover:bg-primary-container transition-colors duration-300">
+                        Request Proposal
+                    </button>
+<button class="bg-surface-container-high text-primary px-10 py-5 font-headline font-bold tracking-widest uppercase text-sm hover:bg-surface-container-highest transition-colors duration-300">
+                        Contact Global Office
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f3f4f5] dark:bg-slate-900 w-full py-16 px-12 mt-32">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-end w-full max-w-7xl mx-auto">
+<div>
+<div class="font-manrope font-black text-[#000a1e] dark:text-white text-3xl mb-8">GLOBOSVN</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm font-label text-sm leading-relaxed mb-8">
+                    Sovereign Authority in Digital Infrastructure. Building the systems that power the next generation of global business.
+                </p>
+<p class="text-slate-500 dark:text-slate-400 font-inter text-sm tracking-wide">
+                    © 2026 GLOBOSVN IT Systems. Sovereign Authority in Digital Infrastructure.
+                </p>
+</div>
+<div class="flex flex-wrap gap-8 md:justify-end">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide underline decoration-[#d9c49e] decoration-2" href="#">Terms of Execution</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide" href="#">Global Standards</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide" href="#">Network Status</a>
+</div>
+</div>
+</footer>
+</body></html>
