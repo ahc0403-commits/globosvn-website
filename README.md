@@ -1,6 +1,6 @@
-# GLOBOSVN Corporate Website
+# Globos Holdings Corporate Website
 
-**CÔNG TY TNHH GLOBOSVN** — Cross-Border Business Execution in Vietnam
+**Globos Holdings** — Cross-Border Business Execution in Vietnam
 
 ## Structure
 

@@ -3,7 +3,7 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GLOBOSVN | Cross-Border Business Execution in Vietnam</title>
+<title>Globos Holdings | Cross-Border Business Execution in Vietnam</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -86,10 +86,58 @@
             width: 0;
             height: 1px;
             background: currentColor;
-            transition: width 0.3s_ease;
+            transition: width 0.3s ease;
         }
         .reveal-link:hover::after {
             width: 100%;
+        }
+        .operating-trigger,
+        .load-trigger,
+        .path-trigger {
+            cursor: pointer;
+            text-align: left;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+        .operating-trigger:hover,
+        .operating-trigger:focus-visible,
+        .load-trigger:hover,
+        .load-trigger:focus-visible,
+        .path-trigger:hover,
+        .path-trigger:focus-visible {
+            transform: translateY(-2px);
+            outline: none;
+        }
+        .operating-trigger[aria-pressed="true"] {
+            border-color: #002147;
+            box-shadow: inset 0 0 0 2px #002147, 0 24px 48px rgba(0, 33, 71, 0.12);
+            background: #ffffff;
+        }
+        .operating-trigger.is-dark[aria-pressed="true"] {
+            border-color: #d9c49e;
+            box-shadow: inset 0 0 0 2px #d9c49e, 0 24px 48px rgba(0, 33, 71, 0.22);
+        }
+        .load-trigger[aria-pressed="true"] {
+            background: #ffffff;
+            box-shadow: inset 0 0 0 1px rgba(0, 33, 71, 0.22);
+        }
+        .path-trigger[aria-pressed="true"] {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .action-cue {
+            opacity: 0.45;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .operating-trigger:hover .action-cue,
+        .operating-trigger:focus-visible .action-cue,
+        .operating-trigger[aria-pressed="true"] .action-cue,
+        .load-trigger:hover .action-cue,
+        .load-trigger:focus-visible .action-cue,
+        .load-trigger[aria-pressed="true"] .action-cue,
+        .path-trigger:hover .action-cue,
+        .path-trigger:focus-visible .action-cue,
+        .path-trigger[aria-pressed="true"] .action-cue {
+            opacity: 1;
+            transform: translateX(4px);
         }
     </style>
 </head>
@@ -97,302 +145,337 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-surface-container">
 <div class="flex justify-between items-center px-6 lg:px-12 py-6 max-w-screen-2xl mx-auto">
-<div class="text-2xl font-extrabold tracking-tighter text-primary">GLOBOSVN</div>
-<div class="hidden lg:flex items-center space-x-12">
-<a class="font-headline tracking-widest text-[11px] uppercase text-primary font-bold border-b-2 border-primary pb-1" href="index.html">Home</a>
-<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" href="index.html#platform">Platform</a>
-<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" href="index.html#capabilities">Capabilities</a>
-<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" href="index.html#intelligence">Intelligence</a>
-<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" href="contact.html">Contact</a>
-</div>
-<div>
-<a href="contact.html" class="bg-primary text-on-primary px-6 py-3 text-[11px] font-bold uppercase tracking-widest rounded-sm hover:bg-opacity-90 transition-all inline-block">Portal Access</a>
+	<a class="text-2xl font-extrabold tracking-tighter text-primary" href="index.html">Globos Holdings</a>
+	<div class="hidden lg:flex items-center space-x-12">
+	<a class="font-headline tracking-widest text-[11px] uppercase text-primary font-bold border-b-2 border-primary pb-1" data-home-nav="home" href="index.html">Home</a>
+		<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" data-home-nav="platform" href="index.html#platform">Model</a>
+		<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" data-home-nav="operating-data" href="index.html#operating-data">Evidence</a>
+		<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" data-home-nav="capabilities" href="index.html#capabilities">Capabilities</a>
+		<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" data-home-nav="intelligence" href="index.html#intelligence">Process</a>
+		<a class="font-headline tracking-widest text-[11px] uppercase text-secondary font-semibold hover:text-primary transition-colors" data-home-nav="contact" href="contact.html">Contact</a>
+	</div>
+	<div>
+	<a href="contact.html" class="bg-primary text-on-primary px-6 py-3 text-[11px] font-bold uppercase tracking-widest rounded-sm hover:bg-opacity-90 transition-all inline-block">Contact Us</a>
 </div>
 </div>
 </nav>
 <main class="pt-24">
 <!-- Section 1: Hero -->
-<section class="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
+	<section class="relative min-h-[76vh] flex items-center overflow-hidden bg-white">
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent z-10"></div>
-<img alt="Commercial development in Vietnam" class="w-full h-full object-cover grayscale opacity-25" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKDgn63QJ8AFqxCePsGs5lnKlovqY8q6Rrml_7T2qbImoGRvcxoEnbgabctApdZ5wqNcnH-lc6l8bl801Vn5jvFO0bhTnJxx30SSwZ-OoUUS2KP1lL_lmK3Ke-dbMvbsGNStjzHRxC01rhm9Oni3ci3sYCR1LOnCaV_C6gF4MrBiBDI6o6e7NNuqIKYfi3sGhBhQhve9nCxGfrr0mJX71si5xPzTWJgFpNX24jHTvPtn0J-9oKr8LTNCYoUk7RaK-rqXcMabOz8IY"/>
+<img alt="Globos Holdings Vietnam execution command center" class="w-full h-full object-cover opacity-45" src="assets/images/generated/home-execution-command.webp"/>
 </div>
 <div class="container mx-auto px-6 lg:px-12 relative z-20">
 <div class="max-w-4xl">
 <div class="flex items-center gap-4 mb-8">
 <div class="h-[1px] w-12 bg-primary"></div>
-<span class="text-[10px] uppercase tracking-[0.6em] font-black text-primary">Market Entry Specialist</span>
+<span class="text-[10px] uppercase tracking-[0.6em] font-black text-primary">Vietnam Execution Platform</span>
 </div>
 <h1 class="font-headline text-5xl lg:text-8xl font-extrabold text-primary leading-[1.05] tracking-tighter mb-10">
-                    Cross-Border <br/>Business Execution <br/><span class="text-on-primary-container/60">in Vietnam.</span>
+                    Vietnam Entry, <br/>Built To <span class="text-on-primary-container/60">Operate.</span>
 </h1>
 <p class="font-body text-xl lg:text-2xl text-secondary max-w-3xl leading-relaxed mb-16 font-light">
-                    GLOBOSVN provides the structural foundations and local operational excellence required for international brands to enter, operate, and scale in the Vietnamese market.
+                    Globos Holdings turns expansion intent into operating infrastructure: store launch, sourcing, franchise rollout, IT systems, marketing localization, and regulatory support managed from the ground in Vietnam.
                 </p>
 <div class="flex flex-wrap items-center gap-10">
-<a href="contact.html" class="bg-primary text-on-primary px-10 py-5 font-bold tracking-widest text-xs uppercase rounded-sm flex items-center gap-4 group inline-flex">Begin Engagement
-                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-<a class="text-xs uppercase tracking-widest font-bold text-primary relative reveal-link" href="#capabilities">
-                        Explore Capability Hub
+	<a href="contact.html" class="bg-primary text-on-primary px-10 py-5 font-bold tracking-widest text-xs uppercase rounded-sm flex items-center gap-4 group inline-flex">Begin Engagement
+	                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+	</a>
+	<a class="text-xs uppercase tracking-widest font-bold text-primary relative reveal-link" href="#platform">
+	                        See Operating Model
                     </a>
 </div>
 </div>
 </div>
 </section>
-<!-- Section 2: Company Position -->
-<section id="platform" class="py-40 bg-surface-container-low border-y border-outline-variant/10">
-<div class="container mx-auto px-6 lg:px-12">
-<div class="grid lg:grid-cols-12 gap-20 items-start">
-<div class="lg:col-span-7">
-<label class="text-[10px] uppercase tracking-[0.4em] font-black text-secondary/60 mb-6 block">Corporate Foundation</label>
-<h2 class="font-headline text-4xl lg:text-6xl text-primary font-extrabold mb-10 leading-[1.1] tracking-tight">Platform Overview: <br/>Strategic Execution.</h2>
-<p class="text-xl text-secondary leading-relaxed mb-12 font-light max-w-2xl">
-                        Vietnam offers immense growth potential, yet demands rigorous local implementation. GLOBOSVN operates as your principal execution partner, bridging the gap between global strategy and local ground-level reality with high-performance infrastructure and regulatory shielding.
-                    </p>
-<div class="h-1 w-20 bg-primary/20"></div>
-</div>
-<div class="lg:col-span-5 grid grid-cols-1 gap-8">
-<div class="p-10 bg-white border border-outline-variant/20 shadow-sm">
-<span class="material-symbols-outlined text-primary mb-6 text-4xl">gavel</span>
-<h4 class="font-headline font-bold text-primary text-lg mb-4 uppercase tracking-tight">Regulatory Shielding</h4>
-<p class="text-sm text-secondary leading-relaxed font-light">Institutional frameworks designed to protect global brand assets and ensure complete operational compliance within local constraints.</p>
-</div>
-<div class="p-10 bg-white border border-outline-variant/20 shadow-sm">
-<span class="material-symbols-outlined text-primary mb-6 text-4xl">account_tree</span>
-<h4 class="font-headline font-bold text-primary text-lg mb-4 uppercase tracking-tight">Vertical Integration</h4>
-<p class="text-sm text-secondary leading-relaxed font-light">Eliminating third-party friction through direct ownership of supply chains, retail networks, and back-office administration.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 3: Capabilities Preview -->
-<section class="py-40 bg-white" id="capabilities">
-<div class="container mx-auto px-6 lg:px-12">
-<div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-8">
-<div class="max-w-2xl">
-<label class="text-[10px] uppercase tracking-[0.5em] font-black text-secondary/60 mb-4 block">Execution Ecosystem</label>
-<h2 class="font-headline text-5xl lg:text-7xl font-extrabold text-primary tracking-tighter">Market Capabilities &amp; Verticals.</h2>
-</div>
-<a class="group flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-primary border-b border-primary/20 pb-2 hover:border-primary transition-all" href="index.html#capabilities">
-                    View Full Ecosystem 
-                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
-</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-outline-variant/20 border border-outline-variant/20">
-<!-- 1. Direct Store Operations -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/direct-store-operations.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">storefront</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">Direct Store Operations</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Full-cycle management of retail assets with institutional-grade financial auditing and local P&amp;L accountability.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 2. Franchise Expansion -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/franchise-expansion.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">hub</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">Franchise Expansion</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Scaling international franchise networks through rigorous vetting and master franchise management protocols.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 3. Master/Brand Acquisition -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/master-brand-acquisition.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">corporate_fare</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">Master / Brand Acquisition</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Strategic identification, due diligence, and acquisition of high-yield market assets and brand licenses.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 4. F&B Market Entry -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/fb-market-entry.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">restaurant</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">F&amp;B Market Entry Consulting</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Comprehensive deployment strategies for global culinary and hospitality groups into HCMC and Hanoi.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 5. Beauty Market Entry -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/beauty-market-entry.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">spa</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">Beauty Market Entry Consulting</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Specialized commercialization and regulatory pathways for cosmetics, wellness, and aesthetic brands.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 6. Vietnam Sourcing -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/vietnam-sourcing.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">inventory</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">Vietnam Sourcing</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">End-to-end supply chain optimization and quality control within Vietnam's core manufacturing ecosystem.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 7. IT Market Entry -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/it-market-entry.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">terminal</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">IT Market Entry Consulting</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Navigating tech regulations, data sovereignty laws, and establishing local digital infrastructure.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 8. IT Systems & Ops -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/it-systems-development.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">settings_input_component</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">IT Systems Dev &amp; Ops</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Custom development and continuous management of localized enterprise systems and operational tech.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 9. Marketing Services -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/marketing-services.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">campaign</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">Marketing Services</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">High-impact brand localization and performance marketing tailored for Vietnam's distinct consumer class.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-<!-- 10. Legal/Advisory -->
-<a class="bg-surface p-12 flex flex-col justify-between hover:bg-white hover:shadow-xl hover:border-primary/20 border border-transparent transition-all group min-h-[320px]" href="capabilities/legal-advisory.html">
-<div>
-<span class="material-symbols-outlined text-primary mb-8 text-4xl">balance</span>
-<h4 class="font-headline font-bold text-sm uppercase tracking-wider text-primary mb-4 leading-tight">Legal / Advisory Support</h4>
-<p class="text-[13px] text-secondary leading-relaxed font-light">Expert navigation of Vietnamese compliance frameworks, intellectual property, and labor legislation.</p>
-</div>
-<div class="flex items-center gap-2 mt-8 text-[10px] uppercase tracking-widest font-bold text-primary/40 group-hover:text-primary transition-colors">
-        View Capability <span class="material-symbols-outlined text-xs">chevron_right</span>
-</div>
-</a>
-</div>
-</div>
-</section>
-<!-- Section 4: Why GLOBOSVN -->
-<section class="py-48 bg-primary text-white">
-<div class="container mx-auto px-6 lg:px-12">
-<div class="max-w-4xl mb-32">
-<label class="text-[10px] uppercase tracking-[0.5em] font-bold text-on-primary-container/60 mb-6 block">Strategic Value</label>
-<h2 class="font-headline text-5xl lg:text-7xl font-extrabold tracking-tight">Strategic Advantages in Execution.</h2>
-</div>
-<div class="grid lg:grid-cols-3 gap-16 lg:gap-24">
-<div class="space-y-8">
-<div class="w-12 h-1 bg-on-primary-container/30"></div>
-<div>
-<h4 class="font-headline text-2xl font-bold mb-6">Localized Operational Mastery</h4>
-<p class="text-slate-400 font-light leading-relaxed">We bypass the agency-client gap. Our personnel are embedded within your operations, managing physical assets and regulatory relationships with 100% on-the-ground accountability.</p>
-</div>
-</div>
-<div class="space-y-8">
-<div class="w-12 h-1 bg-on-primary-container/30"></div>
-<div>
-<h4 class="font-headline text-2xl font-bold mb-6">Integrated Delivery Structure</h4>
-<p class="text-slate-400 font-light leading-relaxed">Operating with the rigor of a global corporation and the agility of a local principal. We unite disparate operational nodes into a single, cohesive execution engine for cross-border expansion.</p>
-</div>
-</div>
-<div class="space-y-8">
-<div class="w-12 h-1 bg-on-primary-container/30"></div>
-<div>
-<h4 class="font-headline text-2xl font-bold mb-6">Long-term Market Alignment</h4>
-<p class="text-slate-400 font-light leading-relaxed">Our frameworks are engineered to scale alongside Vietnam's economic trajectory. We focus on building enduring market presence and infrastructure rather than short-term consulting deliverables.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 5: Vietnam Market Focus -->
-<section id="intelligence" class="py-48 bg-surface">
-<div class="container mx-auto px-6 lg:px-12">
-<div class="grid lg:grid-cols-2 gap-24 lg:gap-40 items-center">
-<div class="relative">
-<div class="aspect-[4/5] bg-surface-container overflow-hidden grayscale">
-<img alt="Vietnam commercial center" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKNPHz1VhDJFDldFcRIwET7OiSq4KWblLgZ7kE_dZDTqteS8fjeu43Gh2dT373CDwK8XMrjg0tqECTqiNERqhNm1s8A9nGHGQbVLttqcNlKt_7kIguBFEaPI9B2hja2qWzqpRNc__-eNfENqdNGei8_QXZBEgM93l3ZISbq3oqzl9QPD2ECq22osTP2F0y03SCfF7L-02OJllA4ODUM_unHdnjIrl8otCP1-ua6mqBfWpYbpNKMIwTDX3OOZrQreMN0Nbcvf6VSxU"/>
-</div>
-<div class="absolute -bottom-8 -right-8 p-12 bg-white border border-outline-variant/10 max-w-xs shadow-2xl hidden lg:block">
-<p class="font-headline font-medium text-xl text-primary leading-tight italic">"Vietnam is a critical node in global supply sovereignty and a primary market for consumer expansion."</p>
-</div>
-</div>
-<div>
-<label class="text-[10px] uppercase tracking-[0.4em] font-black text-secondary/60 mb-6 block">Market Insight</label>
-<h2 class="font-headline text-5xl lg:text-7xl font-extrabold text-primary mb-12 tracking-tighter leading-[1.1]">Vietnam Market Intelligence.</h2>
-<p class="text-xl text-secondary mb-12 leading-relaxed font-light">
-                        Successfully entering Vietnam requires a synthesis of deep local intuition and international operational standards. We provide the intelligence bridge that translates frontier complexity into institutional success.
-                    </p>
-<div class="space-y-12">
-<div class="border-l-2 border-primary pl-8">
-<h5 class="font-bold text-primary uppercase tracking-widest text-xs mb-3">Regulatory Architecture</h5>
-<p class="text-sm text-secondary font-light">Navigating foreign ownership laws and sector-specific licensing with technical precision.</p>
-</div>
-<div class="border-l-2 border-primary/30 pl-8">
-<h5 class="font-bold text-primary uppercase tracking-widest text-xs mb-3">Supply Chain Resilience</h5>
-<p class="text-sm text-secondary font-light">Establishing secure, direct-to-source logistics within Southeast Asia's manufacturing core.</p>
-</div>
-<div class="border-l-2 border-primary/30 pl-8">
-<h5 class="font-bold text-primary uppercase tracking-widest text-xs mb-3">Consumer Localization</h5>
-<p class="text-sm text-secondary font-light">Adapting brand value propositions to resonate with the sophisticated emerging middle class in Tier 1 cities.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Section 6: Contact CTA -->
-<section class="py-48 bg-white border-y border-outline-variant/10">
-<div class="container mx-auto px-6 lg:px-12 text-center max-w-4xl">
-<label class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-8 block">Next Steps</label>
-<h2 class="font-headline text-5xl lg:text-6xl font-extrabold text-primary mb-10 tracking-tighter">Consultation &amp; Engagement.</h2>
-<p class="text-xl lg:text-2xl text-secondary mb-16 font-light mx-auto leading-relaxed">
-                We invite global leadership teams to discuss how GLOBOSVN can secure their operational foothold in Vietnam. Our engagement process is focused on execution reality and market entry implementation.
-            </p>
-<div class="bg-surface-container-low p-2 rounded-sm inline-flex flex-col md:flex-row items-center gap-2 w-full max-w-2xl border border-outline-variant/20">
-<input class="border-none bg-transparent px-6 py-4 focus:ring-0 text-primary w-full text-lg placeholder:text-secondary/30 font-light" placeholder="Institutional Email Address" type="email"/>
-<button class="bg-primary text-on-primary px-10 py-4 font-bold rounded-sm hover:bg-primary/95 transition-all w-full md:w-auto whitespace-nowrap uppercase tracking-widest text-xs">
-                    Contact Principals
-                </button>
-</div>
-<p class="mt-8 text-[10px] uppercase tracking-widest text-secondary/40 font-bold">Absolute confidentiality is maintained for all institutional inquiries.</p>
-</div>
-</section>
+	<!-- Section 2: Operating Model -->
+	<section id="platform" class="py-40 bg-surface-container-low border-y border-outline-variant/10">
+	<div class="container mx-auto px-6 lg:px-12">
+	<div class="grid lg:grid-cols-12 gap-16 items-start">
+	<div class="lg:col-span-5">
+	<label class="text-[10px] uppercase tracking-[0.5em] font-black text-secondary/60 mb-6 block">Operating Model</label>
+	<h2 class="font-headline text-4xl lg:text-6xl text-primary font-extrabold tracking-tighter leading-[1.05] mb-8">Vietnam entry fails when strategy is separated from control.</h2>
+	<p class="text-secondary text-lg font-light leading-relaxed">Globos Holdings is structured around one sequence: define the entry risk, build the operating base, connect local execution, then stabilize the business after launch.</p>
+	</div>
+	<div class="lg:col-span-7 grid md:grid-cols-2 gap-px bg-outline-variant/20 border border-outline-variant/20">
+	<div class="bg-white p-10 min-h-[260px]">
+	<p class="text-[10px] uppercase tracking-[0.3em] font-bold text-secondary mb-6">Where Entry Breaks</p>
+	<h3 class="font-headline text-2xl font-bold text-primary mb-5">Vendors manage tasks, not outcomes.</h3>
+	<p class="text-sm text-secondary font-light leading-relaxed">Legal, sourcing, stores, systems, and marketing are often handled separately. The gaps between them become the real execution risk.</p>
+	</div>
+	<div class="bg-white p-10 min-h-[260px]">
+	<p class="text-[10px] uppercase tracking-[0.3em] font-bold text-secondary mb-6">What Must Be Controlled</p>
+	<h3 class="font-headline text-2xl font-bold text-primary mb-5">The operating base must be visible.</h3>
+	<p class="text-sm text-secondary font-light leading-relaxed">Leadership needs one view of compliance, launch readiness, suppliers, staffing, reporting, and growth loops before committing scale capital.</p>
+	</div>
+	<div class="bg-primary text-white p-10 md:col-span-2">
+	<p class="text-[10px] uppercase tracking-[0.3em] font-bold text-white/45 mb-8">Globos Holdings Control Stack</p>
+	<div class="grid md:grid-cols-4 gap-px bg-white/10">
+	<div class="bg-primary-container/40 p-6">
+	<p class="font-headline text-3xl font-extrabold text-tertiary-fixed-dim mb-3">01</p>
+	<h4 class="font-headline text-sm font-bold uppercase tracking-widest mb-3">Legal Base</h4>
+	<p class="text-xs text-white/60 leading-relaxed">Entity, licensing, contracts, advisory coordination.</p>
+	</div>
+	<div class="bg-primary-container/40 p-6">
+	<p class="font-headline text-3xl font-extrabold text-tertiary-fixed-dim mb-3">02</p>
+	<h4 class="font-headline text-sm font-bold uppercase tracking-widest mb-3">Operating Base</h4>
+	<p class="text-xs text-white/60 leading-relaxed">Store, sourcing, supplier, staffing, site pipeline.</p>
+	</div>
+	<div class="bg-primary-container/40 p-6">
+	<p class="font-headline text-3xl font-extrabold text-tertiary-fixed-dim mb-3">03</p>
+	<h4 class="font-headline text-sm font-bold uppercase tracking-widest mb-3">Data Base</h4>
+	<p class="text-xs text-white/60 leading-relaxed">Systems, reporting, workflow, issue visibility.</p>
+	</div>
+	<div class="bg-primary-container/40 p-6">
+	<p class="font-headline text-3xl font-extrabold text-tertiary-fixed-dim mb-3">04</p>
+	<h4 class="font-headline text-sm font-bold uppercase tracking-widest mb-3">Growth Base</h4>
+	<p class="text-xs text-white/60 leading-relaxed">Localization, campaign learning, franchise scale.</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</section>
+	<!-- Section 3: Operating Evidence -->
+	<section id="operating-data" class="py-40 bg-white border-b border-outline-variant/10">
+	<div class="container mx-auto px-6 lg:px-12">
+	<div class="grid lg:grid-cols-12 gap-16 items-start">
+	<div class="lg:col-span-4">
+	<label class="text-[10px] uppercase tracking-[0.5em] font-black text-secondary/60 mb-6 block">Operating Evidence</label>
+	<h2 class="font-headline text-4xl lg:text-6xl text-primary font-extrabold tracking-tighter leading-[1.05] mb-8">The entry model becomes measurable before launch.</h2>
+	<p class="text-secondary text-lg font-light leading-relaxed">The numbers below are not decorative. They define how work is grouped, sequenced, and assigned so the market entry can be managed as one operating program.</p>
+	</div>
+	<div class="lg:col-span-8 space-y-8">
+	<div class="grid md:grid-cols-4 gap-px bg-outline-variant/20 border border-outline-variant/20">
+	<button aria-pressed="true" class="operating-trigger bg-surface p-8 min-h-[170px] border border-transparent font-body" data-insight-key="lanes" type="button">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-secondary font-bold mb-6">Capability Lanes</p>
+	<p class="font-headline text-5xl font-extrabold text-primary tracking-tighter">10</p>
+	<p class="text-xs text-secondary mt-3">Entry, stores, sourcing, IT, advisory</p>
+	<p class="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] font-bold text-primary">Open lens <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></p>
+	</button>
+	<button aria-pressed="false" class="operating-trigger bg-surface p-8 min-h-[170px] border border-transparent font-body" data-insight-key="layers" type="button">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-secondary font-bold mb-6">Operating Layers</p>
+	<p class="font-headline text-5xl font-extrabold text-primary tracking-tighter">4</p>
+	<p class="text-xs text-secondary mt-3">Strategy, setup, launch, stabilization</p>
+	<p class="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] font-bold text-primary">Open lens <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></p>
+	</button>
+	<button aria-pressed="false" class="operating-trigger bg-surface p-8 min-h-[170px] border border-transparent font-body" data-insight-key="nodes" type="button">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-secondary font-bold mb-6">Regional Nodes</p>
+	<p class="font-headline text-5xl font-extrabold text-primary tracking-tighter">6</p>
+	<p class="text-xs text-secondary mt-3">VN-centered APAC connection model</p>
+	<p class="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] font-bold text-primary">Open lens <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></p>
+	</button>
+	<button aria-pressed="false" class="operating-trigger is-dark bg-primary p-8 min-h-[170px] text-white border border-transparent font-body" data-insight-key="sprint" type="button">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-white/50 font-bold mb-6">Entry Sprint</p>
+	<p class="font-headline text-5xl font-extrabold tracking-tighter">90</p>
+	<p class="text-xs text-white/60 mt-3">Day operating-readiness window</p>
+	<p class="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] font-bold text-tertiary-fixed-dim">Open lens <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></p>
+	</button>
+	</div>
+	<div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-px bg-primary border border-primary shadow-sm" id="operating-insight-panel" aria-live="polite">
+	<div class="bg-primary text-white p-8 lg:p-10">
+	<p class="text-[10px] uppercase tracking-[0.32em] text-white/45 font-bold mb-5" id="operating-insight-kicker">Selected Operating Lens</p>
+	<h3 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight" id="operating-insight-title">10 Capability Lanes</h3>
+	<p class="mt-6 text-sm lg:text-base text-white/70 leading-relaxed font-light" id="operating-insight-body">Globos Holdings groups market entry work into ten capability lanes so a client can move from intent to real operating infrastructure without handing each step to a disconnected vendor.</p>
+	</div>
+	<div class="bg-white p-8 lg:p-10">
+	<p class="text-[10px] uppercase tracking-[0.32em] text-secondary font-bold mb-5">What Opens Next</p>
+	<p class="text-primary text-lg font-headline font-bold leading-snug" id="operating-insight-action">Review the full capability hub and choose the lane that matches the entry problem.</p>
+	<a class="mt-8 inline-flex items-center gap-3 bg-primary text-white px-7 py-4 text-[10px] uppercase tracking-[0.22em] font-bold hover:bg-primary/95 transition-all" href="#capabilities" id="operating-insight-link">
+	Open related page
+	<span class="material-symbols-outlined text-sm">arrow_outward</span>
+	</a>
+	</div>
+	</div>
+	<div class="grid lg:grid-cols-2 gap-8">
+	<div class="bg-surface-container-low p-10 border border-outline-variant/20">
+	<div class="flex justify-between items-center mb-10">
+	<h3 class="font-headline text-2xl font-bold text-primary">Execution Load Model</h3>
+	<span class="text-[10px] uppercase tracking-[0.25em] text-secondary font-bold">Click Rows</span>
+	</div>
+	<div class="space-y-4">
+	<button aria-pressed="false" class="load-trigger w-full p-3 -mx-3 border border-transparent" data-insight-key="regulatory" type="button">
+	<div class="flex justify-between text-xs uppercase tracking-widest font-bold text-primary mb-3"><span>Regulatory Setup</span><span class="flex items-center gap-2">24% <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></span></div>
+	<div class="h-3 bg-white"><div class="h-full bg-primary" style="width: 24%"></div></div>
+	</button>
+	<button aria-pressed="false" class="load-trigger w-full p-3 -mx-3 border border-transparent" data-insight-key="rollout" type="button">
+	<div class="flex justify-between text-xs uppercase tracking-widest font-bold text-primary mb-3"><span>Retail / F&amp;B Rollout</span><span class="flex items-center gap-2">22% <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></span></div>
+	<div class="h-3 bg-white"><div class="h-full bg-tertiary-fixed-dim" style="width: 22%"></div></div>
+	</button>
+	<button aria-pressed="false" class="load-trigger w-full p-3 -mx-3 border border-transparent" data-insight-key="sourcing" type="button">
+	<div class="flex justify-between text-xs uppercase tracking-widest font-bold text-primary mb-3"><span>Sourcing Control</span><span class="flex items-center gap-2">18% <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></span></div>
+	<div class="h-3 bg-white"><div class="h-full bg-primary-container" style="width: 18%"></div></div>
+	</button>
+	<button aria-pressed="false" class="load-trigger w-full p-3 -mx-3 border border-transparent" data-insight-key="systems" type="button">
+	<div class="flex justify-between text-xs uppercase tracking-widest font-bold text-primary mb-3"><span>Systems &amp; Data</span><span class="flex items-center gap-2">20% <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></span></div>
+	<div class="h-3 bg-white"><div class="h-full bg-on-primary-container" style="width: 20%"></div></div>
+	</button>
+	<button aria-pressed="false" class="load-trigger w-full p-3 -mx-3 border border-transparent" data-insight-key="marketing" type="button">
+	<div class="flex justify-between text-xs uppercase tracking-widest font-bold text-primary mb-3"><span>Marketing Localization</span><span class="flex items-center gap-2">16% <span class="material-symbols-outlined text-sm action-cue">arrow_forward</span></span></div>
+	<div class="h-3 bg-white"><div class="h-full bg-secondary" style="width: 16%"></div></div>
+	</button>
+	</div>
+	</div>
+	<div class="bg-primary text-white p-10 overflow-hidden relative">
+	<div class="relative z-10">
+	<div class="flex justify-between items-center mb-10">
+	<h3 class="font-headline text-2xl font-bold">90-Day Entry Path</h3>
+	<span class="material-symbols-outlined text-tertiary-fixed-dim">timeline</span>
+	</div>
+	<div class="space-y-4">
+	<button aria-pressed="false" class="path-trigger w-full grid grid-cols-[72px_1fr_24px] gap-5 items-center p-3 -mx-3 border border-white/0" data-insight-key="phase1" type="button">
+	<span class="text-[10px] uppercase tracking-widest text-white/45 font-bold">0-30</span>
+	<div><p class="text-sm font-bold uppercase tracking-widest">Legal &amp; entity readiness</p><div class="mt-3 h-[1px] bg-white/20"><div class="h-[1px] bg-tertiary-fixed-dim w-1/4"></div></div></div>
+	<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim action-cue">arrow_forward</span>
+	</button>
+	<button aria-pressed="false" class="path-trigger w-full grid grid-cols-[72px_1fr_24px] gap-5 items-center p-3 -mx-3 border border-white/0" data-insight-key="phase2" type="button">
+	<span class="text-[10px] uppercase tracking-widest text-white/45 font-bold">31-60</span>
+	<div><p class="text-sm font-bold uppercase tracking-widest">Partner, supplier, site pipeline</p><div class="mt-3 h-[1px] bg-white/20"><div class="h-[1px] bg-tertiary-fixed-dim w-1/2"></div></div></div>
+	<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim action-cue">arrow_forward</span>
+	</button>
+	<button aria-pressed="false" class="path-trigger w-full grid grid-cols-[72px_1fr_24px] gap-5 items-center p-3 -mx-3 border border-white/0" data-insight-key="phase3" type="button">
+	<span class="text-[10px] uppercase tracking-widest text-white/45 font-bold">61-90</span>
+	<div><p class="text-sm font-bold uppercase tracking-widest">Launch systems and operating control</p><div class="mt-3 h-[1px] bg-white/20"><div class="h-[1px] bg-tertiary-fixed-dim w-3/4"></div></div></div>
+	<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim action-cue">arrow_forward</span>
+	</button>
+	<button aria-pressed="false" class="path-trigger w-full grid grid-cols-[72px_1fr_24px] gap-5 items-center p-3 -mx-3 border border-white/0" data-insight-key="phase4" type="button">
+	<span class="text-[10px] uppercase tracking-widest text-white/45 font-bold">90+</span>
+	<div><p class="text-sm font-bold uppercase tracking-widest">Stabilization and scale loop</p><div class="mt-3 h-[1px] bg-white/20"><div class="h-[1px] bg-tertiary-fixed-dim w-full"></div></div></div>
+	<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim action-cue">arrow_forward</span>
+	</button>
+	</div>
+	</div>
+	<div class="absolute -right-16 -bottom-16 w-64 h-64 border border-white/10 rotate-45"></div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</section>
+	<!-- Section 4: Capabilities System -->
+	<section class="py-40 bg-surface-container-low" id="capabilities">
+	<div class="container mx-auto px-6 lg:px-12">
+	<div class="grid lg:grid-cols-12 gap-16 mb-20">
+	<div class="lg:col-span-5">
+	<label class="text-[10px] uppercase tracking-[0.5em] font-black text-secondary/60 mb-4 block">Capability System</label>
+	<h2 class="font-headline text-5xl lg:text-7xl font-extrabold text-primary tracking-tighter leading-[1.05]">Pick the capability by the bottleneck.</h2>
+	</div>
+	<div class="lg:col-span-7 lg:pt-16">
+	<p class="text-xl text-secondary font-light leading-relaxed">The services are grouped by the work they control. A client does not need ten separate conversations; they need the right entry point into one connected execution system.</p>
+	</div>
+	</div>
+	<div class="space-y-px bg-outline-variant/20 border border-outline-variant/20" id="capabilities-grid">
+	<div class="grid lg:grid-cols-[280px_1fr] bg-white">
+	<div class="p-8 bg-primary text-white">
+	<p class="text-[10px] uppercase tracking-[0.3em] text-white/45 font-bold mb-5">01 / Enter</p>
+	<h3 class="font-headline text-2xl font-bold">Market Entry</h3>
+	</div>
+	<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20">
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/fb-market-entry.html"><span class="material-symbols-outlined text-primary mb-5 block">restaurant</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">F&amp;B Market Entry</h4><p class="text-xs text-secondary leading-relaxed">Concept, launch, menu, staffing, and opening control.</p></a>
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/beauty-market-entry.html"><span class="material-symbols-outlined text-primary mb-5 block">spa</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">Beauty Market Entry</h4><p class="text-xs text-secondary leading-relaxed">Regulatory and commercialization path for beauty brands.</p></a>
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/it-market-entry.html"><span class="material-symbols-outlined text-primary mb-5 block">terminal</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">IT Market Entry</h4><p class="text-xs text-secondary leading-relaxed">Digital infrastructure, local market setup, data constraints.</p></a>
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/legal-advisory.html"><span class="material-symbols-outlined text-primary mb-5 block">balance</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">Legal / Advisory</h4><p class="text-xs text-secondary leading-relaxed">Compliance, entity, contracts, and advisory coordination.</p></a>
+	</div>
+	</div>
+	<div class="grid lg:grid-cols-[280px_1fr] bg-white">
+	<div class="p-8 bg-white">
+	<p class="text-[10px] uppercase tracking-[0.3em] text-secondary font-bold mb-5">02 / Build</p>
+	<h3 class="font-headline text-2xl font-bold text-primary">Operating Base</h3>
+	</div>
+	<div class="grid md:grid-cols-2 gap-px bg-outline-variant/20">
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/direct-store-operations.html"><span class="material-symbols-outlined text-primary mb-5 block">storefront</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">Direct Store Operations</h4><p class="text-xs text-secondary leading-relaxed">Store operation, local P&amp;L discipline, and daily execution.</p></a>
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/it-systems-development.html"><span class="material-symbols-outlined text-primary mb-5 block">settings_input_component</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">IT Systems Dev &amp; Ops</h4><p class="text-xs text-secondary leading-relaxed">POS, workflow, dashboards, reporting, and operations stack.</p></a>
+	</div>
+	</div>
+	<div class="grid lg:grid-cols-[280px_1fr] bg-white">
+	<div class="p-8 bg-white">
+	<p class="text-[10px] uppercase tracking-[0.3em] text-secondary font-bold mb-5">03 / Secure</p>
+	<h3 class="font-headline text-2xl font-bold text-primary">Supply &amp; Rights</h3>
+	</div>
+	<div class="grid md:grid-cols-2 gap-px bg-outline-variant/20">
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/vietnam-sourcing.html"><span class="material-symbols-outlined text-primary mb-5 block">inventory</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">Vietnam Sourcing</h4><p class="text-xs text-secondary leading-relaxed">Supplier qualification, landed-cost control, sample cycles.</p></a>
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/master-brand-acquisition.html"><span class="material-symbols-outlined text-primary mb-5 block">corporate_fare</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">Master / Brand Acquisition</h4><p class="text-xs text-secondary leading-relaxed">Rights, licensing, acquisition, and brand-entry structure.</p></a>
+	</div>
+	</div>
+	<div class="grid lg:grid-cols-[280px_1fr] bg-white">
+	<div class="p-8 bg-white">
+	<p class="text-[10px] uppercase tracking-[0.3em] text-secondary font-bold mb-5">04 / Scale</p>
+	<h3 class="font-headline text-2xl font-bold text-primary">Growth Loop</h3>
+	</div>
+	<div class="grid md:grid-cols-2 gap-px bg-outline-variant/20">
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/franchise-expansion.html"><span class="material-symbols-outlined text-primary mb-5 block">hub</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">Franchise Expansion</h4><p class="text-xs text-secondary leading-relaxed">Repeatable model, rollout logic, operating consistency.</p></a>
+	<a class="bg-white p-8 group hover:bg-surface transition-colors" href="capabilities/marketing-services.html"><span class="material-symbols-outlined text-primary mb-5 block">campaign</span><h4 class="font-headline text-sm font-bold uppercase tracking-widest text-primary mb-3">Marketing Services</h4><p class="text-xs text-secondary leading-relaxed">Localization, channels, launch messaging, demand loops.</p></a>
+	</div>
+	</div>
+	</div>
+	</div>
+	</section>
+	<!-- Section 5: Execution Process -->
+	<section id="intelligence" class="py-48 bg-primary text-white">
+	<div class="container mx-auto px-6 lg:px-12">
+	<div class="grid lg:grid-cols-12 gap-16 items-center">
+	<div class="lg:col-span-5">
+	<label class="text-[10px] uppercase tracking-[0.5em] font-bold text-white/45 mb-6 block">Execution Process</label>
+	<h2 class="font-headline text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[1.05] mb-10">A 90-day path from intent to operating control.</h2>
+	<p class="text-slate-400 text-lg font-light leading-relaxed">The work is staged so decision-makers see exactly what is being resolved at each phase: legal base, partner pipeline, operating systems, then stabilization.</p>
+	</div>
+	<div class="lg:col-span-7">
+	<div class="grid md:grid-cols-2 gap-px bg-white/10">
+	<div class="bg-primary-container/40 p-10">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-tertiary-fixed-dim font-bold mb-6">0-30 Days</p>
+	<h3 class="font-headline text-2xl font-bold mb-4">Entry Readiness</h3>
+	<p class="text-sm text-white/60 leading-relaxed">Define entity route, compliance assumptions, decision rights, and entry risk map.</p>
+	</div>
+	<div class="bg-primary-container/40 p-10">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-tertiary-fixed-dim font-bold mb-6">31-60 Days</p>
+	<h3 class="font-headline text-2xl font-bold mb-4">Pipeline Build</h3>
+	<p class="text-sm text-white/60 leading-relaxed">Vet suppliers, partners, sites, staffing needs, and launch dependencies.</p>
+	</div>
+	<div class="bg-primary-container/40 p-10">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-tertiary-fixed-dim font-bold mb-6">61-90 Days</p>
+	<h3 class="font-headline text-2xl font-bold mb-4">Control Layer</h3>
+	<p class="text-sm text-white/60 leading-relaxed">Connect SOPs, dashboards, reporting, marketing, and issue escalation.</p>
+	</div>
+	<div class="bg-tertiary-fixed-dim text-primary p-10">
+	<p class="text-[10px] uppercase tracking-[0.25em] text-primary/55 font-bold mb-6">90+ Days</p>
+	<h3 class="font-headline text-2xl font-bold mb-4">Stabilize &amp; Scale</h3>
+	<p class="text-sm text-primary/70 leading-relaxed">Monitor performance, correct operating gaps, and prepare the next growth step.</p>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</section>
+	<!-- Section 6: Contact CTA -->
+	<section class="py-48 bg-white border-y border-outline-variant/10">
+	<div class="container mx-auto px-6 lg:px-12 text-center max-w-4xl">
+	<label class="text-[10px] uppercase tracking-[0.5em] font-bold text-primary mb-8 block">Next Step</label>
+	<h2 class="font-headline text-5xl lg:text-6xl font-extrabold text-primary mb-10 tracking-tighter">Start with the bottleneck.</h2>
+	<p class="text-xl lg:text-2xl text-secondary mb-16 font-light mx-auto leading-relaxed">Tell us which part of Vietnam entry is unclear: market setup, legal base, store launch, supplier control, systems, marketing, or scale. We will map the next operating step.</p>
+	<form action="mailto:contact@globos.world" class="bg-surface-container-low p-2 rounded-sm inline-flex flex-col md:flex-row items-center gap-2 w-full max-w-2xl border border-outline-variant/20" data-mail-form data-mail-subject="Globos Holdings Website Inquiry" enctype="text/plain" method="post">
+	<input class="border-none bg-transparent px-6 py-4 focus:ring-0 text-primary w-full text-lg placeholder:text-secondary/30 font-light" name="institutional_email" placeholder="Institutional Email Address" required type="email"/>
+	<button class="bg-primary text-on-primary px-10 py-4 font-bold rounded-sm hover:bg-primary/95 transition-all w-full md:w-auto whitespace-nowrap uppercase tracking-widest text-xs" type="submit">Contact Principals</button>
+	</form>
+	<p aria-live="polite" class="mt-4 text-xs text-primary font-bold uppercase tracking-widest hidden" data-mail-status>Your email client is opening with a prepared inquiry.</p>
+	<p class="mt-8 text-[10px] uppercase tracking-widest text-secondary/40 font-bold">Absolute confidentiality is maintained for all institutional inquiries.</p>
+	</div>
+	</section>
 </main>
 <!-- Footer -->
 <footer class="bg-primary text-white w-full pt-32 pb-16 px-6 lg:px-12">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 max-w-screen-2xl mx-auto">
 <div class="lg:col-span-2 space-y-10">
-<div class="text-3xl font-black tracking-tighter text-white">GLOBOSVN</div>
+	<a class="inline-block text-3xl font-black tracking-tighter text-white" href="index.html">Globos Holdings</a>
 <p class="text-slate-400 font-light text-base leading-relaxed max-w-sm">
-                CÔNG TY TNHH GLOBOSVN. The premier cross-border execution platform specialized in the operational deployment of international brands within Vietnam.
+                Globos Holdings. The premier cross-border execution platform specialized in the operational deployment of international brands within Vietnam.
             </p>
 <div class="flex gap-4">
-<a class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-white hover:text-primary transition-all" href="#">
+	<a class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-white hover:text-primary transition-all" href="https://www.globos.world/">
 <span class="material-symbols-outlined text-sm">public</span>
 </a>
-<a class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-white hover:text-primary transition-all" href="#">
+	<a class="w-10 h-10 border border-white/10 flex items-center justify-center hover:bg-white hover:text-primary transition-all" href="mailto:contact@globos.world?subject=Globos Holdings%20Website%20Inquiry">
 <span class="material-symbols-outlined text-sm">share</span>
 </a>
 </div>
@@ -409,25 +492,209 @@
 <h5 class="font-bold text-[10px] uppercase tracking-[0.3em] text-white/40">Communications</h5>
 <div class="space-y-4">
 <a class="block font-body font-light text-slate-400 hover:text-white transition-colors text-sm" href="tel:+84869369830">+84 869369830</a>
-<a class="block font-body font-light text-slate-400 hover:text-white transition-colors text-sm" href="mailto:globosvn@gmail.com">globosvn@gmail.com</a>
+<a class="block font-body font-light text-slate-400 hover:text-white transition-colors text-sm" href="mailto:contact@globos.world">contact@globos.world</a>
 </div>
 </div>
 <div class="space-y-10">
 <h5 class="font-bold text-[10px] uppercase tracking-[0.3em] text-white/40">Sitemap</h5>
 <div class="flex flex-col space-y-3 text-sm font-body font-light">
-<a class="text-slate-400 hover:text-white transition-colors" href="index.html#platform">Execution Platform</a>
-<a class="text-slate-400 hover:text-white transition-colors" href="index.html#capabilities">Capabilities Hub</a>
-<a class="text-slate-400 hover:text-white transition-colors" href="index.html#intelligence">Market Intelligence</a>
+	<a class="text-slate-400 hover:text-white transition-colors" href="index.html#platform">Operating Model</a>
+	<a class="text-slate-400 hover:text-white transition-colors" href="index.html#operating-data">Operating Evidence</a>
+	<a class="text-slate-400 hover:text-white transition-colors" href="index.html#capabilities">Capabilities Hub</a>
+	<a class="text-slate-400 hover:text-white transition-colors" href="index.html#intelligence">Execution Process</a>
 <a class="text-slate-400 hover:text-white transition-colors" href="contact.html">Consultation</a>
 </div>
 </div>
 </div>
 <div class="max-w-screen-2xl mx-auto pt-24 mt-24 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-<p class="text-[9px] text-slate-600 uppercase tracking-[0.4em] font-bold">© 2026 CÔNG TY TNHH GLOBOSVN. ALL RIGHTS RESERVED.</p>
+<p class="text-[9px] text-slate-600 uppercase tracking-[0.4em] font-bold">© 2026 Globos Holdings. ALL RIGHTS RESERVED.</p>
 <div class="flex gap-12">
-<a class="text-[9px] text-slate-600 uppercase tracking-[0.2em] hover:text-white transition-colors" href="#">Privacy Protocol</a>
-<a class="text-[9px] text-slate-600 uppercase tracking-[0.2em] hover:text-white transition-colors" href="#">Terms of Engagement</a>
+<a class="text-[9px] text-slate-600 uppercase tracking-[0.2em] hover:text-white transition-colors" href="contact.html#privacy-protocol">Privacy Protocol</a>
+<a class="text-[9px] text-slate-600 uppercase tracking-[0.2em] hover:text-white transition-colors" href="contact.html#terms-engagement">Terms of Engagement</a>
 </div>
 </div>
-</footer>
-</body></html>
+	</footer>
+	<script>
+	        const navLinks = Array.from(document.querySelectorAll('[data-home-nav]'));
+	        const homeSectionIds = ['platform', 'operating-data', 'capabilities', 'intelligence'];
+	        const sections = homeSectionIds
+	          .map((id) => document.getElementById(id))
+	          .filter(Boolean);
+
+	        function setActiveNav(id) {
+	          navLinks.forEach((link) => {
+	            const isActive = link.dataset.homeNav === id;
+	            link.classList.toggle('text-primary', isActive);
+	            link.classList.toggle('font-bold', isActive);
+	            link.classList.toggle('border-b-2', isActive);
+	            link.classList.toggle('border-primary', isActive);
+	            link.classList.toggle('pb-1', isActive);
+	            link.classList.toggle('text-secondary', !isActive);
+	            link.classList.toggle('font-semibold', !isActive);
+	          });
+	        }
+
+	        function updateActiveNav() {
+	          const hash = window.location.hash.replace('#', '');
+	          if (hash && homeSectionIds.includes(hash)) {
+	            setActiveNav(hash);
+	            return;
+	          }
+
+	          const activeSection = sections
+	            .filter((section) => section.getBoundingClientRect().top <= 160)
+	            .pop();
+	          setActiveNav(activeSection ? activeSection.id : 'home');
+	        }
+
+		        window.addEventListener('hashchange', updateActiveNav);
+		        window.addEventListener('scroll', updateActiveNav, { passive: true });
+		        updateActiveNav();
+
+		        const operatingInsights = {
+		          lanes: {
+		            kicker: 'Selected Operating Lens',
+		            title: '10 Capability Lanes',
+		            body: 'Globos Holdings groups market entry work into ten capability lanes so a client can move from intent to real operating infrastructure without handing each step to a disconnected vendor.',
+		            action: 'Review the full capability hub and choose the lane that matches the entry problem.',
+		            href: '#capabilities'
+		          },
+		          layers: {
+		            kicker: 'Operating Architecture',
+		            title: '4 Layers From Strategy To Stabilization',
+		            body: 'Every project is staged through strategy, setup, launch, and stabilization. That makes the work visible, assignable, and easier to control from Korea and Vietnam at the same time.',
+		            action: 'Start with the platform model, then move into the capability that owns the current bottleneck.',
+		            href: '#platform'
+		          },
+		          nodes: {
+		            kicker: 'Regional Network',
+		            title: '6 Vietnam-Centered Operating Nodes',
+		            body: 'Supplier, location, staffing, digital, advisory, and growth nodes are mapped around Vietnam as the first operating base for wider APAC execution.',
+		            action: 'Open sourcing and supplier control to see how the local network is structured.',
+		            href: 'capabilities/vietnam-sourcing.html'
+		          },
+		          sprint: {
+		            kicker: 'Entry Timeline',
+		            title: '90-Day Operating Readiness Window',
+		            body: 'The first 90 days are treated as a build sprint: entity readiness, partner pipeline, systems launch, and post-opening stabilization are sequenced before momentum is lost.',
+		            action: 'Move directly into consultation and define the first 90-day entry plan.',
+		            href: 'contact.html#inquiry'
+		          },
+		          regulatory: {
+		            kicker: 'Execution Load Model',
+		            title: 'Regulatory Setup: 24%',
+		            body: 'Entity structure, licensing, contracts, tax posture, and local compliance create the largest early-stage load because mistakes here slow everything downstream.',
+		            action: 'Open legal advisory to check the compliance layer before launch.',
+		            href: 'capabilities/legal-advisory.html'
+		          },
+		          rollout: {
+		            kicker: 'Execution Load Model',
+		            title: 'Retail / F&B Rollout: 22%',
+		            body: 'Location logic, store launch readiness, SOPs, staffing, and opening control decide whether the market entry is only visible or actually operable.',
+		            action: 'Open F&B market entry for launch planning and rollout support.',
+		            href: 'capabilities/fb-market-entry.html'
+		          },
+		          sourcing: {
+		            kicker: 'Execution Load Model',
+		            title: 'Sourcing Control: 18%',
+		            body: 'Supplier qualification, landed-cost control, sample cycles, and cross-border coordination determine whether pricing and quality can hold after launch.',
+		            action: 'Open Vietnam sourcing to inspect the supply-side operating model.',
+		            href: 'capabilities/vietnam-sourcing.html'
+		          },
+		          systems: {
+		            kicker: 'Execution Load Model',
+		            title: 'Systems & Data: 20%',
+		            body: 'POS, reporting, inventory, CRM, workflow, and management dashboards turn local operations into information that leadership can actually act on.',
+		            action: 'Open IT systems operations to connect launch activity to operating data.',
+		            href: 'capabilities/it-systems-development.html'
+		          },
+		          marketing: {
+		            kicker: 'Execution Load Model',
+		            title: 'Marketing Localization: 16%',
+		            body: 'Campaigns, channels, creator relationships, and launch messaging need local adaptation so the brand feels native without losing its Korean identity.',
+		            action: 'Open marketing services for localized launch and growth campaigns.',
+		            href: 'capabilities/marketing-services.html'
+		          },
+		          phase1: {
+		            kicker: '90-Day Entry Path',
+		            title: 'Days 0-30: Legal & Entity Readiness',
+		            body: 'The first month locks the legal base, decision rights, registration route, compliance assumptions, and core operating checklist.',
+		            action: 'Open legal advisory to start the entry foundation.',
+		            href: 'capabilities/legal-advisory.html'
+		          },
+		          phase2: {
+		            kicker: '90-Day Entry Path',
+		            title: 'Days 31-60: Partner, Supplier, Site Pipeline',
+		            body: 'The second phase turns the strategy into candidates: local partners, vetted suppliers, store/site options, and a realistic launch calendar.',
+		            action: 'Open sourcing to move from shortlist to controlled pipeline.',
+		            href: 'capabilities/vietnam-sourcing.html'
+		          },
+		          phase3: {
+		            kicker: '90-Day Entry Path',
+		            title: 'Days 61-90: Launch Systems & Operating Control',
+		            body: 'The third phase connects the visible launch to the management stack: SOPs, dashboards, data flows, staff workflow, and issue escalation.',
+		            action: 'Open IT systems operations to build the control layer.',
+		            href: 'capabilities/it-systems-development.html'
+		          },
+		          phase4: {
+		            kicker: '90-Day Entry Path',
+		            title: 'Day 90+: Stabilization & Scale Loop',
+		            body: 'After launch, the work shifts to stabilization: performance monitoring, improvement cycles, additional stores, franchise expansion, and marketing scale.',
+		            action: 'Open franchise expansion to plan the scale loop.',
+		            href: 'capabilities/franchise-expansion.html'
+		          }
+		        };
+
+		        const operatingTriggers = Array.from(document.querySelectorAll('[data-insight-key]'));
+		        const insightKicker = document.getElementById('operating-insight-kicker');
+		        const insightTitle = document.getElementById('operating-insight-title');
+		        const insightBody = document.getElementById('operating-insight-body');
+		        const insightAction = document.getElementById('operating-insight-action');
+		        const insightLink = document.getElementById('operating-insight-link');
+		        const insightPanel = document.getElementById('operating-insight-panel');
+		        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		        function setOperatingInsight(key, shouldScroll = false) {
+		          const insight = operatingInsights[key];
+		          if (!insight || !insightTitle || !insightLink) return;
+		          insightKicker.textContent = insight.kicker;
+		          insightTitle.textContent = insight.title;
+		          insightBody.textContent = insight.body;
+		          insightAction.textContent = insight.action;
+		          insightLink.href = insight.href;
+		          operatingTriggers.forEach((trigger) => {
+		            trigger.setAttribute('aria-pressed', String(trigger.dataset.insightKey === key));
+		          });
+		          if (shouldScroll && insightPanel) {
+		            insightPanel.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
+		          }
+		        }
+
+		        operatingTriggers.forEach((trigger) => {
+		          trigger.addEventListener('click', () => setOperatingInsight(trigger.dataset.insightKey, true));
+		        });
+		        setOperatingInsight('lanes');
+
+		        function wireMailForms(root = document) {
+		          root.querySelectorAll('[data-mail-form]').forEach((form) => {
+		            form.addEventListener('submit', (event) => {
+		              event.preventDefault();
+		              if (!form.reportValidity()) return;
+		              const data = new FormData(form);
+		              const subject = form.dataset.mailSubject || 'Globos Holdings Inquiry';
+		              const body = Array.from(data.entries())
+		                .map(([key, value]) => `${key.replace(/_/g, ' ')}: ${value}`)
+		                .join('\n');
+		              const status = form.parentElement.querySelector('[data-mail-status]');
+		              if (status) {
+		                status.classList.remove('hidden');
+		                status.textContent = 'Your email client is opening with a prepared inquiry to contact@globos.world.';
+		              }
+		              window.location.href = `mailto:contact@globos.world?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+		            });
+		          });
+		        }
+
+		        wireMailForms();
+		    </script>
+	</body></html>

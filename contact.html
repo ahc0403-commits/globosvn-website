@@ -3,7 +3,7 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact | GLOBOSVN CO., LTD</title>
+<title>Contact | Globos Holdings</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -93,17 +93,17 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/20">
 <div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
-<div class="text-2xl font-extrabold tracking-tighter text-primary font-headline">
-            GLOBOSVN
-        </div>
+	<a class="text-2xl font-extrabold tracking-tighter text-primary font-headline" href="index.html">
+	            Globos Holdings
+	        </a>
 <div class="hidden md:flex items-center space-x-12">
-<a class="text-secondary font-medium hover:text-primary transition-colors font-headline tracking-tight text-sm uppercase" href="#">About</a>
+<a class="text-secondary font-medium hover:text-primary transition-colors font-headline tracking-tight text-sm uppercase" href="index.html#platform">About</a>
 <a class="text-secondary font-medium hover:text-primary transition-colors font-headline tracking-tight text-sm uppercase" href="index.html#capabilities">Capabilities</a>
 <a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline tracking-tight text-sm uppercase" href="contact.html">Contact</a>
 </div>
-<button class="bg-primary hover:opacity-90 active:scale-[0.98] transition-all text-white px-6 py-2.5 text-sm font-headline tracking-tight uppercase">
-            Get Started
-        </button>
+	<a class="bg-primary hover:opacity-90 active:scale-[0.98] transition-all text-white px-6 py-2.5 text-sm font-headline tracking-tight uppercase" href="#inquiry">
+	            Get Started
+	        </a>
 </div>
 </nav>
 <main class="pt-40">
@@ -121,13 +121,13 @@
 </div>
 <div class="hidden md:block col-span-5">
 <div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
-<img class="w-full h-full object-cover grayscale opacity-90" data-alt="Close-up of modern architectural glass and steel detail in deep blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV4ro-XbiOttYxx44GzZluqkRhcKjGN8FxHNwBJaHHe3LFRqTf3fph0-vjSkHxJQUkF44_u1UlCE4BOvGf_3GywAp1fJ4coeI9po7gLXTMMJ1O6MoUZ-XPPxH6VJZSW-rxWaq5H3vaJPI3CKyCL3DeuFLoAK3IryR2BqvWn3FDX0L2NJnhQUGpuQhxuD8BsNozxFkcRGbI-fTKtpfsTyXwe6dmxaW6GpA0ld2A3nFzXQHgwapNGa9UiL2zC1p5yTItan2Yv52mctQ"/>
+<img alt="Confidential inquiry desk with APAC business dashboards" class="w-full h-full object-cover opacity-90" src="assets/images/generated/contact-confidential-inquiry.webp"/>
 </div>
 </div>
 </div>
 </section>
 <!-- Section 2: Start a Conversation -->
-<section class="bg-white py-40 px-8">
+	<section class="bg-white py-40 px-8" id="inquiry">
 <div class="max-w-7xl mx-auto editorial-grid">
 <div class="col-span-12 lg:col-span-5 mb-16 lg:mb-0 lg:sticky lg:top-32 self-start">
 <h2 class="font-headline text-4xl font-bold text-primary mb-8 tracking-tight">Start a Conversation</h2>
@@ -145,32 +145,33 @@
 </div>
 </div>
 <div class="col-span-12 lg:col-span-7">
-<form class="space-y-12 bg-white p-12 border border-outline-variant/30 shadow-[0_32px_64px_-12px_rgba(0,33,71,0.06)]">
+		<form action="mailto:contact@globos.world" class="space-y-12 bg-white p-12 border border-outline-variant/30 shadow-[0_32px_64px_-12px_rgba(0,33,71,0.06)]" data-mail-form data-mail-subject="Globos Holdings Strategic Inquiry" enctype="text/plain" method="post">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
 <div class="relative group">
 <label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Full Name</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium" placeholder="Alexander Vance" type="text"/>
+	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium" name="full_name" placeholder="Alexander Vance" required type="text"/>
 </div>
 <div class="relative group">
 <label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Company</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium" placeholder="Corporate Entity Name" type="text"/>
+	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium" name="company" placeholder="Corporate Entity Name" required type="text"/>
 </div>
 <div class="relative group md:col-span-2">
 <label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Executive Email</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium" placeholder="name@corporation.com" type="email"/>
+	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium" name="executive_email" placeholder="name@corporation.com" required type="email"/>
 </div>
 <div class="relative group md:col-span-2">
 <label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Strategic Intent</label>
-<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium resize-none" placeholder="Briefly outline the nature of your business needs..." rows="5"></textarea>
+	<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-all font-medium resize-none" name="strategic_intent" placeholder="Briefly outline the nature of your business needs..." required rows="5"></textarea>
 </div>
 </div>
 <div class="pt-8">
-<button class="group relative inline-flex items-center justify-center overflow-hidden bg-primary text-white px-12 py-5 font-headline text-sm font-bold tracking-widest uppercase transition-all" type="submit">
-<span class="relative z-10">Send Inquiry</span>
-<div class="absolute inset-0 translate-y-full bg-primary-container transition-transform group-hover:translate-y-0"></div>
-</button>
-</div>
-</form>
+	<button class="group relative inline-flex items-center justify-center overflow-hidden bg-primary text-white px-12 py-5 font-headline text-sm font-bold tracking-widest uppercase transition-all" type="submit">
+	<span class="relative z-10">Send Inquiry</span>
+	<div class="absolute inset-0 translate-y-full bg-primary-container transition-transform group-hover:translate-y-0"></div>
+	</button>
+	<p aria-live="polite" class="mt-6 text-xs text-primary font-bold uppercase tracking-widest hidden" data-mail-status>Your email client is opening with a prepared inquiry.</p>
+	</div>
+	</form>
 </div>
 </div>
 </section>
@@ -185,19 +186,19 @@
 <div class="space-y-12">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Vietnamese name</p>
-<p class="text-primary font-headline text-lg font-bold">CÔNG TY TNHH GLOBOSVN</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Company name</p>
+<p class="text-primary font-headline text-lg font-bold">Globos Holdings</p>
 </div>
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">English name</p>
-<p class="text-primary font-headline text-lg font-bold">GLOBOSVN COMPANY LIMITED</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Website</p>
+<p class="text-primary font-headline text-lg font-bold">globos.world</p>
 </div>
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Short name</p>
-<p class="text-primary font-headline text-lg font-bold">GLOBOSVN CO., LTD</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Primary email</p>
+<p class="text-primary font-headline text-lg font-bold">contact@globos.world</p>
 </div>
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Tax Identification</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Business status</p>
 <p class="text-primary font-headline text-lg font-bold">Registered &amp; Active</p>
 </div>
 </div>
@@ -214,9 +215,9 @@
 <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">call</span>
 <span class="text-primary font-bold text-lg">+84 869369830</span>
 </a>
-<a class="flex items-center gap-4 group w-fit" href="mailto:globosvn@gmail.com">
+<a class="flex items-center gap-4 group w-fit" href="mailto:contact@globos.world">
 <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">mail</span>
-<span class="text-primary font-bold text-lg">globosvn@gmail.com</span>
+<span class="text-primary font-bold text-lg">contact@globos.world</span>
 </a>
 </div>
 </div>
@@ -229,13 +230,13 @@
 <div class="text-center mb-24">
 <h2 class="font-headline text-4xl font-bold text-primary tracking-tight mb-6">Regional Business Reach</h2>
 <p class="text-secondary font-light text-lg max-w-3xl mx-auto leading-relaxed">
-                    From Ho Chi Minh City, GLOBOSVN supports business connection and execution across key markets in Asia-Pacific.
+                    From Ho Chi Minh City, Globos Holdings supports business connection and execution across key markets in Asia-Pacific.
                 </p>
 </div>
 <div class="relative h-[650px] bg-white shadow-2xl overflow-hidden rounded-xl border border-outline-variant/20">
 <!-- High-Fidelity Geographic Map Base -->
 <div class="absolute inset-0 bg-[#f8f9fa] overflow-hidden">
-<img alt="High-fidelity geographic map of Asia-Pacific centered on Vietnam" class="w-full h-full object-cover opacity-60 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQm9V_05xP8w-D5_R89k_0Lp_V8H-rE-8o1-G-O7f-0p9-w6-x_y-z_a_b_c_d_e_f_g_h_i_j_k_l_m_n_o_p_q_r_s_t_u_v_w_x_y_z"/>
+<img alt="Vietnam-centered APAC operations command dashboard" class="w-full h-full object-cover opacity-60 grayscale" src="assets/images/generated/home-execution-command.webp"/>
 </div>
 <!-- Connection Visuals Layer -->
 <svg class="absolute inset-0 w-full h-full pointer-events-none z-10" viewbox="0 0 1000 650">
@@ -294,18 +295,18 @@
 <section class="py-40 px-8 text-center max-w-5xl mx-auto">
 <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary mb-8 tracking-tighter">Let’s Discuss Your Vietnam Entry</h2>
 <p class="text-secondary text-lg md:text-xl font-light leading-relaxed mb-16 mx-auto max-w-3xl">
-            Whether you are exploring market entry, local execution, or regional expansion, GLOBOSVN provides a structured starting point for serious business conversations.
+            Whether you are exploring market entry, local execution, or regional expansion, Globos Holdings provides a structured starting point for serious business conversations.
         </p>
-<button class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all px-12 py-5 font-headline text-sm font-bold tracking-widest uppercase">
-            Send Inquiry
-        </button>
+	<a class="inline-block bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all px-12 py-5 font-headline text-sm font-bold tracking-widest uppercase" href="#inquiry">
+	            Send Inquiry
+	        </a>
 </section>
 </main>
 <!-- Footer -->
 <footer class="bg-white border-t border-outline-variant/30 w-full py-20 px-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-7xl mx-auto">
 <div class="lg:col-span-1">
-<div class="text-2xl font-black text-primary font-headline mb-8">GLOBOSVN</div>
+	<a class="inline-block text-2xl font-black text-primary font-headline mb-8" href="index.html">Globos Holdings</a>
 <p class="font-body font-light text-secondary text-sm leading-relaxed max-w-xs">
                 Pioneering strategic development and industrial excellence across the Asia-Pacific region.
             </p>
@@ -315,33 +316,52 @@
 <ul class="space-y-5">
 <li class="font-body font-light text-secondary text-sm">195/10E, Dien Bien Phu Street, Ho Chi Minh City, Vietnam</li>
 <li class="font-body font-light text-secondary text-sm">+84 869369830</li>
-<li class="font-body font-light text-secondary text-sm">globosvn@gmail.com</li>
+<li class="font-body font-light text-secondary text-sm">contact@globos.world</li>
 </ul>
 </div>
 <div>
 <h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Capabilities</h4>
 <ul class="space-y-5">
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="#">Strategic Consulting</a></li>
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="#">Infrastructure</a></li>
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="#">Global Trade</a></li>
+<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="index.html#platform">Operating Model</a></li>
+<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="index.html#capabilities">Capabilities</a></li>
+<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="contact.html">Global Trade</a></li>
 </ul>
 </div>
 <div>
 <h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Regulatory</h4>
 <ul class="space-y-5">
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="#">Privacy Protocol</a></li>
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="#">Terms of Engagement</a></li>
+	<li id="privacy-protocol"><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="contact.html#privacy-protocol">Privacy Protocol</a></li>
+	<li id="terms-engagement"><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="contact.html#terms-engagement">Terms of Engagement</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-8">
 <p class="font-body font-light text-secondary text-[10px] uppercase tracking-widest">
-            © 2026 GLOBOSVN CO., LTD. All rights reserved.
+            © 2026 Globos Holdings. All rights reserved.
         </p>
 <div class="flex gap-10">
-<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">public</span></a>
-<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-xl">corporate_fare</span></a>
+	<a class="text-secondary hover:text-primary transition-colors" href="https://www.globos.world/"><span class="material-symbols-outlined text-xl">public</span></a>
+	<a class="text-secondary hover:text-primary transition-colors" href="mailto:contact@globos.world?subject=Corporate%20Inquiry"><span class="material-symbols-outlined text-xl">corporate_fare</span></a>
 </div>
 </div>
 </footer>
+<script>
+        document.querySelectorAll('[data-mail-form]').forEach((form) => {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if (!form.reportValidity()) return;
+                const data = new FormData(form);
+                const subject = form.dataset.mailSubject || 'Globos Holdings Inquiry';
+                const body = Array.from(data.entries())
+                    .map(([key, value]) => `${key.replace(/_/g, ' ')}: ${value}`)
+                    .join('\n');
+                const status = form.querySelector('[data-mail-status]');
+                if (status) {
+                    status.classList.remove('hidden');
+                    status.textContent = 'Your email client is opening with a prepared inquiry to contact@globos.world.';
+                }
+                window.location.href = `mailto:contact@globos.world?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            });
+        });
+    </script>
 </body></html>
