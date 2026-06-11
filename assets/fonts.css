@@ -50,6 +50,11 @@ html[lang='ko'] main :where(h1, h2, h3, h4, h5, h6, p, li, span, div, label, inp
   font-weight: 500 !important;
 }
 
+html[lang='ko'] main :where(h1, h2, h3, h4, h5, h6, p, li, dd, dt, a, button, span):not(.material-symbols-outlined) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 html[lang='ko'] header :where(a, button, span):not(.material-symbols-outlined),
 html[lang='ko'] nav :where(a, button, span):not(.material-symbols-outlined),
 html[lang='ko'] .brand-name,
