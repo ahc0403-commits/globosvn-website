@@ -15,7 +15,9 @@
   <meta property="og:site_name" content="Globos Holdings" />
   <meta name="twitter:card" content="summary_large_image" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link href="assets/fonts.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <script id="tailwind-config">
     tailwind.config = {
@@ -33,8 +35,10 @@
             slatecopy: '#5c6672'
           },
           fontFamily: {
-            body: ['Plus Jakarta Sans', 'sans-serif'],
-            headline: ['Space Grotesk', 'sans-serif']
+            body: ['Montserrat', 'sans-serif'],
+            headline: ['Montserrat', 'sans-serif'],
+            label: ['Montserrat', 'sans-serif'],
+            korean: ['Pretendard', 'sans-serif']
           },
           boxShadow: {
             firm: '0 24px 60px rgba(0, 33, 71, 0.12)'
@@ -51,7 +55,7 @@
     :root { color-scheme: light; }
     * { letter-spacing: 0 !important; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background: #f4f6f7;
       color: #071a31;
     }
@@ -150,7 +154,7 @@
 <body class="font-body antialiased">
   <header class="fixed left-0 top-0 z-50 w-full border-b border-line/80 bg-white/95 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
-      <a class="font-headline text-xl font-bold text-navy sm:text-2xl" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
+      <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
       <div class="hidden items-center gap-6 text-sm font-bold text-slatecopy lg:flex">
         <a class="hover:text-navy" href="#guide" data-i18n="nav.guide">Guide</a>
         <a class="hover:text-navy" href="#capabilities" data-i18n="nav.services">Services</a>
@@ -221,8 +225,8 @@
             <circle cx="74" cy="240" r="9" fill="#c8a45d"/><circle cx="784" cy="112" r="9" fill="#5db79e"/>
             <g fill="#7fb0e8" opacity="0.9"><circle class="pulse-node" cx="532" cy="205" r="5"/><circle class="pulse-node" cx="575" cy="236" r="5"/><circle class="pulse-node" cx="612" cy="244" r="5"/><circle class="pulse-node" cx="642" cy="232" r="5"/><circle class="pulse-node" cx="673" cy="204" r="5"/><circle class="pulse-node" cx="704" cy="168" r="5"/><circle class="pulse-node" cx="742" cy="134" r="5"/><circle class="pulse-node" cx="784" cy="112" r="5"/></g>
             <g fill="#c8a45d"><rect class="bar-fill" x="514" y="286" width="22" height="72"/><rect class="bar-fill" x="554" y="258" width="22" height="100"/><rect class="bar-fill" x="594" y="226" width="22" height="132"/><rect class="bar-fill" x="634" y="190" width="22" height="168"/><rect class="bar-fill" x="674" y="150" width="22" height="208"/></g>
-            <text x="46" y="280" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Plus Jakarta Sans">Korea</text>
-            <text x="700" y="88" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Plus Jakarta Sans">Vietnam</text>
+            <text x="46" y="280" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Montserrat">Korea</text>
+            <text x="700" y="88" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Montserrat">Vietnam</text>
           </svg>
           <div class="relative z-10 grid gap-3 md:grid-cols-3">
             <div class="rounded-sm border border-white/10 bg-white/10 p-4 text-white"><p class="text-xs text-white/50">ERP</p><p class="mt-2 text-sm font-bold" data-i18n="visual.erp">Operating visibility</p></div>
@@ -370,7 +374,7 @@
   <footer class="bg-white py-10">
     <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 lg:flex-row lg:items-end lg:justify-between lg:px-8">
       <div>
-        <a class="font-headline text-3xl font-bold text-navy" href="index.html">Globos Holdings</a>
+        <a class="brand-name font-headline text-3xl font-bold text-navy" href="index.html">Globos Holdings</a>
         <p class="mt-3 max-w-xl text-sm leading-7 text-slatecopy" data-i18n="footer.body">Vietnam market entry, franchise expansion, store operations, sourcing, legal setup, marketing localization, ERP, SaaS POS, and delivery infrastructure.</p>
       </div>
       <div class="flex flex-col gap-2 text-sm text-slatecopy lg:text-right">

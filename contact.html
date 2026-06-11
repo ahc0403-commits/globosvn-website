@@ -5,7 +5,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact | Globos Holdings</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link href="assets/fonts.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -62,9 +64,10 @@
               "on-tertiary-fixed-variant": "#534528"
             },
             fontFamily: {
-              "headline": ["Manrope"],
-              "body": ["Inter"],
-              "label": ["Inter"]
+              body: ['Montserrat', 'sans-serif'],
+              headline: ['Montserrat', 'sans-serif'],
+              label: ['Montserrat', 'sans-serif'],
+              korean: ['Pretendard', 'sans-serif']
             },
             borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
           },
@@ -93,7 +96,7 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/20">
 <div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
-	<a class="text-2xl font-extrabold tracking-tighter text-primary font-headline" href="index.html">
+	<a class="brand-name text-2xl font-extrabold tracking-tighter text-primary font-headline" href="index.html">
 	            Globos Holdings
 	        </a>
 <div class="hidden md:flex items-center space-x-12">
@@ -273,7 +276,7 @@
 <path d="M 485 340 Q 700 500, 880 580" marker-end="url(#arrowhead-refined)"></path>
 </g>
 <!-- Destination Labels -->
-<g fill="#002147" font-family="Manrope" font-size="9" font-weight="800" letter-spacing="1.5">
+<g fill="#002147" font-family="Montserrat" font-size="9" font-weight="600" letter-spacing="1.5">
 <text x="790" y="115">KOREA &amp; JAPAN</text>
 <text x="710" y="215">TAIWAN</text>
 <text x="730" y="365">PHILIPPINES</text>

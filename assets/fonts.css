@@ -1,0 +1,66 @@
+:root {
+  --globos-font-body: 'Montserrat', sans-serif;
+  --globos-font-korean: 'Pretendard', sans-serif;
+}
+
+body,
+.font-body,
+.font-label,
+input,
+textarea,
+select,
+button {
+  font-family: var(--globos-font-body) !important;
+}
+
+body {
+  font-weight: 400;
+}
+
+main :where(p, li, dd, dt, input, textarea, select):not(.material-symbols-outlined) {
+  font-weight: 400 !important;
+}
+
+.font-headline,
+header a,
+nav a,
+.brand-name,
+.language-button,
+.stage-button,
+.primary-action,
+.secondary-action {
+  font-family: var(--globos-font-body) !important;
+  font-weight: 600 !important;
+}
+
+header a,
+nav a,
+.brand-name,
+.language-button,
+.stage-button,
+.primary-action,
+.secondary-action,
+.font-label {
+  font-weight: 600 !important;
+}
+
+html[lang='ko'] body,
+html[lang='ko'] main :where(h1, h2, h3, h4, h5, h6, p, li, span, div, label, input, textarea, button):not(.material-symbols-outlined) {
+  font-family: var(--globos-font-korean) !important;
+  font-weight: 500 !important;
+}
+
+html[lang='ko'] header :where(a, button, span):not(.material-symbols-outlined),
+html[lang='ko'] nav :where(a, button, span):not(.material-symbols-outlined),
+html[lang='ko'] .brand-name,
+html[lang='ko'] .language-button,
+html[lang='ko'] .stage-button,
+html[lang='ko'] .primary-action,
+html[lang='ko'] .secondary-action {
+  font-family: var(--globos-font-body) !important;
+  font-weight: 600 !important;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+}

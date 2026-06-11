@@ -3,7 +3,9 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link href="../assets/fonts.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -62,9 +64,10 @@
               "inverse-surface": "#2e3132"
             },
             fontFamily: {
-              "headline": ["Manrope"],
-              "body": ["Inter"],
-              "label": ["Inter"]
+              body: ['Montserrat', 'sans-serif'],
+              headline: ['Montserrat', 'sans-serif'],
+              label: ['Montserrat', 'sans-serif'],
+              korean: ['Pretendard', 'sans-serif']
             },
             borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
           },
@@ -90,7 +93,7 @@
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_24px_48px_rgba(0,33,71,0.06)]">
 <div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
-<a class="text-2xl font-bold tracking-tighter text-[#000a1e] dark:text-white font-headline" href="../index.html">Globos Holdings</a>
+<a class="brand-name text-2xl font-bold tracking-tighter text-[#000a1e] dark:text-white font-headline" href="../index.html">Globos Holdings</a>
 <div class="hidden md:flex space-x-10 items-center">
 <a class="text-slate-500 dark:text-slate-400 font-medium font-label tracking-tight hover:text-[#002147] transition-colors duration-300" href="#overview">Systems</a>
 <a class="text-slate-500 dark:text-slate-400 font-medium font-label tracking-tight hover:text-[#002147] transition-colors duration-300" href="#support">Operations</a>
@@ -339,19 +342,19 @@
 <footer class="bg-[#f3f4f5] dark:bg-slate-900 w-full py-16 px-12 mt-32">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-end w-full max-w-7xl mx-auto">
 <div>
-<div class="font-manrope font-black text-[#000a1e] dark:text-white text-3xl mb-8">Globos Holdings</div>
+<div class="font-body font-black text-[#000a1e] dark:text-white text-3xl mb-8">Globos Holdings</div>
 <p class="text-slate-500 dark:text-slate-400 max-w-sm font-label text-sm leading-relaxed mb-8">
                     Sovereign Authority in Digital Infrastructure. Building the systems that power the next generation of global business.
                 </p>
-<p class="text-slate-500 dark:text-slate-400 font-inter text-sm tracking-wide">
+<p class="text-slate-500 dark:text-slate-400 font-body text-sm tracking-wide">
                     © 2026 Globos Holdings. Sovereign Authority in Digital Infrastructure.
                 </p>
 </div>
 <div class="flex flex-wrap gap-8 md:justify-end">
-<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide" href="../contact.html#privacy-protocol">Privacy Policy</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide underline decoration-[#d9c49e] decoration-2" href="../contact.html#terms-engagement">Terms of Execution</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide" href="../contact.html">Global Standards</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-inter text-sm tracking-wide" href="#related">Network Status</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-body text-sm tracking-wide" href="../contact.html#privacy-protocol">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-body text-sm tracking-wide underline decoration-[#d9c49e] decoration-2" href="../contact.html#terms-engagement">Terms of Execution</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-body text-sm tracking-wide" href="../contact.html">Global Standards</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#002147] transition-all font-body text-sm tracking-wide" href="#related">Network Status</a>
 </div>
 </div>
 </footer>

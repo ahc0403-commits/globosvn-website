@@ -5,7 +5,9 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>F&amp;B Market Entry Consulting | Globos Holdings</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link href="../assets/fonts.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -63,9 +65,10 @@
                         "on-primary": "#ffffff"
                     },
                     fontFamily: {
-                        "headline": ["Manrope"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
+                      body: ['Montserrat', 'sans-serif'],
+                      headline: ['Montserrat', 'sans-serif'],
+                      label: ['Montserrat', 'sans-serif'],
+                      korean: ['Pretendard', 'sans-serif']
                     },
                     borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
                 },
@@ -90,7 +93,7 @@
 <!-- TopAppBar -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_24px_48px_rgba(0,33,71,0.06)]">
 <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
-<a class="text-2xl font-black tracking-tighter text-slate-950 dark:text-white font-headline" href="../index.html">Globos Holdings</a>
+<a class="brand-name text-2xl font-black tracking-tighter text-slate-950 dark:text-white font-headline" href="../index.html">Globos Holdings</a>
 <div class="hidden md:flex gap-10">
 <a class="text-slate-500 font-medium font-headline tracking-tight font-light uppercase text-sm hover:text-slate-950 transition-colors duration-300" href="#overview">Expertise</a>
 <a class="text-slate-950 font-bold border-b-2 border-slate-950 pb-1 font-headline tracking-tight font-light uppercase text-sm" href="#support">Solutions</a>
@@ -322,14 +325,14 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-screen-2xl mx-auto border-t border-slate-200/20 pt-16">
 <div class="space-y-6">
 <a class="text-lg font-bold tracking-tighter text-slate-950 dark:text-white font-headline" href="../index.html">Globos Holdings</a>
-<p class="text-xs text-slate-500 leading-relaxed font-inter tracking-widest uppercase">
+<p class="text-xs text-slate-500 leading-relaxed font-body tracking-widest uppercase">
                     Globos Holdings<br/>
                     contact@globos.world
                 </p>
 </div>
 <div>
 <h5 class="font-headline text-xs font-bold tracking-widest uppercase text-slate-950 dark:text-white mb-8">Headquarters</h5>
-<p class="text-xs text-slate-500 font-inter leading-relaxed">
+<p class="text-xs text-slate-500 font-body leading-relaxed">
                     195/10E, Dien Bien Phu Street,<br/>
                     Gia Dinh Ward, Ho Chi Minh City,<br/>
                     Vietnam
@@ -337,7 +340,7 @@
 </div>
 <div>
 <h5 class="font-headline text-xs font-bold tracking-widest uppercase text-slate-950 dark:text-white mb-8">Contact</h5>
-<p class="text-xs text-slate-500 font-inter leading-relaxed">
+<p class="text-xs text-slate-500 font-body leading-relaxed">
                     T: +84 869369830<br/>
                     E: contact@globos.world
                 </p>
@@ -345,13 +348,13 @@
 <div>
 <h5 class="font-headline text-xs font-bold tracking-widest uppercase text-slate-950 dark:text-white mb-8">Legal</h5>
 <div class="flex flex-col gap-4">
-<a class="text-xs text-slate-500 font-inter tracking-widest uppercase hover:text-amber-600 transition-all duration-200 hover:translate-x-1" href="../contact.html#privacy-protocol">Privacy Policy</a>
-<a class="text-xs text-slate-500 font-inter tracking-widest uppercase hover:text-amber-600 transition-all duration-200 hover:translate-x-1" href="../contact.html#terms-engagement">Terms of Service</a>
+<a class="text-xs text-slate-500 font-body tracking-widest uppercase hover:text-amber-600 transition-all duration-200 hover:translate-x-1" href="../contact.html#privacy-protocol">Privacy Policy</a>
+<a class="text-xs text-slate-500 font-body tracking-widest uppercase hover:text-amber-600 transition-all duration-200 hover:translate-x-1" href="../contact.html#terms-engagement">Terms of Service</a>
 </div>
 </div>
 </div>
 <div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-slate-200/10 text-center">
-<p class="font-inter text-xs tracking-widest uppercase text-slate-400">© 2026 Globos Holdings. All Rights Reserved.</p>
+<p class="font-body text-xs tracking-widest uppercase text-slate-400">© 2026 Globos Holdings. All Rights Reserved.</p>
 </div>
 </footer>
 </body></html>
