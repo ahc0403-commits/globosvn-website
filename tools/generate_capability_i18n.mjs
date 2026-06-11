@@ -7,7 +7,7 @@ const domain = "https://www.globos.world";
 const labels = {
   ko: {
     home: "홈",
-    tower: "컨트롤타워",
+    tower: "로컬 파트너",
     capabilities: "실행 영역",
     proof: "운영 근거",
     sitemap: "사이트맵",
@@ -26,7 +26,7 @@ const labels = {
   },
   en: {
     home: "Home",
-    tower: "How We Work",
+    tower: "Local Partner",
     capabilities: "Services",
     proof: "Track Record",
     sitemap: "Site Map",
@@ -81,7 +81,7 @@ const services = [
       eyebrow: "F&B Brand Launch",
       meta: "베트남 식당, 카페, 한식당, F&B 프랜차이즈 진출을 위한 매장 오픈과 운영 실행 지원.",
       lead: "F&B는 오픈보다 운영이 어렵습니다. 메뉴 현지화, 식자재, 인력, SOP, POS, 배달, 품질 기준이 처음부터 맞아야 합니다.",
-      bestFor: ["식당·카페·한식 브랜드의 베트남 진출", "현지 식자재와 공급처가 필요한 브랜드", "배달 플랫폼과 매장 운영을 같이 준비하는 팀", "오픈 후 품질 유지가 걱정되는 본사"],
+      bestFor: ["식당·카페·한식 브랜드의 베트남 진출", "현지 식자재와 공급처가 필요한 브랜드", "배달 앱과 매장 운영을 같이 준비하는 팀", "오픈 후 품질 유지가 걱정되는 본사"],
       scope: ["메뉴와 가격 현지화", "식자재·공급처·물류 구조", "매장 오픈 체크리스트와 교육", "POS, 배달, 품질 리포팅 기준"],
       flow: ["브랜드와 메뉴 적합성 검토", "입지와 공급망 기준 수립", "오픈 준비, 인력 교육, 운영 테스트", "매출·원가·품질 리포트로 안정화"],
       proof: "직영점 운영 경험을 기반으로 F&B 매장의 매출, 원가, 인력, 배달 흐름을 한 화면에서 관리하는 구조를 갖추고 있습니다."
@@ -399,7 +399,7 @@ function page(service, lang) {
       <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="${homeUrl}" aria-label="Globos Holdings home">Globos Holdings</a>
       <div class="hidden items-center gap-5 text-sm font-bold text-slatecopy lg:flex">
         <a class="hover:text-navy" href="${homeUrl}">${esc(l.home)}</a>
-        <a class="hover:text-navy" href="${homeUrl}#control-tower">${esc(l.tower)}</a>
+        <a class="hover:text-navy" href="${homeUrl}#local-partner">${esc(l.tower)}</a>
         <a class="text-navy" href="${homeUrl}#capabilities">${esc(l.capabilities)}</a>
         <a class="hover:text-navy" href="../../site-map.html">${esc(l.sitemap)}</a>
         <a class="hover:text-navy" href="../../contact.html">${esc(l.contact)}</a>
