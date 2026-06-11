@@ -350,7 +350,7 @@ def render_page(page: dict, lang: str) -> str:
         else "Send your brand, product category, target region, current preparation stage, and bottleneck. We will map the next execution route."
     )
     cta_button = "문의하기" if is_ko else "Contact Globos Holdings"
-    nav_guides = "홈으로" if is_ko else "SEO landings"
+    nav_guides = "사이트맵" if is_ko else "Site map"
     nav_contact = "문의" if is_ko else "Contact"
     related_title = "같이 보면 좋은 페이지" if is_ko else "Related landing pages"
     flow_title = "일하는 순서" if is_ko else "Execution flow"
@@ -484,7 +484,7 @@ def render_page(page: dict, lang: str) -> str:
             <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
               <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="{home_href}">Globos Holdings</a>
               <div class="hidden items-center gap-6 text-sm font-bold text-slatecopy md:flex">
-                <a class="hover:text-navy" href="{home_href}#capabilities">{nav_guides}</a>
+                <a class="hover:text-navy" href="../../site-map.html">{nav_guides}</a>
                 <a class="hover:text-navy" href="{contact_href}">{nav_contact}</a>
               </div>
               <a class="rounded-sm border border-line bg-fog px-4 py-2 text-xs font-extrabold text-navy hover:border-navy" href="../../{other}/{slug}/">{lang_label}</a>
@@ -633,6 +633,7 @@ def render_page(page: dict, lang: str) -> str:
               <a class="brand-name font-headline text-2xl font-bold text-navy" href="{home_href}">Globos Holdings</a>
               <div class="flex flex-col gap-2 lg:text-right">
                 <a class="hover:text-navy" href="mailto:{CONTACT_EMAIL}?subject=Globos Holdings Website Inquiry">{CONTACT_EMAIL}</a>
+                <a class="hover:text-navy" href="../../site-map.html">{nav_guides}</a>
                 <p>© 2026 Globos Holdings. All rights reserved.</p>
               </div>
             </div>
@@ -646,6 +647,7 @@ def render_page(page: dict, lang: str) -> str:
 def render_sitemap() -> str:
     urls = [
         f"{DOMAIN}/",
+        f"{DOMAIN}/site-map",
         f"{DOMAIN}/contact",
         *[abs_url(lang, page["slug"]) for lang in ("ko", "en") for page in PAGES],
         *[f"{DOMAIN}/capabilities/{slug}" for slug in [

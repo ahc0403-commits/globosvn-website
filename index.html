@@ -229,8 +229,8 @@
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
       <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
       <div class="hidden items-center gap-5 text-sm font-bold text-slatecopy lg:flex">
+        <a class="hover:text-navy" href="site-map.html" data-i18n="nav.map">Site Map</a>
         <a class="hover:text-navy" href="#control-tower" data-i18n="nav.tower">Control Tower</a>
-        <a class="hover:text-navy" href="#why-globos" data-i18n="nav.why">Why</a>
         <a class="hover:text-navy" href="#entry-models" data-i18n="nav.models">Models</a>
         <a class="hover:text-navy" href="#operating-system" data-i18n="nav.system">System</a>
         <a class="hover:text-navy" href="#proof" data-i18n="nav.proof">Proof</a>
@@ -254,10 +254,10 @@
           <h1 class="font-headline text-4xl font-bold leading-[1.05] text-ink sm:text-5xl md:text-7xl" data-i18n="hero.title">The local operating team for brands entering Vietnam.</h1>
           <p class="mt-7 max-w-2xl text-base leading-8 text-slatecopy md:text-xl" data-i18n="hero.body">For brands blocked by company setup, licensing, distribution, store operations, marketing, and systems. Globos Holdings turns the question “Can we enter Vietnam?” into an operating route.</p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <button class="primary-action inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white hover:bg-cobalt" type="button" data-start-guide>
+            <a class="primary-action inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white hover:bg-cobalt" href="site-map.html">
               <span data-i18n="hero.primary">View execution route</span>
               <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
-            </button>
+            </a>
             <a class="secondary-action inline-flex items-center justify-center gap-3 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy hover:border-navy hover:bg-fog" href="contact.html">
               <span data-i18n="hero.secondary">Contact principals</span>
               <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
@@ -894,6 +894,7 @@
       </div>
       <div class="flex flex-col gap-2 text-sm text-slatecopy lg:text-right">
         <a class="transition-colors hover:text-navy" href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">contact@globos.world</a>
+        <a class="transition-colors hover:text-navy" href="site-map.html" data-i18n="footer.sitemap">Site map</a>
         <a class="transition-colors hover:text-navy" href="contact.html" data-i18n="footer.contact">Contact page</a>
         <p>© 2026 Globos Holdings. All rights reserved.</p>
       </div>
@@ -903,6 +904,7 @@
   <script>
     const translations = {
       en: {
+        'nav.map': 'Site Map',
         'nav.tower': 'Control Tower',
         'nav.why': 'Why',
         'nav.models': 'Models',
@@ -913,7 +915,7 @@
         'hero.eyebrow': 'Vietnam execution partner',
         'hero.title': 'The local operating team for brands entering Vietnam.',
         'hero.body': 'For brands blocked by company setup, licensing, distribution, store operations, marketing, and systems. Globos Holdings turns the question “Can we enter Vietnam?” into an operating route.',
-        'hero.primary': 'View execution route',
+        'hero.primary': 'Start with site map',
         'hero.secondary': 'Contact principals',
         'stats.started': 'Started',
         'stats.operating': 'Operating stores',
@@ -1093,9 +1095,11 @@
         'footerProof.text': '2024 start. 8 stores operating. 20+ partner firms. 2030 target of 300 stores and 50 partner firms. in-house ERP. SaaS POS. Delivery app base.',
         'footerProof.button': 'Go to inquiry',
         'footer.body': 'Vietnam market entry, franchise expansion, store operations, sourcing, legal setup, marketing localization, ERP, SaaS POS, and delivery infrastructure.',
+        'footer.sitemap': 'Site map',
         'footer.contact': 'Contact page'
       },
       ko: {
+        'nav.map': '사이트맵',
         'nav.tower': '컨트롤타워',
         'nav.why': '왜 필요한가',
         'nav.models': '어떤 경우',
@@ -1106,7 +1110,7 @@
         'hero.eyebrow': '베트남 진출을 준비하는 브랜드에게.',
         'hero.title': '베트남에 들어가고 싶지만, 현지 운영이 막막할 때.',
         'hero.body': '법인 설립부터 인허가, 유통, 매장 운영, 쇼피와 틱톡 판매까지. Globos Holdings는 베트남에서 직접 매장을 운영하며 쌓은 경험으로 브랜드의 첫 진입과 확장을 함께 설계합니다.',
-        'hero.primary': '어디서 막히는지 보기',
+        'hero.primary': '사이트맵으로 시작',
         'hero.secondary': '문의하기',
         'stats.started': '시작',
         'stats.operating': '운영 중인 매장',
@@ -1286,6 +1290,7 @@
         'footerProof.text': '2024년 베트남에서 시작. 현재 8개 점포 운영. 20여 개 파트너사와 협업. 2030년 300개 점포와 50개 파트너사 목표. in-house ERP. SaaS POS. 배달 앱 기반.',
         'footerProof.button': '문의로 이동',
         'footer.body': '베트남 진출, 프랜차이즈 확장, 매장 운영, 소싱, 법인과 인허가, 마케팅, ERP, SaaS POS, 배달 인프라까지 함께 봅니다.',
+        'footer.sitemap': '사이트맵',
         'footer.contact': '문의 페이지'
       }
     };
@@ -1316,10 +1321,6 @@
 
     document.querySelectorAll('[data-lang-button]').forEach((button) => {
       button.addEventListener('click', () => setLanguage(button.dataset.langButton));
-    });
-
-    document.querySelector('[data-start-guide]')?.addEventListener('click', () => {
-      document.getElementById('control-tower')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     setLanguage(activeLanguage);

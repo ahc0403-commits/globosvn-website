@@ -97,11 +97,33 @@ def validate_sitemap() -> None:
     tree = ET.parse(path)
     namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     locs = {node.text for node in tree.findall(".//sm:loc", namespace)}
+    for required_url in [f"{DOMAIN}/", f"{DOMAIN}/site-map", f"{DOMAIN}/contact"]:
+        if required_url not in locs:
+            fail(f"sitemap missing {required_url}")
     for lang in ("ko", "en"):
         for slug in SLUGS:
             url = f"{DOMAIN}/{lang}/{slug}/"
             if url not in locs:
                 fail(f"sitemap missing {url}")
+
+
+def validate_site_map_page() -> None:
+    path = ROOT / "site-map.html"
+    if not path.exists():
+        fail("missing site-map.html")
+    content = path.read_text(encoding="utf-8")
+    required = [
+        "먼저 내 상황을 고르고",
+        "id=\"routes\"",
+        "Full directory",
+        "ko/vietnam-market-entry/",
+        "en/vietnam-market-entry/",
+        "capabilities/franchise-expansion.html",
+        "contact@globos.world",
+    ]
+    for needle in required:
+        if needle not in content:
+            fail(f"site-map.html missing {needle}")
 
 
 def validate_robots() -> None:
@@ -134,6 +156,7 @@ def main() -> None:
         for slug in SLUGS:
             validate_page(lang, slug)
     validate_sitemap()
+    validate_site_map_page()
     validate_robots()
     validate_home_links()
     validate_vercel()
