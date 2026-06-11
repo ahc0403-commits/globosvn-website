@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Confidential inquiry desk with secure documents</title>
+  <desc id="desc">No-people professional visual of inquiry documents, encrypted email route, and operating checklist.</desc>
+  <style>.line{stroke-dasharray:16 12;animation:dash 8s linear infinite}.blink{animation:blink 3s ease-in-out infinite}@keyframes dash{to{stroke-dashoffset:-220}}@keyframes blink{50%{opacity:.25}}</style>
+  <rect width="1600" height="1000" fill="#f4f6f7"/>
+  <rect x="0" y="0" width="1600" height="320" fill="#071a31"/>
+  <rect x="148" y="118" width="524" height="700" fill="#fff" stroke="#d8dde3"/><rect x="204" y="184" width="412" height="46" fill="#071a31" fill-opacity=".08"/><rect x="204" y="270" width="350" height="18" fill="#b6c0cc"/><rect x="204" y="312" width="390" height="18" fill="#b6c0cc"/><rect x="204" y="354" width="286" height="18" fill="#b6c0cc"/>
+  <rect x="784" y="204" width="632" height="438" fill="#fff" stroke="#d8dde3"/><path class="line" d="M260 690C520 504 760 492 1018 378s292-98 360-22" fill="none" stroke="#c8a45d" stroke-width="7"/>
+  <circle class="blink" cx="1030" cy="378" r="18" fill="#5db79e"/><circle class="blink" cx="1378" cy="356" r="18" fill="#b7412d"/>
+  <g font-family="Plus Jakarta Sans, sans-serif" fill="#071a31"><text x="834" y="292" font-size="42" font-weight="800">contact@globos.world</text><text x="834" y="356" font-size="26" fill-opacity=".55">Secure institutional inquiry route</text><text x="204" y="752" font-size="30" font-weight="800">Vietnam Entry Brief</text></g>
+</svg>

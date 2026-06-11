@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Vietnam operating command dashboard</title>
+  <desc id="desc">Animated no-people dashboard showing Korea to Vietnam route, store nodes, and operating metrics.</desc>
+  <style>
+    .dash{stroke-dasharray:18 14;animation:dash 9s linear infinite}.pulse{animation:pulse 2.8s ease-in-out infinite}.bar{transform-origin:bottom;animation:bar 4.6s ease-in-out infinite alternate}@keyframes dash{to{stroke-dashoffset:-260}}@keyframes pulse{50%{opacity:1;r:18}}@keyframes bar{from{transform:scaleY(.42)}to{transform:scaleY(1)}}
+  </style>
+  <rect width="1600" height="1000" fill="#071a31"/>
+  <path d="M0 140H1600M0 300H1600M0 460H1600M0 620H1600M0 780H1600M180 0V1000M420 0V1000M660 0V1000M900 0V1000M1140 0V1000M1380 0V1000" stroke="#fff" stroke-opacity=".07"/>
+  <rect x="112" y="92" width="1376" height="816" fill="#fff" fill-opacity=".045" stroke="#fff" stroke-opacity=".14"/>
+  <path class="dash" d="M214 622C396 332 584 262 798 410s380 122 590-112" fill="none" stroke="#c8a45d" stroke-width="9"/>
+  <circle cx="214" cy="622" r="15" fill="#c8a45d"/><circle cx="1388" cy="298" r="15" fill="#5db79e"/>
+  <g fill="#7fb0e8" opacity=".55"><circle class="pulse" cx="930" cy="486" r="9"/><circle class="pulse" cx="995" cy="510" r="9"/><circle class="pulse" cx="1070" cy="503" r="9"/><circle class="pulse" cx="1142" cy="470" r="9"/><circle class="pulse" cx="1218" cy="410" r="9"/><circle class="pulse" cx="1298" cy="348" r="9"/></g>
+  <g fill="#c8a45d"><rect class="bar" x="1086" y="704" width="46" height="134"/><rect class="bar" x="1160" y="650" width="46" height="188"/><rect class="bar" x="1234" y="598" width="46" height="240"/><rect class="bar" x="1308" y="530" width="46" height="308"/></g>
+  <g fill="#fff"><text x="150" y="170" font-size="56" font-family="Space Grotesk, sans-serif" font-weight="700">Globos Holdings</text><text x="150" y="226" font-size="28" fill-opacity=".62" font-family="Plus Jakarta Sans, sans-serif">Vietnam operating platform</text><text x="1110" y="190" font-size="70" font-family="Space Grotesk, sans-serif" font-weight="700">8 -> 20</text><text x="1110" y="238" font-size="25" fill-opacity=".62" font-family="Plus Jakarta Sans, sans-serif">store expansion model</text></g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Direct store operations dashboard</title>
+  <desc id="desc">No-people store operations visual with SOP board, store nodes, and operational KPIs.</desc>
+  <style>.scan{animation:scan 5s ease-in-out infinite}.bar{transform-origin:bottom;animation:bar 4s ease-in-out infinite alternate}@keyframes scan{50%{transform:translateY(360px)}}@keyframes bar{from{transform:scaleY(.45)}to{transform:scaleY(1)}}</style>
+  <rect width="1600" height="1000" fill="#f4f6f7"/><rect x="120" y="92" width="1360" height="816" fill="#fff" stroke="#d8dde3"/>
+  <g fill="#071a31" font-family="Plus Jakarta Sans, sans-serif"><text x="170" y="176" font-size="54" font-weight="800">Store Operations</text><text x="170" y="230" font-size="26" fill-opacity=".58">SOP · staffing · reporting · expansion control</text></g>
+  <rect x="170" y="310" width="520" height="460" fill="#071a31"/><rect class="scan" x="198" y="342" width="464" height="4" fill="#c8a45d"/>
+  <g fill="#fff" fill-opacity=".13"><rect x="218" y="382" width="360" height="26"/><rect x="218" y="450" width="410" height="26"/><rect x="218" y="518" width="290" height="26"/><rect x="218" y="586" width="380" height="26"/></g>
+  <g fill="#0b4d8f"><rect class="bar" x="880" y="666" width="58" height="150"/><rect class="bar" x="988" y="600" width="58" height="216"/><rect class="bar" x="1096" y="532" width="58" height="284"/><rect class="bar" x="1204" y="458" width="58" height="358"/></g>
+  <path d="M850 816H1300" stroke="#071a31" stroke-opacity=".25" stroke-width="4"/>
+</svg>

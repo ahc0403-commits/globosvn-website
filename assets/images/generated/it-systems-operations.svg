@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">ERP POS and delivery infrastructure dashboard</title>
+  <desc id="desc">No-people animated dashboard for ERP, SaaS POS, store operations, delivery app, and data feedback.</desc>
+  <style>.path{stroke-dasharray:14 12;animation:dash 7s linear infinite}.bar{transform-origin:bottom;animation:bar 4s ease-in-out infinite alternate}@keyframes dash{to{stroke-dashoffset:-220}}@keyframes bar{from{transform:scaleY(.38)}to{transform:scaleY(1)}}</style>
+  <rect width="1600" height="1000" fill="#071a31"/><rect x="120" y="96" width="1360" height="808" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".13"/>
+  <g fill="#fff" font-family="Plus Jakarta Sans, sans-serif"><text x="180" y="178" font-size="54" font-weight="800">ERP · SaaS POS · Delivery App</text><text x="180" y="230" font-size="26" fill-opacity=".58">operating visibility and store workflow</text></g>
+  <g fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".18"><rect x="192" y="332" width="290" height="150"/><rect x="652" y="332" width="290" height="150"/><rect x="1112" y="332" width="290" height="150"/><rect x="422" y="628" width="290" height="150"/><rect x="882" y="628" width="290" height="150"/></g>
+  <path class="path" d="M482 407H652M942 407H1112M338 482C380 604 468 606 566 628M798 482C846 604 920 604 1026 628M1172 628C1308 552 1320 470 1258 482" fill="none" stroke="#c8a45d" stroke-width="8"/>
+  <g fill="#fff" font-family="Plus Jakarta Sans, sans-serif" font-size="34" font-weight="800"><text x="264" y="420">ERP</text><text x="716" y="420">POS</text><text x="1166" y="420">STORE</text><text x="476" y="718">DELIVERY</text><text x="950" y="718">DATA</text></g>
+  <g fill="#5db79e"><rect class="bar" x="1260" y="704" width="38" height="94"/><rect class="bar" x="1320" y="650" width="38" height="148"/><rect class="bar" x="1380" y="588" width="38" height="210"/></g>
+</svg>

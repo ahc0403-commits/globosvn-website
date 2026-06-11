@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Franchise expansion network</title>
+  <desc id="desc">No-people visualization of repeatable franchise network growth from one model to multiple stores.</desc>
+  <style>.link{stroke-dasharray:12 12;animation:dash 8s linear infinite}.pulse{animation:pulse 3s ease-in-out infinite}@keyframes dash{to{stroke-dashoffset:-220}}@keyframes pulse{50%{transform:scale(1.14);opacity:.65}}</style>
+  <rect width="1600" height="1000" fill="#071a31"/><rect x="120" y="112" width="1360" height="760" fill="#fff" fill-opacity=".04" stroke="#fff" stroke-opacity=".14"/>
+  <g stroke="#c8a45d" stroke-width="5" class="link" fill="none"><path d="M800 470L430 300M800 470l370-170M800 470L430 660M800 470l370 190M800 470V760M800 470V210"/></g>
+  <g fill="#fff" stroke="#5db79e" stroke-width="7"><circle class="pulse" cx="800" cy="470" r="72"/><circle cx="430" cy="300" r="46"/><circle cx="1170" cy="300" r="46"/><circle cx="430" cy="660" r="46"/><circle cx="1170" cy="660" r="46"/><circle cx="800" cy="760" r="46"/><circle cx="800" cy="210" r="46"/></g>
+  <g fill="#fff" font-family="Plus Jakarta Sans, sans-serif"><text x="150" y="174" font-size="56" font-weight="800">Franchise Expansion</text><text x="150" y="230" font-size="26" fill-opacity=".58">brand model · store rollout · partner controls</text><text x="744" y="484" font-size="30" fill="#071a31" font-weight="800">MODEL</text></g>
+</svg>

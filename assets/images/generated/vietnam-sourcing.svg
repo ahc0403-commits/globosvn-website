@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Vietnam sourcing and logistics network</title>
+  <desc id="desc">No-people logistics and sourcing network with supplier nodes, route lines, and quality checkpoints.</desc>
+  <style>.route{stroke-dasharray:16 10;animation:dash 8s linear infinite}.pulse{animation:pulse 2.8s ease-in-out infinite}@keyframes dash{to{stroke-dashoffset:-240}}@keyframes pulse{50%{opacity:.4}}</style>
+  <rect width="1600" height="1000" fill="#eef6f2"/><rect x="110" y="94" width="1380" height="812" fill="#fff" stroke="#cddfd8"/>
+  <g fill="#071a31" font-family="Plus Jakarta Sans, sans-serif"><text x="166" y="176" font-size="54" font-weight="800">Sourcing & Logistics</text><text x="166" y="232" font-size="26" fill-opacity=".58">supplier development · route planning · quality control</text></g>
+  <path class="route" d="M316 664C514 462 610 354 792 474s284 180 500-52" fill="none" stroke="#5db79e" stroke-width="9"/>
+  <g fill="#0b4d8f"><circle class="pulse" cx="316" cy="664" r="24"/><circle class="pulse" cx="792" cy="474" r="24"/><circle class="pulse" cx="1292" cy="422" r="24"/></g>
+  <g fill="#071a31" fill-opacity=".08"><rect x="220" y="704" width="260" height="100"/><rect x="700" y="514" width="260" height="100"/><rect x="1190" y="462" width="260" height="100"/></g>
+</svg>

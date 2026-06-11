@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Vietnam market entry decision map</title>
+  <desc id="desc">No-people market entry decision map with risk gates and launch route.</desc>
+  <style>.route{stroke-dasharray:18 12;animation:dash 8s linear infinite}.node{animation:pulse 3s ease-in-out infinite}@keyframes dash{to{stroke-dashoffset:-260}}@keyframes pulse{50%{opacity:.35}}</style>
+  <rect width="1600" height="1000" fill="#eef3f7"/><rect x="92" y="86" width="1416" height="828" fill="#fff" stroke="#d8dde3"/>
+  <path d="M360 220C466 384 614 394 720 500s246 156 520 132" fill="none" stroke="#d8dde3" stroke-width="22"/>
+  <path class="route" d="M360 220C466 384 614 394 720 500s246 156 520 132" fill="none" stroke="#0b4d8f" stroke-width="8"/>
+  <g fill="#c8a45d"><circle class="node" cx="360" cy="220" r="22"/><circle class="node" cx="720" cy="500" r="22"/><circle class="node" cx="1240" cy="632" r="22"/></g>
+  <g fill="#071a31" font-family="Plus Jakarta Sans, sans-serif"><text x="150" y="164" font-size="52" font-weight="800">Vietnam Market Entry</text><text x="150" y="220" font-size="25" fill-opacity=".58">fit · risk · model · launch sequence</text><text x="276" y="310" font-size="26" font-weight="800">Diagnosis</text><text x="642" y="590" font-size="26" font-weight="800">Setup</text><text x="1160" y="724" font-size="26" font-weight="800">Operate</text></g>
+</svg>

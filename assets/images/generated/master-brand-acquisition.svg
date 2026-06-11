@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Master brand rights and partner model</title>
+  <desc id="desc">No-people visualization of brand rights, partner nodes, and Vietnam operating control.</desc>
+  <style>.route{stroke-dasharray:14 12;animation:dash 8s linear infinite}.node{animation:pulse 3s ease-in-out infinite}@keyframes dash{to{stroke-dashoffset:-220}}@keyframes pulse{50%{opacity:.48}}</style>
+  <rect width="1600" height="1000" fill="#071a31"/><rect x="128" y="96" width="1344" height="808" fill="#fff" fill-opacity=".05" stroke="#fff" stroke-opacity=".13"/>
+  <g fill="#fff" font-family="Plus Jakarta Sans, sans-serif"><text x="190" y="182" font-size="54" font-weight="800">Brand Rights & Partner Model</text><text x="190" y="238" font-size="26" fill-opacity=".58">master license · local partner · operating control</text></g>
+  <rect x="238" y="360" width="320" height="240" fill="#fff" fill-opacity=".08" stroke="#c8a45d"/><rect x="1042" y="360" width="320" height="240" fill="#fff" fill-opacity=".08" stroke="#5db79e"/>
+  <path class="route" d="M558 480H1042" stroke="#c8a45d" stroke-width="8" fill="none"/>
+  <g fill="#7fb0e8"><circle class="node" cx="690" cy="480" r="18"/><circle class="node" cx="800" cy="480" r="18"/><circle class="node" cx="910" cy="480" r="18"/></g>
+  <g fill="#fff" font-family="Plus Jakarta Sans, sans-serif" font-weight="800"><text x="302" y="488" font-size="36">Korea Brand</text><text x="1102" y="488" font-size="36">Vietnam Base</text></g>
+</svg>
