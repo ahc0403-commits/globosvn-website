@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/ko/:slug", "destination": "/ko/:slug/index.html" },
+    { "source": "/en/:slug", "destination": "/en/:slug/index.html" },
     { "source": "/capabilities/:slug", "destination": "/capabilities/:slug.html" }
   ],
   "headers": [
