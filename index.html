@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Globos Holdings | Vietnam Market Entry, Franchise Expansion & Store Operations</title>
-  <meta name="description" content="Globos Holdings helps Korean and global brands enter Vietnam with real operating infrastructure: 8 active stores, ERP, SaaS POS, delivery app readiness, franchise expansion, sourcing, legal setup, and marketing localization." />
+  <meta name="description" content="Globos Holdings helps Korean and global brands enter Vietnam with active stores, ERP, SaaS POS, delivery app readiness, franchise expansion, sourcing, legal setup, and marketing localization." />
   <meta name="keywords" content="Vietnam market entry, Vietnam business expansion, Vietnam franchise expansion, 베트남 진출, 베트남 사업 진출, 베트남 프랜차이즈 진출, 베트남 유통 문의, 베트남 물류 유통, 베트남 법인 설립, 베트남 POS 시스템" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.globos.world/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.globos.world/" />
   <meta property="og:title" content="Globos Holdings | Vietnam Market Entry & Operating Platform" />
-  <meta property="og:description" content="Vietnam entry, franchise expansion, store operations, sourcing, legal setup, ERP, SaaS POS, and delivery infrastructure built on local operating proof." />
+  <meta property="og:description" content="A bilingual guided homepage for Vietnam market entry, franchise expansion, store operations, legal setup, ERP, SaaS POS, and delivery infrastructure." />
   <meta property="og:site_name" content="Globos Holdings" />
   <meta name="twitter:card" content="summary_large_image" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -48,12 +48,8 @@
     };
   </script>
   <style>
-    :root {
-      color-scheme: light;
-    }
-    * {
-      letter-spacing: 0 !important;
-    }
+    :root { color-scheme: light; }
+    * { letter-spacing: 0 !important; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: #f4f6f7;
@@ -62,31 +58,6 @@
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
       line-height: 1;
-    }
-    .nav-link {
-      position: relative;
-      color: rgba(7, 26, 49, 0.68);
-      transition: color 180ms ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 100%;
-      height: 1px;
-      transform: scaleX(0);
-      transform-origin: left;
-      background: #002147;
-      transition: transform 180ms ease;
-    }
-    .nav-link:hover,
-    .nav-link:focus-visible {
-      color: #002147;
-    }
-    .nav-link:hover::after,
-    .nav-link:focus-visible::after {
-      transform: scaleX(1);
     }
     .section-label {
       display: inline-flex;
@@ -103,101 +74,63 @@
       height: 2px;
       background: #c8a45d;
     }
+    .language-button,
+    .stage-button,
+    .path-card,
+    .primary-action,
+    .secondary-action {
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    }
+    .language-button[aria-pressed='true'],
+    .stage-button[aria-pressed='true'] {
+      background: #002147;
+      border-color: #002147;
+      color: #fff;
+    }
+    .language-button:hover,
+    .language-button:focus-visible,
+    .stage-button:hover,
+    .stage-button:focus-visible,
+    .path-card:hover,
+    .path-card:focus-visible,
+    .primary-action:hover,
+    .primary-action:focus-visible,
+    .secondary-action:hover,
+    .secondary-action:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .guide-panel {
+      display: none;
+    }
+    .guide-panel.is-active {
+      display: grid;
+    }
     .route-dash {
-      stroke-dasharray: 12 12;
-      animation: routeDash 7s linear infinite;
+      stroke-dasharray: 14 12;
+      animation: routeDash 8s linear infinite;
     }
     .pulse-node {
       transform-origin: center;
       animation: nodePulse 2.8s ease-in-out infinite;
     }
-    .pulse-node:nth-child(2n) {
-      animation-delay: 0.5s;
-    }
     .bar-fill {
       transform-origin: bottom;
-      animation: barRise 4s ease-in-out infinite alternate;
+      animation: barRise 4.2s ease-in-out infinite alternate;
     }
-    .flow-dot {
-      offset-path: path('M 44 180 C 160 58, 302 62, 430 142 S 650 247, 786 110');
-      animation: flowMove 8s linear infinite;
-    }
-    .scan-line {
-      animation: scanLine 5.5s ease-in-out infinite;
-    }
-    .proof-button {
-      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease;
-    }
-    .proof-button:hover,
-    .proof-button:focus-visible {
-      transform: translateY(-2px);
-      border-color: #002147;
-      outline: none;
-    }
-    .proof-button[aria-pressed='true'] {
-      background: #002147;
-      color: white;
-      border-color: #002147;
-    }
-    .topic-link,
-    .service-card,
-    .entry-card {
-      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
-    }
-    .topic-link:hover,
-    .topic-link:focus-visible,
-    .service-card:hover,
-    .service-card:focus-visible,
-    .entry-card:hover,
-    .entry-card:focus-visible {
-      transform: translateY(-3px);
-      border-color: #0b4d8f;
-      box-shadow: 0 18px 42px rgba(0, 33, 71, 0.1);
-      outline: none;
-    }
-    .stack-step::before {
-      content: '';
-      position: absolute;
-      left: 19px;
-      top: 44px;
-      bottom: -18px;
-      width: 1px;
-      background: #d8dde3;
-    }
-    .stack-step:last-child::before {
-      display: none;
-    }
-    .org-line {
-      background: linear-gradient(90deg, transparent, rgba(200, 164, 93, 0.9), transparent);
-      height: 1px;
+    .panel-shell {
+      min-height: min(760px, calc(100vh - 112px));
     }
     @media (prefers-reduced-motion: reduce) {
       .route-dash,
       .pulse-node,
-      .bar-fill,
-      .flow-dot,
-      .scan-line {
+      .bar-fill {
         animation: none;
       }
     }
-    @keyframes routeDash {
-      to { stroke-dashoffset: -240; }
-    }
-    @keyframes nodePulse {
-      0%, 100% { opacity: 0.45; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.35); }
-    }
-    @keyframes barRise {
-      0% { transform: scaleY(0.42); }
-      100% { transform: scaleY(1); }
-    }
-    @keyframes flowMove {
-      to { offset-distance: 100%; }
-    }
-    @keyframes scanLine {
-      0%, 100% { transform: translateY(0); opacity: 0.15; }
-      50% { transform: translateY(165px); opacity: 0.7; }
-    }
+    @keyframes routeDash { to { stroke-dashoffset: -240; } }
+    @keyframes nodePulse { 0%, 100% { opacity: .45; transform: scale(1); } 50% { opacity: 1; transform: scale(1.28); } }
+    @keyframes barRise { from { transform: scaleY(.38); } to { transform: scaleY(1); } }
   </style>
   <script type="application/ld+json">
   {
@@ -216,505 +149,319 @@
 </head>
 <body class="font-body antialiased">
   <header class="fixed left-0 top-0 z-50 w-full border-b border-line/80 bg-white/95 backdrop-blur">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Primary navigation">
-      <a class="font-headline text-2xl font-bold text-navy" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
-      <div class="hidden items-center gap-8 text-sm font-semibold lg:flex">
-        <a class="nav-link" href="#proof">Proof</a>
-        <a class="nav-link" href="#platform">Platform</a>
-        <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#leadership">Leadership</a>
-        <a class="nav-link" href="#organization">Organization</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
+      <a class="font-headline text-xl font-bold text-navy sm:text-2xl" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
+      <div class="hidden items-center gap-6 text-sm font-bold text-slatecopy lg:flex">
+        <a class="hover:text-navy" href="#guide" data-i18n="nav.guide">Guide</a>
+        <a class="hover:text-navy" href="#capabilities" data-i18n="nav.services">Services</a>
+        <a class="hover:text-navy" href="#leadership" data-i18n="nav.leadership">Leadership</a>
+        <a class="hover:text-navy" href="contact.html" data-i18n="nav.contact">Contact</a>
       </div>
-      <a class="inline-flex items-center gap-2 rounded-sm bg-navy px-5 py-3 text-sm font-extrabold text-white transition-colors hover:bg-cobalt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt" href="contact.html">
-        <span class="material-symbols-outlined text-base" aria-hidden="true">mail</span>
-        Inquiry
-      </a>
+      <div class="flex items-center gap-2">
+        <div class="flex rounded-sm border border-line bg-fog p-1" aria-label="Language selector">
+          <button class="language-button rounded-sm px-3 py-2 text-xs font-extrabold text-slatecopy" type="button" data-lang-button="en" aria-pressed="true">EN</button>
+          <button class="language-button rounded-sm px-3 py-2 text-xs font-extrabold text-slatecopy" type="button" data-lang-button="ko" aria-pressed="false">KR</button>
+        </div>
+        <a class="hidden rounded-sm bg-navy px-5 py-3 text-sm font-extrabold text-white transition-colors hover:bg-cobalt sm:inline-flex" href="contact.html" data-i18n="nav.inquiry">Inquiry</a>
+      </div>
     </nav>
   </header>
 
   <main class="pt-[73px]">
     <section class="relative overflow-hidden bg-white">
-      <div class="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
+      <div class="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div>
-          <p class="section-label mb-7">Vietnam operating platform</p>
-          <h1 class="font-headline text-5xl font-bold leading-[1.02] text-ink md:text-7xl lg:text-8xl">
-            Vietnam market entry built on stores, systems, and local control.
-          </h1>
-          <p class="mt-8 max-w-2xl text-lg leading-8 text-slatecopy md:text-xl">
-            Globos Holdings helps Korean and global brands enter Vietnam with operating proof: active stores, local execution teams, ERP-backed management, SaaS POS workflows, and delivery app infrastructure prepared for scalable expansion.
-          </p>
-          <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a class="inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white transition-colors hover:bg-cobalt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt" href="contact.html">
-              Discuss Vietnam market entry
+          <p class="section-label mb-7" data-i18n="hero.eyebrow">Welcome</p>
+          <h1 class="font-headline text-5xl font-bold leading-[1.02] text-ink md:text-7xl" data-i18n="hero.title">Welcome to Globos Holdings.</h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-slatecopy md:text-xl" data-i18n="hero.body">This homepage is a guided path for brands considering Vietnam. Start with the question you have, then move into proof, leadership, services, and the next operating step.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <button class="primary-action inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white hover:bg-cobalt" type="button" data-start-guide>
+              <span data-i18n="hero.primary">Start guided experience</span>
               <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
-            </a>
-            <a class="inline-flex items-center justify-center gap-3 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy transition-colors hover:border-navy hover:bg-fog focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt" href="#proof">
-              View operating proof
-              <span class="material-symbols-outlined text-lg" aria-hidden="true">analytics</span>
+            </button>
+            <a class="secondary-action inline-flex items-center justify-center gap-3 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy hover:border-navy hover:bg-fog" href="contact.html">
+              <span data-i18n="hero.secondary">Contact principals</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
             </a>
           </div>
-          <dl class="mt-12 grid max-w-2xl grid-cols-3 border-y border-line">
-            <div class="py-6 pr-4">
-              <dt class="text-xs font-bold uppercase text-slatecopy">Started</dt>
+          <dl class="mt-10 grid max-w-2xl grid-cols-3 border-y border-line">
+            <div class="py-5 pr-4">
+              <dt class="text-xs font-bold uppercase text-slatecopy" data-i18n="stats.started">Started</dt>
               <dd class="mt-2 font-headline text-3xl font-bold text-navy">2024</dd>
             </div>
-            <div class="border-x border-line px-4 py-6">
-              <dt class="text-xs font-bold uppercase text-slatecopy">Operating</dt>
-              <dd class="mt-2 font-headline text-3xl font-bold text-navy">8 stores</dd>
+            <div class="border-x border-line px-4 py-5">
+              <dt class="text-xs font-bold uppercase text-slatecopy" data-i18n="stats.operating">Operating</dt>
+              <dd class="mt-2 font-headline text-3xl font-bold text-navy" data-i18n="stats.stores">8 stores</dd>
             </div>
-            <div class="py-6 pl-4">
-              <dt class="text-xs font-bold uppercase text-slatecopy">Target</dt>
-              <dd class="mt-2 font-headline text-3xl font-bold text-navy">20 stores</dd>
+            <div class="py-5 pl-4">
+              <dt class="text-xs font-bold uppercase text-slatecopy" data-i18n="stats.target">Target</dt>
+              <dd class="mt-2 font-headline text-3xl font-bold text-navy" data-i18n="stats.targetStores">20 stores</dd>
             </div>
           </dl>
         </div>
 
-        <div class="relative min-h-[580px] overflow-hidden rounded-sm border border-line bg-[#081b32] p-6 shadow-firm" aria-label="Animated operating map and dashboard visualization">
+        <div class="relative overflow-hidden rounded-sm border border-line bg-[#071a31] p-6 shadow-firm" aria-label="Operating map visualization">
           <div class="absolute inset-0 opacity-30" style="background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 42px 42px;"></div>
           <div class="relative z-10 flex items-start justify-between text-white">
             <div>
-              <p class="text-xs font-extrabold uppercase text-white/60">Korea to Vietnam expansion corridor</p>
-              <p class="mt-2 font-headline text-2xl font-bold">Store network control board</p>
+              <p class="text-xs font-extrabold uppercase text-white/60" data-i18n="visual.kicker">Korea to Vietnam route</p>
+              <p class="mt-2 font-headline text-2xl font-bold" data-i18n="visual.title">Operating control board</p>
             </div>
             <div class="rounded-sm border border-white/15 px-3 py-2 text-right">
-              <p class="text-xs text-white/50">Live model</p>
+              <p class="text-xs text-white/50" data-i18n="visual.model">Live model</p>
               <p class="font-headline text-xl font-bold text-brass">8 -> 20</p>
             </div>
           </div>
-
-          <svg class="relative z-10 mt-8 h-[290px] w-full" viewBox="0 0 860 340" role="img" aria-label="Animated line from South Korea to Vietnam with store nodes and operating signals">
+          <svg class="relative z-10 mt-8 h-[360px] w-full" viewBox="0 0 860 430" role="img" aria-label="Animated route map from Korea to Vietnam with store nodes and growth bars">
             <defs>
-              <linearGradient id="routeGradient" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="#c8a45d" />
-                <stop offset="0.52" stop-color="#5db79e" />
-                <stop offset="1" stop-color="#7fb0e8" />
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                <feMerge>
-                  <feMergeNode in="coloredBlur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
+              <linearGradient id="routeGradient" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c8a45d"/><stop offset="0.5" stop-color="#5db79e"/><stop offset="1" stop-color="#7fb0e8"/></linearGradient>
             </defs>
-            <rect x="26" y="28" width="808" height="282" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)" />
-            <path d="M74 204 C180 78, 321 68, 430 142 S642 250, 784 105" fill="none" stroke="url(#routeGradient)" stroke-width="4" class="route-dash" filter="url(#glow)" />
-            <circle cx="74" cy="204" r="9" fill="#c8a45d" />
-            <circle cx="784" cy="105" r="9" fill="#5db79e" />
-            <text x="46" y="238" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Plus Jakarta Sans">Korea brands</text>
-            <text x="700" y="82" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Plus Jakarta Sans">Vietnam operations</text>
-            <g fill="#7fb0e8" opacity="0.9">
-              <circle class="pulse-node" cx="532" cy="179" r="5" />
-              <circle class="pulse-node" cx="575" cy="206" r="5" />
-              <circle class="pulse-node" cx="612" cy="214" r="5" />
-              <circle class="pulse-node" cx="642" cy="204" r="5" />
-              <circle class="pulse-node" cx="673" cy="183" r="5" />
-              <circle class="pulse-node" cx="704" cy="154" r="5" />
-              <circle class="pulse-node" cx="742" cy="124" r="5" />
-              <circle class="pulse-node" cx="784" cy="105" r="5" />
-            </g>
-            <g fill="none" stroke="rgba(255,255,255,0.18)">
-              <path d="M504 258 H794" />
-              <path d="M504 282 H756" />
-              <path d="M504 234 H704" />
-            </g>
-            <g fill="#c8a45d" opacity="0.95">
-              <rect class="bar-fill" x="516" y="218" width="20" height="62" />
-              <rect class="bar-fill" x="552" y="196" width="20" height="84" />
-              <rect class="bar-fill" x="588" y="170" width="20" height="110" />
-              <rect class="bar-fill" x="624" y="146" width="20" height="134" />
-              <rect class="bar-fill" x="660" y="116" width="20" height="164" />
-            </g>
+            <rect x="26" y="28" width="808" height="350" fill="rgba(255,255,255,0.035)" stroke="rgba(255,255,255,0.16)"/>
+            <path d="M74 240 C180 84, 321 76, 430 162 S642 292, 784 112" fill="none" stroke="url(#routeGradient)" stroke-width="4" class="route-dash"/>
+            <circle cx="74" cy="240" r="9" fill="#c8a45d"/><circle cx="784" cy="112" r="9" fill="#5db79e"/>
+            <g fill="#7fb0e8" opacity="0.9"><circle class="pulse-node" cx="532" cy="205" r="5"/><circle class="pulse-node" cx="575" cy="236" r="5"/><circle class="pulse-node" cx="612" cy="244" r="5"/><circle class="pulse-node" cx="642" cy="232" r="5"/><circle class="pulse-node" cx="673" cy="204" r="5"/><circle class="pulse-node" cx="704" cy="168" r="5"/><circle class="pulse-node" cx="742" cy="134" r="5"/><circle class="pulse-node" cx="784" cy="112" r="5"/></g>
+            <g fill="#c8a45d"><rect class="bar-fill" x="514" y="286" width="22" height="72"/><rect class="bar-fill" x="554" y="258" width="22" height="100"/><rect class="bar-fill" x="594" y="226" width="22" height="132"/><rect class="bar-fill" x="634" y="190" width="22" height="168"/><rect class="bar-fill" x="674" y="150" width="22" height="208"/></g>
+            <text x="46" y="280" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Plus Jakarta Sans">Korea</text>
+            <text x="700" y="88" fill="rgba(255,255,255,0.78)" font-size="18" font-family="Plus Jakarta Sans">Vietnam</text>
           </svg>
-
           <div class="relative z-10 grid gap-3 md:grid-cols-3">
-            <div class="rounded-sm border border-white/10 bg-white/10 p-4 text-white">
-              <p class="text-xs text-white/50">in-house ERP</p>
-              <p class="mt-2 text-sm font-bold">Operating visibility</p>
-            </div>
-            <div class="rounded-sm border border-white/10 bg-white/10 p-4 text-white">
-              <p class="text-xs text-white/50">SaaS POS</p>
-              <p class="mt-2 text-sm font-bold">Store-level workflow</p>
-            </div>
-            <div class="rounded-sm border border-white/10 bg-white/10 p-4 text-white">
-              <p class="text-xs text-white/50">Delivery app</p>
-              <p class="mt-2 text-sm font-bold">Launch-ready base</p>
-            </div>
+            <div class="rounded-sm border border-white/10 bg-white/10 p-4 text-white"><p class="text-xs text-white/50">ERP</p><p class="mt-2 text-sm font-bold" data-i18n="visual.erp">Operating visibility</p></div>
+            <div class="rounded-sm border border-white/10 bg-white/10 p-4 text-white"><p class="text-xs text-white/50">SaaS POS</p><p class="mt-2 text-sm font-bold" data-i18n="visual.pos">Store workflow</p></div>
+            <div class="rounded-sm border border-white/10 bg-white/10 p-4 text-white"><p class="text-xs text-white/50">Delivery App</p><p class="mt-2 text-sm font-bold" data-i18n="visual.delivery">Launch-ready base</p></div>
           </div>
-          <div class="scan-line absolute left-6 right-6 top-[310px] z-10 h-px bg-brass/80"></div>
         </div>
       </div>
     </section>
 
-    <section id="proof" class="border-y border-line bg-fog py-24">
+    <section id="guide" class="border-y border-line bg-fog py-12 lg:py-16">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p class="section-label mb-6">Operating proof</p>
-            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-6xl">Built in the market, tested in real stores.</h2>
-            <p class="mt-6 text-lg leading-8 text-slatecopy">
-              Our advantage is not theoretical market knowledge. Globos Holdings builds and operates the infrastructure brands need after launch: stores, workflows, systems, staffing routines, local vendor coordination, and performance data.
-            </p>
-          </div>
-          <div class="grid gap-4 md:grid-cols-2">
-            <button class="proof-button rounded-sm border border-line bg-white p-6 text-left" type="button" data-proof-key="stores" aria-pressed="true">
-              <span class="text-sm font-extrabold text-cobalt">Current operating base</span>
-              <span class="mt-4 block font-headline text-5xl font-bold text-navy">8</span>
-              <span class="mt-2 block text-sm text-slatecopy">stores operating in Vietnam today</span>
-            </button>
-            <button class="proof-button rounded-sm border border-line bg-white p-6 text-left" type="button" data-proof-key="target" aria-pressed="false">
-              <span class="text-sm font-extrabold text-cobalt">This year expansion target</span>
-              <span class="mt-4 block font-headline text-5xl font-bold text-navy">20</span>
-              <span class="mt-2 block text-sm text-slatecopy">store network target for the year</span>
-            </button>
-            <button class="proof-button rounded-sm border border-line bg-white p-6 text-left" type="button" data-proof-key="systems" aria-pressed="false">
-              <span class="text-sm font-extrabold text-cobalt">Infrastructure already built</span>
-              <span class="mt-4 block font-headline text-5xl font-bold text-navy">ERP</span>
-              <span class="mt-2 block text-sm text-slatecopy">SaaS POS and delivery app foundation</span>
-            </button>
-            <button class="proof-button rounded-sm border border-line bg-white p-6 text-left" type="button" data-proof-key="start" aria-pressed="false">
-              <span class="text-sm font-extrabold text-cobalt">Vietnam operations began</span>
-              <span class="mt-4 block font-headline text-5xl font-bold text-navy">2024</span>
-              <span class="mt-2 block text-sm text-slatecopy">local execution base established</span>
-            </button>
-          </div>
-        </div>
-        <div class="mt-8 rounded-sm border border-line bg-white p-6 lg:p-8" aria-live="polite">
-          <p class="text-sm font-extrabold uppercase text-cobalt" id="proof-title">Current operating base</p>
-          <p class="mt-3 max-w-4xl text-lg leading-8 text-slatecopy" id="proof-body">Globos Holdings currently operates 8 stores in Vietnam, giving clients practical knowledge of local staffing, supplier coordination, store routines, reporting, and daily execution pressure.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="platform" class="bg-white py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div>
-            <p class="section-label mb-6">Why choose Globos Holdings</p>
-            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-6xl">The partner already carrying the operating load.</h2>
-            <p class="mt-6 text-lg leading-8 text-slatecopy">
-              A brand entering Vietnam does not only need advice. It needs licensing, locations, staffing, suppliers, systems, POS routines, delivery readiness, marketing, reporting, and daily operational control. Globos Holdings connects those pieces because we have had to build them for our own operations.
-            </p>
-            <div class="mt-10 space-y-5">
-              <div class="stack-step relative flex gap-5">
-                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-navy text-sm font-extrabold text-white">1</span>
-                <div>
-                  <h3 class="font-headline text-xl font-bold text-ink">Legal and licensing base</h3>
-                  <p class="mt-2 text-sm leading-7 text-slatecopy">Entity setup coordination, license roadmap, contract documentation, and qualified local advisor coordination.</p>
-                </div>
-              </div>
-              <div class="stack-step relative flex gap-5">
-                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-cobalt text-sm font-extrabold text-white">2</span>
-                <div>
-                  <h3 class="font-headline text-xl font-bold text-ink">Stores, suppliers, and operating routines</h3>
-                  <p class="mt-2 text-sm leading-7 text-slatecopy">Store opening coordination, SOPs, vendor coordination, local staffing routines, and expansion controls.</p>
-                </div>
-              </div>
-              <div class="stack-step relative flex gap-5">
-                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-mint text-sm font-extrabold text-white">3</span>
-                <div>
-                  <h3 class="font-headline text-xl font-bold text-ink">ERP, SaaS POS, and delivery app infrastructure</h3>
-                  <p class="mt-2 text-sm leading-7 text-slatecopy">Internal operating visibility, POS workflow in real stores, reporting rhythm, and delivery app foundation now in administrative preparation.</p>
-                </div>
-              </div>
+        <div class="grid gap-6 lg:grid-cols-[280px_1fr]">
+          <aside class="rounded-sm border border-line bg-white p-3 shadow-sm lg:sticky lg:top-24 lg:self-start">
+            <p class="px-3 pb-3 pt-2 text-xs font-extrabold uppercase text-slatecopy" data-i18n="guide.label">Choose the next screen</p>
+            <div class="grid gap-2" role="tablist" aria-label="Guided homepage screens">
+              <button class="stage-button rounded-sm border border-line bg-fog px-4 py-3 text-left text-sm font-extrabold text-ink" type="button" data-stage="problem" aria-pressed="true" role="tab" aria-controls="panel-problem" data-i18n="stage.problem">1. Choose your problem</button>
+              <button class="stage-button rounded-sm border border-line bg-fog px-4 py-3 text-left text-sm font-extrabold text-ink" type="button" data-stage="proof" aria-pressed="false" role="tab" aria-controls="panel-proof" data-i18n="stage.proof">2. See operating proof</button>
+              <button class="stage-button rounded-sm border border-line bg-fog px-4 py-3 text-left text-sm font-extrabold text-ink" type="button" data-stage="leadership" aria-pressed="false" role="tab" aria-controls="panel-leadership" data-i18n="stage.leadership">3. Meet the operators</button>
+              <button class="stage-button rounded-sm border border-line bg-fog px-4 py-3 text-left text-sm font-extrabold text-ink" type="button" data-stage="next" aria-pressed="false" role="tab" aria-controls="panel-next" data-i18n="stage.next">4. Decide next step</button>
             </div>
-          </div>
-          <div class="overflow-hidden rounded-sm border border-line bg-[#0a1d34] p-6 text-white shadow-firm">
-            <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+          </aside>
+
+          <div class="panel-shell rounded-sm border border-line bg-white p-5 shadow-firm lg:p-8">
+            <section class="guide-panel is-active gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center" id="panel-problem" data-panel="problem" role="tabpanel">
               <div>
-                <p class="text-xs font-extrabold uppercase text-white/50">Operating system diagram</p>
-                <p class="mt-2 font-headline text-2xl font-bold">ERP -> POS -> Store -> Delivery -> Data</p>
+                <p class="section-label mb-6" data-i18n="problem.eyebrow">User-first route</p>
+                <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-6xl" data-i18n="problem.title">What are you trying to solve in Vietnam?</h2>
+                <p class="mt-6 text-lg leading-8 text-slatecopy" data-i18n="problem.body">Instead of reading a long corporate page, choose the situation closest to your business. The screen will move toward the proof and service path that matters first.</p>
               </div>
-              <span class="material-symbols-outlined text-brass" aria-hidden="true">hub</span>
-            </div>
-            <svg class="mt-7 h-[360px] w-full" viewBox="0 0 860 430" role="img" aria-label="Animated operating stack connecting ERP, POS, store operations, delivery app, and data feedback">
-              <rect x="36" y="40" width="188" height="88" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" />
-              <rect x="336" y="40" width="188" height="88" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" />
-              <rect x="636" y="40" width="188" height="88" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" />
-              <rect x="186" y="246" width="188" height="88" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" />
-              <rect x="486" y="246" width="188" height="88" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" />
-              <path d="M224 84 H336 M524 84 H636 M130 128 C150 220, 210 220, 280 246 M430 128 C446 216, 502 222, 580 246 M674 246 C760 205, 768 142, 728 128" fill="none" stroke="#c8a45d" stroke-width="3" stroke-dasharray="10 10" class="route-dash" />
-              <circle class="flow-dot" r="7" fill="#5db79e" />
-              <text x="82" y="78" fill="white" font-size="20" font-weight="700" font-family="Plus Jakarta Sans">ERP</text>
-              <text x="378" y="78" fill="white" font-size="20" font-weight="700" font-family="Plus Jakarta Sans">SaaS POS</text>
-              <text x="674" y="78" fill="white" font-size="20" font-weight="700" font-family="Plus Jakarta Sans">Store Ops</text>
-              <text x="221" y="284" fill="white" font-size="20" font-weight="700" font-family="Plus Jakarta Sans">Delivery App</text>
-              <text x="530" y="284" fill="white" font-size="20" font-weight="700" font-family="Plus Jakarta Sans">Data Loop</text>
-              <text x="82" y="105" fill="rgba(255,255,255,0.56)" font-size="13" font-family="Plus Jakarta Sans">management visibility</text>
-              <text x="378" y="105" fill="rgba(255,255,255,0.56)" font-size="13" font-family="Plus Jakarta Sans">transaction workflow</text>
-              <text x="674" y="105" fill="rgba(255,255,255,0.56)" font-size="13" font-family="Plus Jakarta Sans">field routines</text>
-              <text x="221" y="311" fill="rgba(255,255,255,0.56)" font-size="13" font-family="Plus Jakarta Sans">launch readiness</text>
-              <text x="530" y="311" fill="rgba(255,255,255,0.56)" font-size="13" font-family="Plus Jakarta Sans">improve and expand</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="capabilities" class="border-y border-line bg-fog py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <span id="services" class="sr-only" aria-hidden="true">Services</span>
-        <div class="max-w-3xl">
-          <p class="section-label mb-6">Service architecture</p>
-          <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-6xl">One connected route from market decision to operating control.</h2>
-        </div>
-        <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/it-market-entry.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">travel_explore</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">Vietnam Market Entry Strategy</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Market fit, entry sequencing, local risk, partner channel design, and operating model selection.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/franchise-expansion.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">account_tree</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">Franchise & Brand Expansion</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Franchise model adaptation, store development roadmap, partner requirements, and expansion controls.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/direct-store-operations.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">storefront</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">Store Operations & Retail Execution</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Store opening, staffing routines, SOP creation, reporting, and POS/ERP workflow integration.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/fb-market-entry.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">restaurant</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">F&B Market Entry</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Menu localization, supplier support, kitchen operation, delivery readiness, and store launch planning.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/vietnam-sourcing.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">local_shipping</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">Distribution, Logistics & Sourcing</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Supplier development, distribution route planning, product sourcing, and local vendor control.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/legal-advisory.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">gavel</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">Legal, Licensing & Entity Setup</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Entity setup coordination, licensing roadmap, compliance support, and legal documentation interface.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/marketing-services.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">campaign</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">Marketing & Sales Localization</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Local messaging, launch campaigns, customer acquisition, sales activation, and retention systems.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/it-systems-development.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">database</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">ERP, POS & Delivery Infrastructure</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Operating visibility, POS routines, store reporting, delivery app infrastructure, and multi-store readiness.</p>
-          </a>
-          <a class="service-card rounded-sm border border-line bg-white p-7" href="capabilities/master-brand-acquisition.html">
-            <span class="material-symbols-outlined text-cobalt" aria-hidden="true">hub</span>
-            <h3 class="mt-5 font-headline text-2xl font-bold text-ink">Local Partner & Supplier Development</h3>
-            <p class="mt-4 text-sm leading-7 text-slatecopy">Partner identification, supplier shortlist, due diligence coordination, negotiation support, and operating interface.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p class="section-label mb-6">Client entry points</p>
-            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl">Start from the problem, not the department name.</h2>
-          </div>
-          <div class="grid gap-3 md:grid-cols-2">
-            <a class="entry-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/franchise-expansion.html">I want to bring a Korean brand to Vietnam.</a>
-            <a class="entry-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/direct-store-operations.html">I need a local operator for store expansion.</a>
-            <a class="entry-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/fb-market-entry.html">I want to franchise my F&B brand in Vietnam.</a>
-            <a class="entry-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/vietnam-sourcing.html">I need distribution, logistics, or sourcing support.</a>
-            <a class="entry-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/legal-advisory.html">I need legal, licensing, and entity setup.</a>
-            <a class="entry-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/it-systems-development.html">I need POS, ERP, or delivery app infrastructure.</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="leadership" class="border-y border-line bg-[#081b32] py-24 text-white">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="max-w-4xl">
-          <p class="section-label mb-6 text-white">Leadership</p>
-          <h2 class="font-headline text-4xl font-bold leading-tight md:text-6xl">Operators behind the Vietnam expansion platform.</h2>
-          <p class="mt-6 text-lg leading-8 text-white/70">
-            Globos Holdings is led by three co-founders and co-presidents with experience across Korean food enterprises, franchise company operations, franchise development, store expansion, and Vietnam-based execution.
-          </p>
-        </div>
-        <div class="mt-12 grid gap-5 lg:grid-cols-3">
-          <article class="rounded-sm border border-white/15 bg-white/10 p-7">
-            <div class="flex h-14 w-14 items-center justify-center rounded-sm bg-brass font-headline text-xl font-bold text-navy">AA</div>
-            <p class="mt-6 text-sm font-extrabold uppercase text-brass">CEO / Co-Founder & Co-President</p>
-            <h3 class="mt-2 font-headline text-3xl font-bold">ANDRE AHN</h3>
-            <p class="mt-5 text-sm leading-7 text-white/70">Andre Ahn brings over 15 years of experience with a major Korean food enterprise, including four years as an expatriate leader in Vietnam and three years of direct Vietnam business operation and market-entry execution. He leads the connection between Korean brand strategy and on-the-ground Vietnam execution.</p>
-          </article>
-          <article class="rounded-sm border border-white/15 bg-white/10 p-7">
-            <div class="flex h-14 w-14 items-center justify-center rounded-sm bg-mint font-headline text-xl font-bold text-navy">AJ</div>
-            <p class="mt-6 text-sm font-extrabold uppercase text-mint">CGO / Co-Founder & Co-President</p>
-            <h3 class="mt-2 font-headline text-3xl font-bold">ALEX JANG</h3>
-            <p class="mt-5 text-sm leading-7 text-white/70">Alex Jang brings over 15 years of experience working with Korean franchise companies, with a focus on brand growth, store development, and market rollout. He has supported large-scale franchise networks and helped bring Korean brands into Vietnam with experience launching 10 local stores.</p>
-          </article>
-          <article class="rounded-sm border border-white/15 bg-white/10 p-7">
-            <div class="flex h-14 w-14 items-center justify-center rounded-sm bg-[#7fb0e8] font-headline text-xl font-bold text-navy">DL</div>
-            <p class="mt-6 text-sm font-extrabold uppercase text-[#7fb0e8]">COO / Co-Founder & Co-President</p>
-            <h3 class="mt-2 font-headline text-3xl font-bold">DANIEL LEE</h3>
-            <p class="mt-5 text-sm leading-7 text-white/70">Daniel Lee brings over 15 years of experience working with Korean franchise companies, including franchise development, store operations, and operating standardization across networks of approximately 100 stores. He leads store execution, operational stability, and expansion readiness.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="organization" class="bg-white py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-          <div>
-            <p class="section-label mb-6">Operating organization</p>
-            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl">An execution organization built around stores, systems, and market entry.</h2>
-            <p class="mt-6 text-lg leading-8 text-slatecopy">Leadership sets market-entry direction, while dedicated teams manage brand operations, consulting delivery, marketing activation, and administrative support across finance, HR, and legal coordination.</p>
-          </div>
-          <div class="rounded-sm border border-line bg-fog p-5 lg:p-8">
-            <div class="grid gap-4 md:grid-cols-3">
-              <div class="rounded-sm bg-white p-5 text-center shadow-sm">
-                <p class="text-xs font-extrabold uppercase text-slatecopy">CEO</p>
-                <p class="mt-2 font-headline text-xl font-bold text-navy">ANDRE AHN</p>
+              <div class="grid gap-4 md:grid-cols-2">
+                <button class="path-card rounded-sm border border-line bg-fog p-6 text-left" type="button" data-path="entry">
+                  <span class="material-symbols-outlined text-cobalt" aria-hidden="true">travel_explore</span>
+                  <h3 class="mt-4 font-headline text-2xl font-bold text-ink" data-i18n="path.entry.title">Enter Vietnam</h3>
+                  <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="path.entry.body">Market fit, local setup, licensing, and operating model.</p>
+                </button>
+                <button class="path-card rounded-sm border border-line bg-fog p-6 text-left" type="button" data-path="franchise">
+                  <span class="material-symbols-outlined text-cobalt" aria-hidden="true">account_tree</span>
+                  <h3 class="mt-4 font-headline text-2xl font-bold text-ink" data-i18n="path.franchise.title">Expand a brand</h3>
+                  <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="path.franchise.body">Franchise rollout, store development, and local partner control.</p>
+                </button>
+                <button class="path-card rounded-sm border border-line bg-fog p-6 text-left" type="button" data-path="store">
+                  <span class="material-symbols-outlined text-cobalt" aria-hidden="true">storefront</span>
+                  <h3 class="mt-4 font-headline text-2xl font-bold text-ink" data-i18n="path.store.title">Operate stores</h3>
+                  <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="path.store.body">SOPs, staffing routines, reporting, ERP, POS, and field control.</p>
+                </button>
+                <button class="path-card rounded-sm border border-line bg-fog p-6 text-left" type="button" data-path="legal">
+                  <span class="material-symbols-outlined text-cobalt" aria-hidden="true">gavel</span>
+                  <h3 class="mt-4 font-headline text-2xl font-bold text-ink" data-i18n="path.legal.title">Solve legal or sourcing</h3>
+                  <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="path.legal.body">Entity, licensing, suppliers, logistics, and local coordination.</p>
+                </button>
               </div>
-              <div class="rounded-sm bg-white p-5 text-center shadow-sm">
-                <p class="text-xs font-extrabold uppercase text-slatecopy">CGO</p>
-                <p class="mt-2 font-headline text-xl font-bold text-navy">ALEX JANG</p>
+            </section>
+
+            <section class="guide-panel gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center" id="panel-proof" data-panel="proof" role="tabpanel">
+              <div>
+                <p class="section-label mb-6" data-i18n="proof.eyebrow">Proof before pitch</p>
+                <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-6xl" data-i18n="proof.title">Globos Holdings is already operating in Vietnam.</h2>
+                <p class="mt-6 text-lg leading-8 text-slatecopy" data-i18n="proof.body">The company began Vietnam operations in 2024, currently operates 8 stores, and targets 20 stores this year. The operating base includes in-house ERP, SaaS POS workflows, and delivery app infrastructure in administrative preparation.</p>
               </div>
-              <div class="rounded-sm bg-white p-5 text-center shadow-sm">
-                <p class="text-xs font-extrabold uppercase text-slatecopy">COO</p>
-                <p class="mt-2 font-headline text-xl font-bold text-navy">DANIEL LEE</p>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="rounded-sm border border-line bg-fog p-6"><p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="proof.card1.label">Vietnam operations</p><p class="mt-3 font-headline text-5xl font-bold text-navy">2024</p><p class="mt-3 text-sm text-slatecopy" data-i18n="proof.card1.body">Local execution begins.</p></div>
+                <div class="rounded-sm border border-line bg-fog p-6"><p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="proof.card2.label">Current base</p><p class="mt-3 font-headline text-5xl font-bold text-navy" data-i18n="proof.card2.value">8 stores</p><p class="mt-3 text-sm text-slatecopy" data-i18n="proof.card2.body">Daily store operation experience.</p></div>
+                <div class="rounded-sm border border-line bg-fog p-6"><p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="proof.card3.label">Expansion target</p><p class="mt-3 font-headline text-5xl font-bold text-navy" data-i18n="proof.card3.value">20 stores</p><p class="mt-3 text-sm text-slatecopy" data-i18n="proof.card3.body">Scale plan for this year.</p></div>
+                <div class="rounded-sm border border-line bg-fog p-6"><p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="proof.card4.label">Operating stack</p><p class="mt-3 font-headline text-4xl font-bold text-navy">ERP / POS</p><p class="mt-3 text-sm text-slatecopy" data-i18n="proof.card4.body">Delivery app base included.</p></div>
               </div>
-            </div>
-            <div class="org-line my-8"></div>
-            <div class="grid gap-4 md:grid-cols-2">
-              <div class="rounded-sm border border-line bg-white p-5"><p class="font-extrabold text-ink">Portfolio / F&B Brand Operations Team</p><p class="mt-2 text-sm text-slatecopy">Store performance, brand operations, field routines.</p></div>
-              <div class="rounded-sm border border-line bg-white p-5"><p class="font-extrabold text-ink">Consulting Operations Team</p><p class="mt-2 text-sm text-slatecopy">Market-entry roadmap, partner coordination, execution tracking.</p></div>
-              <div class="rounded-sm border border-line bg-white p-5"><p class="font-extrabold text-ink">Consulting Service Team</p><p class="mt-2 text-sm text-slatecopy">Client delivery, research, documentation, service packaging.</p></div>
-              <div class="rounded-sm border border-line bg-white p-5"><p class="font-extrabold text-ink">Marketing Operations Team</p><p class="mt-2 text-sm text-slatecopy">Localization, campaign launch, local sales activation.</p></div>
-              <div class="rounded-sm border border-line bg-white p-5 md:col-span-2"><p class="font-extrabold text-ink">Finance, HR & Legal Support Team</p><p class="mt-2 text-sm text-slatecopy">Finance control, HR operations, contracts, licensing support, advisor coordination.</p></div>
-            </div>
+            </section>
+
+            <section class="guide-panel gap-8 lg:grid-cols-[0.72fr_1.28fr]" id="panel-leadership" data-panel="leadership" role="tabpanel">
+              <div>
+                <p class="section-label mb-6" data-i18n="leadership.eyebrow">Leadership and organization</p>
+                <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl" data-i18n="leadership.title">Operators, not profile photos.</h2>
+                <p class="mt-6 text-lg leading-8 text-slatecopy" data-i18n="leadership.body">The leadership team is presented by role, operating background, and responsibility. No executive photos are used.</p>
+              </div>
+              <div class="grid gap-4 lg:grid-cols-3">
+                <article class="rounded-sm border border-line bg-fog p-6"><p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="leaders.andre.role">CEO / Co-Founder & Co-President</p><h3 class="mt-3 font-headline text-2xl font-bold text-ink">ANDRE AHN</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="leaders.andre.body">15+ years with a Korean food enterprise, 4 years as a Vietnam expatriate leader, and 3 years of Vietnam business operation and market-entry execution.</p></article>
+                <article class="rounded-sm border border-line bg-fog p-6"><p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="leaders.alex.role">CGO / Co-Founder & Co-President</p><h3 class="mt-3 font-headline text-2xl font-bold text-ink">ALEX JANG</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="leaders.alex.body">15+ years with Korean franchise companies, brand growth, store development, large-scale networks, and 10 Vietnam store launches.</p></article>
+                <article class="rounded-sm border border-line bg-fog p-6"><p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="leaders.daniel.role">COO / Co-Founder & Co-President</p><h3 class="mt-3 font-headline text-2xl font-bold text-ink">DANIEL LEE</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="leaders.daniel.body">15+ years with Korean franchise companies, franchise development, operations, and standardization across approximately 100 stores.</p></article>
+                <div class="rounded-sm border border-line bg-white p-5 lg:col-span-3"><p class="font-extrabold text-ink" data-i18n="org.title">Operating organization</p><p class="mt-2 text-sm leading-7 text-slatecopy" data-i18n="org.body">Portfolio / F&B Brand Operations Team, Consulting Operations Team, Consulting Service Team, Marketing Operations Team, and Finance, HR & Legal Support Team.</p></div>
+              </div>
+            </section>
+
+            <section class="guide-panel gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center" id="panel-next" data-panel="next" role="tabpanel">
+              <div>
+                <p class="section-label mb-6" data-i18n="next.eyebrow">Next action</p>
+                <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-6xl" data-i18n="next.title">Start with the operating problem.</h2>
+                <p class="mt-6 text-lg leading-8 text-slatecopy" data-i18n="next.body">Tell us whether your Vietnam challenge is market entry, franchise expansion, store operations, licensing, sourcing, distribution, marketing, or operating systems. We will map the next execution step.</p>
+              </div>
+              <div class="rounded-sm border border-line bg-fog p-5">
+                <form action="https://www.globos.world/contact" class="flex flex-col gap-3" data-mail-form data-mail-subject="Globos Holdings Vietnam Business Inquiry" method="post">
+                  <label class="sr-only" for="email" data-i18n="form.label">Institutional Email Address</label>
+                  <input id="email" name="executive_email" type="email" required placeholder="Institutional Email Address" data-i18n-placeholder="form.placeholder" class="min-h-14 rounded-sm border border-line bg-white px-4 text-ink placeholder:text-slatecopy focus:border-cobalt focus:ring-cobalt" />
+                  <button type="submit" class="primary-action inline-flex min-h-14 items-center justify-center gap-2 rounded-sm bg-navy px-7 py-3 text-sm font-extrabold text-white hover:bg-cobalt">
+                    <span data-i18n="form.submit">Contact principals</span>
+                    <span class="material-symbols-outlined text-lg" aria-hidden="true">send</span>
+                  </button>
+                </form>
+                <p class="mt-4 text-sm text-slatecopy" data-mail-status aria-live="polite" data-i18n="form.note">All serious institutional inquiries can also be sent to contact@globos.world.</p>
+              </div>
+            </section>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="border-y border-line bg-fog py-24">
+    <section id="capabilities" class="bg-white py-16">
+      <span id="services" class="sr-only" aria-hidden="true">Services</span>
+      <span id="platform" class="sr-only" aria-hidden="true">Platform</span>
+      <span id="proof" class="sr-only" aria-hidden="true">Proof</span>
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="max-w-3xl">
-          <p class="section-label mb-6">Company history</p>
-          <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl">A short operating history, not a long presentation.</h2>
-        </div>
-        <div class="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line md:grid-cols-5">
-          <div class="bg-white p-6"><p class="font-headline text-3xl font-bold text-navy">2024</p><p class="mt-4 text-sm leading-7 text-slatecopy">Vietnam operations begin.</p></div>
-          <div class="bg-white p-6"><p class="font-headline text-3xl font-bold text-navy">2024-25</p><p class="mt-4 text-sm leading-7 text-slatecopy">Local F&B and retail operating base established.</p></div>
-          <div class="bg-white p-6"><p class="font-headline text-3xl font-bold text-navy">Now</p><p class="mt-4 text-sm leading-7 text-slatecopy">8 stores operating with store-level routines.</p></div>
-          <div class="bg-white p-6"><p class="font-headline text-3xl font-bold text-navy">System</p><p class="mt-4 text-sm leading-7 text-slatecopy">ERP, SaaS POS, workflow, and delivery app infrastructure built.</p></div>
-          <div class="bg-white p-6"><p class="font-headline text-3xl font-bold text-navy">This year</p><p class="mt-4 text-sm leading-7 text-slatecopy">Expansion target of 20 stores and external brand support.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process" class="bg-white py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <span id="intelligence" class="sr-only" aria-hidden="true">Process</span>
-        <div class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p class="section-label mb-6">Execution process</p>
-            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl">From market entry decision to operating control.</h2>
+        <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div class="max-w-3xl">
+            <p class="section-label mb-6" data-i18n="services.eyebrow">Service map</p>
+            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl" data-i18n="services.title">Pick the deeper page only after the guide gives you context.</h2>
           </div>
-          <ol class="grid gap-4 md:grid-cols-2">
-            <li class="rounded-sm border border-line bg-fog p-5"><span class="font-headline text-2xl font-bold text-cobalt">01</span><p class="mt-3 font-extrabold text-ink">Market Fit Diagnosis</p></li>
-            <li class="rounded-sm border border-line bg-fog p-5"><span class="font-headline text-2xl font-bold text-cobalt">02</span><p class="mt-3 font-extrabold text-ink">Legal & Licensing Review</p></li>
-            <li class="rounded-sm border border-line bg-fog p-5"><span class="font-headline text-2xl font-bold text-cobalt">03</span><p class="mt-3 font-extrabold text-ink">Store, Franchise, or Distribution Model Design</p></li>
-            <li class="rounded-sm border border-line bg-fog p-5"><span class="font-headline text-2xl font-bold text-cobalt">04</span><p class="mt-3 font-extrabold text-ink">Local Partner, Supplier, and Operation Setup</p></li>
-            <li class="rounded-sm border border-line bg-fog p-5"><span class="font-headline text-2xl font-bold text-cobalt">05</span><p class="mt-3 font-extrabold text-ink">ERP, POS, and Delivery Infrastructure Integration</p></li>
-            <li class="rounded-sm border border-line bg-fog p-5"><span class="font-headline text-2xl font-bold text-cobalt">06</span><p class="mt-3 font-extrabold text-ink">Launch, Operate, Improve, Expand</p></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="border-y border-line bg-fog py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="max-w-3xl">
-          <p class="section-label mb-6">Search gateway</p>
-          <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl">Vietnam business entry topics we handle.</h2>
+          <a class="secondary-action inline-flex items-center justify-center gap-2 rounded-sm border border-line bg-fog px-6 py-4 text-sm font-extrabold text-navy hover:border-navy" href="contact.html"><span data-i18n="services.cta">Ask for a matched route</span><span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span></a>
         </div>
         <div class="mt-10 grid gap-3 md:grid-cols-3">
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/it-market-entry.html">Vietnam Market Entry / 베트남 진출</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/franchise-expansion.html">Franchise Expansion in Vietnam / 베트남 프랜차이즈 진출</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/fb-market-entry.html">F&B Brand Launch in Vietnam / 베트남 F&B 진출</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/direct-store-operations.html">Store Operations in Vietnam / 베트남 점포 운영</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/vietnam-sourcing.html">Vietnam Distribution & Logistics / 베트남 물류 유통</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/vietnam-sourcing.html">Vietnam Sourcing & Supplier Development / 베트남 소싱</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/legal-advisory.html">Legal, Licensing & Entity Setup / 베트남 법인 설립</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/it-systems-development.html">ERP, POS & Delivery Infrastructure / 베트남 POS 시스템</a>
-          <a class="topic-link rounded-sm border border-line bg-white p-4 text-sm font-bold text-ink" href="capabilities/marketing-services.html">Vietnam Marketing Localization / 베트남 마케팅</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/it-market-entry.html" data-i18n="service.market">Vietnam Market Entry / 베트남 진출</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/franchise-expansion.html" data-i18n="service.franchise">Franchise Expansion / 베트남 프랜차이즈 진출</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/fb-market-entry.html" data-i18n="service.fb">F&B Brand Launch / 베트남 F&B 진출</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/direct-store-operations.html" data-i18n="service.store">Store Operations / 베트남 점포 운영</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/vietnam-sourcing.html" data-i18n="service.sourcing">Distribution, Logistics & Sourcing / 베트남 물류 유통</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/legal-advisory.html" data-i18n="service.legal">Legal, Licensing & Entity Setup / 베트남 법인 설립</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/it-systems-development.html" data-i18n="service.systems">ERP, POS & Delivery Infrastructure / 베트남 POS 시스템</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/marketing-services.html" data-i18n="service.marketing">Marketing Localization / 베트남 마케팅</a>
+          <a class="path-card rounded-sm border border-line bg-fog p-5 font-bold text-ink" href="capabilities/master-brand-acquisition.html" data-i18n="service.partner">Partner & Supplier Development / 베트남 현지 파트너</a>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="bg-white py-24">
-      <div class="mx-auto max-w-5xl px-5 text-center lg:px-8">
-        <p class="section-label mb-6 justify-center">Contact</p>
-        <h2 class="font-headline text-5xl font-bold leading-tight text-ink md:text-7xl">Start with the operating problem.</h2>
-        <p class="mx-auto mt-7 max-w-3xl text-lg leading-8 text-slatecopy">Tell us whether your Vietnam challenge is market entry, franchise expansion, store operations, licensing, sourcing, distribution, marketing, or operating systems. We will map the next execution step.</p>
-        <form action="https://www.globos.world/contact" class="mx-auto mt-10 flex max-w-2xl flex-col gap-3 rounded-sm border border-line bg-fog p-3 sm:flex-row" data-mail-form data-mail-subject="Globos Holdings Vietnam Business Inquiry" method="post">
-          <label class="sr-only" for="email">Institutional Email Address</label>
-          <input id="email" name="executive_email" type="email" required placeholder="Institutional Email Address" class="min-h-14 flex-1 rounded-sm border border-transparent bg-white px-4 text-ink placeholder:text-slatecopy focus:border-cobalt focus:ring-cobalt" />
-          <button type="submit" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-sm bg-navy px-7 py-3 text-sm font-extrabold text-white transition-colors hover:bg-cobalt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt">
-            Contact principals
-            <span class="material-symbols-outlined text-lg" aria-hidden="true">send</span>
-          </button>
-        </form>
-        <p class="mt-4 text-sm text-slatecopy" data-mail-status aria-live="polite">All serious institutional inquiries can also be sent to contact@globos.world.</p>
+    <section id="leadership" class="border-y border-line bg-[#071a31] py-14 text-white">
+      <span id="organization" class="sr-only" aria-hidden="true">Organization</span>
+      <span id="intelligence" class="sr-only" aria-hidden="true">Process</span>
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <p class="text-xs font-extrabold uppercase text-white/50" data-i18n="footerProof.label">Operating proof stays visible</p>
+          <p class="mt-2 max-w-3xl font-headline text-3xl font-bold" data-i18n="footerProof.text">2024 start · 8 stores operating · 20 store target · in-house ERP · SaaS POS · delivery app base</p>
+        </div>
+        <button class="primary-action inline-flex items-center justify-center gap-2 rounded-sm bg-brass px-6 py-4 text-sm font-extrabold text-navy" type="button" data-stage-jump="next"><span data-i18n="footerProof.button">Go to inquiry</span><span class="material-symbols-outlined text-lg" aria-hidden="true">north_east</span></button>
       </div>
     </section>
   </main>
 
-  <footer class="bg-[#071a31] py-12 text-white">
-    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+  <footer class="bg-white py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 lg:flex-row lg:items-end lg:justify-between lg:px-8">
       <div>
-        <a class="font-headline text-3xl font-bold" href="index.html">Globos Holdings</a>
-        <p class="mt-4 max-w-xl text-sm leading-7 text-white/60">Vietnam market entry, franchise expansion, store operations, sourcing, legal setup, marketing localization, ERP, SaaS POS, and delivery infrastructure.</p>
+        <a class="font-headline text-3xl font-bold text-navy" href="index.html">Globos Holdings</a>
+        <p class="mt-3 max-w-xl text-sm leading-7 text-slatecopy" data-i18n="footer.body">Vietnam market entry, franchise expansion, store operations, sourcing, legal setup, marketing localization, ERP, SaaS POS, and delivery infrastructure.</p>
       </div>
-      <div class="flex flex-col gap-2 text-sm text-white/70 lg:text-right">
-        <a class="transition-colors hover:text-white" href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">contact@globos.world</a>
-        <a class="transition-colors hover:text-white" href="contact.html">Contact page</a>
+      <div class="flex flex-col gap-2 text-sm text-slatecopy lg:text-right">
+        <a class="transition-colors hover:text-navy" href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">contact@globos.world</a>
+        <a class="transition-colors hover:text-navy" href="contact.html" data-i18n="footer.contact">Contact page</a>
         <p>© 2026 Globos Holdings. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    const proofContent = {
-      stores: {
-        title: 'Current operating base',
-        body: 'Globos Holdings currently operates 8 stores in Vietnam, giving clients practical knowledge of local staffing, supplier coordination, store routines, reporting, and daily execution pressure.'
+    const translations = {
+      en: {
+        'nav.guide': 'Guide', 'nav.services': 'Services', 'nav.leadership': 'Leadership', 'nav.contact': 'Contact', 'nav.inquiry': 'Inquiry',
+        'hero.eyebrow': 'Welcome', 'hero.title': 'Welcome to Globos Holdings.', 'hero.body': 'This homepage is a guided path for brands considering Vietnam. Start with the question you have, then move into proof, leadership, services, and the next operating step.', 'hero.primary': 'Start guided experience', 'hero.secondary': 'Contact principals',
+        'stats.started': 'Started', 'stats.operating': 'Operating', 'stats.stores': '8 stores', 'stats.target': 'Target', 'stats.targetStores': '20 stores',
+        'visual.kicker': 'Korea to Vietnam route', 'visual.title': 'Operating control board', 'visual.model': 'Live model', 'visual.erp': 'Operating visibility', 'visual.pos': 'Store workflow', 'visual.delivery': 'Launch-ready base',
+        'guide.label': 'Choose the next screen', 'stage.problem': '1. Choose your problem', 'stage.proof': '2. See operating proof', 'stage.leadership': '3. Meet the operators', 'stage.next': '4. Decide next step',
+        'problem.eyebrow': 'User-first route', 'problem.title': 'What are you trying to solve in Vietnam?', 'problem.body': 'Instead of reading a long corporate page, choose the situation closest to your business. The screen will move toward the proof and service path that matters first.',
+        'path.entry.title': 'Enter Vietnam', 'path.entry.body': 'Market fit, local setup, licensing, and operating model.', 'path.franchise.title': 'Expand a brand', 'path.franchise.body': 'Franchise rollout, store development, and local partner control.', 'path.store.title': 'Operate stores', 'path.store.body': 'SOPs, staffing routines, reporting, ERP, POS, and field control.', 'path.legal.title': 'Solve legal or sourcing', 'path.legal.body': 'Entity, licensing, suppliers, logistics, and local coordination.',
+        'proof.eyebrow': 'Proof before pitch', 'proof.title': 'Globos Holdings is already operating in Vietnam.', 'proof.body': 'The company began Vietnam operations in 2024, currently operates 8 stores, and targets 20 stores this year. The operating base includes in-house ERP, SaaS POS workflows, and delivery app infrastructure in administrative preparation.', 'proof.card1.label': 'Vietnam operations', 'proof.card1.body': 'Local execution begins.', 'proof.card2.label': 'Current base', 'proof.card2.value': '8 stores', 'proof.card2.body': 'Daily store operation experience.', 'proof.card3.label': 'Expansion target', 'proof.card3.value': '20 stores', 'proof.card3.body': 'Scale plan for this year.', 'proof.card4.label': 'Operating stack', 'proof.card4.body': 'Delivery app base included.',
+        'leadership.eyebrow': 'Leadership and organization', 'leadership.title': 'Operators, not profile photos.', 'leadership.body': 'The leadership team is presented by role, operating background, and responsibility. No executive photos are used.', 'leaders.andre.role': 'CEO / Co-Founder & Co-President', 'leaders.andre.body': '15+ years with a Korean food enterprise, 4 years as a Vietnam expatriate leader, and 3 years of Vietnam business operation and market-entry execution.', 'leaders.alex.role': 'CGO / Co-Founder & Co-President', 'leaders.alex.body': '15+ years with Korean franchise companies, brand growth, store development, large-scale networks, and 10 Vietnam store launches.', 'leaders.daniel.role': 'COO / Co-Founder & Co-President', 'leaders.daniel.body': '15+ years with Korean franchise companies, franchise development, operations, and standardization across approximately 100 stores.', 'org.title': 'Operating organization', 'org.body': 'Portfolio / F&B Brand Operations Team, Consulting Operations Team, Consulting Service Team, Marketing Operations Team, and Finance, HR & Legal Support Team.',
+        'next.eyebrow': 'Next action', 'next.title': 'Start with the operating problem.', 'next.body': 'Tell us whether your Vietnam challenge is market entry, franchise expansion, store operations, licensing, sourcing, distribution, marketing, or operating systems. We will map the next execution step.', 'form.label': 'Institutional Email Address', 'form.placeholder': 'Institutional Email Address', 'form.submit': 'Contact principals', 'form.note': 'All serious institutional inquiries can also be sent to contact@globos.world.', 'form.status': 'Your email client is opening with a prepared inquiry to contact@globos.world.',
+        'services.eyebrow': 'Service map', 'services.title': 'Pick the deeper page only after the guide gives you context.', 'services.cta': 'Ask for a matched route', 'service.market': 'Vietnam Market Entry / 베트남 진출', 'service.franchise': 'Franchise Expansion / 베트남 프랜차이즈 진출', 'service.fb': 'F&B Brand Launch / 베트남 F&B 진출', 'service.store': 'Store Operations / 베트남 점포 운영', 'service.sourcing': 'Distribution, Logistics & Sourcing / 베트남 물류 유통', 'service.legal': 'Legal, Licensing & Entity Setup / 베트남 법인 설립', 'service.systems': 'ERP, POS & Delivery Infrastructure / 베트남 POS 시스템', 'service.marketing': 'Marketing Localization / 베트남 마케팅', 'service.partner': 'Partner & Supplier Development / 베트남 현지 파트너',
+        'footerProof.label': 'Operating proof stays visible', 'footerProof.text': '2024 start · 8 stores operating · 20 store target · in-house ERP · SaaS POS · delivery app base', 'footerProof.button': 'Go to inquiry', 'footer.body': 'Vietnam market entry, franchise expansion, store operations, sourcing, legal setup, marketing localization, ERP, SaaS POS, and delivery infrastructure.', 'footer.contact': 'Contact page'
       },
-      target: {
-        title: 'This year expansion target',
-        body: 'The operating plan targets expansion to 20 stores this year, which means the website message must show scale readiness, not only advisory capability.'
-      },
-      systems: {
-        title: 'Infrastructure already built',
-        body: 'The company has built an in-house ERP, uses SaaS POS workflows in real store operations, and has delivery app infrastructure developed with administrative preparation underway.'
-      },
-      start: {
-        title: 'Vietnam operations began in 2024',
-        body: 'The company history starts with Vietnam execution in 2024, followed by the buildout of local F&B and retail operating routines, systems, and expansion infrastructure.'
+      ko: {
+        'nav.guide': '안내', 'nav.services': '서비스', 'nav.leadership': '경영진', 'nav.contact': '문의', 'nav.inquiry': '문의하기',
+        'hero.eyebrow': '환영합니다', 'hero.title': 'Globos Holdings에 오신 것을 환영합니다.', 'hero.body': '이 홈페이지는 베트남 진출을 검토하는 브랜드를 위한 안내형 경로입니다. 먼저 현재 고민을 선택하고, 운영 증거와 경영진, 서비스 구조, 다음 실행 단계로 이동하세요.', 'hero.primary': '안내 시작하기', 'hero.secondary': '경영진에게 문의',
+        'stats.started': '시작', 'stats.operating': '운영 중', 'stats.stores': '8개 점포', 'stats.target': '목표', 'stats.targetStores': '20개 점포',
+        'visual.kicker': '한국에서 베트남으로', 'visual.title': '운영 컨트롤 보드', 'visual.model': '운영 모델', 'visual.erp': '운영 가시성', 'visual.pos': '매장 워크플로우', 'visual.delivery': '출시 준비 기반',
+        'guide.label': '다음 화면 선택', 'stage.problem': '1. 문제 선택', 'stage.proof': '2. 운영 증거 확인', 'stage.leadership': '3. 운영진 확인', 'stage.next': '4. 다음 단계 결정',
+        'problem.eyebrow': '사용자 중심 경로', 'problem.title': '베트남에서 무엇을 해결하고 싶으신가요?', 'problem.body': '긴 회사 소개를 끝까지 읽는 대신, 현재 사업 상황에 가장 가까운 선택지를 고르세요. 화면은 먼저 확인해야 할 증거와 서비스 경로로 이동합니다.',
+        'path.entry.title': '베트남 진출', 'path.entry.body': '시장 적합성, 현지 setup, 인허가, 운영 모델 설계.', 'path.franchise.title': '브랜드 확장', 'path.franchise.body': '프랜차이즈 전개, 점포 개발, 현지 파트너 관리.', 'path.store.title': '점포 운영', 'path.store.body': 'SOP, 인력 운영, 리포팅, ERP, POS, 현장 관리.', 'path.legal.title': '법률/소싱 해결', 'path.legal.body': '법인, 인허가, 공급처, 물류, 현지 조율.',
+        'proof.eyebrow': '말보다 증거', 'proof.title': 'Globos Holdings는 이미 베트남에서 운영 중입니다.', 'proof.body': 'Globos Holdings는 2024년 베트남 운영을 시작했고, 현재 8개 점포를 운영하며 올해 20개 점포까지 확대를 목표로 합니다. 운영 기반에는 in-house ERP, SaaS POS 워크플로우, 행정 준비 중인 배달 앱 인프라가 포함됩니다.', 'proof.card1.label': '베트남 운영 시작', 'proof.card1.body': '현지 실행 기반 시작.', 'proof.card2.label': '현재 운영 기반', 'proof.card2.value': '8개 점포', 'proof.card2.body': '실제 매장 운영 경험.', 'proof.card3.label': '확장 목표', 'proof.card3.value': '20개 점포', 'proof.card3.body': '올해 확장 계획.', 'proof.card4.label': '운영 스택', 'proof.card4.body': '배달 앱 기반 포함.',
+        'leadership.eyebrow': '경영진과 조직', 'leadership.title': '사진이 아니라 운영 역량으로 보여줍니다.', 'leadership.body': '경영진은 인물 사진이 아니라 역할, 운영 이력, 책임 범위로 소개합니다. 대표 사진은 사용하지 않습니다.', 'leaders.andre.role': 'CEO / Co-Founder & Co-President', 'leaders.andre.body': '한국 식품 대기업 15년 이상, 베트남 주재원 4년, 베트남 사업 운영 및 시장 진출 실행 3년 경험.', 'leaders.alex.role': 'CGO / Co-Founder & Co-President', 'leaders.alex.body': '한국 프랜차이즈 회사 15년 이상, 브랜드 성장, 점포 개발, 대규모 네트워크, 베트남 10개 점포 런칭 경험.', 'leaders.daniel.role': 'COO / Co-Founder & Co-President', 'leaders.daniel.body': '한국 프랜차이즈 회사 15년 이상, 프랜차이즈 개발, 점포 운영, 약 100개 점포 규모의 운영 표준화 경험.', 'org.title': '운영 조직', 'org.body': 'Portfolio / F&B Brand Operations Team, Consulting Operations Team, Consulting Service Team, Marketing Operations Team, Finance, HR & Legal Support Team으로 구성됩니다.',
+        'next.eyebrow': '다음 실행', 'next.title': '운영 문제부터 시작하세요.', 'next.body': '베트남 진출, 프랜차이즈 확장, 점포 운영, 인허가, 소싱, 유통, 마케팅, 운영 시스템 중 어디가 병목인지 알려주시면 다음 실행 단계를 정리해드립니다.', 'form.label': '회사 이메일 주소', 'form.placeholder': '회사 이메일 주소', 'form.submit': '경영진에게 문의', 'form.note': '중요한 사업 문의는 contact@globos.world 로도 보낼 수 있습니다.', 'form.status': 'contact@globos.world 로 보낼 문의 메일을 준비하고 있습니다.',
+        'services.eyebrow': '서비스 지도', 'services.title': '안내 화면으로 맥락을 잡은 뒤 필요한 상세 페이지로 이동하세요.', 'services.cta': '맞춤 경로 문의', 'service.market': '베트남 진출 / Vietnam Market Entry', 'service.franchise': '베트남 프랜차이즈 진출 / Franchise Expansion', 'service.fb': '베트남 F&B 진출 / F&B Brand Launch', 'service.store': '베트남 점포 운영 / Store Operations', 'service.sourcing': '베트남 물류 유통 및 소싱 / Distribution, Logistics & Sourcing', 'service.legal': '베트남 법인 설립 및 인허가 / Legal & Licensing', 'service.systems': '베트남 ERP, POS, 배달 앱 / ERP, POS & Delivery', 'service.marketing': '베트남 마케팅 / Marketing Localization', 'service.partner': '베트남 현지 파트너 / Partner & Supplier Development',
+        'footerProof.label': '운영 증거는 계속 보이게', 'footerProof.text': '2024년 시작 · 8개 점포 운영 · 20개 점포 목표 · in-house ERP · SaaS POS · 배달 앱 기반', 'footerProof.button': '문의로 이동', 'footer.body': '베트남 진출, 프랜차이즈 확장, 점포 운영, 소싱, 법률 setup, 마케팅 현지화, ERP, SaaS POS, 배달 인프라.', 'footer.contact': '문의 페이지'
       }
     };
 
-    document.querySelectorAll('[data-proof-key]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const key = button.dataset.proofKey;
-        const content = proofContent[key];
-        if (!content) return;
-        document.querySelectorAll('[data-proof-key]').forEach((item) => {
-          item.setAttribute('aria-pressed', String(item === button));
-        });
-        document.getElementById('proof-title').textContent = content.title;
-        document.getElementById('proof-body').textContent = content.body;
+    const supportedLanguages = ['en', 'ko'];
+    const queryLanguage = new URLSearchParams(window.location.search).get('lang');
+    const savedLanguage = localStorage.getItem('globos-language');
+    let activeLanguage = supportedLanguages.includes(queryLanguage) ? queryLanguage : (supportedLanguages.includes(savedLanguage) ? savedLanguage : 'en');
+
+    function setLanguage(language) {
+      activeLanguage = supportedLanguages.includes(language) ? language : 'en';
+      localStorage.setItem('globos-language', activeLanguage);
+      document.documentElement.lang = activeLanguage === 'ko' ? 'ko' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach((node) => {
+        const key = node.dataset.i18n;
+        const value = translations[activeLanguage][key];
+        if (value) node.textContent = value;
       });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((node) => {
+        const key = node.dataset.i18nPlaceholder;
+        const value = translations[activeLanguage][key];
+        if (value) node.setAttribute('placeholder', value);
+      });
+      document.querySelectorAll('[data-lang-button]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.langButton === activeLanguage));
+      });
+    }
+
+    function setStage(stage) {
+      const target = document.querySelector(`[data-panel="${stage}"]`);
+      if (!target) return;
+      document.querySelectorAll('[data-panel]').forEach((panel) => panel.classList.toggle('is-active', panel === target));
+      document.querySelectorAll('[data-stage]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.stage === stage)));
+    }
+
+    document.querySelectorAll('[data-lang-button]').forEach((button) => {
+      button.addEventListener('click', () => setLanguage(button.dataset.langButton));
+    });
+    document.querySelectorAll('[data-stage]').forEach((button) => {
+      button.addEventListener('click', () => setStage(button.dataset.stage));
+    });
+    document.querySelectorAll('[data-path]').forEach((button) => {
+      button.addEventListener('click', () => setStage('proof'));
+    });
+    document.querySelectorAll('[data-stage-jump]').forEach((button) => {
+      button.addEventListener('click', () => {
+        setStage(button.dataset.stageJump);
+        document.getElementById('guide')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+    document.querySelector('[data-start-guide]')?.addEventListener('click', () => {
+      setStage('problem');
+      document.getElementById('guide')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     document.querySelectorAll('[data-mail-form]').forEach((form) => {
@@ -723,17 +470,16 @@
         const formData = new FormData(form);
         const subject = form.dataset.mailSubject || 'Globos Holdings Inquiry';
         const lines = [];
-        formData.forEach((value, key) => {
-          lines.push(`${key}: ${value}`);
-        });
+        formData.forEach((value, key) => lines.push(`${key}: ${value}`));
         const body = lines.length ? lines.join('\n') : 'Please contact me about Vietnam market entry and operating support.';
         const status = form.parentElement.querySelector('[data-mail-status]');
-        if (status) {
-          status.textContent = 'Your email client is opening with a prepared inquiry to contact@globos.world.';
-        }
+        if (status) status.textContent = translations[activeLanguage]['form.status'];
         window.location.href = `mailto:contact@globos.world?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
     });
+
+    setLanguage(activeLanguage);
+    setStage('problem');
   </script>
 </body>
 </html>
