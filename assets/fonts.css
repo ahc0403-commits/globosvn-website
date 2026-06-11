@@ -1,5 +1,9 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 :root {
-  --globos-font-body: 'Montserrat', sans-serif;
+  --globos-font-display: 'Clash Display', 'Plus Jakarta Sans', 'Pretendard', sans-serif;
+  --globos-font-body: 'Plus Jakarta Sans', 'Pretendard', sans-serif;
   --globos-font-korean: 'Pretendard', sans-serif;
 }
 
@@ -21,7 +25,11 @@ main :where(p, li, dd, dt, input, textarea, select):not(.material-symbols-outlin
   font-weight: 400 !important;
 }
 
-.font-headline,
+.font-headline {
+  font-family: var(--globos-font-display) !important;
+  font-weight: 600 !important;
+}
+
 header a,
 nav a,
 .brand-name,
@@ -31,6 +39,10 @@ nav a,
 .secondary-action {
   font-family: var(--globos-font-body) !important;
   font-weight: 600 !important;
+}
+
+.brand-name {
+  font-family: var(--globos-font-display) !important;
 }
 
 header a,
@@ -48,6 +60,10 @@ html[lang='ko'] body,
 html[lang='ko'] main :where(h1, h2, h3, h4, h5, h6, p, li, span, div, label, input, textarea, button):not(.material-symbols-outlined) {
   font-family: var(--globos-font-korean) !important;
   font-weight: 500 !important;
+}
+
+html[lang='ko'] main :where(h1, h2, h3, h4, h5, h6):not(.material-symbols-outlined) {
+  font-weight: 700 !important;
 }
 
 html[lang='ko'] main :where(h1, h2, h3, h4, h5, h6, p, li, dd, dt, a, button, span):not(.material-symbols-outlined) {
