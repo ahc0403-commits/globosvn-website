@@ -100,6 +100,27 @@
       transform: translateY(-2px);
       outline: none;
     }
+    .path-card:hover,
+    .path-card:focus-visible {
+      box-shadow: 0 18px 42px rgba(7, 26, 49, .14), 0 2px 10px rgba(7, 26, 49, .05);
+    }
+    .route-radar {
+      background:
+        radial-gradient(circle at 72% 28%, rgba(93, 183, 158, .18), transparent 25%),
+        radial-gradient(circle at 24% 70%, rgba(200, 164, 93, .18), transparent 28%),
+        linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,0));
+    }
+    .route-radar::before {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+    .locale-card[hidden] {
+      display: none !important;
+    }
     .operating-cockpit {
       min-height: 570px;
     }
@@ -816,57 +837,83 @@
       </div>
     </section>
 
-    <section id="capabilities" class="border-y border-line bg-fog py-16">
+    <section id="capabilities" class="relative overflow-hidden border-y border-line bg-white py-20">
       <span id="services" class="sr-only" aria-hidden="true">Services</span>
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <div class="max-w-3xl">
-            <p class="section-label mb-6" data-i18n="services.eyebrow">Service map</p>
-            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl" data-i18n="services.title">Pick the deeper page after the operating story is clear.</h2>
+      <div class="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
+        <aside class="route-radar relative overflow-hidden rounded-sm bg-[#071a31] p-6 text-white shadow-firm lg:sticky lg:top-28 lg:min-h-[560px]">
+          <div class="relative z-10 flex h-full flex-col justify-between gap-10">
+            <div>
+              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="services.eyebrow">Service map</p>
+              <h2 class="mt-5 font-headline text-4xl font-bold leading-tight md:text-6xl" data-i18n="services.title">Choose the area you need now.</h2>
+              <p class="mt-6 text-base leading-8 text-white/68" data-i18n="services.body">Start from the blocked point: setup, licensing, store operation, ecommerce, distribution, sourcing, or systems.</p>
+            </div>
+            <div class="grid gap-3">
+              <div class="rounded-sm border border-white/12 bg-white/10 p-4"><p class="text-xs uppercase text-white/45">01</p><p class="mt-1 font-headline text-2xl font-bold" data-i18n="services.stage1">Find the bottleneck.</p></div>
+              <div class="rounded-sm border border-white/12 bg-white/10 p-4"><p class="text-xs uppercase text-white/45">02</p><p class="mt-1 font-headline text-2xl font-bold" data-i18n="services.stage2">Open the matching page.</p></div>
+              <div class="rounded-sm border border-white/12 bg-white/10 p-4"><p class="text-xs uppercase text-white/45">03</p><p class="mt-1 font-headline text-2xl font-bold" data-i18n="services.stage3">Send the current situation.</p></div>
+            </div>
+            <a class="primary-action inline-flex items-center justify-center gap-2 rounded-sm bg-brass px-6 py-4 text-sm font-extrabold text-navy" href="contact.html">
+              <span data-i18n="services.cta">Ask for a matched route</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+            </a>
           </div>
-          <a class="secondary-action inline-flex items-center justify-center gap-2 rounded-sm border border-line bg-white px-6 py-4 text-sm font-extrabold text-navy hover:border-navy" href="contact.html">
-            <span data-i18n="services.cta">Ask for a matched route</span>
-            <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+        </aside>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          <a class="path-card rounded-sm bg-fog p-6 text-ink md:col-span-2" href="capabilities/it-market-entry.html">
+            <div class="grid gap-6 md:grid-cols-[1fr_220px] md:items-end">
+              <div>
+                <span class="material-symbols-outlined text-cobalt" aria-hidden="true">public</span>
+                <p class="mt-5 text-xs font-extrabold uppercase text-cobalt">01</p>
+                <h3 class="mt-3 font-headline text-3xl font-bold" data-i18n="service.market.title">Vietnam market entry</h3>
+                <p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.market.body">Map company setup, licensing, distribution, operation, and first local execution.</p>
+              </div>
+              <div class="rounded-sm bg-white p-5">
+                <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="service.market.noteLabel">Best for</p>
+                <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="service.market.note">Brands before their first Vietnam decision.</p>
+              </div>
+            </div>
           </a>
-        </div>
-        <div class="mt-10 grid gap-3 md:grid-cols-3">
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/it-market-entry.html" data-i18n="service.market">Vietnam Market Entry / 베트남 진출</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/franchise-expansion.html" data-i18n="service.franchise">Franchise Expansion / 베트남 프랜차이즈 진출</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/fb-market-entry.html" data-i18n="service.fb">F&B Brand Launch / 베트남 F&B 진출</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/direct-store-operations.html" data-i18n="service.store">Store Operations / 베트남 점포 운영</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/vietnam-sourcing.html" data-i18n="service.sourcing">Distribution, Logistics & Sourcing / 베트남 물류 유통</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/legal-advisory.html" data-i18n="service.legal">Legal, Licensing & Entity Setup / 베트남 법인 설립</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/it-systems-development.html" data-i18n="service.systems">ERP, POS & Delivery Infrastructure / 베트남 POS 시스템</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/marketing-services.html" data-i18n="service.marketing">Marketing Localization / 베트남 마케팅</a>
-          <a class="path-card rounded-sm border border-line bg-white p-5 font-bold text-ink" href="capabilities/master-brand-acquisition.html" data-i18n="service.partner">Partner & Supplier Development / 베트남 현지 파트너</a>
+          <a class="path-card rounded-sm bg-[#071a31] p-6 text-white" href="capabilities/franchise-expansion.html"><span class="material-symbols-outlined text-brass" aria-hidden="true">storefront</span><p class="mt-5 text-xs font-extrabold uppercase text-white/50">02</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.franchise.title">Franchise expansion</h3><p class="mt-4 text-sm leading-7 text-white/65" data-i18n="service.franchise.body">Local store development, operator control, launch sequence, and expansion governance.</p></a>
+          <a class="path-card rounded-sm bg-fog p-6 text-ink" href="capabilities/fb-market-entry.html"><span class="material-symbols-outlined text-cobalt" aria-hidden="true">restaurant</span><p class="mt-5 text-xs font-extrabold uppercase text-cobalt">03</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.fb.title">F&B brand launch</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.fb.body">Store opening, staffing, ingredients, SOP, POS, delivery, and daily quality control.</p></a>
+          <a class="path-card rounded-sm bg-fog p-6 text-ink" href="capabilities/direct-store-operations.html"><span class="material-symbols-outlined text-cobalt" aria-hidden="true">dashboard</span><p class="mt-5 text-xs font-extrabold uppercase text-cobalt">04</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.store.title">Store operations</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.store.body">Vietnam store operation, reporting, staff routines, cost checks, and field control.</p></a>
+          <a class="path-card rounded-sm bg-fog p-6 text-ink" href="capabilities/legal-advisory.html"><span class="material-symbols-outlined text-cobalt" aria-hidden="true">gavel</span><p class="mt-5 text-xs font-extrabold uppercase text-cobalt">05</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.legal.title">Legal and licensing</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.legal.body">Entity setup, business registration, permits, product registration, and local professional coordination.</p></a>
+          <a class="path-card rounded-sm bg-fog p-6 text-ink" href="capabilities/vietnam-sourcing.html"><span class="material-symbols-outlined text-cobalt" aria-hidden="true">local_shipping</span><p class="mt-5 text-xs font-extrabold uppercase text-cobalt">06</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.sourcing.title">Distribution and sourcing</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.sourcing.body">Distributor, customs, logistics, supplier development, warehouse, and sales-channel connection.</p></a>
+          <a class="path-card rounded-sm bg-[#f7f0df] p-6 text-ink" href="capabilities/marketing-services.html"><span class="material-symbols-outlined text-cobalt" aria-hidden="true">campaign</span><p class="mt-5 text-xs font-extrabold uppercase text-cobalt">07</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.marketing.title">Marketing and ecommerce</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.marketing.body">TikTok, Shopee, content, influencer, live commerce, ads, and sales conversion.</p></a>
+          <a class="path-card rounded-sm bg-fog p-6 text-ink" href="capabilities/it-systems-development.html"><span class="material-symbols-outlined text-cobalt" aria-hidden="true">database</span><p class="mt-5 text-xs font-extrabold uppercase text-cobalt">08</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.systems.title">ERP, POS, delivery systems</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.systems.body">Sales, inventory, orders, settlement, delivery, and reporting connected into one routine.</p></a>
+          <a class="path-card rounded-sm bg-fog p-6 text-ink" href="capabilities/master-brand-acquisition.html"><span class="material-symbols-outlined text-cobalt" aria-hidden="true">handshake</span><p class="mt-5 text-xs font-extrabold uppercase text-cobalt">09</p><h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="service.partner.title">Partner development</h3><p class="mt-4 text-sm leading-7 text-slatecopy" data-i18n="service.partner.body">Local partner, supplier, operator, distributor, and brand expansion pipeline.</p></a>
         </div>
       </div>
     </section>
 
-    <section id="seo-landings" class="bg-white py-16">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="max-w-3xl">
+    <section id="seo-landings" class="relative overflow-hidden bg-fog py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
+        <div>
           <p class="section-label mb-6" data-i18n="seo.eyebrow">Search intent routes</p>
-          <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl" data-i18n="seo.title">Start from the exact Vietnam problem people search for.</h2>
-          <p class="mt-5 text-lg leading-8 text-slatecopy" data-i18n="seo.body">These static landing pages are built around concrete search intent: company registration, cosmetics registration, F&B entry, Shopee, TikTok Shop, distribution, customs, logistics, and sourcing.</p>
+          <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl" data-i18n="seo.title">Local execution is the answer.</h2>
+          <p class="mt-5 text-lg leading-8 text-slatecopy" data-i18n="seo.body">Each landing page starts from a specific problem: company setup, cosmetics registration, F&B entry, Shopee, TikTok Shop, distribution, logistics, or sourcing.</p>
+          <div class="mt-8 rounded-sm bg-white p-5 shadow-sm">
+            <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="seo.note.label">How to use</p>
+            <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="seo.note.body">Choose the closest problem first. The page should lead to the operating route, not a generic brochure.</p>
+          </div>
         </div>
-        <div class="mt-10 grid gap-4 lg:grid-cols-2">
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-market-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 진출 컨설팅</h3><p class="mt-2 text-sm leading-7 text-slatecopy">법인, 인허가, 유통, 운영까지 한 번에 보는 진출 준비.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-market-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam Market Entry</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Market entry strategy connected to local execution.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-company-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 법인 설립</h3><p class="mt-2 text-sm leading-7 text-slatecopy">설립 절차, 비용, 자본금, 외투법인.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-company-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam Company Registration</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Company setup, capital, licensing, and operating readiness.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-cosmetics-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 화장품 인허가</h3><p class="mt-2 text-sm leading-7 text-slatecopy">수출, 제품등록, 라벨링, 통관.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-cosmetics-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam Cosmetics Registration</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Notification, labeling, customs, and distribution.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-fnb-franchise-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 F&B 프랜차이즈 진출</h3><p class="mt-2 text-sm leading-7 text-slatecopy">식당, 카페, 한식당, 점포 운영.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-fnb-franchise-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam F&B Franchise Entry</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Restaurant, cafe, Korean food, and store operations.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-ecommerce-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 쇼피 라자다 틱톡샵 진출</h3><p class="mt-2 text-sm leading-7 text-slatecopy">쇼피 입점, 라자다 판매, 틱톡샵 운영.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-ecommerce-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam Ecommerce Entry</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Shopee, Lazada, TikTok Shop, and seller operations.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-tiktok-shopee-marketing/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 틱톡 쇼피 마케팅</h3><p class="mt-2 text-sm leading-7 text-slatecopy">조회수보다 판매까지 이어지는 채널 운영.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-tiktok-shopee-marketing/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam TikTok and Shopee Marketing</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Ads, influencers, live commerce, and sales conversion.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-distribution-logistics/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 유통 통관 물류</h3><p class="mt-2 text-sm leading-7 text-slatecopy">유통업체, 통관대행, 수입관세, 물류.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-distribution-logistics/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam Distribution and Logistics</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Distributor, customs, import duties, and logistics.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="ko/vietnam-sourcing/"><span class="text-xs font-extrabold uppercase text-cobalt">KO</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 소싱</h3><p class="mt-2 text-sm leading-7 text-slatecopy">소싱 업체, 제조, 식자재, 공급망.</p></a>
-          <a class="path-card rounded-sm border border-line bg-fog p-5 text-ink" href="en/vietnam-sourcing/"><span class="text-xs font-extrabold uppercase text-cobalt">EN</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam Sourcing</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Manufacturing, ingredients, suppliers, and local partners.</p></a>
+        <div class="grid gap-4 md:grid-cols-2">
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-market-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">01</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 진출 컨설팅</h3><p class="mt-2 text-sm leading-7 text-slatecopy">법인, 인허가, 유통, 운영까지 한 번에 보는 진출 준비.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-market-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">01</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam market entry</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Market entry strategy connected to local execution.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-company-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">02</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 법인 설립</h3><p class="mt-2 text-sm leading-7 text-slatecopy">설립 절차, 비용, 자본금, 외투법인.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-company-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">02</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam company registration</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Company setup, capital, licensing, and operating readiness.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-cosmetics-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">03</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 화장품 인허가</h3><p class="mt-2 text-sm leading-7 text-slatecopy">수출, 제품등록, 라벨링, 통관.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-cosmetics-registration/"><span class="text-xs font-extrabold uppercase text-cobalt">03</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam cosmetics registration</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Notification, labeling, customs, and distribution.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-fnb-franchise-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">04</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 F&B 프랜차이즈 진출</h3><p class="mt-2 text-sm leading-7 text-slatecopy">식당, 카페, 한식당, 점포 운영.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-fnb-franchise-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">04</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam F&B franchise entry</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Restaurant, cafe, Korean food, and store operations.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-ecommerce-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">05</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 쇼피 라자다 틱톡샵 진출</h3><p class="mt-2 text-sm leading-7 text-slatecopy">쇼피 입점, 라자다 판매, 틱톡샵 운영.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-ecommerce-entry/"><span class="text-xs font-extrabold uppercase text-cobalt">05</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam ecommerce entry</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Shopee, Lazada, TikTok Shop, and seller operations.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-tiktok-shopee-marketing/"><span class="text-xs font-extrabold uppercase text-cobalt">06</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 틱톡 쇼피 마케팅</h3><p class="mt-2 text-sm leading-7 text-slatecopy">조회수보다 판매까지 이어지는 채널 운영.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-tiktok-shopee-marketing/"><span class="text-xs font-extrabold uppercase text-cobalt">06</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam TikTok and Shopee marketing</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Ads, influencers, live commerce, and sales conversion.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-distribution-logistics/"><span class="text-xs font-extrabold uppercase text-cobalt">07</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 유통 통관 물류</h3><p class="mt-2 text-sm leading-7 text-slatecopy">유통업체, 통관대행, 수입관세, 물류.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-distribution-logistics/"><span class="text-xs font-extrabold uppercase text-cobalt">07</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam distribution and logistics</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Distributor, customs, import duties, and logistics.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="ko" href="ko/vietnam-sourcing/"><span class="text-xs font-extrabold uppercase text-cobalt">08</span><h3 class="mt-2 font-headline text-xl font-bold">베트남 소싱</h3><p class="mt-2 text-sm leading-7 text-slatecopy">소싱 업체, 제조, 식자재, 공급망.</p></a>
+          <a class="locale-card path-card rounded-sm bg-white p-5 text-ink shadow-sm" data-locale-card="en" href="en/vietnam-sourcing/"><span class="text-xs font-extrabold uppercase text-cobalt">08</span><h3 class="mt-2 font-headline text-xl font-bold">Vietnam sourcing</h3><p class="mt-2 text-sm leading-7 text-slatecopy">Manufacturing, ingredients, suppliers, and local partners.</p></a>
         </div>
       </div>
     </section>
@@ -1077,20 +1124,37 @@
         'org.team6.title': 'Finance, HR & Legal Support Team',
         'org.team6.body': 'Accounting, payroll, hiring, contracts, compliance, and administrative control.',
         'services.eyebrow': 'Service map',
-        'services.title': 'Pick the deeper page after the operating story is clear.',
+        'services.title': 'Choose the area you need now.',
+        'services.body': 'Start from the blocked point: setup, licensing, store operation, ecommerce, distribution, sourcing, or systems.',
+        'services.stage1': 'Find the bottleneck.',
+        'services.stage2': 'Open the matching page.',
+        'services.stage3': 'Send the current situation.',
         'services.cta': 'Ask for a matched route',
-        'service.market': 'Vietnam Market Entry / 베트남 진출',
-        'service.franchise': 'Franchise Expansion / 베트남 프랜차이즈 진출',
-        'service.fb': 'F&B Brand Launch / 베트남 F&B 진출',
-        'service.store': 'Store Operations / 베트남 점포 운영',
-        'service.sourcing': 'Distribution, Logistics & Sourcing / 베트남 물류 유통',
-        'service.legal': 'Legal, Licensing & Entity Setup / 베트남 법인 설립',
-        'service.systems': 'ERP, POS & Delivery Infrastructure / 베트남 POS 시스템',
-        'service.marketing': 'Marketing Localization / 베트남 마케팅',
-        'service.partner': 'Partner & Supplier Development / 베트남 현지 파트너',
+        'service.market.title': 'Vietnam market entry',
+        'service.market.body': 'Map company setup, licensing, distribution, operation, and first local execution.',
+        'service.market.noteLabel': 'Best for',
+        'service.market.note': 'Brands before their first Vietnam decision.',
+        'service.franchise.title': 'Franchise expansion',
+        'service.franchise.body': 'Local store development, operator control, launch sequence, and expansion governance.',
+        'service.fb.title': 'F&B brand launch',
+        'service.fb.body': 'Store opening, staffing, ingredients, SOP, POS, delivery, and daily quality control.',
+        'service.store.title': 'Store operations',
+        'service.store.body': 'Vietnam store operation, reporting, staff routines, cost checks, and field control.',
+        'service.legal.title': 'Legal and licensing',
+        'service.legal.body': 'Entity setup, business registration, permits, product registration, and local professional coordination.',
+        'service.sourcing.title': 'Distribution and sourcing',
+        'service.sourcing.body': 'Distributor, customs, logistics, supplier development, warehouse, and sales-channel connection.',
+        'service.marketing.title': 'Marketing and ecommerce',
+        'service.marketing.body': 'TikTok, Shopee, content, influencer, live commerce, ads, and sales conversion.',
+        'service.systems.title': 'ERP, POS, delivery systems',
+        'service.systems.body': 'Sales, inventory, orders, settlement, delivery, and reporting connected into one routine.',
+        'service.partner.title': 'Partner development',
+        'service.partner.body': 'Local partner, supplier, operator, distributor, and brand expansion pipeline.',
         'seo.eyebrow': 'Search intent routes',
-        'seo.title': 'Start from the exact Vietnam problem people search for.',
-        'seo.body': 'These static landing pages are built around concrete search intent: company registration, cosmetics registration, F&B entry, Shopee, TikTok Shop, distribution, customs, logistics, and sourcing.',
+        'seo.title': 'Local execution is the answer.',
+        'seo.body': 'Each landing page starts from a specific problem: company setup, cosmetics registration, F&B entry, Shopee, TikTok Shop, distribution, logistics, or sourcing.',
+        'seo.note.label': 'How to use',
+        'seo.note.body': 'Choose the closest problem first. The page should lead to the operating route, not a generic brochure.',
         'footerProof.label': 'Operating proof stays visible',
         'footerProof.text': '2024 start. 8 stores operating. 20+ partner firms. 2030 target of 300 stores and 50 partner firms. in-house ERP. SaaS POS. Delivery app base.',
         'footerProof.button': 'Go to inquiry',
@@ -1271,21 +1335,38 @@
         'org.team6.label': '06 / 관리 지원',
         'org.team6.title': 'Finance, HR & Legal Support Team',
         'org.team6.body': '회계, 급여, 채용, 계약, 컴플라이언스, 행정 관리 지원.',
-        'services.eyebrow': '더 자세히 볼 영역.',
+        'services.eyebrow': '필요한 영역 선택.',
         'services.title': '지금 필요한 영역부터 확인해보세요.',
+        'services.body': '법인, 인허가, 매장 운영, 쇼피와 틱톡샵, 유통, 소싱, 시스템 중 지금 막힌 지점부터 고르면 됩니다.',
+        'services.stage1': '막힌 지점 확인.',
+        'services.stage2': '맞는 페이지로 이동.',
+        'services.stage3': '현재 상황 전달.',
         'services.cta': '우리 상황 문의하기',
-        'service.market': '베트남 진출. Vietnam Market Entry',
-        'service.franchise': '베트남 프랜차이즈 진출. Franchise Expansion',
-        'service.fb': '베트남 F&B 진출. F&B Brand Launch',
-        'service.store': '베트남 점포 운영. Store Operations',
-        'service.sourcing': '베트남 물류 유통 소싱. Distribution Logistics Sourcing',
-        'service.legal': '베트남 법인 설립 인허가. Legal Licensing',
-        'service.systems': '베트남 ERP POS 배달 앱. ERP POS Delivery',
-        'service.marketing': '베트남 마케팅. Marketing Localization',
-        'service.partner': '베트남 현지 파트너. Partner Supplier Development',
-        'seo.eyebrow': '사람들이 실제로 찾는 고민.',
-        'seo.title': '검색어는 달라도 결국 필요한 것은 현지에서 움직일 팀입니다.',
-        'seo.body': '법인 설립, 화장품 인허가, F&B 진출, 쇼피, 틱톡샵, 유통, 통관, 물류, 소싱까지. 각 고민별로 따로 확인할 수 있게 정리했습니다.',
+        'service.market.title': '베트남 진출',
+        'service.market.body': '법인, 인허가, 유통, 운영, 첫 실행 경로를 한 번에 정리.',
+        'service.market.noteLabel': '이런 경우',
+        'service.market.note': '아직 베트남 첫 의사결정 전인 브랜드.',
+        'service.franchise.title': '프랜차이즈 진출',
+        'service.franchise.body': '현지 매장 개발, 운영자 통제, 오픈 순서, 다점포 확장 기준.',
+        'service.fb.title': 'F&B 브랜드 런칭',
+        'service.fb.body': '매장 오픈, 인력, 식자재, SOP, POS, 배달, 품질 관리.',
+        'service.store.title': '점포 운영',
+        'service.store.body': '베트남 매장 운영, 리포팅, 인력 루틴, 원가 점검, 현장 관리.',
+        'service.legal.title': '법인과 인허가',
+        'service.legal.body': '법인 설립, 사업자등록, 허가, 제품등록, 현지 전문가 조율.',
+        'service.sourcing.title': '유통과 소싱',
+        'service.sourcing.body': '유통업체, 통관, 물류, 공급처, 창고, 판매 채널 연결.',
+        'service.marketing.title': '마케팅과 이커머스',
+        'service.marketing.body': '틱톡, 쇼피, 콘텐츠, 인플루언서, 라이브커머스, 광고, 판매 전환.',
+        'service.systems.title': 'ERP, POS, 배달 시스템',
+        'service.systems.body': '매출, 재고, 주문, 정산, 배달, 리포팅을 한 루틴으로 연결.',
+        'service.partner.title': '현지 파트너 개발',
+        'service.partner.body': '파트너, 공급처, 운영자, 유통사, 브랜드 확장 파이프라인.',
+        'seo.eyebrow': '검색 유입 페이지.',
+        'seo.title': '결국 필요한 것은 현지에서 움직일 팀입니다.',
+        'seo.body': '법인 설립, 화장품 인허가, F&B 진출, 쇼피, 틱톡샵, 유통, 물류, 소싱처럼 실제 고민별로 들어갈 수 있게 정리했습니다.',
+        'seo.note.label': '보는 방법',
+        'seo.note.body': '가장 가까운 고민부터 고르면 됩니다. 목표는 설명 자료가 아니라 실제 실행 경로입니다.',
         'footerProof.label': '우리가 보여주고 싶은 근거',
         'footerProof.text': '2024년 베트남에서 시작. 현재 8개 점포 운영. 20여 개 파트너사와 협업. 2030년 300개 점포와 50개 파트너사 목표. in-house ERP. SaaS POS. 배달 앱 기반.',
         'footerProof.button': '문의로 이동',
@@ -1316,6 +1397,9 @@
       });
       document.querySelectorAll('[data-lang-button]').forEach((button) => {
         button.setAttribute('aria-pressed', String(button.dataset.langButton === activeLanguage));
+      });
+      document.querySelectorAll('[data-locale-card]').forEach((card) => {
+        card.hidden = card.dataset.localeCard !== activeLanguage;
       });
     }
 
