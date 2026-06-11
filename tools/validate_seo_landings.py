@@ -113,10 +113,10 @@ def validate_site_map_page() -> None:
         fail("missing site-map.html")
     content = path.read_text(encoding="utf-8")
     required = [
-        "먼저 막힌 지점을 고르면",
+        "Globos Holdings 웹사이트의 전체 페이지",
+        "id=\"directory\"",
         "id=\"entry-problems\"",
-        "id=\"routes\"",
-        "Full directory",
+        "상황별 바로가기",
         "ko/vietnam-market-entry/",
         "en/vietnam-market-entry/",
         "capabilities/franchise-expansion.html",
