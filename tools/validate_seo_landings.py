@@ -113,7 +113,8 @@ def validate_site_map_page() -> None:
         fail("missing site-map.html")
     content = path.read_text(encoding="utf-8")
     required = [
-        "먼저 내 상황을 고르고",
+        "먼저 막힌 지점을 고르면",
+        "id=\"entry-problems\"",
         "id=\"routes\"",
         "Full directory",
         "ko/vietnam-market-entry/",
