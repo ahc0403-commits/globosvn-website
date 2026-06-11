@@ -21,6 +21,18 @@ SLUGS = [
     "vietnam-distribution-logistics",
     "vietnam-sourcing",
 ]
+CAPABILITY_SLUGS = [
+    "franchise-expansion",
+    "fb-market-entry",
+    "direct-store-operations",
+    "legal-advisory",
+    "it-systems-development",
+    "it-market-entry",
+    "beauty-market-entry",
+    "vietnam-sourcing",
+    "marketing-services",
+    "master-brand-acquisition",
+]
 REQUIRED_KO_TERMS = {
     "vietnam-market-entry": ["베트남 진출", "베트남 시장 진출", "베트남 진출 전략"],
     "vietnam-company-registration": ["베트남 법인 설립", "베트남 법인 설립 비용", "베트남 법인 설립 자본금"],
@@ -105,6 +117,11 @@ def validate_sitemap() -> None:
             url = f"{DOMAIN}/{lang}/{slug}/"
             if url not in locs:
                 fail(f"sitemap missing {url}")
+    for lang in ("ko", "en"):
+        for slug in CAPABILITY_SLUGS:
+            url = f"{DOMAIN}/{lang}/capabilities/{slug}"
+            if url not in locs:
+                fail(f"sitemap missing {url}")
 
 
 def validate_site_map_page() -> None:
@@ -119,7 +136,7 @@ def validate_site_map_page() -> None:
         "상황별 바로가기",
         "ko/vietnam-market-entry/",
         "en/vietnam-market-entry/",
-        "capabilities/franchise-expansion.html",
+        "ko/capabilities/franchise-expansion.html",
         "contact@globos.world",
     ]
     for needle in required:
@@ -143,11 +160,40 @@ def validate_home_links() -> None:
             href = f"{lang}/{slug}/"
             if href not in content:
                 fail(f"homepage missing internal link {href}")
+    for slug in CAPABILITY_SLUGS:
+        if f'data-capability-link="{slug}"' not in content:
+            fail(f"homepage missing capability language link {slug}")
+
+
+def validate_capability_pages() -> None:
+    for lang in ("ko", "en"):
+        other = "en" if lang == "ko" else "ko"
+        for slug in CAPABILITY_SLUGS:
+            path = ROOT / lang / "capabilities" / f"{slug}.html"
+            if not path.exists():
+                fail(f"missing {path}")
+            content = path.read_text(encoding="utf-8")
+            checks = [
+                (f'<html class="scroll-smooth" lang="{lang}">' in content, "html lang"),
+                (f'<link rel="canonical" href="{DOMAIN}/{lang}/capabilities/{slug}"' in content, "canonical"),
+                (f'hreflang="{other}" href="{DOMAIN}/{other}/capabilities/{slug}"' in content, "alternate hreflang"),
+                ("../../assets/fonts.css" in content, "shared fonts"),
+                ("contact@globos.world" in content, "contact email"),
+                ('"@type":"Service"' in content or '"@type": "Service"' in content, "service schema"),
+                ("Globos Holdings" in content, "brand"),
+            ]
+            for ok, label in checks:
+                if not ok:
+                    fail(f"{path} missing {label}")
+            if lang == "ko" and "베트남" not in content:
+                fail(f"{path} missing Korean Vietnam copy")
+            if lang == "en" and "Vietnam" not in content:
+                fail(f"{path} missing English Vietnam copy")
 
 
 def validate_vercel() -> None:
     content = (ROOT / "vercel.json").read_text(encoding="utf-8")
-    for route in ["/ko/:slug", "/en/:slug"]:
+    for route in ["/ko/:slug", "/en/:slug", "/ko/capabilities/:slug", "/en/capabilities/:slug"]:
         if route not in content:
             fail(f"vercel.json missing rewrite {route}")
 
@@ -160,8 +206,9 @@ def main() -> None:
     validate_site_map_page()
     validate_robots()
     validate_home_links()
+    validate_capability_pages()
     validate_vercel()
-    print(f"Validated {len(SLUGS) * 2} SEO landing pages plus sitemap, robots, homepage links, and Vercel rewrites")
+    print(f"Validated {len(SLUGS) * 2} SEO landing pages, {len(CAPABILITY_SLUGS) * 2} capability pages, sitemap, robots, homepage links, and Vercel rewrites")
 
 
 if __name__ == "__main__":

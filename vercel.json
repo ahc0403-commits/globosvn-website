@@ -4,6 +4,8 @@
   "rewrites": [
     { "source": "/ko/:slug", "destination": "/ko/:slug/index.html" },
     { "source": "/en/:slug", "destination": "/en/:slug/index.html" },
+    { "source": "/ko/capabilities/:slug", "destination": "/ko/capabilities/:slug.html" },
+    { "source": "/en/capabilities/:slug", "destination": "/en/capabilities/:slug.html" },
     { "source": "/capabilities/:slug", "destination": "/capabilities/:slug.html" }
   ],
   "headers": [
