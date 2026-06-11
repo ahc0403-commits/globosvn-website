@@ -228,7 +228,8 @@
   <header class="fixed left-0 top-0 z-50 w-full border-b border-line/80 bg-white/95 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
       <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
-      <div class="hidden items-center gap-6 text-sm font-bold text-slatecopy lg:flex">
+      <div class="hidden items-center gap-5 text-sm font-bold text-slatecopy lg:flex">
+        <a class="hover:text-navy" href="#control-tower" data-i18n="nav.tower">Control Tower</a>
         <a class="hover:text-navy" href="#why-globos" data-i18n="nav.why">Why</a>
         <a class="hover:text-navy" href="#entry-models" data-i18n="nav.models">Models</a>
         <a class="hover:text-navy" href="#operating-system" data-i18n="nav.system">System</a>
@@ -459,7 +460,84 @@
       </div>
     </section>
 
-    <section id="why-globos" class="border-y border-line bg-fog py-16">
+    <section id="control-tower" class="border-y border-line bg-fog py-16">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid min-w-0 gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <div class="min-w-0">
+            <p class="section-label mb-6" data-i18n="tower.eyebrow">Control tower</p>
+            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-6xl" data-i18n="tower.title">Setup, operation, and scale in one route.</h2>
+            <p class="mt-6 text-lg leading-8 text-slatecopy" data-i18n="tower.body">Strong market-entry firms clarify the setup path. Strong operating platforms show the numbers. Globos Holdings combines both for Vietnam: legal base, field execution, and operating control.</p>
+            <div class="mt-8 grid gap-3 sm:grid-cols-3">
+              <div class="rounded-sm border border-line bg-white p-4">
+                <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.step1.label">01 / Setup</p>
+                <h3 class="mt-3 font-headline text-lg font-bold text-ink" data-i18n="tower.step1.title">Build the base</h3>
+                <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="tower.step1.body">Entity, licensing, product registration, customs, and contracts aligned before launch.</p>
+              </div>
+              <div class="rounded-sm border border-line bg-white p-4">
+                <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.step2.label">02 / Operate</p>
+                <h3 class="mt-3 font-headline text-lg font-bold text-ink" data-i18n="tower.step2.title">Run the field</h3>
+                <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="tower.step2.body">Stores, suppliers, staffing, SOP, POS, delivery, ecommerce, and reporting routines.</p>
+              </div>
+              <div class="rounded-sm border border-line bg-white p-4">
+                <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.step3.label">03 / Scale</p>
+                <h3 class="mt-3 font-headline text-lg font-bold text-ink" data-i18n="tower.step3.title">Scale with control</h3>
+                <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="tower.step3.body">ERP, SaaS POS, dashboards, partner pipeline, and the 2030 expansion roadmap.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="min-w-0 rounded-sm border border-line bg-white p-5 shadow-firm">
+            <div class="max-w-full overflow-x-auto">
+            <div class="grid min-w-[620px] grid-cols-[1fr_repeat(3,minmax(64px,1fr))] gap-px overflow-hidden rounded-sm border border-line bg-line text-sm">
+              <div class="bg-[#071a31] p-4 font-bold text-white" data-i18n="tower.matrix.corner">Operating layer</div>
+              <div class="bg-[#071a31] p-4 text-center font-bold text-white" data-i18n="tower.matrix.setup">Setup</div>
+              <div class="bg-[#071a31] p-4 text-center font-bold text-white" data-i18n="tower.matrix.operate">Operate</div>
+              <div class="bg-[#071a31] p-4 text-center font-bold text-white" data-i18n="tower.matrix.scale">Scale</div>
+
+              <div class="bg-white p-4 font-bold text-ink" data-i18n="tower.matrix.legal">Legal and licensing</div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-mint" aria-hidden="true">check_circle</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-brass" aria-hidden="true">sync_alt</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-slatecopy" aria-hidden="true">radio_button_unchecked</span></div>
+
+              <div class="bg-white p-4 font-bold text-ink" data-i18n="tower.matrix.store">Store operation</div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-brass" aria-hidden="true">sync_alt</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-mint" aria-hidden="true">check_circle</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-mint" aria-hidden="true">monitoring</span></div>
+
+              <div class="bg-white p-4 font-bold text-ink" data-i18n="tower.matrix.channel">Sales channels</div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-brass" aria-hidden="true">sync_alt</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-mint" aria-hidden="true">check_circle</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-mint" aria-hidden="true">trending_up</span></div>
+
+              <div class="bg-white p-4 font-bold text-ink" data-i18n="tower.matrix.system">Systems and data</div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-brass" aria-hidden="true">sync_alt</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-mint" aria-hidden="true">database</span></div>
+              <div class="bg-white p-4 text-center"><span class="material-symbols-outlined text-mint" aria-hidden="true">query_stats</span></div>
+            </div>
+            </div>
+            <div class="mt-5 grid gap-3 md:grid-cols-3">
+              <div class="rounded-sm bg-fog p-4">
+                <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.metric1.label">Current base</p>
+                <p class="mt-2 font-headline text-3xl font-bold text-navy">8</p>
+                <p class="text-sm text-slatecopy" data-i18n="tower.metric1.body">Operating stores</p>
+              </div>
+              <div class="rounded-sm bg-fog p-4">
+                <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.metric2.label">Network</p>
+                <p class="mt-2 font-headline text-3xl font-bold text-navy">20+</p>
+                <p class="text-sm text-slatecopy" data-i18n="tower.metric2.body">Partner firms</p>
+              </div>
+              <div class="rounded-sm bg-fog p-4">
+                <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.metric3.label">2030 vision</p>
+                <p class="mt-2 font-headline text-3xl font-bold text-navy">300</p>
+                <p class="text-sm text-slatecopy" data-i18n="tower.metric3.body">Store platform</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-globos" class="border-b border-line bg-white py-16">
       <span id="guide" class="sr-only" aria-hidden="true">Guide</span>
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
@@ -825,6 +903,7 @@
   <script>
     const translations = {
       en: {
+        'nav.tower': 'Control Tower',
         'nav.why': 'Why',
         'nav.models': 'Models',
         'nav.system': 'System',
@@ -865,6 +944,32 @@
         'screen.roadmap.step1': 'Vietnam operations begin.',
         'screen.roadmap.step2': '8 stores and 20+ partner firms.',
         'screen.roadmap.step3': '300 stores and 50 partner firms.',
+        'tower.eyebrow': 'Control tower',
+        'tower.title': 'Setup, operation, and scale in one route.',
+        'tower.body': 'Strong market-entry firms clarify the setup path. Strong operating platforms show the numbers. Globos Holdings combines both for Vietnam: legal base, field execution, and operating control.',
+        'tower.step1.label': '01 / Setup',
+        'tower.step1.title': 'Build the base',
+        'tower.step1.body': 'Entity, licensing, product registration, customs, and contracts aligned before launch.',
+        'tower.step2.label': '02 / Operate',
+        'tower.step2.title': 'Run the field',
+        'tower.step2.body': 'Stores, suppliers, staffing, SOP, POS, delivery, ecommerce, and reporting routines.',
+        'tower.step3.label': '03 / Scale',
+        'tower.step3.title': 'Scale with control',
+        'tower.step3.body': 'ERP, SaaS POS, dashboards, partner pipeline, and the 2030 expansion roadmap.',
+        'tower.matrix.corner': 'Operating layer',
+        'tower.matrix.setup': 'Setup',
+        'tower.matrix.operate': 'Operate',
+        'tower.matrix.scale': 'Scale',
+        'tower.matrix.legal': 'Legal and licensing',
+        'tower.matrix.store': 'Store operation',
+        'tower.matrix.channel': 'Sales channels',
+        'tower.matrix.system': 'Systems and data',
+        'tower.metric1.label': 'Current base',
+        'tower.metric1.body': 'Operating stores',
+        'tower.metric2.label': 'Network',
+        'tower.metric2.body': 'Partner firms',
+        'tower.metric3.label': '2030 vision',
+        'tower.metric3.body': 'Store platform',
         'why.eyebrow': 'Why Globos',
         'why.title': 'Vietnam entry fails where execution is missing.',
         'why.body': 'A brand may understand the opportunity and still get blocked by the pieces that must move locally every day. Globos Holdings exists for that gap.',
@@ -991,6 +1096,7 @@
         'footer.contact': 'Contact page'
       },
       ko: {
+        'nav.tower': '컨트롤타워',
         'nav.why': '왜 필요한가',
         'nav.models': '어떤 경우',
         'nav.system': '운영 방식',
@@ -1031,6 +1137,32 @@
         'screen.roadmap.step1': '베트남 운영 개시.',
         'screen.roadmap.step2': '8개 점포와 20여 개 파트너사.',
         'screen.roadmap.step3': '300개 점포와 50개 파트너사.',
+        'tower.eyebrow': '진입 컨트롤타워.',
+        'tower.title': '설립, 운영, 확장을 한 흐름으로 보는 구조.',
+        'tower.body': '좋은 시장 진출 회사는 설립 절차를 명확히 보여주고, 좋은 운영 플랫폼은 숫자를 한 화면에 모읍니다. Globos Holdings는 두 가지를 베트남 현장에 맞게 묶습니다.',
+        'tower.step1.label': '01 / 기반 세팅',
+        'tower.step1.title': '사업 방식부터 정리',
+        'tower.step1.body': '법인, 인허가, 제품등록, 통관, 계약 구조를 오픈 전에 맞추는 일.',
+        'tower.step2.label': '02 / 현장 운영',
+        'tower.step2.title': '현지에서 실제로 굴리는 일',
+        'tower.step2.body': '매장, 공급처, 인력, SOP, POS, 배달, 이커머스, 리포팅 루틴.',
+        'tower.step3.label': '03 / 통제하며 확장',
+        'tower.step3.title': '숫자로 보고 키우는 일',
+        'tower.step3.body': 'ERP, SaaS POS, 대시보드, 파트너 파이프라인, 2030년 확장 로드맵.',
+        'tower.matrix.corner': '운영 레이어',
+        'tower.matrix.setup': '세팅',
+        'tower.matrix.operate': '운영',
+        'tower.matrix.scale': '확장',
+        'tower.matrix.legal': '법인과 인허가',
+        'tower.matrix.store': '매장 운영',
+        'tower.matrix.channel': '판매 채널',
+        'tower.matrix.system': '시스템과 데이터',
+        'tower.metric1.label': '현재 기반',
+        'tower.metric1.body': '운영 중인 점포',
+        'tower.metric2.label': '협업 네트워크',
+        'tower.metric2.body': '파트너사',
+        'tower.metric3.label': '2030 비전',
+        'tower.metric3.body': '점포 플랫폼',
         'why.eyebrow': '왜 필요한가.',
         'why.title': '베트남은 진출보다 운영이 더 어렵습니다.',
         'why.body': '현지에 들어가는 것 자체보다, 들어간 뒤 매일 굴러가게 만드는 일이 더 어렵습니다. Globos Holdings는 그 부분을 같이 고민하고 실제로 움직이는 팀입니다.',
@@ -1187,7 +1319,7 @@
     });
 
     document.querySelector('[data-start-guide]')?.addEventListener('click', () => {
-      document.getElementById('why-globos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('control-tower')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     setLanguage(activeLanguage);

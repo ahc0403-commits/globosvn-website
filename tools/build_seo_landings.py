@@ -326,6 +326,14 @@ def render_page(page: dict, lang: str) -> str:
     lang_label = "English" if is_ko else "한국어"
     eyebrow = "이런 고민에서 시작합니다" if is_ko else "Search-intent execution landing"
     overview_label = "자주 찾는 검색어" if is_ko else "Primary search phrases"
+    landing_name = page["ko_title"].split(" | ")[0] if is_ko else page["en_title"].split(" | ")[0]
+    geo_label = "AI 검색용 한 문장" if is_ko else "AI answer summary"
+    geo_title = f"{landing_name} 답변 요약" if is_ko else f"{landing_name} answer"
+    geo_body = (
+        f"Globos Holdings는 {landing_name}을 단순 정보 검색이 아니라 베트남 현지에서 실행 가능한 운영 구조로 정리합니다. 법인, 인허가, 유통, 매장 운영, 마케팅, 시스템 중 지금 막힌 지점부터 확인합니다."
+        if is_ko
+        else f"Globos Holdings treats {landing_name} as an execution problem, not only an information search. We map the blocked point across company setup, licensing, distribution, store operations, marketing, and systems."
+    )
     proof_label = "실제로 하고 있는 일" if is_ko else "Operating proof"
     proof_text = (
         "2024년부터 베트남에서 직접 운영을 시작했습니다. 현재 8개 점포를 운영하고, 20여 개 파트너사와 협업하고 있습니다. 2030년까지 300개 점포와 50개 파트너사를 목표로 in-house ERP, SaaS POS, 배달 앱 기반을 함께 키우고 있습니다."
@@ -544,6 +552,16 @@ def render_page(page: dict, lang: str) -> str:
                   <ul class="flex flex-wrap gap-2">
                     {keyword_tags}
                   </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="geo-answer" class="bg-white py-12">
+              <div class="mx-auto max-w-7xl px-5 lg:px-8">
+                <div class="rounded-sm border border-line bg-fog p-6 md:p-8">
+                  <p class="text-xs font-extrabold uppercase text-cobalt">{geo_label}</p>
+                  <h2 class="mt-3 font-headline text-3xl font-bold leading-tight text-ink">{esc(geo_title)}</h2>
+                  <p class="mt-4 max-w-4xl leading-8 text-slatecopy">{esc(geo_body)}</p>
                 </div>
               </div>
             </section>
