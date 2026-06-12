@@ -154,9 +154,75 @@
       background-image:
         linear-gradient(90deg, rgba(3, 14, 31, .78), rgba(3, 14, 31, .54) 48%, rgba(3, 14, 31, .30)),
         linear-gradient(0deg, rgba(3, 14, 31, .36), rgba(3, 14, 31, .05)),
-        url('assets/images/generated/home-execution-command.webp');
+        url('assets/images/generated/franchise-expansion.webp');
       background-position: center;
       background-size: cover;
+    }
+    .home-hero-bg > .mx-auto {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-growth-visual {
+      position: absolute;
+      inset: 0 0 0 auto;
+      z-index: 1;
+      display: flex;
+      width: min(58vw, 820px);
+      align-items: center;
+      justify-content: center;
+      opacity: .78;
+      pointer-events: none;
+    }
+    .hero-growth-visual svg {
+      width: 100%;
+      max-width: 820px;
+      height: auto;
+      filter: drop-shadow(0 30px 80px rgba(0, 0, 0, .36));
+    }
+    .hero-growth-visual .map-outline {
+      fill: rgba(11, 77, 143, .16);
+      stroke: rgba(219, 188, 111, .74);
+      stroke-width: 2;
+    }
+    .hero-growth-visual .route-line {
+      fill: none;
+      stroke: rgba(219, 188, 111, .42);
+      stroke-width: 1.4;
+      stroke-dasharray: 6 10;
+      animation: routeFlow 12s linear infinite;
+    }
+    .hero-growth-visual .city-halo {
+      fill: rgba(200, 164, 93, .15);
+      stroke: rgba(255, 229, 166, .85);
+      stroke-width: 1;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: cityHalo 2.8s ease-in-out infinite;
+    }
+    .hero-growth-visual .city-core {
+      fill: #ffd978;
+      filter: url(#heroCityGlow);
+    }
+    .hero-growth-visual .light-step-1 { animation: stepLight1 12s steps(1, end) infinite; }
+    .hero-growth-visual .light-step-2 { animation: stepLight2 12s steps(1, end) infinite; }
+    .hero-growth-visual .light-step-3 { animation: stepLight3 12s steps(1, end) infinite; }
+    .hero-growth-visual .light-step-4 { animation: stepLight4 12s steps(1, end) infinite; }
+    .hero-growth-visual .light-step-5 { animation: stepLight5 12s steps(1, end) infinite; }
+    .hero-growth-visual .growth-progress {
+      transform-origin: 128px 470px;
+      animation: heroGrowthProgress 12s steps(5, end) infinite;
+    }
+    .hero-growth-visual .growth-year {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      fill: rgba(255, 255, 255, .62);
+    }
+    .hero-growth-visual .growth-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      fill: #ffd978;
     }
     .nav-group {
       position: relative;
@@ -289,6 +355,46 @@
     .flow-glow {
       animation: flowGlow 2.6s ease-in-out infinite;
     }
+    @keyframes routeFlow {
+      to { stroke-dashoffset: -80; }
+    }
+    @keyframes cityHalo {
+      0%, 100% { opacity: .45; transform: scale(.92); }
+      50% { opacity: .95; transform: scale(1.22); }
+    }
+    @keyframes stepLight1 {
+      0%, 6% { opacity: .15; transform: scale(.86); }
+      8%, 96% { opacity: .95; transform: scale(1); }
+      100% { opacity: .15; transform: scale(.86); }
+    }
+    @keyframes stepLight2 {
+      0%, 24% { opacity: .12; transform: scale(.82); }
+      26%, 96% { opacity: .9; transform: scale(1); }
+      100% { opacity: .12; transform: scale(.82); }
+    }
+    @keyframes stepLight3 {
+      0%, 44% { opacity: .1; transform: scale(.8); }
+      46%, 96% { opacity: .92; transform: scale(1); }
+      100% { opacity: .1; transform: scale(.8); }
+    }
+    @keyframes stepLight4 {
+      0%, 64% { opacity: .08; transform: scale(.78); }
+      66%, 96% { opacity: .92; transform: scale(1); }
+      100% { opacity: .08; transform: scale(.78); }
+    }
+    @keyframes stepLight5 {
+      0%, 82% { opacity: .06; transform: scale(.76); }
+      84%, 96% { opacity: .95; transform: scale(1); }
+      100% { opacity: .06; transform: scale(.76); }
+    }
+    @keyframes heroGrowthProgress {
+      0% { transform: scaleX(.02); }
+      20% { transform: scaleX(.07); }
+      40% { transform: scaleX(.17); }
+      60% { transform: scaleX(.33); }
+      80% { transform: scaleX(.67); }
+      100% { transform: scaleX(1); }
+    }
     .timeline-track::before {
       content: '';
       position: absolute;
@@ -336,7 +442,15 @@
       .metric-line,
       .bar-grow,
       .signal-dot,
-      .flow-glow {
+      .flow-glow,
+      .hero-growth-visual .route-line,
+      .hero-growth-visual .city-halo,
+      .hero-growth-visual .growth-progress,
+      .hero-growth-visual .light-step-1,
+      .hero-growth-visual .light-step-2,
+      .hero-growth-visual .light-step-3,
+      .hero-growth-visual .light-step-4,
+      .hero-growth-visual .light-step-5 {
         animation: none;
       }
       .dashboard-screen {
@@ -358,6 +472,11 @@
       }
       .home-hero-bg {
         background-position: 62% center;
+      }
+      .hero-growth-visual {
+        right: -28%;
+        width: 92vw;
+        opacity: .38;
       }
       .org-branch::before,
       .org-branch::after {
@@ -392,8 +511,13 @@
         background-image:
           linear-gradient(90deg, rgba(3, 14, 31, .86), rgba(3, 14, 31, .68)),
           linear-gradient(0deg, rgba(3, 14, 31, .42), rgba(3, 14, 31, .08)),
-          url('assets/images/generated/home-execution-command.webp');
+          url('assets/images/generated/franchise-expansion.webp');
         background-position: 66% center;
+      }
+      .hero-growth-visual {
+        right: -66%;
+        width: 150vw;
+        opacity: .24;
       }
     }
     @keyframes dashboardCycle {
@@ -531,6 +655,66 @@
 
   <main class="pt-[74px] lg:pt-[149px]">
     <section class="home-screen home-hero-bg relative text-white">
+      <div class="hero-growth-visual" aria-hidden="true">
+        <svg viewBox="0 0 760 560" role="img">
+          <defs>
+            <filter id="heroCityGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="heroMapFill" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#2d6aa6" stop-opacity=".3" />
+              <stop offset="1" stop-color="#0b1f3c" stop-opacity=".1" />
+            </linearGradient>
+          </defs>
+          <rect x="92" y="54" width="560" height="420" rx="2" fill="rgba(4, 17, 36, .48)" stroke="rgba(255,255,255,.12)" />
+          <path d="M140 132h444M140 206h444M140 280h444M140 354h444M212 86v362M286 86v362M360 86v362M434 86v362M508 86v362" stroke="rgba(255,255,255,.07)" stroke-width="1" />
+          <path class="map-outline" d="M396 82c31 10 48 29 45 54-3 24-25 33-17 62 6 22 31 34 25 61-5 25-32 30-29 58 3 24 28 35 34 57 8 31-13 58-45 72-34 15-67 9-86-13 28-6 49-22 53-45 5-28-22-42-20-70 2-30 30-42 26-72-3-25-27-33-25-59 2-23 25-33 24-56-1-18-13-31 15-49Z" fill="url(#heroMapFill)" />
+          <path class="route-line" d="M396 125C326 172 298 246 386 300C466 348 501 403 410 444" />
+          <path class="route-line" d="M426 145C502 178 548 236 450 278C360 318 348 388 448 416" />
+          <g>
+            <circle class="city-halo" cx="392" cy="130" r="22" />
+            <circle class="city-core" cx="392" cy="130" r="5" />
+            <circle class="city-halo" cx="424" cy="146" r="18" />
+            <circle class="city-core" cx="424" cy="146" r="4" />
+            <circle class="city-halo" cx="423" cy="280" r="20" />
+            <circle class="city-core" cx="423" cy="280" r="5" />
+            <circle class="city-halo" cx="448" cy="416" r="24" />
+            <circle class="city-core" cx="448" cy="416" r="6" />
+            <circle class="city-halo" cx="418" cy="452" r="17" />
+            <circle class="city-core" cx="418" cy="452" r="4" />
+          </g>
+          <g fill="#ffd978" filter="url(#heroCityGlow)">
+            <circle class="light-step-1" cx="386" cy="118" r="3" />
+            <circle class="light-step-1" cx="402" cy="139" r="2.6" />
+            <circle class="light-step-1" cx="433" cy="151" r="2.8" />
+            <circle class="light-step-2" cx="402" cy="198" r="3" />
+            <circle class="light-step-2" cx="414" cy="236" r="2.4" />
+            <circle class="light-step-2" cx="434" cy="272" r="3.2" />
+            <circle class="light-step-3" cx="392" cy="304" r="2.8" />
+            <circle class="light-step-3" cx="438" cy="324" r="2.8" />
+            <circle class="light-step-3" cx="462" cy="356" r="2.4" />
+            <circle class="light-step-4" cx="452" cy="402" r="3.4" />
+            <circle class="light-step-4" cx="430" cy="432" r="2.8" />
+            <circle class="light-step-4" cx="404" cy="448" r="2.5" />
+            <circle class="light-step-5" cx="368" cy="388" r="2.4" />
+            <circle class="light-step-5" cx="476" cy="430" r="2.8" />
+            <circle class="light-step-5" cx="398" cy="466" r="2.3" />
+            <circle class="light-step-5" cx="520" cy="384" r="2.6" />
+            <circle class="light-step-5" cx="550" cy="242" r="2.2" />
+          </g>
+          <g>
+            <text class="growth-year" x="128" y="444">2025</text>
+            <text class="growth-year" x="512" y="444">2030</text>
+            <rect x="128" y="466" width="420" height="8" rx="4" fill="rgba(255,255,255,.13)" />
+            <rect class="growth-progress" x="128" y="466" width="420" height="8" rx="4" fill="#ffd978" />
+            <text class="growth-value" x="128" y="510" data-i18n="hero.growth.value">0 → 300 stores</text>
+          </g>
+        </svg>
+      </div>
       <div class="mx-auto flex h-full max-w-7xl flex-col justify-center px-5 py-8 lg:px-8">
         <div class="max-w-4xl lg:-translate-y-12">
           <p class="mb-6 inline-flex items-center gap-3 text-xs font-extrabold uppercase text-brass">
@@ -539,12 +723,12 @@
           </p>
           <h1 class="font-headline text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl" data-i18n="hero.title">A local execution partner for brands entering Vietnam.</h1>
           <p class="mt-6 max-w-3xl text-base leading-8 text-white/82 lg:text-xl" data-i18n="hero.body">Globos Holdings connects company setup, licensing, store operations, distribution, Shopee, TikTok Shop, ERP, and POS into one practical Vietnam operating structure.</p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a class="primary-action inline-flex items-center justify-center gap-3 rounded-sm bg-brass px-8 py-4 text-sm font-extrabold text-ink hover:bg-white" href="contact.html">
+          <div class="mt-8 grid max-w-[720px] gap-3 sm:grid-cols-2">
+            <a class="primary-action inline-flex min-h-[72px] items-center justify-center gap-3 rounded-sm bg-brass px-6 py-4 text-center text-sm font-extrabold text-ink hover:bg-white" href="contact.html">
               <span data-i18n="hero.cta.primary">Start a consultation</span>
               <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
             </a>
-            <a class="secondary-action inline-flex items-center justify-center gap-3 rounded-sm bg-white/12 px-8 py-4 text-sm font-extrabold text-white ring-1 ring-white/30 hover:bg-white/18" href="#capabilities">
+            <a class="secondary-action inline-flex min-h-[72px] items-center justify-center gap-3 rounded-sm bg-white/12 px-6 py-4 text-center text-sm font-extrabold text-white ring-1 ring-white/30 hover:bg-white/18" href="#capabilities">
               <span data-i18n="hero.cta.secondary">Explore business areas</span>
               <span class="material-symbols-outlined text-lg" aria-hidden="true">grid_view</span>
             </a>
@@ -1099,7 +1283,8 @@
         'hero.primary': 'View local partnership',
         'hero.secondary': 'View business areas',
         'hero.cta.primary': 'Start a consultation',
-        'hero.cta.secondary': 'Explore business areas',
+        'hero.cta.secondary': 'View available business areas',
+        'hero.growth.value': '0 → 300 stores',
         'hero.selector.label': 'Select your current priority.',
         'hero.option.franchise': 'F&B, beauty, and IT services',
         'hero.option.franchise.body': 'Market entry, launch route, and operating standards.',
@@ -1198,7 +1383,7 @@
         'tower.title': 'Vietnam entry needs a local partner that can move on the ground.',
         'tower.body': 'Globos Holdings connects company setup, J/V structuring, licensing, store operations, distribution, Shopee, TikTok Shop, ERP, and POS into one practical local execution structure.',
         'tower.cta.primary': 'Request consultation',
-        'tower.cta.secondary': 'View business areas',
+        'tower.cta.secondary': 'View available business areas',
         'tower.visual1.label': 'Legal base',
         'tower.visual1.value': 'FDI company, J/V',
         'tower.visual2.label': 'Operating base',
@@ -1419,7 +1604,8 @@
         'hero.primary': '로컬 파트너십 보기',
         'hero.secondary': '제공 가능 영역 보기',
         'hero.cta.primary': '전문가 상담 바로가기',
-        'hero.cta.secondary': '제공 영역 보기',
+        'hero.cta.secondary': '서비스 가능 비즈니스 영역 보기',
+        'hero.growth.value': '0 → 300개 점포',
         'hero.selector.label': '현재 검토 중인 우선 과제.',
         'hero.option.franchise': 'F&B·화장품·IT 서비스',
         'hero.option.franchise.body': '시장 진입, 런칭 경로, 운영 기준.',
@@ -1518,7 +1704,7 @@
         'tower.title': '베트남 진출에는 현장에서 움직일 로컬 파트너가 필요합니다.',
         'tower.body': 'Globos Holdings는 법인 설립, J/V 구조, 인허가, 점포 운영, 유통, 쇼피·틱톡샵, ERP·POS를 하나의 현지 실행 구조로 연결합니다.',
         'tower.cta.primary': '상담 문의하기',
-        'tower.cta.secondary': '제공 영역 보기',
+        'tower.cta.secondary': '서비스 가능 비즈니스 영역 보기',
         'tower.visual1.label': '법무 기반',
         'tower.visual1.value': '외투법인, J/V',
         'tower.visual2.label': '운영 기반',
