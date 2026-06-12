@@ -140,6 +140,281 @@
       background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
       background-size: 34px 34px;
     }
+    .dark-section .section-label {
+      color: #d8b763;
+    }
+    .dark-section .section-label::before {
+      background: #d8b763;
+    }
+    .friction-stage {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(circle at 72% 28%, rgba(93, 183, 158, .16), transparent 24%),
+        radial-gradient(circle at 24% 78%, rgba(200, 164, 93, .16), transparent 26%),
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      box-shadow: 0 28px 80px rgba(0, 12, 28, .32), inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .friction-stage::before {
+      content: '';
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255,255,255,.09);
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 46px 46px;
+      opacity: .75;
+    }
+    .friction-stage::after {
+      content: '';
+      position: absolute;
+      left: 52%;
+      top: 10%;
+      width: 1px;
+      height: 80%;
+      background: linear-gradient(180deg, transparent, rgba(200,164,93,.7), transparent);
+      transform: rotate(18deg);
+    }
+    .friction-card {
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(7, 26, 49, .64);
+      padding: 22px;
+      color: #fff;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 48px rgba(0, 12, 28, .24);
+      transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease, background-color 180ms ease;
+    }
+    .friction-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(200,164,93,.48);
+      background: rgba(9, 33, 61, .78);
+    }
+    .friction-card:nth-child(1) { margin: 46px 34% 0 8%; }
+    .friction-card:nth-child(2) { margin: -8px 8% 0 42%; }
+    .friction-card:nth-child(3) { margin: 24px 36% 0 14%; }
+    .friction-card:nth-child(4) { margin: -6px 10% 0 45%; }
+    .partner-stage {
+      position: relative;
+      min-height: 590px;
+      overflow: hidden;
+      border: 1px solid #d8dde3;
+      background: #071a31;
+      box-shadow: 0 28px 70px rgba(7, 26, 49, .18), 0 2px 10px rgba(7, 26, 49, .05);
+    }
+    .partner-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .58;
+      filter: saturate(.9) contrast(1.04);
+    }
+    .partner-stage::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7,26,49,.78), rgba(7,26,49,.38) 52%, rgba(7,26,49,.72)),
+        radial-gradient(circle at 72% 22%, rgba(200,164,93,.22), transparent 25%);
+    }
+    .partner-stage-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: inherit;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      padding: clamp(24px, 4vw, 44px);
+    }
+    .partner-process {
+      display: grid;
+      gap: 14px;
+      max-width: 460px;
+    }
+    .partner-process-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(5, 19, 38, .58);
+      padding: 18px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease, background-color 180ms ease;
+    }
+    .partner-process-item:hover {
+      transform: translateX(6px);
+      border-color: rgba(200,164,93,.48);
+      background: rgba(8, 31, 58, .76);
+    }
+    .partner-process-index {
+      display: flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(200,164,93,.55);
+      color: #d8b763;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .partner-proof-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 620px;
+    }
+    .partner-proof-row > div {
+      border-top: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      padding: 16px;
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+    .system-console {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      background: #071a31;
+      box-shadow: 0 28px 70px rgba(7, 26, 49, .18), 0 2px 10px rgba(7, 26, 49, .05);
+    }
+    .system-console img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .42;
+      filter: saturate(.95) contrast(1.05);
+    }
+    .system-console::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7,26,49,.2), rgba(7,26,49,.82)),
+        radial-gradient(circle at 24% 22%, rgba(93,183,158,.16), transparent 24%);
+    }
+    .system-console-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      min-height: inherit;
+      grid-template-rows: 1fr auto;
+      gap: 24px;
+      padding: clamp(24px, 4vw, 42px);
+    }
+    .system-flow {
+      align-self: end;
+      display: grid;
+      gap: 12px;
+      max-width: 520px;
+    }
+    .system-flow-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      border-left: 2px solid rgba(200,164,93,.72);
+      background: rgba(255,255,255,.08);
+      padding: 16px 18px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+    .system-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.14);
+    }
+    .system-proof-grid > div {
+      background: rgba(7,26,49,.72);
+      padding: 18px;
+      color: #fff;
+    }
+    .feature-hero-grid {
+      min-height: calc(100dvh - var(--active-header-height));
+    }
+    .feature-visual {
+      position: relative;
+      min-height: 540px;
+      overflow: hidden;
+      border: 1px solid #d8dde3;
+      background: #071a31;
+      box-shadow: 0 30px 70px rgba(7, 26, 49, .16), 0 2px 10px rgba(7, 26, 49, .05);
+    }
+    .feature-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .82;
+      filter: saturate(.96) contrast(1.04);
+    }
+    .feature-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7,26,49,.04), rgba(7,26,49,.86)),
+        linear-gradient(90deg, rgba(7,26,49,.18), rgba(7,26,49,.46));
+    }
+    .feature-visual-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      min-height: inherit;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 26px;
+      padding: clamp(24px, 4vw, 42px);
+      color: #fff;
+    }
+    .feature-line {
+      display: grid;
+      gap: 2px;
+      max-width: 600px;
+    }
+    .feature-line-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.22);
+      padding: 16px 0;
+    }
+    .feature-line-index {
+      color: #d8b763;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .feature-proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border-top: 1px solid rgba(255,255,255,.18);
+    }
+    .feature-proof-strip > div {
+      padding-top: 16px;
+    }
+    .feature-number-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 620px;
+    }
+    .feature-number-row > div {
+      border-top: 1px solid #d8dde3;
+      padding-top: 18px;
+    }
     .locale-card[hidden] {
       display: none !important;
     }
@@ -358,6 +633,37 @@
       }
       .home-hero-bg {
         background-position: 62% center;
+      }
+      .friction-stage,
+      .partner-stage,
+      .system-console {
+        min-height: auto;
+      }
+      .friction-card:nth-child(n) {
+        margin: 0;
+      }
+      .friction-stage {
+        display: grid;
+        gap: 12px;
+        padding: 18px;
+      }
+      .partner-stage img,
+      .system-console img {
+        opacity: .34;
+      }
+      .partner-proof-row,
+      .system-proof-grid {
+        grid-template-columns: 1fr;
+      }
+      .feature-hero-grid {
+        min-height: auto;
+      }
+      .feature-visual {
+        min-height: 500px;
+      }
+      .feature-number-row,
+      .feature-proof-strip {
+        grid-template-columns: 1fr;
       }
       .org-branch::before,
       .org-branch::after {
@@ -596,48 +902,66 @@
       </div>
     </section>
 
-    <section id="why-globos" class="border-b border-line bg-white py-16">
+    <section id="why-globos" class="relative overflow-hidden border-b border-line bg-white">
       <span id="guide" class="sr-only" aria-hidden="true">Guide</span>
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
-          <div>
-            <p class="section-label mb-6" data-i18n="why.eyebrow">Why Globos</p>
-            <h2 class="font-headline text-3xl font-bold leading-tight text-ink md:text-5xl" data-i18n="why.title">The gap between plan and execution appears locally.</h2>
-            <p class="mt-6 text-base leading-8 text-slatecopy" data-i18n="why.body">Licensing, supply chains, stores, online channels, and settlement are connected decisions. A brand needs a local partner that can set priorities, align people, and manage the sequence.</p>
+      <div class="mx-auto grid feature-hero-grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-20">
+        <div>
+          <p class="section-label mb-7" data-i18n="why.eyebrow">Why Globos</p>
+          <h2 class="font-headline text-4xl font-bold leading-[1.05] text-ink sm:text-5xl md:text-7xl" data-i18n="why.title">The gap between plan and execution appears locally.</h2>
+          <p class="mt-7 max-w-2xl text-base leading-8 text-slatecopy md:text-xl" data-i18n="why.body">Licensing, supply chains, stores, online channels, and settlement are connected decisions. A brand needs a local partner that can set priorities, align people, and manage the sequence.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a class="primary-action inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white hover:bg-cobalt" href="#local-partner">
+              <span data-i18n="nav.partnership.structure">Partnership Structure</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+            </a>
+            <a class="secondary-action inline-flex items-center justify-center gap-3 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy hover:border-navy" href="contact.html">
+              <span data-i18n="tower.cta.primary">Request consultation</span>
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
+            </a>
           </div>
-          <div class="grid gap-3 md:grid-cols-2">
-            <article class="rounded-sm border border-line bg-white p-5 shadow-sm">
-              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">domain_add</span>
-              <h3 class="mt-4 font-headline text-xl font-bold text-ink" data-i18n="bottleneck.legal.title">Company and licensing</h3>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="bottleneck.legal.body">Entity, permits, registration, contracts, and local professionals moving together.</p>
-            </article>
-            <article class="rounded-sm border border-line bg-white p-5 shadow-sm">
-              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">storefront</span>
-              <h3 class="mt-4 font-headline text-xl font-bold text-ink" data-i18n="bottleneck.store.title">Store launch and operation</h3>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="bottleneck.store.body">Location, staff, SOP, POS, delivery, reporting, and field control after opening.</p>
-            </article>
-            <article class="rounded-sm border border-line bg-white p-5 shadow-sm">
-              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">local_shipping</span>
-              <h3 class="mt-4 font-headline text-xl font-bold text-ink" data-i18n="bottleneck.distribution.title">Distribution and logistics</h3>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="bottleneck.distribution.body">Importer, customs, warehouses, routes, distributors, ecommerce, and retail channels.</p>
-            </article>
-            <article class="rounded-sm border border-line bg-white p-5 shadow-sm">
-              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">monitoring</span>
-              <h3 class="mt-4 font-headline text-xl font-bold text-ink" data-i18n="bottleneck.system.title">Systems and numbers</h3>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="bottleneck.system.body">Sales, net profit, inventory, labor, orders, and settlement visible in one routine.</p>
-            </article>
+        </div>
+        <div class="feature-visual">
+          <img src="assets/images/generated/legal-advisory.webp" alt="Vietnam legal and operating review" />
+          <div class="feature-visual-content">
+            <div>
+              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="feature.gap.label">Execution Gap</p>
+              <h3 class="mt-3 max-w-xl font-headline text-3xl font-bold leading-tight md:text-5xl" data-i18n="home.panel.partner.title">Plan-to-execution gap control.</h3>
+            </div>
+            <div class="feature-line">
+              <article class="feature-line-item">
+                <span class="feature-line-index">01</span>
+                <div>
+                  <h4 class="font-headline text-xl font-bold" data-i18n="bottleneck.legal.title">Company and licensing</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="bottleneck.legal.body">Entity, permits, registration, contracts, and local professionals moving together.</p>
+                </div>
+              </article>
+              <article class="feature-line-item">
+                <span class="feature-line-index">02</span>
+                <div>
+                  <h4 class="font-headline text-xl font-bold" data-i18n="bottleneck.store.title">Store launch and operation</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="bottleneck.store.body">Location, staff, SOP, POS, delivery, reporting, and field control after opening.</p>
+                </div>
+              </article>
+              <article class="feature-line-item">
+                <span class="feature-line-index">03</span>
+                <div>
+                  <h4 class="font-headline text-xl font-bold" data-i18n="bottleneck.system.title">Systems and numbers</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="bottleneck.system.body">Sales, net profit, inventory, labor, orders, and settlement visible in one routine.</p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="local-partner" class="relative overflow-hidden border-y border-line bg-white">
+    <section id="local-partner" class="relative overflow-hidden border-y border-line bg-fog">
       <span id="control-tower" class="sr-only" aria-hidden="true">Local partner</span>
-      <div class="mx-auto grid min-h-[calc(100vh_-_var(--active-header-height))] max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-20">
+      <div class="mx-auto grid feature-hero-grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-20">
         <div>
           <p class="section-label mb-7" data-i18n="tower.eyebrow">Local partnership</p>
-          <h2 class="font-headline text-4xl font-bold leading-[1.06] text-ink sm:text-5xl md:text-6xl" data-i18n="tower.title">Vietnam entry needs a local partner that can move on the ground.</h2>
-          <p class="mt-7 max-w-2xl text-base leading-8 text-slatecopy md:text-lg" data-i18n="tower.body">Globos Holdings connects company setup, J/V structuring, licensing, store operations, distribution, Shopee, TikTok Shop, ERP, and POS into one practical local execution structure.</p>
+          <h2 class="font-headline text-4xl font-bold leading-[1.06] text-ink sm:text-5xl md:text-7xl" data-i18n="tower.title">Vietnam entry needs a local partner that can move on the ground.</h2>
+          <p class="mt-7 max-w-2xl text-base leading-8 text-slatecopy md:text-xl" data-i18n="tower.body">Globos Holdings connects company setup, J/V structuring, licensing, store operations, distribution, Shopee, TikTok Shop, ERP, and POS into one practical local execution structure.</p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row">
             <a class="primary-action inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white hover:bg-cobalt" href="contact.html">
               <span data-i18n="tower.cta.primary">Request consultation</span>
@@ -648,21 +972,70 @@
               <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
             </a>
           </div>
+          <div class="feature-number-row mt-10">
+            <div>
+              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.metric1.label">Current</p>
+              <p class="mt-2 font-headline text-2xl font-bold text-ink">8</p>
+              <p class="mt-1 text-sm font-bold text-slatecopy" data-i18n="tower.metric1.body">stores in operation</p>
+            </div>
+            <div>
+              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.metric2.label">Korea collaboration</p>
+              <p class="mt-2 font-headline text-2xl font-bold text-ink">2</p>
+              <p class="mt-1 text-sm font-bold text-slatecopy" data-i18n="tower.metric2.body">Korea projects</p>
+            </div>
+            <div>
+              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.metric3.label">2030</p>
+              <p class="mt-2 font-headline text-2xl font-bold text-ink">300</p>
+              <p class="mt-1 text-sm font-bold text-slatecopy" data-i18n="tower.metric3.body">store target</p>
+            </div>
+          </div>
         </div>
-        <div class="relative overflow-hidden rounded-sm border border-line bg-[#071a31] p-4 shadow-firm">
-          <img class="aspect-[4/3] w-full rounded-sm object-cover" src="assets/images/generated/it-market-entry.webp" alt="Vietnam local execution dashboard" />
-          <div class="mt-3 grid gap-3 sm:absolute sm:inset-x-4 sm:bottom-4 sm:mt-0 sm:grid-cols-3">
-            <div class="rounded-sm bg-white/95 p-4 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.visual1.label">Legal base</p>
-              <p class="mt-1 font-headline text-xl font-bold" data-i18n="tower.visual1.value">FDI company, J/V</p>
+        <div class="feature-visual">
+          <img src="assets/images/generated/it-market-entry.webp" alt="Vietnam local execution dashboard" />
+          <div class="feature-visual-content">
+            <div>
+              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="tower.matrix.corner">Local execution</p>
+              <h3 class="mt-3 max-w-xl font-headline text-3xl font-bold leading-tight text-white md:text-5xl" data-i18n="home.panel.partner.title">Plan-to-execution gap control.</h3>
             </div>
-            <div class="rounded-sm bg-white/95 p-4 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.visual2.label">Operating base</p>
-              <p class="mt-1 font-headline text-xl font-bold" data-i18n="tower.visual2.value">8 stores</p>
+            <div class="feature-line">
+              <article class="feature-line-item">
+                <span class="feature-line-index">01</span>
+                <div>
+                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="tower.step1.label">01 / Setup</p>
+                  <h4 class="mt-2 font-headline text-xl font-bold" data-i18n="tower.step1.title">Set the base</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="tower.step1.body">FDI company, J/V, entity formation, licensing, product registration, customs, and contracts aligned before launch.</p>
+                </div>
+              </article>
+              <article class="feature-line-item">
+                <span class="feature-line-index">02</span>
+                <div>
+                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="tower.step2.label">02 / Operate</p>
+                  <h4 class="mt-2 font-headline text-xl font-bold" data-i18n="tower.step2.title">Operate on the ground</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="tower.step2.body">Stores, suppliers, staffing, SOP, POS, delivery, ecommerce, and reporting handled as one routine.</p>
+                </div>
+              </article>
+              <article class="feature-line-item">
+                <span class="feature-line-index">03</span>
+                <div>
+                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="tower.step3.label">03 / Scale</p>
+                  <h4 class="mt-2 font-headline text-xl font-bold" data-i18n="tower.step3.title">Scale with numbers</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="tower.step3.body">ERP analytics, partner pipeline, store performance, and a clear expansion roadmap.</p>
+                </div>
+              </article>
             </div>
-            <div class="rounded-sm bg-white/95 p-4 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.visual3.label">System base</p>
-              <p class="mt-1 font-headline text-xl font-bold" data-i18n="tower.visual3.value">ERP · POS</p>
+            <div class="feature-proof-strip">
+              <div>
+                <p class="text-xs font-extrabold uppercase text-white/45" data-i18n="tower.visual1.label">Legal base</p>
+                <p class="mt-2 font-headline text-lg font-bold" data-i18n="tower.visual1.value">FDI company, J/V</p>
+              </div>
+              <div>
+                <p class="text-xs font-extrabold uppercase text-white/45" data-i18n="tower.visual2.label">Operating base</p>
+                <p class="mt-2 font-headline text-lg font-bold" data-i18n="tower.visual2.value">8 stores</p>
+              </div>
+              <div>
+                <p class="text-xs font-extrabold uppercase text-white/45" data-i18n="tower.visual3.label">System base</p>
+                <p class="mt-2 font-headline text-lg font-bold" data-i18n="tower.visual3.value">ERP · POS</p>
+              </div>
             </div>
           </div>
         </div>
@@ -714,50 +1087,68 @@
       </div>
     </section>
 
-    <section id="operating-system" class="border-y border-line bg-fog py-16">
+    <section id="operating-system" class="relative overflow-hidden border-y border-line bg-white">
       <span id="platform" class="sr-only" aria-hidden="true">Operating infrastructure</span>
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p class="section-label mb-6" data-i18n="system.eyebrow">Operating system</p>
-            <h2 class="font-headline text-3xl font-bold leading-tight text-ink md:text-5xl" data-i18n="system.title">Globos Holdings manages business through operating infrastructure.</h2>
-            <p class="mt-6 text-base leading-8 text-slatecopy" data-i18n="system.body">ERP, POS, delivery systems, and reporting tools were built around actual store operations. The value is a local system that can launch, operate, measure, and expand the business.</p>
-          </div>
-          <div class="rounded-sm border border-line bg-white p-5 shadow-firm">
-            <div class="grid gap-3 md:grid-cols-3">
-              <div class="rounded-sm border border-line bg-fog p-4">
-                <p class="text-xs font-extrabold uppercase text-cobalt">01</p>
-                <h3 class="mt-3 font-headline text-xl font-bold text-ink" data-i18n="system.step1.title">Brand entry design</h3>
-                <p class="mt-2 text-sm leading-7 text-slatecopy" data-i18n="system.step1.body">Market fit, legal route, operating model.</p>
-              </div>
-              <div class="rounded-sm border border-line bg-fog p-4">
-                <p class="text-xs font-extrabold uppercase text-cobalt">02</p>
-                <h3 class="mt-3 font-headline text-xl font-bold text-ink" data-i18n="system.step2.title">Local execution</h3>
-                <p class="mt-2 text-sm leading-7 text-slatecopy" data-i18n="system.step2.body">Stores, suppliers, partners, field routines.</p>
-              </div>
-              <div class="rounded-sm border border-line bg-fog p-4">
-                <p class="text-xs font-extrabold uppercase text-cobalt">03</p>
-                <h3 class="mt-3 font-headline text-xl font-bold text-ink" data-i18n="system.step3.title">System control</h3>
-                <p class="mt-2 text-sm leading-7 text-slatecopy" data-i18n="system.step3.body">ERP, POS, delivery app, dashboards.</p>
-              </div>
+      <div class="mx-auto grid feature-hero-grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-20">
+        <div class="feature-visual order-2 lg:order-none">
+          <img src="assets/images/generated/it-systems-operations.webp" alt="Globos operating infrastructure dashboard" />
+          <div class="feature-visual-content">
+            <div>
+              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="system.eyebrow">Operating system</p>
+              <h3 class="mt-3 max-w-xl font-headline text-3xl font-bold leading-tight md:text-5xl" data-i18n="visual.title">Revenue, margins, store health.</h3>
             </div>
-            <div class="mt-6 grid gap-3 md:grid-cols-4">
-              <div class="rounded-sm bg-navy p-5 text-white">
-                <p class="text-xs uppercase text-white/55" data-i18n="system.proof1.label">Operating stores</p>
-                <p class="mt-2 font-headline text-4xl font-bold">8</p>
+            <div class="feature-line">
+              <article class="feature-line-item">
+                <span class="feature-line-index">01</span>
+                <div>
+                  <h4 class="font-headline text-xl font-bold" data-i18n="system.step1.title">Brand entry design</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="system.step1.body">Market fit, legal route, operating model.</p>
+                </div>
+              </article>
+              <article class="feature-line-item">
+                <span class="feature-line-index">02</span>
+                <div>
+                  <h4 class="font-headline text-xl font-bold" data-i18n="system.step2.title">Local execution</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="system.step2.body">Stores, suppliers, partners, field routines.</p>
+                </div>
+              </article>
+              <article class="feature-line-item">
+                <span class="feature-line-index">03</span>
+                <div>
+                  <h4 class="font-headline text-xl font-bold" data-i18n="system.step3.title">System control</h4>
+                  <p class="mt-2 text-sm leading-7 text-white/62" data-i18n="system.step3.body">ERP, POS, delivery app, dashboards.</p>
+                </div>
+              </article>
+            </div>
+            <div class="feature-proof-strip">
+              <div>
+                <p class="text-xs uppercase text-white/45" data-i18n="system.proof1.label">Operating stores</p>
+                <p class="mt-2 font-headline text-2xl font-bold">8</p>
               </div>
-              <div class="rounded-sm bg-cobalt p-5 text-white">
-                <p class="text-xs uppercase text-white/55" data-i18n="system.proof2.label">Korea projects</p>
-                <p class="mt-2 font-headline text-4xl font-bold">2</p>
-              </div>
-              <div class="rounded-sm bg-mint p-5 text-ink">
-                <p class="text-xs uppercase text-ink/55" data-i18n="system.proof3.label">System base</p>
+              <div>
+                <p class="text-xs uppercase text-white/45" data-i18n="system.proof3.label">System base</p>
                 <p class="mt-2 font-headline text-2xl font-bold">ERP POS</p>
               </div>
-              <div class="rounded-sm bg-brass p-5 text-ink">
-                <p class="text-xs uppercase text-ink/55" data-i18n="system.proof4.label">2030 vision</p>
-                <p class="mt-2 font-headline text-4xl font-bold">300</p>
+              <div>
+                <p class="text-xs uppercase text-white/45" data-i18n="system.proof4.label">2030 vision</p>
+                <p class="mt-2 font-headline text-2xl font-bold">300</p>
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-none lg:pl-4">
+          <p class="section-label mb-7" data-i18n="system.eyebrow">Operating system</p>
+          <h2 class="font-headline text-4xl font-bold leading-[1.06] text-ink sm:text-5xl md:text-7xl" data-i18n="system.title">Globos Holdings manages business through operating infrastructure.</h2>
+          <p class="mt-7 max-w-2xl text-base leading-8 text-slatecopy md:text-xl" data-i18n="system.body">ERP, POS, delivery systems, and reporting tools were built around actual store operations. The value is a local system that can launch, operate, measure, and expand the business.</p>
+          <div class="mt-9 grid gap-4">
+            <div class="border-t border-line pt-5">
+              <p class="font-headline text-xl font-bold text-ink" data-i18n="visual.erp">Unified revenue and inventory tracking.</p>
+            </div>
+            <div class="border-t border-line pt-5">
+              <p class="font-headline text-xl font-bold text-ink" data-i18n="visual.pos">Standardized store workflows.</p>
+            </div>
+            <div class="border-t border-line pt-5">
+              <p class="font-headline text-xl font-bold text-ink" data-i18n="visual.delivery">End-to-end order and settlement.</p>
             </div>
           </div>
         </div>
@@ -1141,6 +1532,7 @@
         'home.panel.about.title': 'Three co-founders, one operating organization.',
         'home.panel.about.body': 'CEO Andre Ahn, CGO Alex Jang, and COO Daniel Lee lead strategy, growth, and field operations with dedicated brand, consulting, marketing, finance, HR, and legal support teams.',
         'home.panel.partner.title': 'Plan-to-execution gap control.',
+        'feature.gap.label': 'Execution Gap',
         'home.panel.business.title': 'Choose the business area your company needs now.',
         'home.panel.proof.title': 'Founded in 2025. 8 operating stores. 2 Korea collaboration projects. 2030 target of 300 stores.',
         'home.panel.proof.body': 'The operating base includes in-house ERP, SaaS POS, delivery app readiness, store routines, and a local partner network.',
@@ -1461,6 +1853,7 @@
         'home.panel.about.title': '세 명의 공동창업자와 하나의 실행 조직.',
         'home.panel.about.body': 'CEO 안드레 안, CGO 알렉스 장, COO 다니엘 리가 전략, 성장, 현장 운영을 맡고 브랜드 운영, 컨설팅, 마케팅, 재무, 인사, 법무 지원팀이 실행을 받칩니다.',
         'home.panel.partner.title': '계획과 실행의 Gap 관리.',
+        'feature.gap.label': '계획·실행 Gap',
         'home.panel.business.title': '지금 필요한 비즈니스 영역을 선택해 주십시오.',
         'home.panel.proof.title': '2025년 설립. 8개 운영 점포. 한국 협업 프로젝트 2개. 2030년 300개 점포 목표.',
         'home.panel.proof.body': '자체 ERP, SaaS POS, 배달앱 기반, 점포 운영 루틴, 현지 파트너 네트워크를 운영 기반으로 보유하고 있습니다.',
