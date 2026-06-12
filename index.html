@@ -643,7 +643,7 @@
               <div class="rounded-sm border border-line bg-white p-4">
                 <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.step1.label">01 / Setup</p>
                 <h3 class="mt-3 font-headline text-lg font-bold text-ink" data-i18n="tower.step1.title">Set the base</h3>
-                <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="tower.step1.body">Entity formation, licensing, product registration, customs, and contracts aligned before launch.</p>
+                <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="tower.step1.body">FDI company, J/V, entity formation, licensing, product registration, customs, and contracts aligned before launch.</p>
               </div>
               <div class="rounded-sm border border-line bg-white p-4">
                 <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="tower.step2.label">02 / Operate</p>
@@ -666,7 +666,10 @@
               <div class="bg-[#071a31] p-4 text-center font-bold text-white" data-i18n="tower.matrix.operate">Operate</div>
               <div class="bg-[#071a31] p-4 text-center font-bold text-white" data-i18n="tower.matrix.scale">Scale</div>
 
-              <div class="bg-white p-4 font-bold text-ink" data-i18n="tower.matrix.legal">Legal and licensing</div>
+              <div class="bg-white p-4">
+                <p class="font-bold text-ink" data-i18n="tower.matrix.legal">Legal and licensing</p>
+                <p class="mt-1 text-xs font-bold text-slatecopy" data-i18n="tower.matrix.legalSub">FDI company, J/V</p>
+              </div>
               <div class="bg-white p-4 text-center"><span class="inline-flex items-center gap-1 rounded-sm bg-mint/10 px-3 py-2 text-xs font-extrabold text-mint"><span class="material-symbols-outlined text-base" aria-hidden="true">task_alt</span><span data-i18n="tower.matrix.ready">Ready</span></span></div>
               <div class="bg-white p-4 text-center"><span class="inline-flex items-center gap-1 rounded-sm bg-brass/12 px-3 py-2 text-xs font-extrabold text-brass"><span class="material-symbols-outlined text-base" aria-hidden="true">link</span><span data-i18n="tower.matrix.linked">Linked</span></span></div>
               <div class="bg-white p-4 text-center"><span class="inline-flex items-center gap-1 rounded-sm bg-fog px-3 py-2 text-xs font-extrabold text-slatecopy"><span class="material-symbols-outlined text-base" aria-hidden="true">schedule</span><span data-i18n="tower.matrix.next">Next</span></span></div>
@@ -885,7 +888,7 @@
           <div>
           <p class="section-label mb-6" data-i18n="leadership.eyebrow">Leadership and organization</p>
             <h2 class="font-headline text-3xl font-bold leading-tight text-ink md:text-5xl" data-i18n="leadership.title">Leadership and organization built around execution.</h2>
-            <p class="mt-6 text-base leading-8 text-slatecopy" data-i18n="leadership.body">The management team brings together corporate food business, franchise development, store operations, and Vietnam execution experience.</p>
+            <p class="mt-6 text-base leading-8 text-slatecopy" data-i18n="leadership.body">The leadership team aligns decision-making, execution priorities, and operating accountability across the business pipeline.</p>
           </div>
           <div class="grid gap-4 sm:grid-cols-2">
             <span id="mission-vision" class="sr-only" aria-hidden="true">Mission and vision</span>
@@ -985,9 +988,15 @@
             </div>
             <p class="max-w-xl text-sm leading-7 text-white/62" data-i18n="org.map.body">The chart separates decision, operating teams, client service, growth channels, and control functions.</p>
           </div>
-          <div class="mx-auto max-w-2xl rounded-sm border border-brass/40 bg-brass px-5 py-4 text-center text-ink">
-            <p class="text-xs font-extrabold uppercase text-ink/55" data-i18n="org.council.label">Executive council</p>
-            <p class="mt-2 font-headline text-xl font-bold" data-i18n="org.council.title">Mission, capital allocation, partner approval, expansion priority.</p>
+          <div class="mx-auto grid max-w-4xl gap-4 md:grid-cols-[1fr_0.72fr]">
+            <div class="rounded-sm border border-brass/40 bg-brass px-5 py-4 text-center text-ink">
+              <p class="text-xs font-extrabold uppercase text-ink/55" data-i18n="org.council.label">Executive council</p>
+              <p class="mt-2 font-headline text-xl font-bold" data-i18n="org.council.title">Mission, capital allocation, partner approval, expansion priority.</p>
+            </div>
+            <div class="rounded-sm border border-dashed border-brass/70 px-5 py-4 text-center text-brass">
+              <p class="text-xs font-extrabold uppercase text-brass/75" data-i18n="org.investor.label">Investors</p>
+              <p class="mt-2 font-headline text-lg font-bold text-white" data-i18n="org.investor.title">Strategic capital and expansion partners.</p>
+            </div>
           </div>
 
           <div class="org-branch mt-10 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
@@ -999,7 +1008,7 @@
             <article class="rounded-sm bg-white p-5 text-ink">
               <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="org.team2.label">02 / Legal setup</p>
               <h4 class="mt-3 font-headline text-xl font-bold" data-i18n="org.team2.title">Legal, Licensing & Administration</h4>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="org.team2.body">Entity setup, permits, product registration, contracts, compliance, accounting, and local administration.</p>
+              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="org.team2.body">FDI company, J/V, entity setup, permits, product registration, contracts, compliance, accounting, and local administration.</p>
             </article>
             <article class="rounded-sm bg-white p-5 text-ink">
               <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="org.team3.label">03 / Field operations</p>
@@ -1020,19 +1029,16 @@
 
           <div class="mt-7 grid gap-4 lg:grid-cols-3">
             <article class="org-node rounded-sm bg-white/[0.08] p-6">
-              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="leaders.andre.role">CEO / Co-Founder & Co-President</p>
               <h3 class="mt-3 font-headline text-2xl font-bold text-white">ANDRE AHN</h3>
-              <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="leaders.andre.body">15+ years at a Korean food enterprise, 4 years as a Vietnam expatriate leader, and Vietnam business execution experience. Leads governance, partner decisions, and market-entry direction.</p>
+              <p class="mt-3 text-sm font-extrabold uppercase text-brass" data-i18n="leaders.andre.role">CEO / Co-Founder & Co-President</p>
             </article>
             <article class="org-node rounded-sm bg-white/[0.08] p-6">
-              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="leaders.alex.role">CGO / Co-Founder & Co-President</p>
               <h3 class="mt-3 font-headline text-2xl font-bold text-white">ALEX JANG</h3>
-              <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="leaders.alex.body">15+ years in Korean franchise companies, brand development across large store networks, and 10 Vietnam store launches. Leads growth and expansion pipeline.</p>
+              <p class="mt-3 text-sm font-extrabold uppercase text-brass" data-i18n="leaders.alex.role">CGO / Co-Founder & Co-President</p>
             </article>
             <article class="org-node rounded-sm bg-white/[0.08] p-6">
-              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="leaders.daniel.role">COO / Co-Founder & Co-President</p>
               <h3 class="mt-3 font-headline text-2xl font-bold text-white">DANIEL LEE</h3>
-              <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="leaders.daniel.body">15+ years in Korean franchise companies, franchise development, operations, and standardization across approximately 100 stores. Leads field operations.</p>
+              <p class="mt-3 text-sm font-extrabold uppercase text-brass" data-i18n="leaders.daniel.role">COO / Co-Founder & Co-President</p>
             </article>
           </div>
         </div>
@@ -1241,7 +1247,7 @@
         'tower.body': 'Globos Holdings connects entity setup, licensing, stores, distribution, Shopee, TikTok Shop, ERP, POS, and local partners into one practical execution route.',
         'tower.step1.label': '01 / Setup',
         'tower.step1.title': 'Set the base',
-        'tower.step1.body': 'Entity formation, licensing, product registration, customs, and contracts aligned before launch.',
+        'tower.step1.body': 'FDI company, J/V, entity formation, licensing, product registration, customs, and contracts aligned before launch.',
         'tower.step2.label': '02 / Operate',
         'tower.step2.title': 'Operate on the ground',
         'tower.step2.body': 'Stores, suppliers, staffing, SOP, POS, delivery, ecommerce, and reporting handled as one routine.',
@@ -1253,6 +1259,7 @@
         'tower.matrix.operate': 'Operate',
         'tower.matrix.scale': 'Scale',
         'tower.matrix.legal': 'Legal & licensing',
+        'tower.matrix.legalSub': 'FDI company, J/V',
         'tower.matrix.store': 'Store operations',
         'tower.matrix.channel': 'Sales channels',
         'tower.matrix.system': 'Systems & data',
@@ -1341,7 +1348,7 @@
         'proof.card4.body': '60 cumulative Vietnam-entry collaborations.',
         'leadership.eyebrow': 'Leadership & organization',
         'leadership.title': 'Leadership and organization built around execution.',
-        'leadership.body': 'The management team brings together corporate food business, franchise development, store operations, and Vietnam execution experience.',
+        'leadership.body': 'The leadership team aligns decision-making, execution priorities, and operating accountability across the business pipeline.',
         'mission.label': 'Mission',
         'mission.title': 'Turn Vietnam market entry into a functioning business—not a consulting deliverable.',
         'mission.body': 'We integrate every element of market entry—legal, commercial, operational, technological—into one cohesive local operation.',
@@ -1349,15 +1356,14 @@
         'vision.title': 'A 300-store Vietnam operating network by 2030.',
         'vision.body': 'From 8 stores and 2 Korea collaboration projects today to a Vietnam operating network of 300 stores and 60 cumulative Vietnam-entry collaborations.',
         'leaders.andre.role': 'CEO / Co-Founder & Co-President',
-        'leaders.andre.body': '15+ years in Korean food industry leadership. 4 years as Vietnam country head. Oversees governance, strategic partnerships, and market-entry architecture.',
         'leaders.alex.role': 'CGO / Co-Founder & Co-President',
-        'leaders.alex.body': '15+ years in Korean franchise operations. Led brand development across large-scale store networks. 10 Vietnam store launches. Drives growth strategy and expansion.',
         'leaders.daniel.role': 'COO / Co-Founder & Co-President',
-        'leaders.daniel.body': '15+ years in Korean franchise operations. Standardized processes across ~100 stores. Leads field operations, quality systems, and operational scaling.',
         'org.title': 'Operating pipeline organization',
         'org.body': 'A pipeline organization that connects entry design, legal setup, field operations, commerce, technology, finance, and HR.',
         'org.council.label': 'Executive council',
         'org.council.title': 'Strategy, capital allocation, partner approvals, risk control, and expansion priorities.',
+        'org.investor.label': 'Investors',
+        'org.investor.title': 'Strategic capital and expansion partners.',
         'org.map.label': 'Organization',
         'org.map.title': 'Organization aligned to the business pipeline.',
         'org.map.body': 'The structure follows the operating sequence: market-entry design, legal setup, field execution, sales channels, and platform control.',
@@ -1366,7 +1372,7 @@
         'org.team1.body': 'Entry strategy, J/V structure, partner search, brand pipeline, and commercial model design.',
         'org.team2.label': '02 / Legal setup',
         'org.team2.title': 'Legal, Licensing & Administration',
-        'org.team2.body': 'Entity setup, permits, product registration, contracts, compliance, accounting, and local administration.',
+        'org.team2.body': 'FDI company, J/V, entity setup, permits, product registration, contracts, compliance, accounting, and local administration.',
         'org.team3.label': '03 / Field operations',
         'org.team3.title': 'Brand & Store Operations',
         'org.team3.body': 'Direct stores, franchise operations, SOP, staffing, training, quality control, suppliers, and delivery routines.',
@@ -1554,7 +1560,7 @@
         'tower.body': 'Globos Holdings는 법인, 인허가, 점포, 유통, 쇼피·틱톡샵, ERP·POS를 하나의 실행 경로로 연결합니다.',
         'tower.step1.label': '01 / 기반 구축',
         'tower.step1.title': '진입 기반 정리',
-        'tower.step1.body': '법인 설립, 인허가, 제품 등록, 통관, 계약 구조를 사업 시작 전에 정리.',
+        'tower.step1.body': '외투법인, J/V, 법인 설립, 인허가, 제품 등록, 통관, 계약 구조를 사업 시작 전에 정리.',
         'tower.step2.label': '02 / 현장 운영',
         'tower.step2.title': '현장 운영 실행',
         'tower.step2.body': '점포 관리, 공급처 조율, 인력, SOP, POS, 배달, 리포팅을 한 흐름으로 운영.',
@@ -1566,6 +1572,7 @@
         'tower.matrix.operate': '운영',
         'tower.matrix.scale': '확장',
         'tower.matrix.legal': '법무·인허가',
+        'tower.matrix.legalSub': '외투법인, J/V',
         'tower.matrix.store': '점포 운영',
         'tower.matrix.channel': '판매 채널',
         'tower.matrix.system': '시스템·데이터',
@@ -1654,7 +1661,7 @@
         'proof.card4.body': '베트남 진출 협업 누적 60개.',
         'leadership.eyebrow': '회사소개',
         'leadership.title': '경영진과 조직은 실행 중심으로 구성되어 있습니다.',
-        'leadership.body': '경영진은 한국 식품 대기업, 프랜차이즈 본사, 베트남 현지 사업 운영 경험을 바탕으로 시장 진입과 확장을 총괄합니다.',
+        'leadership.body': '경영진은 사업 파이프라인 전반의 의사결정, 실행 우선순위, 운영 책임을 조율합니다.',
         'mission.label': 'Mission',
         'mission.title': '베트남 진출을 실제 운영 가능한 사업으로 전환.',
         'mission.body': '법무, 상업, 운영, 기술을 현지 실행 구조 안에서 연결합니다.',
@@ -1662,15 +1669,14 @@
         'vision.title': '2030년 베트남 300개 점포 운영망 구축.',
         'vision.body': '현재 8개 점포와 한국 협업 프로젝트 2개를 기반으로, 300개 점포와 베트남 진출 협업 누적 60개 규모의 현지 운영망을 목표로 합니다.',
         'leaders.andre.role': 'CEO / Co-Founder & Co-President',
-        'leaders.andre.body': '한국 식품 대기업 15년 이상 근무. 베트남 주재원 4년. 거버넌스, 전략적 파트너십, 진출 아키텍처 총괄.',
         'leaders.alex.role': 'CGO / Co-Founder & Co-President',
-        'leaders.alex.body': '한국 프랜차이즈 업계 15년 이상 근무. 대규모 점포 네트워크 브랜드 개발. 베트남 10개 점포 론칭. 성장 전략과 확장 총괄.',
         'leaders.daniel.role': 'COO / Co-Founder & Co-President',
-        'leaders.daniel.body': '한국 프랜차이즈 업계 15년 이상 근무. 약 100개 점포 규모 운영 표준화 경험. 현장 운영, 품질 시스템, 확장 오퍼레이션 총괄.',
         'org.title': '사업 파이프라인 조직',
         'org.body': '시장 진입 설계, 법무·인허가, 현장 운영, 커머스, IT·데이터, 재무, HR까지 연결되는 파이프라인형 조직.',
         'org.council.label': '경영 위원회',
         'org.council.title': '전략 방향, 투자 배분, 파트너 승인, 리스크 통제, 확장 우선순위 결정.',
+        'org.investor.label': '투자자',
+        'org.investor.title': '전략 자본과 확장 파트너.',
         'org.map.label': '조직 구조',
         'org.map.title': '사업 파이프라인에 맞춘 조직 구조.',
         'org.map.body': '시장 진입 설계, 법무·인허가, 현장 실행, 판매 채널, 플랫폼 통제 순서로 조직을 배치합니다.',
@@ -1679,7 +1685,7 @@
         'org.team1.body': '진출 전략, J/V 구조, 파트너 발굴, 브랜드 파이프라인, 사업 모델 설계.',
         'org.team2.label': '02 / 법무 기반',
         'org.team2.title': '법무·인허가·행정 본부',
-        'org.team2.body': '법인 설립, 인허가, 제품 등록, 계약, 컴플라이언스, 회계, 현지 행정 관리.',
+        'org.team2.body': '외투법인, J/V, 법인 설립, 인허가, 제품 등록, 계약, 컴플라이언스, 회계, 현지 행정 관리.',
         'org.team3.label': '03 / 현장 운영',
         'org.team3.title': '브랜드·점포 운영 본부',
         'org.team3.body': '직영점, 프랜차이즈 운영, SOP, 인력, 교육, 품질 관리, 공급처, 배달 운영.',
