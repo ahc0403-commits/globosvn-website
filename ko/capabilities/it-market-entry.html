@@ -40,6 +40,13 @@
     .section-label::before { content: ''; width: 34px; height: 2px; background: #c8a45d; }
     .hover-lift { transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease; }
     .hover-lift:hover, .hover-lift:focus-visible { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(7, 26, 49, .14), 0 2px 10px rgba(7, 26, 49, .05); outline: none; }
+    .nav-group { position: relative; }
+    .nav-trigger { display: inline-flex; align-items: center; border-radius: 0.125rem; padding: 0.625rem 0.5rem; color: #5c6672; transition: color 160ms ease, background-color 160ms ease; }
+    .nav-trigger:hover, .nav-trigger:focus-visible, .nav-group:focus-within .nav-trigger { color: #002147; background: #f4f6f7; outline: none; }
+    .nav-panel { position: absolute; left: 0; top: calc(100% + 0.5rem); z-index: 60; min-width: 230px; border: 1px solid #d8dde3; background: rgba(255,255,255,.98); padding: .5rem; box-shadow: 0 18px 42px rgba(7, 26, 49, .12); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease; }
+    .nav-group:hover .nav-panel, .nav-group:focus-within .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-panel a { display: block; border-radius: 0.125rem; padding: .75rem .85rem; font-size: .8125rem; font-weight: 700; color: #5c6672; white-space: nowrap; }
+    .nav-panel a:hover, .nav-panel a:focus-visible { color: #002147; background: #f4f6f7; outline: none; }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"베트남 시장 진출","provider":{"@type":"Organization","name":"Globos Holdings","url":"https://www.globos.world"},"areaServed":["Vietnam","South Korea"],"serviceType":"Vietnam Market Entry","description":"베트남 시장 진출, 법인 설립, 인허가, 유통, 운영, 마케팅, 시스템까지 한 번에 정리하는 실행 경로.","url":"https://www.globos.world/ko/capabilities/it-market-entry"}</script>
 </head>
@@ -47,16 +54,52 @@
   <header class="fixed left-0 top-0 z-50 w-full border-b border-line/80 bg-white/95 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
       <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="../../index.html?lang=ko" aria-label="Globos Holdings home">Globos Holdings</a>
-      <div class="hidden items-center gap-5 text-sm font-bold text-slatecopy lg:flex">
-        <a class="hover:text-navy" href="../../index.html?lang=ko">홈</a>
-        <a class="hover:text-navy" href="../../index.html?lang=ko#local-partner">로컬 파트너</a>
-        <a class="text-navy" href="../../index.html?lang=ko#capabilities">실행 영역</a>
-        <a class="hover:text-navy" href="../../site-map.html">사이트맵</a>
-        <a class="hover:text-navy" href="../../contact.html">문의</a>
+      <div class="hidden items-center gap-1 text-sm font-bold text-slatecopy lg:flex">
+        <div class="nav-group">
+          <a class="nav-trigger" href="../../index.html?lang=ko#leadership">회사소개</a>
+          <div class="nav-panel" aria-label="회사소개 submenu">
+            <a href="../../index.html?lang=ko#leadership">경영진</a>
+            <a href="../../index.html?lang=ko#mission-vision">비전&amp;미션</a>
+            <a href="../../index.html?lang=ko#organization">조직도</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger" href="../../index.html?lang=ko#local-partner">로컬 파트너십 안내</a>
+          <div class="nav-panel" aria-label="로컬 파트너십 안내 submenu">
+            <a href="../../index.html?lang=ko#local-partner">파트너십 구조</a>
+            <a href="../../index.html?lang=ko#why-globos">현지 실행 필요성</a>
+            <a href="../../index.html?lang=ko#operating-system">운영 인프라</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger text-navy" href="../../index.html?lang=ko#capabilities">제공가능 비즈니스 영역</a>
+          <div class="nav-panel" aria-label="제공가능 비즈니스 영역 submenu">
+            <a href="../../ko/capabilities/franchise-expansion.html">프랜차이즈·F&amp;B</a>
+            <a href="../../ko/capabilities/legal-advisory.html">법인·인허가</a>
+            <a href="../../ko/capabilities/marketing-services.html">쇼피·틱톡샵 마케팅</a>
+            <a href="../../ko/capabilities/vietnam-sourcing.html">유통·소싱</a>
+            <a href="../../ko/capabilities/it-systems-development.html">ERP·POS·배달</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger" href="../../index.html?lang=ko#proof">운영 실적</a>
+          <div class="nav-panel" aria-label="운영 실적 submenu">
+            <a href="../../index.html?lang=ko#proof">운영 현황</a>
+            <a href="../../index.html?lang=ko#execution-flow">실행 프로세스</a>
+            <a href="../../index.html?lang=ko#seo-landings">베트남 진출 가이드</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger" href="../../contact.html">문의</a>
+          <div class="nav-panel" aria-label="문의 submenu">
+            <a href="../../contact.html">상담 문의</a>
+            <a href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">이메일</a>
+            <a href="../../site-map.html">사이트맵</a>
+          </div>
+        </div>
       </div>
       <div class="flex items-center gap-2">
         <a class="rounded-sm border border-line bg-fog px-3 py-2 text-xs font-extrabold text-slatecopy hover:border-navy hover:text-navy" href="../../en/capabilities/it-market-entry.html">EN</a>
-        <a class="hidden rounded-sm bg-navy px-5 py-3 text-sm font-extrabold text-white transition-colors hover:bg-cobalt sm:inline-flex" href="../../contact.html">문의하기</a>
       </div>
     </nav>
   </header>
@@ -70,7 +113,7 @@
           <p class="mt-7 max-w-2xl text-base leading-8 text-slatecopy md:text-xl">베트남 진출은 시장 조사로 끝나지 않습니다. 법인, 인허가, 유통, 운영, 판매 채널, 시스템을 한 흐름으로 정리해야 실행이 시작됩니다.</p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row">
             <a class="hover-lift inline-flex items-center justify-center gap-3 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white hover:bg-cobalt" href="../../contact.html">상담 문의하기<span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span></a>
-            <a class="hover-lift inline-flex items-center justify-center gap-3 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy hover:border-navy" href="../../index.html?lang=ko#capabilities">실행 영역 전체 보기<span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_back</span></a>
+            <a class="hover-lift inline-flex items-center justify-center gap-3 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy hover:border-navy" href="../../index.html?lang=ko#capabilities">비즈니스 영역 전체 보기<span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_back</span></a>
           </div>
         </div>
         <div class="relative overflow-hidden rounded-sm border border-line bg-[#071a31] p-4 shadow-firm">
@@ -87,7 +130,7 @@
     <section class="border-y border-line bg-fog py-16">
       <div class="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-3 lg:px-8">
         <article class="rounded-sm bg-white p-6 shadow-sm">
-          <p class="text-xs font-extrabold uppercase text-cobalt">이런 경우</p>
+          <p class="text-xs font-extrabold uppercase text-cobalt">적합한 경우</p>
           <ul class="mt-6 grid gap-4 text-sm leading-7 text-slatecopy"><li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-brass"></span><span>베트남 진출 여부를 처음 검토하는 브랜드</span></li>
 <li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-brass"></span><span>사업 모델은 있지만 현지 실행 순서가 없는 회사</span></li>
 <li class="flex gap-3"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-brass"></span><span>법인, 유통, 매장, 온라인 판매를 같이 봐야 하는 팀</span></li>
@@ -112,8 +155,8 @@
         <div class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
           <div>
             <p class="section-label mb-6">진행 흐름</p>
-            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl">지금 막힌 지점부터 정리하면 됩니다.</h2>
-            <p class="mt-6 text-lg leading-8 text-slatecopy">브랜드, 제품군, 목표 지역, 현재 막힌 지점을 보내주시면 베트남에서 필요한 실행 순서부터 정리합니다.</p>
+            <h2 class="font-headline text-4xl font-bold leading-tight text-ink md:text-5xl">현재 검토 중인 과제부터 정리해 드립니다.</h2>
+            <p class="mt-6 text-lg leading-8 text-slatecopy">브랜드, 제품군, 목표 지역, 준비 단계, 우선 과제를 보내주시면 베트남에서 필요한 실행 순서를 정리해 드립니다.</p>
           </div>
           <div class="grid gap-4 md:grid-cols-2">
             <div class="rounded-sm border border-line bg-fog p-5">
@@ -146,17 +189,17 @@
         <div class="grid gap-4 md:grid-cols-3"><a class="group rounded-sm border border-white/12 bg-white/[0.08] p-5 transition hover:bg-white hover:text-ink" href="legal-advisory.html">
       <span class="material-symbols-outlined text-brass transition group-hover:text-cobalt" aria-hidden="true">gavel</span>
       <strong class="mt-4 block font-headline text-xl">법인 설립·인허가 자문</strong>
-      <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold">실행 영역 전체 보기<span class="material-symbols-outlined text-base" aria-hidden="true">north_east</span></span>
+      <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold">비즈니스 영역 전체 보기<span class="material-symbols-outlined text-base" aria-hidden="true">north_east</span></span>
     </a>
 <a class="group rounded-sm border border-white/12 bg-white/[0.08] p-5 transition hover:bg-white hover:text-ink" href="vietnam-sourcing.html">
       <span class="material-symbols-outlined text-brass transition group-hover:text-cobalt" aria-hidden="true">local_shipping</span>
       <strong class="mt-4 block font-headline text-xl">베트남 소싱·공급망</strong>
-      <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold">실행 영역 전체 보기<span class="material-symbols-outlined text-base" aria-hidden="true">north_east</span></span>
+      <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold">비즈니스 영역 전체 보기<span class="material-symbols-outlined text-base" aria-hidden="true">north_east</span></span>
     </a>
 <a class="group rounded-sm border border-white/12 bg-white/[0.08] p-5 transition hover:bg-white hover:text-ink" href="marketing-services.html">
       <span class="material-symbols-outlined text-brass transition group-hover:text-cobalt" aria-hidden="true">campaign</span>
       <strong class="mt-4 block font-headline text-xl">틱톡·쇼피 마케팅 운영</strong>
-      <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold">실행 영역 전체 보기<span class="material-symbols-outlined text-base" aria-hidden="true">north_east</span></span>
+      <span class="mt-3 inline-flex items-center gap-2 text-sm font-bold">비즈니스 영역 전체 보기<span class="material-symbols-outlined text-base" aria-hidden="true">north_east</span></span>
     </a></div>
       </div>
     </section>

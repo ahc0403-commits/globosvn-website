@@ -53,6 +53,13 @@
             .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24; line-height: 1; }
             .landing-bar { animation: landingBar 3.8s ease-in-out infinite alternate; transform-origin: left; }
             .landing-pulse { animation: landingPulse 2.4s ease-in-out infinite; }
+            .nav-group { position: relative; }
+            .nav-trigger { display: inline-flex; align-items: center; border-radius: 0.125rem; padding: 0.625rem 0.5rem; color: #5c6672; transition: color 160ms ease, background-color 160ms ease; }
+            .nav-trigger:hover, .nav-trigger:focus-visible, .nav-group:focus-within .nav-trigger { color: #002147; background: #f4f6f7; outline: none; }
+            .nav-panel { position: absolute; left: 0; top: calc(100% + 0.5rem); z-index: 60; min-width: 230px; border: 1px solid #d8dde3; background: rgba(255,255,255,.98); padding: .5rem; box-shadow: 0 18px 42px rgba(7, 26, 49, .12); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease; }
+            .nav-group:hover .nav-panel, .nav-group:focus-within .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+            .nav-panel a { display: block; border-radius: 0.125rem; padding: .75rem .85rem; font-size: .8125rem; font-weight: 700; color: #5c6672; white-space: nowrap; }
+            .nav-panel a:hover, .nav-panel a:focus-visible { color: #002147; background: #f4f6f7; outline: none; }
             @keyframes landingBar { from { transform: scaleX(.52); opacity: .58; } to { transform: scaleX(1); opacity: 1; } }
             @keyframes landingPulse { 0%, 100% { opacity: .45; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
             @media (prefers-reduced-motion: reduce) { .landing-bar, .landing-pulse { animation: none; } }
@@ -163,10 +170,50 @@
         <body class="font-body antialiased">
           <header class="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
             <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
-              <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="../../index.html">Globos Holdings</a>
-              <div class="hidden items-center gap-6 text-sm font-bold text-slatecopy md:flex">
-                <a class="hover:text-navy" href="../../site-map.html">Site map</a>
-                <a class="hover:text-navy" href="../../contact.html">Contact</a>
+              <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="../../index.html?lang=en">Globos Holdings</a>
+              <div class="hidden items-center gap-1 text-sm font-bold text-slatecopy lg:flex">
+                <div class="nav-group">
+                  <a class="nav-trigger" href="../../index.html?lang=en#leadership">About</a>
+                  <div class="nav-panel" aria-label="About submenu">
+                    <a href="../../index.html?lang=en#leadership">Leadership</a>
+                    <a href="../../index.html?lang=en#mission-vision">Vision & Mission</a>
+                    <a href="../../index.html?lang=en#organization">Organization</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger" href="../../index.html?lang=en#local-partner">Local Partnership</a>
+                  <div class="nav-panel" aria-label="Local Partnership submenu">
+                    <a href="../../index.html?lang=en#local-partner">Partnership Structure</a>
+                    <a href="../../index.html?lang=en#why-globos">Why Local Execution</a>
+                    <a href="../../index.html?lang=en#operating-system">Operating Infrastructure</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger" href="../../index.html?lang=en#capabilities">Business Areas</a>
+                  <div class="nav-panel" aria-label="Business Areas submenu">
+                    <a href="../../en/capabilities/franchise-expansion.html">Franchise & F&B</a>
+                    <a href="../../en/capabilities/legal-advisory.html">Company & Licensing</a>
+                    <a href="../../en/capabilities/marketing-services.html">Shopee & TikTok Marketing</a>
+                    <a href="../../en/capabilities/vietnam-sourcing.html">Distribution & Sourcing</a>
+                    <a href="../../en/capabilities/it-systems-development.html">ERP, POS & Delivery</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger text-navy" href="../../index.html?lang=en#proof">Track Record</a>
+                  <div class="nav-panel" aria-label="Track Record submenu">
+                    <a href="../../index.html?lang=en#proof">Operating Numbers</a>
+                    <a href="../../index.html?lang=en#execution-flow">Execution Flow</a>
+                    <a href="../../index.html?lang=en#seo-landings">Vietnam Entry Guides</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger" href="../../contact.html">Contact</a>
+                  <div class="nav-panel" aria-label="Contact submenu">
+                    <a href="../../contact.html">Consultation</a>
+                    <a href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">Email</a>
+                    <a href="../../site-map.html">Site map</a>
+                  </div>
+                </div>
               </div>
               <a class="rounded-sm border border-line bg-fog px-4 py-2 text-xs font-extrabold text-navy hover:border-navy" href="../../ko/vietnam-tiktok-shopee-marketing/">한국어</a>
             </nav>
@@ -180,7 +227,7 @@
                   <p class="mt-7 max-w-3xl text-lg leading-8 text-slatecopy">Vietnam online marketing is not only ad buying. Channel-specific sales structure and content localization matter. TikTok ads, TikTok Shop, Shopee campaigns, influencers, and live commerce must connect to sales operations.</p>
                   <div class="mt-9 flex flex-col gap-3 sm:flex-row">
                     <a class="primary-action inline-flex items-center justify-center gap-2 rounded-sm bg-navy px-7 py-4 text-sm font-extrabold text-white hover:bg-cobalt" href="../../contact.html">Contact Globos Holdings<span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span></a>
-                    <a class="secondary-action inline-flex items-center justify-center gap-2 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy hover:border-navy" href="../../index.html">Globos Holdings</a>
+                    <a class="secondary-action inline-flex items-center justify-center gap-2 rounded-sm border border-line bg-white px-7 py-4 text-sm font-extrabold text-navy hover:border-navy" href="../../index.html?lang=en">Globos Holdings</a>
                   </div>
                 </div>
                 <aside class="rounded-sm border border-line bg-[#071a31] p-6 text-white shadow-firm">
@@ -370,7 +417,7 @@
           </main>
           <footer class="border-t border-line bg-white py-10">
             <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-slatecopy lg:flex-row lg:items-center lg:justify-between lg:px-8">
-              <a class="brand-name font-headline text-2xl font-bold text-navy" href="../../index.html">Globos Holdings</a>
+              <a class="brand-name font-headline text-2xl font-bold text-navy" href="../../index.html?lang=en">Globos Holdings</a>
               <div class="flex flex-col gap-2 lg:text-right">
                 <a class="hover:text-navy" href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">contact@globos.world</a>
                 <a class="hover:text-navy" href="../../site-map.html">Site map</a>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
+<html class="scroll-smooth" lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact | Globos Holdings</title>
+<title>문의 | Globos Holdings</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
@@ -90,6 +90,60 @@
             stroke-width: 1;
             opacity: 0.6;
         }
+        .nav-group { position: relative; }
+        .nav-trigger {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 0.125rem;
+            padding: 0.625rem 0.5rem;
+            color: #5f5e5e;
+            transition: color 160ms ease, background-color 160ms ease;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        .nav-trigger:hover,
+        .nav-trigger:focus-visible,
+        .nav-group:focus-within .nav-trigger {
+            color: #000a1e;
+            background: #f3f4f5;
+            outline: none;
+        }
+        .nav-panel {
+            position: absolute;
+            left: 0;
+            top: calc(100% + 0.5rem);
+            z-index: 60;
+            min-width: 230px;
+            border: 1px solid #c4c6cf;
+            background: rgba(255, 255, 255, .98);
+            padding: .5rem;
+            box-shadow: 0 18px 42px rgba(0, 33, 71, .12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(6px);
+            transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+        }
+        .nav-group:hover .nav-panel,
+        .nav-group:focus-within .nav-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .nav-panel a {
+            display: block;
+            border-radius: 0.125rem;
+            padding: .75rem .85rem;
+            font-size: .8125rem;
+            font-weight: 700;
+            color: #5f5e5e;
+            white-space: nowrap;
+        }
+        .nav-panel a:hover,
+        .nav-panel a:focus-visible {
+            color: #000a1e;
+            background: #f3f4f5;
+            outline: none;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed-dim/30">
@@ -99,15 +153,50 @@
 	<a class="brand-name text-2xl font-extrabold tracking-tighter text-primary font-headline" href="index.html">
 	            Globos Holdings
 	        </a>
-<div class="hidden md:flex items-center space-x-12">
-<a class="text-secondary font-medium hover:text-primary transition-colors font-headline tracking-tight text-sm uppercase" href="site-map.html">Site Map</a>
-<a class="text-secondary font-medium hover:text-primary transition-colors font-headline tracking-tight text-sm uppercase" href="index.html#platform">About</a>
-<a class="text-secondary font-medium hover:text-primary transition-colors font-headline tracking-tight text-sm uppercase" href="index.html#capabilities">Capabilities</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline tracking-tight text-sm uppercase" href="contact.html">Contact</a>
+<div class="hidden lg:flex items-center gap-1 font-headline">
+<div class="nav-group">
+<a class="nav-trigger" href="index.html#leadership">회사소개</a>
+<div class="nav-panel" aria-label="회사소개 하위 메뉴">
+<a href="index.html#leadership">경영진</a>
+<a href="index.html#mission-vision">비전&미션</a>
+<a href="index.html#organization">조직도</a>
 </div>
-	<a class="bg-primary hover:opacity-90 active:scale-[0.98] transition-[transform,opacity] text-white px-6 py-2.5 text-sm font-headline tracking-tight uppercase" href="#inquiry">
-	            Get Started
-	        </a>
+</div>
+<div class="nav-group">
+<a class="nav-trigger" href="index.html#local-partner">로컬 파트너십 안내</a>
+<div class="nav-panel" aria-label="로컬 파트너십 하위 메뉴">
+<a href="index.html#local-partner">파트너십 구조</a>
+<a href="index.html#why-globos">현지 실행 필요성</a>
+<a href="index.html#operating-system">운영 인프라</a>
+</div>
+</div>
+<div class="nav-group">
+<a class="nav-trigger" href="index.html#capabilities">제공가능 비즈니스 영역</a>
+<div class="nav-panel" aria-label="비즈니스 영역 하위 메뉴">
+<a href="ko/capabilities/franchise-expansion.html">프랜차이즈·F&B</a>
+<a href="ko/capabilities/legal-advisory.html">법인·인허가</a>
+<a href="ko/capabilities/marketing-services.html">쇼피·틱톡샵 마케팅</a>
+<a href="ko/capabilities/vietnam-sourcing.html">유통·소싱</a>
+<a href="ko/capabilities/it-systems-development.html">ERP·POS·배달</a>
+</div>
+</div>
+<div class="nav-group">
+<a class="nav-trigger" href="index.html#proof">운영 실적</a>
+<div class="nav-panel" aria-label="운영 실적 하위 메뉴">
+<a href="index.html#proof">운영 현황</a>
+<a href="index.html#execution-flow">실행 프로세스</a>
+<a href="index.html#seo-landings">베트남 진출 가이드</a>
+</div>
+</div>
+<div class="nav-group">
+<a class="nav-trigger text-primary" href="contact.html">문의</a>
+<div class="nav-panel" aria-label="문의 하위 메뉴">
+<a href="#inquiry">상담 문의</a>
+<a href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">이메일</a>
+<a href="site-map.html">사이트맵</a>
+</div>
+</div>
+</div>
 </div>
 </nav>
 <main class="pt-40">
@@ -115,12 +204,12 @@
 <section class="px-8 mb-32 max-w-7xl mx-auto">
 <div class="editorial-grid items-center">
 <div class="col-span-12 md:col-span-7">
-<span class="inline-block py-1 px-3 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold bg-secondary-fixed text-on-secondary-fixed rounded-full">Engagement</span>
+<span class="inline-block py-1 px-3 mb-8 text-[10px] uppercase tracking-[0.2em] font-bold bg-secondary-fixed text-on-secondary-fixed rounded-full">Inquiry</span>
 <h1 class="text-primary font-headline font-extrabold text-5xl md:text-7xl leading-[1.1] tracking-tighter mb-10">
-                    Business Inquiry
+                    사업 문의
                 </h1>
 <p class="text-secondary text-xl md:text-2xl font-light leading-relaxed max-w-2xl border-l-2 border-tertiary-fixed-dim pl-8">
-                    We welcome business inquiries related to market entry, partnerships, operations, sourcing, and strategic collaboration in Vietnam.
+                    베트남 진출, 로컬 파트너십, 점포 운영, 유통·소싱, 전략적 협업과 관련된 문의를 남겨 주시면 검토 후 회신드리겠습니다.
                 </p>
 </div>
 <div class="hidden md:block col-span-5">
@@ -134,16 +223,16 @@
 	<section class="bg-white py-40 px-8" id="inquiry">
 <div class="max-w-7xl mx-auto editorial-grid">
 <div class="col-span-12 lg:col-span-5 mb-16 lg:mb-0 lg:sticky lg:top-32 self-start">
-<h2 class="font-headline text-4xl font-bold text-primary mb-8 tracking-tight">Start a Conversation</h2>
+<h2 class="font-headline text-4xl font-bold text-primary mb-8 tracking-tight">상담 정보</h2>
 <p class="text-secondary font-light text-lg leading-relaxed mb-12 max-w-md">
-                    Share a brief overview of your business needs, and we will respond with the most relevant next step.
+                    사업 개요와 현재 검토 중인 과제를 간단히 남겨 주시면 가장 적합한 다음 단계를 안내드리겠습니다.
                 </p>
 <div class="flex flex-col space-y-8">
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-tertiary-fixed-dim scale-125" style="font-variation-settings: 'FILL' 1;">verified_user</span>
 <div>
-<h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-1">Corporate Confidentiality</h4>
-<p class="text-xs text-secondary max-w-xs">All communications are treated with the highest degree of sensitivity and professional ethics.</p>
+<h4 class="text-sm font-bold text-primary uppercase tracking-wider mb-1">Confidentiality</h4>
+<p class="text-xs text-secondary max-w-xs">문의 내용은 사업상 비밀과 전문 윤리 기준에 따라 신중하게 관리합니다.</p>
 </div>
 </div>
 </div>
@@ -152,28 +241,28 @@
 		<form action="https://www.globos.world/contact" class="space-y-12 bg-white p-12 border border-outline-variant/30 shadow-[0_32px_64px_-12px_rgba(0,33,71,0.06)]" data-mail-form data-mail-subject="Globos Holdings Strategic Inquiry" method="post">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
 <div class="relative group">
-<label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Full Name</label>
-	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium" name="full_name" placeholder="Alexander Vance" required type="text"/>
+<label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Name</label>
+	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium" name="full_name" placeholder="성함" required type="text"/>
 </div>
 <div class="relative group">
 <label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Company</label>
-	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium" name="company" placeholder="Corporate Entity Name" required type="text"/>
+	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium" name="company" placeholder="회사명" required type="text"/>
 </div>
 <div class="relative group md:col-span-2">
-<label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Executive Email</label>
-	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium" name="executive_email" placeholder="name@corporation.com" required type="email"/>
+<label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Email</label>
+	<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium" name="executive_email" placeholder="name@company.com" required type="email"/>
 </div>
 <div class="relative group md:col-span-2">
-<label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Strategic Intent</label>
-	<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium resize-none" name="strategic_intent" placeholder="Briefly outline the nature of your business needs..." required rows="5"></textarea>
+<label class="block text-[10px] uppercase tracking-[0.2em] text-secondary mb-3 font-bold group-focus-within:text-primary transition-colors">Inquiry</label>
+	<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 text-primary placeholder:text-outline-variant/40 transition-[border-color,color,box-shadow] font-medium resize-none" name="strategic_intent" placeholder="검토 중인 사업, 목표 지역, 필요한 지원 범위를 간단히 작성해 주십시오." required rows="5"></textarea>
 </div>
 </div>
 <div class="pt-8">
 	<button class="group relative inline-flex items-center justify-center overflow-hidden bg-primary text-white px-12 py-5 font-headline text-sm font-bold tracking-widest uppercase transition-[transform,background-color,color,box-shadow]" type="submit">
-	<span class="relative z-10">Send Inquiry</span>
+	<span class="relative z-10">문의 보내기</span>
 	<div class="absolute inset-0 translate-y-full bg-primary-container transition-transform group-hover:translate-y-0"></div>
 	</button>
-	<p aria-live="polite" class="mt-6 text-xs text-primary font-bold uppercase tracking-widest hidden" data-mail-status>Your email client is opening with a prepared inquiry.</p>
+	<p aria-live="polite" class="mt-6 text-xs text-primary font-bold uppercase tracking-widest hidden" data-mail-status>작성된 문의 메일을 열고 있습니다.</p>
 	</div>
 	</form>
 </div>
@@ -182,7 +271,7 @@
 <!-- Section 3: Company Information -->
 <section class="py-40 px-8 max-w-7xl mx-auto">
 <div class="mb-20">
-<h2 class="font-headline text-4xl font-bold text-primary tracking-tight mb-4">Company Information</h2>
+<h2 class="font-headline text-4xl font-bold text-primary tracking-tight mb-4">회사 정보</h2>
 <div class="w-24 h-1 bg-tertiary-fixed-dim"></div>
 </div>
 <div class="editorial-grid">
@@ -190,19 +279,19 @@
 <div class="space-y-12">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Company name</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">회사명</p>
 <p class="text-primary font-headline text-lg font-bold">Globos Holdings</p>
 </div>
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Website</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">웹사이트</p>
 <p class="text-primary font-headline text-lg font-bold">globos.world</p>
 </div>
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Primary email</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">대표 이메일</p>
 <p class="text-primary font-headline text-lg font-bold">contact@globos.world</p>
 </div>
 <div>
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">Business status</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-3">사업 상태</p>
 <p class="text-primary font-headline text-lg font-bold">Registered &amp; Active</p>
 </div>
 </div>
@@ -210,7 +299,7 @@
 </div>
 <div class="col-span-12 lg:col-span-6 mt-16 lg:mt-0">
 <div class="bg-surface-container-low p-12 border-l-4 border-primary">
-<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-4">Registered Domicile</p>
+<p class="text-[10px] text-secondary uppercase tracking-widest font-bold mb-4">등록 주소</p>
 <p class="text-primary font-body text-xl leading-relaxed mb-10">
                         195/10E, Dien Bien Phu Street, Gia Dinh Ward, Ho Chi Minh City, Vietnam
                     </p>
@@ -232,9 +321,9 @@
 <section class="w-full bg-surface-container-highest py-40 px-8">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-24">
-<h2 class="font-headline text-4xl font-bold text-primary tracking-tight mb-6">Regional Business Reach</h2>
+<h2 class="font-headline text-4xl font-bold text-primary tracking-tight mb-6">베트남 실행 거점</h2>
 <p class="text-secondary font-light text-lg max-w-3xl mx-auto leading-relaxed">
-                    From Ho Chi Minh City, Globos Holdings supports business connection and execution across key markets in Asia-Pacific.
+                    Globos Holdings는 호치민을 중심으로 베트남 시장 진출, 현지 운영, 파트너 연결을 지원합니다.
                 </p>
 </div>
 <div class="relative h-[650px] bg-white shadow-2xl overflow-hidden rounded-xl border border-outline-variant/20">
@@ -297,12 +386,12 @@
 </section>
 <!-- Section 5: Closing CTA -->
 <section class="py-40 px-8 text-center max-w-5xl mx-auto">
-<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary mb-8 tracking-tighter">Let’s Discuss Your Vietnam Entry</h2>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-primary mb-8 tracking-tighter">베트남 진출 검토를 시작해 보십시오.</h2>
 <p class="text-secondary text-lg md:text-xl font-light leading-relaxed mb-16 mx-auto max-w-3xl">
-            Whether you are exploring market entry, local execution, or regional expansion, Globos Holdings provides a structured starting point for serious business conversations.
+            시장 진출, 현지 실행, 운영 대행, 유통·소싱 등 현재 검토 중인 과제를 기준으로 상담을 시작하실 수 있습니다.
         </p>
 	<a class="inline-block bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white transition-[transform,background-color,color,border-color] px-12 py-5 font-headline text-sm font-bold tracking-widest uppercase" href="#inquiry">
-	            Send Inquiry
+	            문의하기
 	        </a>
 </section>
 </main>
@@ -312,11 +401,11 @@
 <div class="lg:col-span-1">
 	<a class="inline-block text-2xl font-black text-primary font-headline mb-8" href="index.html">Globos Holdings</a>
 <p class="font-body font-light text-secondary text-sm leading-relaxed max-w-xs">
-                Pioneering strategic development and industrial excellence across the Asia-Pacific region.
+                베트남 시장 진출, 현지 운영, 파트너십, 유통·소싱 실행 지원.
             </p>
 </div>
 <div>
-<h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Contact Nodes</h4>
+<h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Contact</h4>
 <ul class="space-y-5">
 <li class="font-body font-light text-secondary text-sm">195/10E, Dien Bien Phu Street, Ho Chi Minh City, Vietnam</li>
 <li class="font-body font-light text-secondary text-sm">+84 869369830</li>
@@ -324,16 +413,16 @@
 </ul>
 </div>
 <div>
-<h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Capabilities</h4>
+<h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Menu</h4>
 <ul class="space-y-5">
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="site-map.html">Site Map</a></li>
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="index.html#platform">Operating Model</a></li>
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="index.html#capabilities">Capabilities</a></li>
-<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="contact.html">Global Trade</a></li>
+<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="index.html#leadership">회사소개</a></li>
+<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="index.html#local-partner">로컬 파트너십 안내</a></li>
+<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="index.html#capabilities">제공가능 비즈니스 영역</a></li>
+<li><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="site-map.html">사이트맵</a></li>
 </ul>
 </div>
 <div>
-<h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Regulatory</h4>
+<h4 class="text-primary font-headline text-xs uppercase tracking-[0.2em] mb-10 font-bold">Policy</h4>
 <ul class="space-y-5">
 	<li id="privacy-protocol"><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="contact.html#privacy-protocol">Privacy Protocol</a></li>
 	<li id="terms-engagement"><a class="font-body font-light text-secondary hover:text-primary transition-colors duration-200 text-sm" href="contact.html#terms-engagement">Terms of Engagement</a></li>
@@ -363,7 +452,7 @@
                 const status = form.querySelector('[data-mail-status]');
                 if (status) {
                     status.classList.remove('hidden');
-                    status.textContent = 'Your email client is opening with a prepared inquiry to contact@globos.world.';
+                    status.textContent = 'contact@globos.world로 보낼 문의 메일을 열고 있습니다.';
                 }
                 window.location.href = `mailto:contact@globos.world?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });

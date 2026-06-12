@@ -321,48 +321,68 @@ def render_page(page: dict, lang: str) -> str:
     faqs = page["faqs_ko"] if is_ko else page["faqs_en"]
     keywords = page["keywords"]
     html_lang = "ko" if is_ko else "en"
-    home_href = "../../index.html"
+    home_href = f"../../index.html?lang={'ko' if is_ko else 'en'}"
     contact_href = "../../contact.html"
     lang_label = "English" if is_ko else "한국어"
     eyebrow = "이런 고민에서 시작합니다" if is_ko else "Search-intent execution landing"
     overview_label = "자주 찾는 검색어" if is_ko else "Primary search phrases"
     landing_name = page["ko_title"].split(" | ")[0] if is_ko else page["en_title"].split(" | ")[0]
-    geo_label = "AI 검색용 한 문장" if is_ko else "AI answer summary"
+    geo_label = "AI 검색 답변 요약" if is_ko else "AI answer summary"
     geo_title = f"{landing_name} 답변 요약" if is_ko else f"{landing_name} answer"
     geo_body = (
-        f"Globos Holdings는 {landing_name}을 단순 정보 검색이 아니라 베트남 현지에서 실행 가능한 운영 구조로 정리합니다. 법인, 인허가, 유통, 매장 운영, 마케팅, 시스템 중 지금 막힌 지점부터 확인합니다."
+        f"Globos Holdings는 {landing_name}을 단순 정보가 아니라 베트남 현지에서 실행 가능한 운영 과제로 정리합니다. 법인, 인허가, 유통, 매장 운영, 마케팅, 시스템 중 우선 검토가 필요한 범위부터 확인합니다."
         if is_ko
         else f"Globos Holdings treats {landing_name} as an execution problem, not only an information search. We map the blocked point across company setup, licensing, distribution, store operations, marketing, and systems."
     )
-    proof_label = "실제로 하고 있는 일" if is_ko else "Operating proof"
+    proof_label = "운영 실적" if is_ko else "Operating proof"
     proof_text = (
         "2024년부터 베트남에서 직접 운영을 시작했습니다. 현재 8개 점포를 운영하고, 20여 개 파트너사와 협업하고 있습니다. 2030년까지 300개 점포와 50개 파트너사를 목표로 in-house ERP, SaaS POS, 배달 앱 기반을 함께 키우고 있습니다."
         if is_ko
         else "Globos Holdings began Vietnam operations in 2024, currently operates 8 stores, works with 20+ partner firms, and targets 300 stores with 50 partner firms by 2030. in-house ERP, SaaS POS, and delivery app infrastructure are connected to the operating model."
     )
-    can_do = "우리가 같이 보는 것" if is_ko else "What Globos Holdings supports"
-    search_problem = "사람들이 검색하는 말과 실제 고민" if is_ko else "The problem searchers are actually trying to solve"
-    faq_title = "처음 상담 전 많이 묻는 질문" if is_ko else "Frequently Asked Questions"
-    cta_title = "지금 막히는 부분부터 말씀해주세요." if is_ko else "Share the Vietnam execution bottleneck first."
+    can_do = "검토 가능 범위" if is_ko else "What Globos Holdings supports"
+    search_problem = "검색 의도와 실제 검토 과제" if is_ko else "The problem searchers are actually trying to solve"
+    faq_title = "상담 전 주요 질문" if is_ko else "Frequently Asked Questions"
+    cta_title = "현재 검토 중인 과제를 알려주십시오." if is_ko else "Share the Vietnam execution bottleneck first."
     cta_body = (
-        "브랜드, 제품군, 목표 지역, 현재 준비 단계, 가장 답답한 부분을 알려주시면 됩니다. 거기서부터 필요한 일을 같이 정리하겠습니다."
+        "브랜드, 제품군, 목표 지역, 현재 준비 단계, 우선 과제를 알려주시면 필요한 실행 범위와 진행 순서를 정리해 드립니다."
         if is_ko
         else "Send your brand, product category, target region, current preparation stage, and bottleneck. We will map the next execution route."
     )
     cta_button = "문의하기" if is_ko else "Contact Globos Holdings"
     nav_guides = "사이트맵" if is_ko else "Site map"
     nav_contact = "문의" if is_ko else "Contact"
+    nav_about = "회사소개" if is_ko else "About"
+    nav_leaders = "경영진" if is_ko else "Leadership"
+    nav_vision = "비전&미션" if is_ko else "Vision & Mission"
+    nav_org = "조직도" if is_ko else "Organization"
+    nav_partnership = "로컬 파트너십 안내" if is_ko else "Local Partnership"
+    nav_partnership_structure = "파트너십 구조" if is_ko else "Partnership Structure"
+    nav_partnership_reason = "현지 실행 필요성" if is_ko else "Why Local Execution"
+    nav_partnership_infra = "운영 인프라" if is_ko else "Operating Infrastructure"
+    nav_business = "제공가능 비즈니스 영역" if is_ko else "Business Areas"
+    nav_business_franchise = "프랜차이즈·F&B" if is_ko else "Franchise & F&B"
+    nav_business_legal = "법인·인허가" if is_ko else "Company & Licensing"
+    nav_business_marketing = "쇼피·틱톡샵 마케팅" if is_ko else "Shopee & TikTok Marketing"
+    nav_business_sourcing = "유통·소싱" if is_ko else "Distribution & Sourcing"
+    nav_business_systems = "ERP·POS·배달" if is_ko else "ERP, POS & Delivery"
+    nav_record = "운영 실적" if is_ko else "Track Record"
+    nav_record_current = "운영 현황" if is_ko else "Operating Numbers"
+    nav_record_flow = "실행 프로세스" if is_ko else "Execution Flow"
+    nav_record_guides = "베트남 진출 가이드" if is_ko else "Vietnam Entry Guides"
+    nav_consult = "상담 문의" if is_ko else "Consultation"
+    nav_email = "이메일" if is_ko else "Email"
     related_title = "같이 보면 좋은 페이지" if is_ko else "Related landing pages"
     flow_title = "일하는 순서" if is_ko else "Execution flow"
     flow_body = (
-        "한 가지 검색어로 시작해도 실제 일은 여러 단계로 이어집니다. 그래서 처음부터 순서를 맞춰 보는 것이 중요합니다."
+        "하나의 검색어로 시작하더라도 실제 실행은 여러 단계로 이어집니다. 초기 단계부터 순서를 맞춰 검토하는 것이 중요합니다."
         if is_ko
         else "A search phrase may look like one problem, but execution works only when the required functions connect in order."
     )
-    keyword_title = "사람들이 실제로 찾는 말" if is_ko else "Search intent and real concern"
-    dashboard_title = "Globos가 가진 근거" if is_ko else "Operating base"
+    keyword_title = "주요 검색 의도" if is_ko else "Search intent and real concern"
+    dashboard_title = "운영 기반" if is_ko else "Operating base"
     dashboard_subtitle = (
-        "현재 운영 중인 숫자와 앞으로의 목표를 같이 보여드립니다."
+        "현재 운영 현황과 2030년 확장 목표를 함께 제시합니다."
         if is_ko
         else "Live operating numbers and the 2030 expansion vision shown together."
     )
@@ -471,6 +491,13 @@ def render_page(page: dict, lang: str) -> str:
             .material-symbols-outlined {{ font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24; line-height: 1; }}
             .landing-bar {{ animation: landingBar 3.8s ease-in-out infinite alternate; transform-origin: left; }}
             .landing-pulse {{ animation: landingPulse 2.4s ease-in-out infinite; }}
+            .nav-group {{ position: relative; }}
+            .nav-trigger {{ display: inline-flex; align-items: center; border-radius: 0.125rem; padding: 0.625rem 0.5rem; color: #5c6672; transition: color 160ms ease, background-color 160ms ease; }}
+            .nav-trigger:hover, .nav-trigger:focus-visible, .nav-group:focus-within .nav-trigger {{ color: #002147; background: #f4f6f7; outline: none; }}
+            .nav-panel {{ position: absolute; left: 0; top: calc(100% + 0.5rem); z-index: 60; min-width: 230px; border: 1px solid #d8dde3; background: rgba(255,255,255,.98); padding: .5rem; box-shadow: 0 18px 42px rgba(7, 26, 49, .12); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease; }}
+            .nav-group:hover .nav-panel, .nav-group:focus-within .nav-panel {{ opacity: 1; visibility: visible; transform: translateY(0); }}
+            .nav-panel a {{ display: block; border-radius: 0.125rem; padding: .75rem .85rem; font-size: .8125rem; font-weight: 700; color: #5c6672; white-space: nowrap; }}
+            .nav-panel a:hover, .nav-panel a:focus-visible {{ color: #002147; background: #f4f6f7; outline: none; }}
             @keyframes landingBar {{ from {{ transform: scaleX(.52); opacity: .58; }} to {{ transform: scaleX(1); opacity: 1; }} }}
             @keyframes landingPulse {{ 0%, 100% {{ opacity: .45; transform: scale(1); }} 50% {{ opacity: 1; transform: scale(1.12); }} }}
             @media (prefers-reduced-motion: reduce) {{ .landing-bar, .landing-pulse {{ animation: none; }} }}
@@ -483,9 +510,49 @@ def render_page(page: dict, lang: str) -> str:
           <header class="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
             <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
               <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="{home_href}">Globos Holdings</a>
-              <div class="hidden items-center gap-6 text-sm font-bold text-slatecopy md:flex">
-                <a class="hover:text-navy" href="../../site-map.html">{nav_guides}</a>
-                <a class="hover:text-navy" href="{contact_href}">{nav_contact}</a>
+              <div class="hidden items-center gap-1 text-sm font-bold text-slatecopy lg:flex">
+                <div class="nav-group">
+                  <a class="nav-trigger" href="{home_href}#leadership">{nav_about}</a>
+                  <div class="nav-panel" aria-label="{nav_about} submenu">
+                    <a href="{home_href}#leadership">{nav_leaders}</a>
+                    <a href="{home_href}#mission-vision">{nav_vision}</a>
+                    <a href="{home_href}#organization">{nav_org}</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger" href="{home_href}#local-partner">{nav_partnership}</a>
+                  <div class="nav-panel" aria-label="{nav_partnership} submenu">
+                    <a href="{home_href}#local-partner">{nav_partnership_structure}</a>
+                    <a href="{home_href}#why-globos">{nav_partnership_reason}</a>
+                    <a href="{home_href}#operating-system">{nav_partnership_infra}</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger" href="{home_href}#capabilities">{nav_business}</a>
+                  <div class="nav-panel" aria-label="{nav_business} submenu">
+                    <a href="../../{lang}/capabilities/franchise-expansion.html">{nav_business_franchise}</a>
+                    <a href="../../{lang}/capabilities/legal-advisory.html">{nav_business_legal}</a>
+                    <a href="../../{lang}/capabilities/marketing-services.html">{nav_business_marketing}</a>
+                    <a href="../../{lang}/capabilities/vietnam-sourcing.html">{nav_business_sourcing}</a>
+                    <a href="../../{lang}/capabilities/it-systems-development.html">{nav_business_systems}</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger text-navy" href="{home_href}#proof">{nav_record}</a>
+                  <div class="nav-panel" aria-label="{nav_record} submenu">
+                    <a href="{home_href}#proof">{nav_record_current}</a>
+                    <a href="{home_href}#execution-flow">{nav_record_flow}</a>
+                    <a href="{home_href}#seo-landings">{nav_record_guides}</a>
+                  </div>
+                </div>
+                <div class="nav-group">
+                  <a class="nav-trigger" href="{contact_href}">{nav_contact}</a>
+                  <div class="nav-panel" aria-label="{nav_contact} submenu">
+                    <a href="{contact_href}">{nav_consult}</a>
+                    <a href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">{nav_email}</a>
+                    <a href="../../site-map.html">{nav_guides}</a>
+                  </div>
+                </div>
               </div>
               <a class="rounded-sm border border-line bg-fog px-4 py-2 text-xs font-extrabold text-navy hover:border-navy" href="../../{other}/{slug}/">{lang_label}</a>
             </nav>
@@ -645,23 +712,25 @@ def render_page(page: dict, lang: str) -> str:
 
 
 def render_sitemap() -> str:
+    capability_slugs = [
+        "direct-store-operations",
+        "franchise-expansion",
+        "master-brand-acquisition",
+        "fb-market-entry",
+        "beauty-market-entry",
+        "vietnam-sourcing",
+        "it-market-entry",
+        "it-systems-development",
+        "marketing-services",
+        "legal-advisory",
+    ]
     urls = [
         f"{DOMAIN}/",
         f"{DOMAIN}/site-map",
         f"{DOMAIN}/contact",
         *[abs_url(lang, page["slug"]) for lang in ("ko", "en") for page in PAGES],
-        *[f"{DOMAIN}/capabilities/{slug}" for slug in [
-            "direct-store-operations",
-            "franchise-expansion",
-            "master-brand-acquisition",
-            "fb-market-entry",
-            "beauty-market-entry",
-            "vietnam-sourcing",
-            "it-market-entry",
-            "it-systems-development",
-            "marketing-services",
-            "legal-advisory",
-        ]],
+        *[f"{DOMAIN}/{lang}/capabilities/{slug}" for lang in ("ko", "en") for slug in capability_slugs],
+        *[f"{DOMAIN}/capabilities/{slug}" for slug in capability_slugs],
     ]
     items = "\n".join(
         f"  <url><loc>{esc(url)}</loc><changefreq>weekly</changefreq><priority>{'1.0' if url == DOMAIN + '/' else '0.8'}</priority></url>"

@@ -14,15 +14,35 @@ const labels = {
     contact: "문의",
     inquiry: "문의하기",
     langOther: "EN",
-    bestFor: "이런 경우",
+    bestFor: "적합한 경우",
     scope: "실행 범위",
     flow: "진행 흐름",
     proofTitle: "운영 근거",
     related: "연결되는 실행 영역",
-    ctaTitle: "지금 막힌 지점부터 정리하면 됩니다.",
-    ctaBody: "브랜드, 제품군, 목표 지역, 현재 막힌 지점을 보내주시면 베트남에서 필요한 실행 순서부터 정리합니다.",
+    ctaTitle: "현재 검토 중인 과제부터 정리해 드립니다.",
+    ctaBody: "브랜드, 제품군, 목표 지역, 준비 단계, 우선 과제를 보내주시면 베트남에서 필요한 실행 순서를 정리해 드립니다.",
     ctaButton: "상담 문의하기",
-    back: "실행 영역 전체 보기"
+    back: "비즈니스 영역 전체 보기",
+    about: "회사소개",
+    leaders: "경영진",
+    vision: "비전&미션",
+    org: "조직도",
+    partnership: "로컬 파트너십 안내",
+    partnershipStructure: "파트너십 구조",
+    partnershipReason: "현지 실행 필요성",
+    partnershipInfra: "운영 인프라",
+    business: "제공가능 비즈니스 영역",
+    businessFranchise: "프랜차이즈·F&B",
+    businessLegal: "법인·인허가",
+    businessMarketing: "쇼피·틱톡샵 마케팅",
+    businessSourcing: "유통·소싱",
+    businessSystems: "ERP·POS·배달",
+    record: "운영 실적",
+    recordCurrent: "운영 현황",
+    recordFlow: "실행 프로세스",
+    recordGuides: "베트남 진출 가이드",
+    consultation: "상담 문의",
+    email: "이메일"
   },
   en: {
     home: "Home",
@@ -41,7 +61,27 @@ const labels = {
     ctaTitle: "Start with the bottleneck.",
     ctaBody: "Send the brand, product category, target area, and current constraint. We will map the operating sequence required for Vietnam.",
     ctaButton: "Request consultation",
-    back: "View all services"
+    back: "View all business areas",
+    about: "About",
+    leaders: "Leadership",
+    vision: "Vision & Mission",
+    org: "Organization",
+    partnership: "Local Partnership",
+    partnershipStructure: "Partnership Structure",
+    partnershipReason: "Why Local Execution",
+    partnershipInfra: "Operating Infrastructure",
+    business: "Business Areas",
+    businessFranchise: "Franchise & F&B",
+    businessLegal: "Company & Licensing",
+    businessMarketing: "Shopee & TikTok Marketing",
+    businessSourcing: "Distribution & Sourcing",
+    businessSystems: "ERP, POS & Delivery",
+    record: "Track Record",
+    recordCurrent: "Operating Numbers",
+    recordFlow: "Execution Flow",
+    recordGuides: "Vietnam Entry Guides",
+    consultation: "Consultation",
+    email: "Email"
   }
 };
 
@@ -390,6 +430,13 @@ function page(service, lang) {
     .section-label::before { content: ''; width: 34px; height: 2px; background: #c8a45d; }
     .hover-lift { transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease; }
     .hover-lift:hover, .hover-lift:focus-visible { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(7, 26, 49, .14), 0 2px 10px rgba(7, 26, 49, .05); outline: none; }
+    .nav-group { position: relative; }
+    .nav-trigger { display: inline-flex; align-items: center; border-radius: 0.125rem; padding: 0.625rem 0.5rem; color: #5c6672; transition: color 160ms ease, background-color 160ms ease; }
+    .nav-trigger:hover, .nav-trigger:focus-visible, .nav-group:focus-within .nav-trigger { color: #002147; background: #f4f6f7; outline: none; }
+    .nav-panel { position: absolute; left: 0; top: calc(100% + 0.5rem); z-index: 60; min-width: 230px; border: 1px solid #d8dde3; background: rgba(255,255,255,.98); padding: .5rem; box-shadow: 0 18px 42px rgba(7, 26, 49, .12); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease; }
+    .nav-group:hover .nav-panel, .nav-group:focus-within .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-panel a { display: block; border-radius: 0.125rem; padding: .75rem .85rem; font-size: .8125rem; font-weight: 700; color: #5c6672; white-space: nowrap; }
+    .nav-panel a:hover, .nav-panel a:focus-visible { color: #002147; background: #f4f6f7; outline: none; }
   </style>
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
@@ -397,16 +444,52 @@ function page(service, lang) {
   <header class="fixed left-0 top-0 z-50 w-full border-b border-line/80 bg-white/95 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
       <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="${homeUrl}" aria-label="Globos Holdings home">Globos Holdings</a>
-      <div class="hidden items-center gap-5 text-sm font-bold text-slatecopy lg:flex">
-        <a class="hover:text-navy" href="${homeUrl}">${esc(l.home)}</a>
-        <a class="hover:text-navy" href="${homeUrl}#local-partner">${esc(l.tower)}</a>
-        <a class="text-navy" href="${homeUrl}#capabilities">${esc(l.capabilities)}</a>
-        <a class="hover:text-navy" href="../../site-map.html">${esc(l.sitemap)}</a>
-        <a class="hover:text-navy" href="../../contact.html">${esc(l.contact)}</a>
+      <div class="hidden items-center gap-1 text-sm font-bold text-slatecopy lg:flex">
+        <div class="nav-group">
+          <a class="nav-trigger" href="${homeUrl}#leadership">${esc(l.about)}</a>
+          <div class="nav-panel" aria-label="${esc(l.about)} submenu">
+            <a href="${homeUrl}#leadership">${esc(l.leaders)}</a>
+            <a href="${homeUrl}#mission-vision">${esc(l.vision)}</a>
+            <a href="${homeUrl}#organization">${esc(l.org)}</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger" href="${homeUrl}#local-partner">${esc(l.partnership)}</a>
+          <div class="nav-panel" aria-label="${esc(l.partnership)} submenu">
+            <a href="${homeUrl}#local-partner">${esc(l.partnershipStructure)}</a>
+            <a href="${homeUrl}#why-globos">${esc(l.partnershipReason)}</a>
+            <a href="${homeUrl}#operating-system">${esc(l.partnershipInfra)}</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger text-navy" href="${homeUrl}#capabilities">${esc(l.business)}</a>
+          <div class="nav-panel" aria-label="${esc(l.business)} submenu">
+            <a href="../../${lang}/capabilities/franchise-expansion.html">${esc(l.businessFranchise)}</a>
+            <a href="../../${lang}/capabilities/legal-advisory.html">${esc(l.businessLegal)}</a>
+            <a href="../../${lang}/capabilities/marketing-services.html">${esc(l.businessMarketing)}</a>
+            <a href="../../${lang}/capabilities/vietnam-sourcing.html">${esc(l.businessSourcing)}</a>
+            <a href="../../${lang}/capabilities/it-systems-development.html">${esc(l.businessSystems)}</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger" href="${homeUrl}#proof">${esc(l.record)}</a>
+          <div class="nav-panel" aria-label="${esc(l.record)} submenu">
+            <a href="${homeUrl}#proof">${esc(l.recordCurrent)}</a>
+            <a href="${homeUrl}#execution-flow">${esc(l.recordFlow)}</a>
+            <a href="${homeUrl}#seo-landings">${esc(l.recordGuides)}</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a class="nav-trigger" href="../../contact.html">${esc(l.contact)}</a>
+          <div class="nav-panel" aria-label="${esc(l.contact)} submenu">
+            <a href="../../contact.html">${esc(l.consultation)}</a>
+            <a href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">${esc(l.email)}</a>
+            <a href="../../site-map.html">${esc(l.sitemap)}</a>
+          </div>
+        </div>
       </div>
       <div class="flex items-center gap-2">
         <a class="rounded-sm border border-line bg-fog px-3 py-2 text-xs font-extrabold text-slatecopy hover:border-navy hover:text-navy" href="../../${other}/capabilities/${service.slug}.html">${otherLabel}</a>
-        <a class="hidden rounded-sm bg-navy px-5 py-3 text-sm font-extrabold text-white transition-colors hover:bg-cobalt sm:inline-flex" href="../../contact.html">${esc(l.inquiry)}</a>
       </div>
     </nav>
   </header>
