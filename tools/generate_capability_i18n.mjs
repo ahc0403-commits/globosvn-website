@@ -32,11 +32,11 @@ const labels = {
     partnershipReason: "현지 실행 필요성",
     partnershipInfra: "운영 인프라",
     business: "제공가능 비즈니스 영역",
-    businessFranchise: "프랜차이즈·F&B",
-    businessLegal: "법인·인허가",
-    businessMarketing: "쇼피·틱톡샵 마케팅",
+    businessFranchise: "F&B/화장품/IT 서비스",
+    businessLegal: "베트남 현지 법률 기반 서비스",
+    businessMarketing: "온·오프라인 마케팅 채널/인프라",
     businessSourcing: "유통·소싱",
-    businessSystems: "ERP·POS·배달",
+    businessSystems: "자체 IT 인프라",
     record: "운영 실적",
     recordCurrent: "운영 현황",
     recordFlow: "실행 프로세스",
@@ -71,11 +71,11 @@ const labels = {
     partnershipReason: "Why Local Execution",
     partnershipInfra: "Operating Infrastructure",
     business: "Business Areas",
-    businessFranchise: "Franchise & F&B",
-    businessLegal: "Company & Licensing",
-    businessMarketing: "Shopee & TikTok Marketing",
+    businessFranchise: "F&B, beauty, and IT services",
+    businessLegal: "Vietnam legal-based services",
+    businessMarketing: "Online/offline marketing channels",
     businessSourcing: "Distribution & Sourcing",
-    businessSystems: "ERP, POS & Delivery",
+    businessSystems: "In-house IT infrastructure",
     record: "Track Record",
     recordCurrent: "Operating Numbers",
     recordFlow: "Execution Flow",
@@ -228,7 +228,7 @@ const services = [
       bestFor: ["베트남 진출 여부를 처음 검토하는 브랜드", "사업 모델은 있지만 현지 실행 순서가 없는 회사", "법인, 유통, 매장, 온라인 판매를 같이 봐야 하는 팀", "투자 전 실행 리스크를 확인하고 싶은 본사"],
       scope: ["시장 진입 경로와 우선순위 정리", "법인·인허가·유통·운영 연결", "현지 파트너와 실행 일정 관리", "초기 운영 지표와 확장 가능성 검토"],
       flow: ["브랜드와 제품군 진단", "진입 방식과 필수 허가 확인", "운영·유통·판매 채널 설계", "초기 실행 범위와 예산 정리"],
-      proof: "2024년 베트남에서 시작해 현재 8개 점포와 20여 개 파트너사 기반으로 진입 이후 운영까지 연결합니다."
+      proof: "2025년 설립 이후 현재 8개 점포와 한국 협업 프로젝트 2개를 기반으로 진입 이후 운영까지 연결합니다."
     },
     en: {
       title: "Vietnam Market Entry",
@@ -238,7 +238,7 @@ const services = [
       bestFor: ["Brands evaluating Vietnam for the first time", "Companies with a business model but no local execution sequence", "Teams that need entity, distribution, store, and online sales reviewed together", "Headquarters checking execution risk before investment"],
       scope: ["Market-entry route and priority setting", "Entity, licensing, distribution, and operations connection", "Local partner and execution schedule management", "Initial operating metrics and scale potential review"],
       flow: ["Diagnose brand and product category", "Confirm entry mode and required permits", "Design operations, distribution, and sales channels", "Define initial scope and budget"],
-      proof: "Since starting Vietnam operations in 2024, Globos Holdings connects market entry to actual operations through 8 stores and 20+ partner firms."
+      proof: "Founded in 2025, Globos Holdings connects market entry to actual operations through 8 stores and 2 Korea collaboration projects."
     },
     related: ["legal-advisory", "vietnam-sourcing", "marketing-services"]
   },
@@ -332,7 +332,7 @@ const services = [
       bestFor: ["현지 파트너나 운영자를 찾아야 하는 브랜드", "마스터 운영권이나 브랜드 도입 구조를 검토하는 회사", "유통사, 공급처, 운영사를 동시에 봐야 하는 팀", "장기 확장 파이프라인이 필요한 본사"],
       scope: ["파트너 후보 발굴과 조건 검토", "운영 책임과 수익 구조 정리", "브랜드 도입, 마스터 권리, 계약 방향", "확장 파이프라인과 관리 기준"],
       flow: ["브랜드 목표와 파트너 요건 정의", "후보 검토와 운영 적합성 확인", "권리·책임·수익 구조 협의", "성과 기준과 확장 단계 관리"],
-      proof: "20여 개 파트너사 네트워크와 현장 운영 경험을 기반으로 실제 실행 가능한 관계를 설계합니다."
+      proof: "한국 협업 프로젝트와 현장 운영 경험을 기반으로 실제 실행 가능한 관계를 설계합니다."
     },
     en: {
       title: "Partner and Brand Development",
@@ -342,7 +342,7 @@ const services = [
       bestFor: ["Brands looking for local partners or operators", "Companies reviewing master rights or brand introduction structures", "Teams evaluating distributors, suppliers, and operators together", "Headquarters needing long-term expansion pipelines"],
       scope: ["Partner candidate sourcing and condition review", "Operating responsibility and profit structure", "Brand introduction, master rights, and contract direction", "Expansion pipeline and management standards"],
       flow: ["Define brand goals and partner requirements", "Review candidates and operating fit", "Align rights, responsibilities, and profit structure", "Manage performance standards and expansion stages"],
-      proof: "Our 20+ partner-firm network and field operating experience help us design relationships that can actually execute."
+      proof: "Our Korea collaboration projects and field operating experience help us design relationships that can actually execute."
     },
     related: ["franchise-expansion", "vietnam-sourcing", "legal-advisory"]
   }
@@ -509,9 +509,9 @@ function page(service, lang) {
         <div class="relative overflow-hidden rounded-sm border border-line bg-[#071a31] p-4 shadow-firm">
           <img class="aspect-[4/3] w-full rounded-sm object-cover" src="${imagePath}" alt="${esc(t.title)}" />
           <div class="absolute inset-x-4 bottom-4 grid gap-3 sm:grid-cols-3">
-            <div class="rounded-sm bg-white/95 p-4 text-ink"><p class="text-xs font-extrabold uppercase text-cobalt">2024</p><p class="mt-1 font-headline text-xl font-bold">${lang === "ko" ? "베트남 시작" : "Vietnam start"}</p></div>
+            <div class="rounded-sm bg-white/95 p-4 text-ink"><p class="text-xs font-extrabold uppercase text-cobalt">2025</p><p class="mt-1 font-headline text-xl font-bold">${lang === "ko" ? "회사 설립" : "Founded"}</p></div>
             <div class="rounded-sm bg-white/95 p-4 text-ink"><p class="text-xs font-extrabold uppercase text-cobalt">8</p><p class="mt-1 font-headline text-xl font-bold">${lang === "ko" ? "운영 점포" : "stores"}</p></div>
-            <div class="rounded-sm bg-white/95 p-4 text-ink"><p class="text-xs font-extrabold uppercase text-cobalt">20+</p><p class="mt-1 font-headline text-xl font-bold">${lang === "ko" ? "파트너사" : "partners"}</p></div>
+            <div class="rounded-sm bg-white/95 p-4 text-ink"><p class="text-xs font-extrabold uppercase text-cobalt">2</p><p class="mt-1 font-headline text-xl font-bold">${lang === "ko" ? "한국 협업" : "Korea projects"}</p></div>
           </div>
         </div>
       </div>

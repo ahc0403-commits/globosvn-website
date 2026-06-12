@@ -22,7 +22,7 @@ PAGES = [
         "en_description": "Globos Holdings supports Vietnam market entry with market strategy, entity setup coordination, licensing, distribution, marketing localization, store operations, ERP, POS, and delivery infrastructure.",
         "ko_h1": "베트남 진출, 보고서보다 현지에서 움직일 팀이 먼저입니다.",
         "en_h1": "Vietnam market entry needs an execution structure, not just a strategy deck.",
-        "ko_intro": "베트남 시장이 좋아 보여도, 막상 시작하려면 법인, 인허가, 유통, 마케팅, 매장 운영이 한꺼번에 걸립니다. Globos Holdings는 2024년부터 베트남에서 매장을 운영하며 쌓은 경험으로 그 과정을 같이 정리합니다.",
+        "ko_intro": "베트남 시장이 좋아 보여도, 막상 시작하려면 법인, 인허가, 유통, 마케팅, 매장 운영이 한꺼번에 걸립니다. Globos Holdings는 2025년 설립 이후 실제 운영 기반을 쌓으며 그 과정을 같이 정리합니다.",
         "en_intro": "Companies entering Vietnam must evaluate market fit, company setup, licensing, distribution, marketing, and operating infrastructure together. Globos Holdings connects market-entry strategy to local execution through active Vietnam operations.",
         "ko_problem": "계획 단계에서는 베트남 진출 전략, 시장 진출, 컨설팅을 검토합니다. 실행 단계에서는 법인, 인허가, 유통, 운영을 현지에서 누가 연결하고 관리할지가 핵심입니다.",
         "en_problem": "Planning usually begins with Vietnam market-entry strategy, consulting, Korean company examples, and failure cases. Execution depends on who connects company setup, licensing, distribution, and daily operations locally.",
@@ -31,7 +31,7 @@ PAGES = [
         "services_en": ["Clarify market-entry assumptions and execution scope", "Map entity setup, licensing, distribution, marketing, and store operations", "Connect ERP, SaaS POS, and delivery infrastructure into the operating model"],
         "faqs_ko": [
             ["베트남 진출 전 우선 확인 사항", "시장 규모만 볼 것이 아니라 현지에서 누가 운영할지, 법인과 인허가가 어떤 방식으로 맞는지, 유통과 마케팅을 어떻게 시작할지 먼저 확인해야 합니다."],
-            ["Globos Holdings와 단순 컨설팅의 차이", "Globos Holdings는 2024년부터 베트남에서 실제 점포를 운영하고 있습니다. ERP, POS, 배달 앱 기반까지 함께 보는 현지 운영 파트너입니다."],
+            ["Globos Holdings와 단순 컨설팅의 차이", "Globos Holdings는 2025년 설립 이후 베트남에서 실제 점포 운영 기반을 쌓고 있습니다. ERP, POS, 배달 앱 기반까지 함께 보는 현지 운영 파트너입니다."],
             ["적합 업종", "F&B, 프랜차이즈, 뷰티, 리테일, 이커머스, 유통형 브랜드."],
             ["초기 상담 준비 자료", "브랜드 소개, 목표 지역, 제품과 서비스, 예상 투자 범위, 필요한 현지 기능."],
         ],
@@ -278,7 +278,7 @@ def render_json_ld(page: dict, lang: str) -> str:
             "name": "Globos Holdings",
             "url": DOMAIN + "/",
             "email": CONTACT_EMAIL,
-            "foundingDate": "2024",
+            "foundingDate": "2025",
             "areaServed": ["Vietnam", "South Korea"],
             "knowsAbout": page["keywords"],
         },
@@ -346,9 +346,9 @@ def render_page(page: dict, lang: str) -> str:
     )
     proof_label = "운영 실적" if is_ko else "Operating proof"
     proof_text = (
-        "2024년부터 베트남에서 직접 운영을 시작했습니다. 현재 8개 점포를 운영하고, 20여 개 파트너사와 협업하고 있습니다. 2030년까지 300개 점포와 50개 파트너사를 목표로 in-house ERP, SaaS POS, 배달 앱 기반을 함께 키우고 있습니다."
+        "2025년 설립 이후 베트남에서 직접 운영 기반을 쌓고 있습니다. 현재 8개 점포를 운영하고, 한국 협업 프로젝트 2개를 진행 중입니다. 2030년까지 300개 점포와 협업 브랜드/파트너 30개를 목표로 in-house ERP, SaaS POS, 배달 앱 기반을 함께 키우고 있습니다."
         if is_ko
-        else "Globos Holdings began Vietnam operations in 2024, currently operates 8 stores, works with 20+ partner firms, and targets 300 stores with 50 partner firms by 2030. in-house ERP, SaaS POS, and delivery app infrastructure are connected to the operating model."
+        else "Founded in 2025, Globos Holdings currently operates 8 stores, runs 2 Korea collaboration projects, and targets 300 stores with 30 collaboration brands/partners by 2030. in-house ERP, SaaS POS, and delivery app infrastructure are connected to the operating model."
     )
     can_do = "지원 가능 범위" if is_ko else "What Globos Holdings supports"
     search_problem = "계획과 실행의 Gap" if is_ko else "The Gap Between Planning and Execution"
@@ -371,11 +371,11 @@ def render_page(page: dict, lang: str) -> str:
     nav_partnership_reason = "현지 실행 필요성" if is_ko else "Why Local Execution"
     nav_partnership_infra = "운영 인프라" if is_ko else "Operating Infrastructure"
     nav_business = "제공가능 비즈니스 영역" if is_ko else "Business Areas"
-    nav_business_franchise = "프랜차이즈·F&B" if is_ko else "Franchise & F&B"
-    nav_business_legal = "법인·인허가" if is_ko else "Company & Licensing"
-    nav_business_marketing = "쇼피·틱톡샵 마케팅" if is_ko else "Shopee & TikTok Marketing"
+    nav_business_franchise = "F&B/화장품/IT 서비스" if is_ko else "F&B, beauty, and IT services"
+    nav_business_legal = "베트남 현지 법률 기반 서비스" if is_ko else "Vietnam legal-based services"
+    nav_business_marketing = "온·오프라인 마케팅 채널/인프라" if is_ko else "Online/offline marketing channels"
     nav_business_sourcing = "유통·소싱" if is_ko else "Distribution & Sourcing"
-    nav_business_systems = "ERP·POS·배달" if is_ko else "ERP, POS & Delivery"
+    nav_business_systems = "자체 IT 인프라" if is_ko else "In-house IT infrastructure"
     nav_record = "운영 실적" if is_ko else "Track Record"
     nav_record_current = "운영 현황" if is_ko else "Operating Numbers"
     nav_record_flow = "실행 프로세스" if is_ko else "Execution Flow"
@@ -396,11 +396,11 @@ def render_page(page: dict, lang: str) -> str:
         if is_ko
         else "Live operating numbers and the 2030 expansion vision shown together."
     )
-    operations_started = "베트남 운영 시작" if is_ko else "Vietnam operations"
+    operations_started = "회사 설립" if is_ko else "Company founded"
     now_label = "현재" if is_ko else "Now"
     stores_label = "운영 점포" if is_ko else "stores"
-    partners_label = "파트너사" if is_ko else "Partners"
-    firms_label = "개사" if is_ko else "firms"
+    partners_label = "한국 협업" if is_ko else "Korea collaboration"
+    firms_label = "프로젝트" if is_ko else "projects"
     target_label = "2030 목표" if is_ko else "2030 target"
     all_pages = [
         (
@@ -585,7 +585,7 @@ def render_page(page: dict, lang: str) -> str:
                   <p class="mt-3 text-sm leading-7 text-white/65">{dashboard_subtitle}</p>
                   <div class="mt-6 grid gap-3">
                     <div class="rounded-sm border border-white/10 bg-white/10 p-4">
-                      <p class="text-xs uppercase text-white/45">2024</p>
+                      <p class="text-xs uppercase text-white/45">2025</p>
                       <p class="mt-1 font-headline text-2xl font-bold">{operations_started}</p>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
@@ -596,7 +596,7 @@ def render_page(page: dict, lang: str) -> str:
                       </div>
                       <div class="rounded-sm border border-white/10 bg-white/10 p-4">
                         <p class="text-xs uppercase text-white/45">{partners_label}</p>
-                        <p class="mt-1 font-headline text-3xl font-bold">20+</p>
+                        <p class="mt-1 font-headline text-3xl font-bold">2</p>
                         <p class="text-xs text-white/55">{firms_label}</p>
                       </div>
                     </div>
