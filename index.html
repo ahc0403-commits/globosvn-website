@@ -560,6 +560,143 @@
       height: 1px;
       background: rgba(200, 164, 93, .55);
     }
+    .growth-runway,
+    .pipeline-stage {
+      position: relative;
+      overflow: hidden;
+      background: #071a31;
+      color: #fff;
+      box-shadow: 0 30px 80px rgba(7, 26, 49, .18), 0 2px 10px rgba(7, 26, 49, .05);
+    }
+    .growth-runway::before,
+    .pipeline-stage::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: .44;
+      pointer-events: none;
+    }
+    .growth-runway::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 42%;
+      background: linear-gradient(180deg, rgba(7,26,49,0), rgba(7,26,49,.92));
+      pointer-events: none;
+    }
+    .growth-runway-inner,
+    .pipeline-stage-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .growth-rail {
+      position: relative;
+      display: grid;
+      gap: 1px;
+      background: rgba(255,255,255,.16);
+    }
+    .growth-rail::before {
+      content: '';
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      top: 42px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(200,164,93,.35), rgba(200,164,93,1));
+      pointer-events: none;
+    }
+    .growth-node {
+      position: relative;
+      min-height: 220px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.025)),
+        rgba(7,26,49,.82);
+      padding: 24px;
+    }
+    .growth-node::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 37px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #d8b763;
+      background: #071a31;
+      transform: rotate(45deg);
+    }
+    .growth-node.is-target {
+      background:
+        linear-gradient(180deg, rgba(200,164,93,.32), rgba(255,255,255,.035)),
+        rgba(7,26,49,.9);
+    }
+    .growth-metric-line {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .growth-metric-line span {
+      display: block;
+      height: 2px;
+      transform-origin: left center;
+      background: linear-gradient(90deg, #d8b763, rgba(216,183,99,.16));
+    }
+    .pipeline-command {
+      display: grid;
+      gap: 1px;
+      background: rgba(255,255,255,.14);
+    }
+    .pipeline-command > div,
+    .pipeline-lane {
+      background: rgba(255,255,255,.075);
+      backdrop-filter: blur(10px);
+    }
+    .leader-strip > div {
+      background: #071a31;
+      backdrop-filter: blur(10px);
+    }
+    .pipeline-stage .leader-strip > div {
+      background: rgba(255,255,255,.075);
+    }
+    .pipeline-lanes {
+      position: relative;
+      display: grid;
+      gap: 1px;
+      background: rgba(255,255,255,.14);
+    }
+    .pipeline-lane {
+      min-height: 300px;
+      padding: 24px;
+      transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms ease;
+    }
+    .pipeline-lane:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.12);
+    }
+    .pipeline-lane-index {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #d8b763;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .pipeline-lane-index::after {
+      content: '';
+      display: block;
+      width: 34px;
+      height: 1px;
+      background: rgba(216,183,99,.7);
+    }
+    .leader-strip {
+      display: grid;
+      gap: 1px;
+      background: rgba(255,255,255,.14);
+    }
     @media (prefers-reduced-motion: reduce) {
       .dashboard-screen,
       .metric-line,
@@ -621,6 +758,12 @@
       .org-branch::before,
       .org-branch::after {
         display: none;
+      }
+      .growth-rail,
+      .pipeline-command,
+      .pipeline-lanes,
+      .leader-strip {
+        grid-template-columns: 1fr;
       }
     }
     @media (min-width: 1024px) {
@@ -724,7 +867,7 @@
           <a class="nav-trigger" href="#leadership" data-i18n="nav.about">About</a>
           <div class="nav-panel" aria-label="About submenu">
             <a href="#leadership" data-i18n="nav.about.leaders">Leadership</a>
-            <a href="#mission-vision" data-i18n="nav.about.vision">Vision & Mission</a>
+            <a href="#growth-roadmap" data-i18n="nav.about.vision">Growth Roadmap</a>
             <a href="#organization" data-i18n="nav.about.org">Organization</a>
           </div>
         </div>
@@ -1041,164 +1184,164 @@
       </div>
     </section>
 
-    <section id="leadership" class="bg-white py-16">
+    <section id="leadership" class="bg-white py-20">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div class="grid gap-10 lg:grid-cols-[0.76fr_1.24fr] lg:items-end">
           <div>
-          <p class="section-label mb-6" data-i18n="leadership.eyebrow">Leadership and organization</p>
+            <p class="section-label mb-6" data-i18n="leadership.eyebrow">Leadership and organization</p>
             <h2 class="font-headline text-3xl font-bold leading-tight text-ink md:text-5xl" data-i18n="leadership.title">Leadership and organization built around execution.</h2>
             <p class="mt-6 text-base leading-8 text-slatecopy" data-i18n="leadership.body">The leadership team aligns decision-making, execution priorities, and operating accountability across the business pipeline.</p>
           </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <span id="mission-vision" class="sr-only" aria-hidden="true">Mission and vision</span>
-            <article class="rounded-sm bg-[#071a31] p-6 text-white shadow-firm">
-              <p class="text-xs font-extrabold uppercase text-white/45" data-i18n="mission.label">Mission</p>
-              <h3 class="mt-4 font-headline text-2xl font-bold" data-i18n="mission.title">Make Vietnam entry operational.</h3>
-              <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="mission.body">Connect entity, licensing, distribution, store operation, marketing, and systems so brands do not enter Vietnam as disconnected projects.</p>
-            </article>
-            <article class="rounded-sm bg-brass p-6 text-ink shadow-firm">
-              <p class="text-xs font-extrabold uppercase text-ink/55" data-i18n="vision.label">Vision</p>
-              <h3 class="mt-4 font-headline text-2xl font-bold" data-i18n="vision.title">Build a 300-store Vietnam platform by 2030.</h3>
-              <p class="mt-4 text-sm leading-7 text-ink/70" data-i18n="vision.body">Grow from 8 operating stores and 2 Korea collaboration projects into a 300-store, 60-collaboration Vietnam operating platform.</p>
-            </article>
+          <div class="leader-strip lg:grid-cols-3">
+            <div class="bg-[#071a31] p-6 text-white">
+              <p class="text-xs font-extrabold uppercase text-brass">CEO</p>
+              <p class="mt-3 font-headline text-2xl font-bold">ANDRE AHN</p>
+              <p class="mt-2 text-xs font-extrabold uppercase text-white/52" data-i18n="leaders.andre.role">CEO / Co-Founder & Co-President</p>
+            </div>
+            <div class="bg-[#071a31] p-6 text-white">
+              <p class="text-xs font-extrabold uppercase text-brass">CGO</p>
+              <p class="mt-3 font-headline text-2xl font-bold">ALEX JANG</p>
+              <p class="mt-2 text-xs font-extrabold uppercase text-white/52" data-i18n="leaders.alex.role">CGO / Co-Founder & Co-President</p>
+            </div>
+            <div class="bg-[#071a31] p-6 text-white">
+              <p class="text-xs font-extrabold uppercase text-brass">COO</p>
+              <p class="mt-3 font-headline text-2xl font-bold">DANIEL LEE</p>
+              <p class="mt-2 text-xs font-extrabold uppercase text-white/52" data-i18n="leaders.daniel.role">COO / Co-Founder & Co-President</p>
+            </div>
           </div>
         </div>
 
-        <div class="mt-12 rounded-sm border border-line bg-fog p-5 lg:p-6">
-          <div class="mb-5 flex flex-col gap-2 border-b border-line pb-4 lg:flex-row lg:items-end lg:justify-between">
+        <div id="growth-roadmap" class="growth-runway mt-14 p-6 lg:p-10">
+          <span id="mission-vision" class="sr-only" aria-hidden="true">Growth roadmap</span>
+          <div class="growth-runway-inner grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
             <div>
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.label">Growth roadmap</p>
-              <h3 class="mt-2 font-headline text-2xl font-bold text-ink" data-i18n="roadmap.note">Store network and Korea collaboration pipeline</h3>
+              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="roadmap.label">Growth roadmap</p>
+              <h3 class="mt-4 font-headline text-4xl font-bold leading-tight text-white md:text-6xl" data-i18n="roadmap.note">Store network and Korea collaboration pipeline</h3>
+              <p class="mt-6 max-w-xl text-base leading-8 text-white/64" data-i18n="roadmap.range">2026-2030 target path</p>
+              <div class="mt-10 border-t border-white/18 pt-6">
+                <p class="text-xs font-extrabold uppercase text-white/42">2030</p>
+                <p class="mt-2 font-headline text-6xl font-bold text-brass">300</p>
+                <p class="mt-2 text-sm font-bold text-white/62" data-i18n="roadmap.stores.label">Total stores</p>
+              </div>
             </div>
-            <p class="text-sm font-bold text-slatecopy" data-i18n="roadmap.range">2026-2030 target path</p>
-          </div>
-          <div class="overflow-x-auto pb-2">
-            <div class="min-w-[760px] overflow-hidden rounded-sm border border-line bg-white shadow-sm">
-              <div class="grid grid-cols-[220px_repeat(5,minmax(96px,1fr))] border-b border-line bg-[#071a31] text-white">
-                <div class="p-4 text-xs font-extrabold uppercase text-white/58" data-i18n="roadmap.metric">Metric</div>
-                <div class="p-4 text-center font-headline text-xl font-bold">2026</div>
-                <div class="p-4 text-center font-headline text-xl font-bold">2027</div>
-                <div class="p-4 text-center font-headline text-xl font-bold">2028</div>
-                <div class="p-4 text-center font-headline text-xl font-bold">2029</div>
-                <div class="p-4 text-center font-headline text-xl font-bold text-brass">2030</div>
-              </div>
-              <div class="grid grid-cols-[220px_repeat(5,minmax(96px,1fr))] border-b border-line">
-                <div class="border-r border-line p-4">
-                  <p class="text-sm font-extrabold text-ink" data-i18n="roadmap.stores.label">Total stores</p>
-                  <p class="mt-1 text-xs font-bold text-slatecopy" data-i18n="roadmap.stores.note">Owned stores, F/C</p>
+            <div class="growth-rail lg:grid-cols-5">
+              <article class="growth-node">
+                <p class="ml-8 font-headline text-2xl font-bold text-white">2026</p>
+                <div class="mt-12">
+                  <p class="font-headline text-5xl font-bold text-white">20</p>
+                  <p class="mt-2 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.stores.label">Total stores</p>
+                  <p class="mt-5 font-headline text-3xl font-bold text-mint">5</p>
+                  <p class="mt-1 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.collab.note">Brands / partners</p>
                 </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">20</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 7%"></span></div>
+                <div class="growth-metric-line"><span style="width: 18%"></span><span style="width: 10%"></span></div>
+              </article>
+              <article class="growth-node">
+                <p class="ml-8 font-headline text-2xl font-bold text-white">2027</p>
+                <div class="mt-12">
+                  <p class="font-headline text-5xl font-bold text-white">50</p>
+                  <p class="mt-2 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.stores.label">Total stores</p>
+                  <p class="mt-5 font-headline text-3xl font-bold text-mint">15</p>
+                  <p class="mt-1 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.collab.note">Brands / partners</p>
                 </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">50</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 17%"></span></div>
+                <div class="growth-metric-line"><span style="width: 32%"></span><span style="width: 25%"></span></div>
+              </article>
+              <article class="growth-node">
+                <p class="ml-8 font-headline text-2xl font-bold text-white">2028</p>
+                <div class="mt-12">
+                  <p class="font-headline text-5xl font-bold text-white">100</p>
+                  <p class="mt-2 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.stores.label">Total stores</p>
+                  <p class="mt-5 font-headline text-3xl font-bold text-mint">30</p>
+                  <p class="mt-1 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.collab.note">Brands / partners</p>
                 </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">100</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 33%"></span></div>
+                <div class="growth-metric-line"><span style="width: 50%"></span><span style="width: 50%"></span></div>
+              </article>
+              <article class="growth-node">
+                <p class="ml-8 font-headline text-2xl font-bold text-white">2029</p>
+                <div class="mt-12">
+                  <p class="font-headline text-5xl font-bold text-white">200</p>
+                  <p class="mt-2 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.stores.label">Total stores</p>
+                  <p class="mt-5 font-headline text-3xl font-bold text-mint">45</p>
+                  <p class="mt-1 text-xs font-extrabold uppercase text-white/48" data-i18n="roadmap.collab.note">Brands / partners</p>
                 </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">200</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 67%"></span></div>
+                <div class="growth-metric-line"><span style="width: 76%"></span><span style="width: 72%"></span></div>
+              </article>
+              <article class="growth-node is-target">
+                <p class="ml-8 font-headline text-2xl font-bold text-brass">2030</p>
+                <div class="mt-12">
+                  <p class="font-headline text-5xl font-bold text-brass">300</p>
+                  <p class="mt-2 text-xs font-extrabold uppercase text-white/58" data-i18n="roadmap.stores.label">Total stores</p>
+                  <p class="mt-5 font-headline text-3xl font-bold text-brass">60</p>
+                  <p class="mt-1 text-xs font-extrabold uppercase text-white/58" data-i18n="roadmap.collab.note">Brands / partners</p>
                 </div>
-                <div class="bg-[#fff7e3] p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">300</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-brass" style="width: 100%"></span></div>
-                </div>
-              </div>
-              <div class="grid grid-cols-[220px_repeat(5,minmax(96px,1fr))] bg-fog/70">
-                <div class="border-r border-line p-4">
-                  <p class="text-sm font-extrabold text-ink" data-i18n="roadmap.collab.label">Vietnam-entry collaborations (cumulative)</p>
-                  <p class="mt-1 text-xs font-bold text-slatecopy" data-i18n="roadmap.collab.note">Brands / partners</p>
-                </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">5</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 8%"></span></div>
-                </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">15</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 25%"></span></div>
-                </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">30</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 50%"></span></div>
-                </div>
-                <div class="border-r border-line p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">45</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 75%"></span></div>
-                </div>
-                <div class="bg-[#fff7e3] p-4">
-                  <p class="font-headline text-3xl font-bold text-navy">60</p>
-                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-brass" style="width: 100%"></span></div>
-                </div>
-              </div>
+                <div class="growth-metric-line"><span style="width: 100%"></span><span style="width: 100%"></span></div>
+              </article>
             </div>
           </div>
         </div>
 
-        <div class="mt-12 rounded-sm bg-[#071a31] p-5 text-white shadow-firm lg:p-8">
+        <div class="pipeline-stage mt-14 p-6 lg:p-10">
           <span id="organization" class="sr-only" aria-hidden="true">Organization</span>
-          <div class="mb-6 flex flex-col gap-3 border-b border-white/12 pb-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="pipeline-stage-inner">
+          <div class="mb-8 flex flex-col gap-3 border-b border-white/18 pb-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p class="text-xs font-extrabold uppercase text-brass" data-i18n="org.map.label">Organization chart</p>
-              <h3 class="mt-2 font-headline text-2xl font-bold" data-i18n="org.map.title">Founder direction to field execution.</h3>
+              <h3 class="mt-3 font-headline text-4xl font-bold leading-tight md:text-6xl" data-i18n="org.map.title">Founder direction to field execution.</h3>
             </div>
             <p class="max-w-xl text-sm leading-7 text-white/62" data-i18n="org.map.body">The chart separates decision, operating teams, client service, growth channels, and control functions.</p>
           </div>
-          <div class="mx-auto grid max-w-4xl gap-4 md:grid-cols-[1fr_0.72fr]">
-            <div class="rounded-sm border border-brass/40 bg-brass px-5 py-4 text-center text-ink">
-              <p class="text-xs font-extrabold uppercase text-ink/55" data-i18n="org.council.label">Executive council</p>
-              <p class="mt-2 font-headline text-xl font-bold" data-i18n="org.council.title">Mission, capital allocation, partner approval, expansion priority.</p>
+          <div class="pipeline-command md:grid-cols-[1fr_0.74fr]">
+            <div class="p-6 text-white">
+              <p class="text-xs font-extrabold uppercase text-brass/75" data-i18n="org.council.label">Executive council</p>
+              <p class="mt-3 font-headline text-2xl font-bold text-brass" data-i18n="org.council.title">Mission, capital allocation, partner approval, expansion priority.</p>
             </div>
-            <div class="rounded-sm border border-dashed border-brass/70 px-5 py-4 text-center text-brass">
+            <div class="border-dashed border-brass/60 p-6 text-white md:border-l">
               <p class="text-xs font-extrabold uppercase text-brass/75" data-i18n="org.investor.label">Investors</p>
-              <p class="mt-2 font-headline text-lg font-bold text-white" data-i18n="org.investor.title">Strategic capital and expansion partners.</p>
+              <p class="mt-3 font-headline text-2xl font-bold text-white" data-i18n="org.investor.title">Strategic capital and expansion partners.</p>
             </div>
           </div>
 
-          <div class="org-branch mt-10 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-            <article class="rounded-sm bg-white p-5 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="org.team1.label">01 / Entry design</p>
-              <h4 class="mt-3 font-headline text-xl font-bold" data-i18n="org.team1.title">Market Entry & Partnership</h4>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="org.team1.body">Entry strategy, J/V structure, partner search, brand pipeline, and commercial model design.</p>
+          <div class="pipeline-lanes mt-1 xl:grid-cols-5">
+            <article class="pipeline-lane">
+              <p class="pipeline-lane-index" data-i18n="org.team1.label">01 / Entry design</p>
+              <h4 class="mt-8 font-headline text-2xl font-bold" data-i18n="org.team1.title">Market Entry & Partnership</h4>
+              <p class="mt-6 text-sm leading-7 text-white/62" data-i18n="org.team1.body">Entry strategy, J/V structure, partner search, brand pipeline, and commercial model design.</p>
             </article>
-            <article class="rounded-sm bg-white p-5 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="org.team2.label">02 / Legal setup</p>
-              <h4 class="mt-3 font-headline text-xl font-bold" data-i18n="org.team2.title">Legal, Licensing & Administration</h4>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="org.team2.body">FDI company, J/V, entity setup, permits, product registration, contracts, compliance, accounting, and local administration.</p>
+            <article class="pipeline-lane">
+              <p class="pipeline-lane-index" data-i18n="org.team2.label">02 / Legal setup</p>
+              <h4 class="mt-8 font-headline text-2xl font-bold" data-i18n="org.team2.title">Legal, Licensing & Administration</h4>
+              <p class="mt-6 text-sm leading-7 text-white/62" data-i18n="org.team2.body">FDI company, J/V, entity setup, permits, product registration, contracts, compliance, accounting, and local administration.</p>
             </article>
-            <article class="rounded-sm bg-white p-5 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="org.team3.label">03 / Field operations</p>
-              <h4 class="mt-3 font-headline text-xl font-bold" data-i18n="org.team3.title">Brand & Store Operations</h4>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="org.team3.body">Direct stores, franchise operations, SOP, staffing, training, quality control, suppliers, and delivery routines.</p>
+            <article class="pipeline-lane">
+              <p class="pipeline-lane-index" data-i18n="org.team3.label">03 / Field operations</p>
+              <h4 class="mt-8 font-headline text-2xl font-bold" data-i18n="org.team3.title">Brand & Store Operations</h4>
+              <p class="mt-6 text-sm leading-7 text-white/62" data-i18n="org.team3.body">Direct stores, franchise operations, SOP, staffing, training, quality control, suppliers, and delivery routines.</p>
             </article>
-            <article class="rounded-sm bg-white p-5 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="org.team4.label">04 / Sales channels</p>
-              <h4 class="mt-3 font-headline text-xl font-bold" data-i18n="org.team4.title">Commerce & Marketing</h4>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="org.team4.body">Shopee, TikTok Shop, offline channels, content, influencer programs, campaigns, CS, and sales conversion.</p>
+            <article class="pipeline-lane">
+              <p class="pipeline-lane-index" data-i18n="org.team4.label">04 / Sales channels</p>
+              <h4 class="mt-8 font-headline text-2xl font-bold" data-i18n="org.team4.title">Commerce & Marketing</h4>
+              <p class="mt-6 text-sm leading-7 text-white/62" data-i18n="org.team4.body">Shopee, TikTok Shop, offline channels, content, influencer programs, campaigns, CS, and sales conversion.</p>
             </article>
-            <article class="rounded-sm bg-white p-5 text-ink">
-              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="org.team5.label">05 / Platform control</p>
-              <h4 class="mt-3 font-headline text-xl font-bold" data-i18n="org.team5.title">IT, Data, Finance & HR</h4>
-              <p class="mt-3 text-sm leading-7 text-slatecopy" data-i18n="org.team5.body">ERP, POS, delivery app, dashboards, data reporting, finance control, payroll, recruiting, and HR operations.</p>
+            <article class="pipeline-lane">
+              <p class="pipeline-lane-index" data-i18n="org.team5.label">05 / Platform control</p>
+              <h4 class="mt-8 font-headline text-2xl font-bold" data-i18n="org.team5.title">IT, Data, Finance & HR</h4>
+              <p class="mt-6 text-sm leading-7 text-white/62" data-i18n="org.team5.body">ERP, POS, delivery app, dashboards, data reporting, finance control, payroll, recruiting, and HR operations.</p>
             </article>
           </div>
 
-          <div class="mt-7 grid gap-4 lg:grid-cols-3">
-            <article class="org-node rounded-sm bg-white/[0.08] p-6">
-              <h3 class="mt-3 font-headline text-2xl font-bold text-white">ANDRE AHN</h3>
-              <p class="mt-3 text-sm font-extrabold uppercase text-brass" data-i18n="leaders.andre.role">CEO / Co-Founder & Co-President</p>
-            </article>
-            <article class="org-node rounded-sm bg-white/[0.08] p-6">
-              <h3 class="mt-3 font-headline text-2xl font-bold text-white">ALEX JANG</h3>
-              <p class="mt-3 text-sm font-extrabold uppercase text-brass" data-i18n="leaders.alex.role">CGO / Co-Founder & Co-President</p>
-            </article>
-            <article class="org-node rounded-sm bg-white/[0.08] p-6">
-              <h3 class="mt-3 font-headline text-2xl font-bold text-white">DANIEL LEE</h3>
-              <p class="mt-3 text-sm font-extrabold uppercase text-brass" data-i18n="leaders.daniel.role">COO / Co-Founder & Co-President</p>
-            </article>
+          <div class="leader-strip mt-1 lg:grid-cols-3">
+            <div class="p-6">
+              <h3 class="font-headline text-2xl font-bold text-white">ANDRE AHN</h3>
+              <p class="mt-3 text-xs font-extrabold uppercase text-brass" data-i18n="leaders.andre.role">CEO / Co-Founder & Co-President</p>
+            </div>
+            <div class="p-6">
+              <h3 class="font-headline text-2xl font-bold text-white">ALEX JANG</h3>
+              <p class="mt-3 text-xs font-extrabold uppercase text-brass" data-i18n="leaders.alex.role">CGO / Co-Founder & Co-President</p>
+            </div>
+            <div class="p-6">
+              <h3 class="font-headline text-2xl font-bold text-white">DANIEL LEE</h3>
+              <p class="mt-3 text-xs font-extrabold uppercase text-brass" data-i18n="leaders.daniel.role">COO / Co-Founder & Co-President</p>
+            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -1280,7 +1423,7 @@
         'nav.inquiry': 'Get in Touch',
         'nav.about': 'About',
         'nav.about.leaders': 'Leadership',
-        'nav.about.vision': 'Vision & Mission',
+        'nav.about.vision': 'Growth Roadmap',
         'nav.about.org': 'Organization',
         'nav.partnership': 'Local Partnership',
         'nav.partnership.structure': 'Partnership Structure',
@@ -1335,7 +1478,7 @@
         'home.node.system.body': 'ERP, POS, delivery.',
         'home.node.scale': 'Scale',
         'home.node.scale.body': '300 stores, 60 cumulative collaborations.',
-        'home.card.about': 'Leadership, mission, organization.',
+        'home.card.about': 'Leadership, growth roadmap, organization.',
         'home.card.partner': 'Plan-to-execution gap control.',
         'home.card.business': 'Franchise, F&B, beauty, ecommerce, systems.',
         'home.panel.overview.label': 'Operating summary',
@@ -1601,7 +1744,7 @@
         'nav.inquiry': '상담 신청',
         'nav.about': '회사소개',
         'nav.about.leaders': '경영진',
-        'nav.about.vision': '비전&미션',
+        'nav.about.vision': '성장 로드맵',
         'nav.about.org': '조직도',
         'nav.partnership': '로컬 파트너십 안내',
         'nav.partnership.structure': '파트너십 구조',
@@ -1656,7 +1799,7 @@
         'home.node.system.body': 'ERP, POS, 배달.',
         'home.node.scale': '확장',
         'home.node.scale.body': '300개 점포, 베트남 진출 협업 누적 60개.',
-        'home.card.about': '경영진, 비전, 조직도.',
+        'home.card.about': '경영진, 성장 로드맵, 조직도.',
         'home.card.partner': '계획과 실행의 Gap 관리.',
         'home.card.business': '프랜차이즈, F&B, 뷰티, 이커머스, 시스템.',
         'home.panel.overview.label': '운영 요약',
@@ -1958,6 +2101,7 @@
       'execution-flow',
       'proof',
       'leadership',
+      'growth-roadmap',
       'mission-vision',
       'organization',
       'seo-landings'
