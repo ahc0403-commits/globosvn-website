@@ -24,8 +24,8 @@ PAGES = [
         "en_h1": "Vietnam market entry needs an execution structure, not just a strategy deck.",
         "ko_intro": "베트남 시장이 좋아 보여도, 막상 시작하려면 법인, 인허가, 유통, 마케팅, 매장 운영이 한꺼번에 걸립니다. Globos Holdings는 2024년부터 베트남에서 매장을 운영하며 쌓은 경험으로 그 과정을 같이 정리합니다.",
         "en_intro": "Companies entering Vietnam must evaluate market fit, company setup, licensing, distribution, marketing, and operating infrastructure together. Globos Holdings connects market-entry strategy to local execution through active Vietnam operations.",
-        "ko_problem": "사람들이 찾는 말은 베트남 진출 전략, 베트남 시장 진출, 베트남 진출 컨설팅입니다. 하지만 실제 고민은 하나입니다. 현지에서 누가 움직이고, 누가 계속 관리할 것인가.",
-        "en_problem": "Searchers compare Vietnam market-entry strategy, consulting, Korean company examples, and failure cases. The real failure point is often not research, but the absence of local execution structure.",
+        "ko_problem": "계획 단계에서는 베트남 진출 전략, 시장 진출, 컨설팅을 검토합니다. 실행 단계에서는 법인, 인허가, 유통, 운영을 현지에서 누가 연결하고 관리할지가 핵심입니다.",
+        "en_problem": "Planning usually begins with Vietnam market-entry strategy, consulting, Korean company examples, and failure cases. Execution depends on who connects company setup, licensing, distribution, and daily operations locally.",
         "keywords": ["베트남 진출", "베트남 시장 진출", "베트남 진출 전략", "베트남 진출 컨설팅", "Vietnam market entry", "Vietnam market entry strategy"],
         "services_ko": ["우리 브랜드가 베트남에서 팔릴 수 있는지 먼저 정리", "법인 설립, 인허가, 유통, 마케팅, 점포 운영을 한 흐름으로 검토", "ERP, SaaS POS, 배달 앱까지 고려한 운영 방식 설계"],
         "services_en": ["Clarify market-entry assumptions and execution scope", "Map entity setup, licensing, distribution, marketing, and store operations", "Connect ERP, SaaS POS, and delivery infrastructure into the operating model"],
@@ -52,8 +52,8 @@ PAGES = [
         "en_h1": "Vietnam company registration starts with the business structure, not only the filing checklist.",
         "ko_intro": "베트남 법인 설립은 비용표만 보고 결정하기 어렵습니다. 어떤 업종으로, 어떤 허가를 받아, 실제로 어떻게 매출을 만들 것인지에 따라 설립 방식이 달라집니다.",
         "en_intro": "Company setup, foreign-invested structures, representative offices, business registration, investment licensing, and operating permits depend on business type and operating model. Globos Holdings coordinates advisory support with execution planning.",
-        "ko_problem": "많이 찾는 검색어는 베트남 법인 설립 비용, 베트남 법인 설립 절차, 베트남 법인 설립 자본금, 베트남 외투법인입니다. 실제로는 사업 모델과 허가 범위를 먼저 봐야 합니다.",
-        "en_problem": "Searchers look for Vietnam company setup cost, process, capital, and service providers, but the real decision starts with how the business will operate.",
+        "ko_problem": "계획 단계에서는 설립 비용, 절차, 자본금, 외투법인 구조를 검토합니다. 실행 단계에서는 실제 사업 모델에 맞는 허가 범위와 운영 구조를 먼저 정리해야 합니다.",
+        "en_problem": "Planning usually begins with company setup cost, process, capital, and foreign-invested structures. Execution starts with the operating model and the licensing scope required for revenue.",
         "keywords": ["베트남 법인 설립", "베트남 법인 설립 비용", "베트남 법인 설립 자본금", "베트남 외투법인", "Vietnam company registration", "business setup cost in Vietnam"],
         "services_ko": ["법인을 왜 세우는지와 어떤 업종으로 운영할지 정리", "외투법인, 대표사무소, 사업자등록, 투자허가 검토 조율", "세무, 회계, 노무, 법률 지원이 필요한 지점 연결"],
         "services_en": ["Clarify the purpose of company setup and industry-specific structure", "Coordinate review of FIE, representative office, business registration, and investment licensing", "Connect tax, accounting, labor, and legal support functions"],
@@ -80,8 +80,8 @@ PAGES = [
         "en_h1": "Vietnam cosmetics entry requires registration, labeling, customs, and distribution to move together.",
         "ko_intro": "화장품은 제품등록만 끝났다고 바로 팔리는 시장이 아닙니다. 성분, 라벨링, CFS와 PIF, 수입자, 통관, 유통 채널까지 같이 준비되어야 합니다.",
         "en_intro": "Cosmetics export does not end with one approval. Ingredients, product notification, labeling, CFS/PIF, importer coordination, customs, and distribution channels must move together.",
-        "ko_problem": "검색어는 베트남 화장품 수출, 베트남 화장품 인허가, 베트남 화장품 제품등록, 라벨링, 통관으로 나뉩니다. 하지만 출시할 때는 이 모든 과정이 하나로 이어져야 합니다.",
-        "en_problem": "Searchers separate cosmetics export, certification, registration, labeling, and customs, but execution works as one launch flow.",
+        "ko_problem": "계획 단계에서는 화장품 수출, 인허가, 제품등록, 라벨링, 통관을 각각 검토합니다. 실행 단계에서는 이 과정이 출시 일정과 유통 계획 안에서 하나로 연결되어야 합니다.",
+        "en_problem": "Planning separates cosmetics export, certification, registration, labeling, and customs. Execution works only when the full launch flow connects to distribution and sales timing.",
         "keywords": ["베트남 화장품 수출", "베트남 화장품 인허가", "베트남 화장품 제품등록", "베트남 화장품 라벨링", "Vietnam cosmetics registration", "Vietnam cosmetic product notification"],
         "services_ko": ["제품별 등록과 인허가 준비 항목 정리", "라벨링, CFS, PIF, 통관 요구사항 확인", "유통업체, 쇼피, 틱톡샵, 마케팅 판매 흐름 연결"],
         "services_en": ["Map registration and notification requirements by product", "Coordinate labeling, CFS, PIF, and customs requirements", "Connect distribution, ecommerce, and marketing execution routes"],
@@ -108,8 +108,8 @@ PAGES = [
         "en_h1": "Vietnam restaurant and cafe entry is about operating durability, not only opening day.",
         "ko_intro": "베트남에서 식당이나 카페를 여는 것보다 어려운 일은 오픈 이후입니다. 입지, 인허가, 인력, 식자재, POS, 배달, 마케팅, 매장 SOP가 매일 같이 돌아가야 합니다.",
         "en_intro": "Vietnam F&B entry requires location, licensing, staffing, ingredients, POS, delivery, marketing, and store SOPs to work together. Globos Holdings designs the local execution structure from real store operations.",
-        "ko_problem": "사람들은 베트남 식당 창업, 베트남 카페 창업, 베트남 한식당 창업, 베트남 프랜차이즈 창업을 검색합니다. 실제로는 오픈보다 운영 관리가 더 큰 문제입니다.",
-        "en_problem": "Searchers look for restaurant, cafe, Korean food, and franchise entry, but the bottleneck is usually post-launch operating control.",
+        "ko_problem": "계획 단계에서는 식당, 카페, 한식당, 프랜차이즈 창업 가능성을 검토합니다. 실행 단계에서는 오픈 이후의 인력, 식자재, 품질, POS, 배달 운영이 더 큰 과제가 됩니다.",
+        "en_problem": "Planning begins with restaurant, cafe, Korean food, and franchise entry feasibility. Execution is shaped by staffing, ingredients, quality control, POS, delivery, and post-launch management.",
         "keywords": ["베트남 식당 창업", "베트남 카페 창업", "베트남 한식당 창업", "베트남 외식업 진출", "Vietnam restaurant business", "Vietnam F&B market entry"],
         "services_ko": ["F&B 브랜드 현지화와 매장 오픈 경로 설계", "점포 SOP, 인력 운영, POS, 배달 앱 준비", "식자재, 공급망, 마케팅, 프랜차이즈 전개 연결"],
         "services_en": ["Design F&B localization and store launch route", "Prepare store SOPs, staffing routines, POS, and delivery readiness", "Connect ingredients, supply chain, marketing, and franchise rollout"],
@@ -136,8 +136,8 @@ PAGES = [
         "en_h1": "Vietnam ecommerce entry starts with Shopee, Lazada, and TikTok Shop operating structure.",
         "ko_intro": "쇼피, 라자다, 틱톡샵은 상품만 올린다고 팔리는 채널이 아닙니다. 현지 셀러 구조, 콘텐츠, 광고, 물류, 통관, CS, 정산까지 같이 봐야 합니다.",
         "en_intro": "Shopee, Lazada, and TikTok Shop entry is not just product listing. Seller structure, content, ads, logistics, customs, customer service, and settlement routines must be prepared.",
-        "ko_problem": "검색어는 베트남 쇼피 입점, 쇼피 베트남 판매, 베트남 라자다 입점, 베트남 틱톡샵 입점입니다. 결국 궁금한 것은 현지에서 판매를 계속 굴릴 수 있느냐입니다.",
-        "en_problem": "Searchers look for Shopee Vietnam selling, Lazada entry, and TikTok Shop Vietnam. This intent is closer to commercial operation than general marketing.",
+        "ko_problem": "계획 단계에서는 쇼피, 라자다, 틱톡샵 입점을 검토합니다. 실행 단계에서는 상품 등록, 콘텐츠, 광고, 주문 처리, 정산을 현지에서 지속 운영할 수 있어야 합니다.",
+        "en_problem": "Planning begins with Shopee, Lazada, and TikTok Shop entry. Execution requires listing, content, ads, order handling, customer service, and settlement to run continuously.",
         "keywords": ["베트남 쇼피 입점", "쇼피 베트남 판매", "베트남 라자다 입점", "베트남 틱톡샵 입점", "TikTok Shop Vietnam", "Shopee Vietnam seller"],
         "services_ko": ["쇼피, 라자다, 틱톡샵 입점 가능성 검토", "상품 등록, 콘텐츠, 광고, CS, 정산 운영 방식 정리", "물류, 통관, 유통, 마케팅을 판매 흐름에 맞게 연결"],
         "services_en": ["Review Shopee, Lazada, and TikTok Shop entry feasibility", "Design listing, content, ads, CS, and settlement routines", "Connect logistics, customs, distribution, and marketing execution"],
@@ -164,8 +164,8 @@ PAGES = [
         "en_h1": "Vietnam marketing must connect TikTok, Shopee, influencers, and sales conversion.",
         "ko_intro": "베트남에서 마케팅은 광고를 켜는 것만으로 끝나지 않습니다. 틱톡 광고, 틱톡샵, 쇼피 캠페인, 인플루언서, 라이브커머스가 실제 매출로 이어지도록 설계해야 합니다.",
         "en_intro": "Vietnam online marketing is not only ad buying. Channel-specific sales structure and content localization matter. TikTok ads, TikTok Shop, Shopee campaigns, influencers, and live commerce must connect to sales operations.",
-        "ko_problem": "사람들이 찾는 말은 베트남 틱톡 마케팅, 베트남 틱톡 광고, 베트남 쇼피 마케팅, 베트남 인플루언서 마케팅입니다. 실제로는 채널마다 콘텐츠와 판매 방식이 다릅니다.",
-        "en_problem": "Searchers look for Vietnam TikTok marketing, TikTok ads, TikTok agency, Shopee marketing, and influencer marketing. Each channel needs a distinct operating method.",
+        "ko_problem": "계획 단계에서는 틱톡 광고, 쇼피 마케팅, 인플루언서 운영을 검토합니다. 실행 단계에서는 채널별 콘텐츠, 라이브커머스, 광고비, 판매 전환 구조를 함께 관리해야 합니다.",
+        "en_problem": "Planning begins with TikTok ads, Shopee marketing, agency support, and influencer campaigns. Execution requires channel-specific content, live commerce, media spend, and conversion management.",
         "keywords": ["베트남 틱톡 마케팅", "베트남 틱톡 광고", "베트남 쇼피 마케팅", "베트남 인플루언서 마케팅", "Vietnam TikTok marketing", "Shopee Vietnam marketing agency"],
         "services_ko": ["틱톡, 쇼피, SNS 채널별 캠페인 구조 설계", "인플루언서, 숏폼, 라이브커머스 실행 조율", "이커머스 판매, 매장 방문, 브랜드 런칭 목표와 연결"],
         "services_en": ["Design campaign structures by TikTok, Shopee, and SNS channel", "Coordinate influencer, short-form, and live commerce execution", "Connect campaigns to ecommerce sales, store visits, and brand launch goals"],
@@ -192,8 +192,8 @@ PAGES = [
         "en_h1": "Vietnam distribution is not a vendor list. It is the structure from customs to sales channels.",
         "ko_intro": "제품을 베트남에 들여오는 일과 실제로 판매되는 일 사이에는 생각보다 많은 단계가 있습니다. 통관, 수입자, 관세, 창고, 물류, 유통업체, 판매 채널을 같이 봐야 합니다.",
         "en_intro": "For products to enter Vietnam, customs, importer coordination, duties, warehousing, logistics, distributors, and sales channels must connect. Globos Holdings reviews practical routes to market after entry.",
-        "ko_problem": "검색어는 베트남 유통업체, 베트남 유통망, 베트남 통관대행, 베트남 수입관세, 베트남 물류업체로 나뉩니다. 문제는 이 기능들이 따로 움직이면 일정과 원가가 흔들린다는 점입니다.",
-        "en_problem": "Searchers look for distributors, customs brokers, import duties, and logistics companies. If these functions move separately, launch timing and cost control suffer.",
+        "ko_problem": "계획 단계에서는 유통업체, 유통망, 통관대행, 수입관세, 물류업체를 각각 검토합니다. 실행 단계에서는 일정, 원가, 재고, 채널 입점을 하나의 프로세스로 관리해야 합니다.",
+        "en_problem": "Planning often separates distributors, customs brokers, import duties, and logistics companies. Execution suffers unless timing, cost, inventory, and channel entry are managed as one process.",
         "keywords": ["베트남 유통업체", "베트남 유통망", "베트남 통관대행", "베트남 수입관세", "베트남 물류업체", "Vietnam distributor"],
         "services_ko": ["제품군별 유통 경로와 수입 방식 검토", "통관, 관세, 물류, 창고, 냉장 물류 확인", "오프라인 유통, 이커머스, 매장 판매 채널 연결"],
         "services_en": ["Review route-to-market and import structure by product category", "Coordinate customs, duties, logistics, warehousing, and cold chain execution", "Connect offline distribution, ecommerce, and store operating channels"],
@@ -220,8 +220,8 @@ PAGES = [
         "en_h1": "Vietnam sourcing is not only price comparison. It is building an operating supply chain.",
         "ko_intro": "베트남 소싱은 업체 리스트를 받는 것으로 끝나지 않습니다. 품질, 납기, 통관, 물류, 매장 공급, 정산, 지속 가능성까지 봐야 실제 운영에 쓸 수 있습니다.",
         "en_intro": "Sourcing does not end with factory or supplier lists. Quality, delivery, customs, logistics, store supply, settlement, and continuity must be reviewed together.",
-        "ko_problem": "사람들이 찾는 말은 베트남 소싱, 베트남 소싱 업체, 베트남 제조 소싱, 베트남 식자재 유통입니다. 브랜드 운영에서 중요한 것은 실제로 계속 납품 가능한 공급망입니다.",
-        "en_problem": "Searchers look for sourcing agents, factories, and ingredient distribution. Brand operations need suppliers that can actually deliver consistently.",
+        "ko_problem": "계획 단계에서는 소싱 업체, 제조 소싱, 식자재 유통을 검토합니다. 실행 단계에서는 품질, 납기, 단가, 반복 공급이 가능한 현지 공급망을 확보해야 합니다.",
+        "en_problem": "Planning begins with sourcing agents, factories, and ingredient distribution. Execution depends on quality, delivery timing, price control, and a supply base that can repeat.",
         "keywords": ["베트남 소싱", "베트남 소싱 업체", "베트남 제조 소싱", "베트남 식자재 유통", "Vietnam sourcing agent", "Vietnam supplier development"],
         "services_ko": ["제품과 브랜드 운영에 맞는 공급처 조건 정리", "제조, 식자재, 부자재, 물류 연결 가능성 확인", "점포 운영, 유통, 이커머스 판매까지 이어지는 공급망 설계"],
         "services_en": ["Clarify supplier requirements for product and brand operations", "Review manufacturing, ingredients, packaging, and logistics feasibility", "Design supply chains connected to store operations, distribution, and ecommerce sales"],
@@ -251,6 +251,16 @@ def lang_path(lang: str, slug: str) -> str:
 
 def abs_url(lang: str, slug: str) -> str:
     return f"{DOMAIN}{lang_path(lang, slug)}"
+
+
+def object_particle(value: str) -> str:
+    stripped = value.strip()
+    if not stripped:
+        return "을"
+    code = ord(stripped[-1])
+    if 0xAC00 <= code <= 0xD7A3 and (code - 0xAC00) % 28 == 0:
+        return "를"
+    return "을"
 
 
 def render_json_ld(page: dict, lang: str) -> str:
@@ -324,15 +334,15 @@ def render_page(page: dict, lang: str) -> str:
     home_href = f"../../index.html?lang={'ko' if is_ko else 'en'}"
     contact_href = "../../contact.html"
     lang_label = "English" if is_ko else "한국어"
-    eyebrow = "이런 고민에서 시작합니다" if is_ko else "Search-intent execution landing"
-    overview_label = "자주 찾는 검색어" if is_ko else "Primary search phrases"
+    eyebrow = "계획을 실행으로 바꾸는 지점" if is_ko else "From planning to execution"
+    overview_label = "초기 검토 키워드" if is_ko else "Initial review keywords"
     landing_name = page["ko_title"].split(" | ")[0] if is_ko else page["en_title"].split(" | ")[0]
-    geo_label = "AI 검색 답변 요약" if is_ko else "AI answer summary"
-    geo_title = f"{landing_name} 답변 요약" if is_ko else f"{landing_name} answer"
+    geo_label = "실행 관점 요약" if is_ko else "Execution summary"
+    geo_title = f"{landing_name} 실행 요약" if is_ko else f"{landing_name} execution summary"
     geo_body = (
-        f"Globos Holdings는 {landing_name}을 단순 정보가 아니라 베트남 현지에서 실행 가능한 운영 과제로 정리합니다. 법인, 인허가, 유통, 매장 운영, 마케팅, 시스템 중 우선 검토가 필요한 범위부터 확인합니다."
+        f"Globos Holdings는 {landing_name}{object_particle(landing_name)} 자료 검토 단계에 머무르게 두지 않고, 베트남 현지에서 바로 확인해야 할 실행 과제로 정리합니다. 법인, 인허가, 유통, 운영, 마케팅, 시스템 중 먼저 풀어야 할 범위를 함께 확인합니다."
         if is_ko
-        else f"Globos Holdings treats {landing_name} as an execution problem, not only an information search. We map the blocked point across company setup, licensing, distribution, store operations, marketing, and systems."
+        else f"Globos Holdings treats {landing_name} as an execution agenda, not a research note. We map the first operating gap across company setup, licensing, distribution, store operations, marketing, and systems."
     )
     proof_label = "운영 실적" if is_ko else "Operating proof"
     proof_text = (
@@ -340,14 +350,14 @@ def render_page(page: dict, lang: str) -> str:
         if is_ko
         else "Globos Holdings began Vietnam operations in 2024, currently operates 8 stores, works with 20+ partner firms, and targets 300 stores with 50 partner firms by 2030. in-house ERP, SaaS POS, and delivery app infrastructure are connected to the operating model."
     )
-    can_do = "검토 가능 범위" if is_ko else "What Globos Holdings supports"
-    search_problem = "검색 의도와 실제 검토 과제" if is_ko else "The problem searchers are actually trying to solve"
+    can_do = "지원 가능 범위" if is_ko else "What Globos Holdings supports"
+    search_problem = "계획과 실행의 Gap" if is_ko else "The Gap Between Planning and Execution"
     faq_title = "상담 전 주요 질문" if is_ko else "Frequently Asked Questions"
-    cta_title = "현재 검토 중인 과제를 알려주십시오." if is_ko else "Share the Vietnam execution bottleneck first."
+    cta_title = "현재 준비 상황부터 정리해 드립니다." if is_ko else "Start with the execution gap."
     cta_body = (
-        "브랜드, 제품군, 목표 지역, 현재 준비 단계, 우선 과제를 알려주시면 필요한 실행 범위와 진행 순서를 정리해 드립니다."
+        "브랜드, 제품군, 목표 지역, 준비 단계, 가장 먼저 풀어야 할 과제를 알려주시면 필요한 실행 범위와 진행 순서를 정리해 드립니다."
         if is_ko
-        else "Send your brand, product category, target region, current preparation stage, and bottleneck. We will map the next execution route."
+        else "Send your brand, product category, target region, current preparation stage, and the first issue to solve. We will map the next execution route."
     )
     cta_button = "문의하기" if is_ko else "Contact Globos Holdings"
     nav_guides = "사이트맵" if is_ko else "Site map"
@@ -375,11 +385,11 @@ def render_page(page: dict, lang: str) -> str:
     related_title = "같이 보면 좋은 페이지" if is_ko else "Related landing pages"
     flow_title = "일하는 순서" if is_ko else "Execution flow"
     flow_body = (
-        "하나의 검색어로 시작하더라도 실제 실행은 여러 단계로 이어집니다. 초기 단계부터 순서를 맞춰 검토하는 것이 중요합니다."
+        "시장 검토는 하나의 주제에서 시작되지만, 현지 실행은 법인, 인허가, 유통, 운영, 시스템이 순서대로 맞물려야 합니다."
         if is_ko
-        else "A search phrase may look like one problem, but execution works only when the required functions connect in order."
+        else "Market review may begin with one topic, but local execution works only when legal, licensing, distribution, operations, and systems connect in order."
     )
-    keyword_title = "주요 검색 의도" if is_ko else "Search intent and real concern"
+    keyword_title = "시장 검토의 출발점" if is_ko else "Where market review begins"
     dashboard_title = "운영 기반" if is_ko else "Operating base"
     dashboard_subtitle = (
         "현재 운영 현황과 2030년 확장 목표를 함께 제시합니다."
