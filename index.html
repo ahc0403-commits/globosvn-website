@@ -137,29 +137,25 @@
       display: none !important;
     }
     .home-screen {
-      height: calc(100dvh - 73px);
+      height: calc(100dvh - 149px);
       overflow: hidden;
     }
-    .home-map-line {
-      position: absolute;
-      left: 42px;
-      right: 42px;
-      top: 50%;
-      height: 1px;
-      background: rgba(200, 164, 93, .38);
+    .home-hero-bg {
+      background-image:
+        linear-gradient(90deg, rgba(3, 14, 31, .78), rgba(3, 14, 31, .54) 48%, rgba(3, 14, 31, .30)),
+        linear-gradient(0deg, rgba(3, 14, 31, .36), rgba(3, 14, 31, .05)),
+        url('assets/images/generated/home-execution-command.webp');
+      background-position: center;
+      background-size: cover;
     }
-    .home-node {
-      position: relative;
-      z-index: 1;
+    .hero-service-card {
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(10px);
     }
-    .home-node::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: -18px;
-      width: 1px;
-      height: 18px;
-      background: rgba(200, 164, 93, .45);
+    .hero-service-card[aria-pressed='true'] {
+      background: #071a31;
+      color: #fff;
+      border-color: rgba(200, 164, 93, .8);
     }
     .nav-group {
       position: relative;
@@ -350,27 +346,46 @@
 </head>
 <body class="home-page font-body antialiased">
   <header class="fixed left-0 top-0 z-50 w-full border-b border-line/80 bg-white/95 backdrop-blur">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8" aria-label="Primary navigation">
-      <a class="brand-name font-headline text-xl font-bold text-navy sm:text-2xl" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
-      <div class="hidden items-center gap-1 text-sm font-bold text-slatecopy lg:flex">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+      <a class="brand-name font-headline text-2xl font-bold text-navy sm:text-3xl" href="index.html" aria-label="Globos Holdings home">Globos Holdings</a>
+      <div class="hidden items-center gap-5 text-sm font-bold text-ink lg:flex">
+        <a class="inline-flex items-center gap-2 transition-colors hover:text-cobalt" href="mailto:contact@globos.world?subject=Globos Holdings Website Inquiry">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
+          contact@globos.world
+        </a>
+        <span class="inline-flex items-center gap-2 text-slatecopy">
+          <span class="material-symbols-outlined text-lg" aria-hidden="true">public</span>
+          <span data-i18n="top.focus">Vietnam market entry</span>
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex rounded-sm border border-line bg-fog p-1" aria-label="Language selector">
+          <button class="language-button rounded-sm px-3 py-2 text-xs font-extrabold text-slatecopy" type="button" data-lang-button="en" aria-pressed="true">EN</button>
+          <button class="language-button rounded-sm px-3 py-2 text-xs font-extrabold text-slatecopy" type="button" data-lang-button="ko" aria-pressed="false">KR</button>
+        </div>
+        <a class="hidden rounded-sm bg-navy px-6 py-3 text-sm font-extrabold text-white transition-colors hover:bg-cobalt sm:inline-flex" href="contact.html" data-i18n="nav.inquiry">Get in Touch</a>
+      </div>
+    </div>
+    <nav class="border-t border-line/80" aria-label="Primary navigation">
+      <div class="mx-auto hidden max-w-7xl items-center justify-between gap-1 px-5 py-3 text-sm font-bold text-slatecopy lg:flex lg:px-8">
         <div class="nav-group">
-          <a class="nav-trigger" href="#home-about" data-home-panel-trigger="about" data-i18n="nav.about">About</a>
+          <a class="nav-trigger" href="#leadership" data-i18n="nav.about">About</a>
           <div class="nav-panel" aria-label="About submenu">
-            <a href="#home-about" data-home-panel-trigger="about" data-i18n="nav.about.leaders">Leadership</a>
-            <a href="#home-about" data-home-panel-trigger="about" data-i18n="nav.about.vision">Vision & Mission</a>
-            <a href="#home-about" data-home-panel-trigger="about" data-i18n="nav.about.org">Organization</a>
+            <a href="#leadership" data-i18n="nav.about.leaders">Leadership</a>
+            <a href="#mission-vision" data-i18n="nav.about.vision">Vision & Mission</a>
+            <a href="#organization" data-i18n="nav.about.org">Organization</a>
           </div>
         </div>
         <div class="nav-group">
-          <a class="nav-trigger" href="#home-partner" data-home-panel-trigger="partner" data-i18n="nav.partnership">Local Partnership</a>
+          <a class="nav-trigger" href="#local-partner" data-i18n="nav.partnership">Local Partnership</a>
           <div class="nav-panel" aria-label="Local partnership submenu">
-            <a href="#home-partner" data-home-panel-trigger="partner" data-i18n="nav.partnership.structure">Partnership Structure</a>
-            <a href="#home-partner" data-home-panel-trigger="partner" data-i18n="nav.partnership.reason">Why Local Execution</a>
-            <a href="#home-proof" data-home-panel-trigger="proof" data-i18n="nav.partnership.infra">Operating Infrastructure</a>
+            <a href="#local-partner" data-i18n="nav.partnership.structure">Partnership Structure</a>
+            <a href="#why-globos" data-i18n="nav.partnership.reason">Why Local Execution</a>
+            <a href="#operating-system" data-i18n="nav.partnership.infra">Operating Infrastructure</a>
           </div>
         </div>
         <div class="nav-group">
-          <a class="nav-trigger" href="#home-business" data-home-panel-trigger="business" data-i18n="nav.business">Business Areas</a>
+          <a class="nav-trigger" href="#capabilities" data-i18n="nav.business">Business Areas</a>
           <div class="nav-panel" aria-label="Business areas submenu">
             <a href="en/capabilities/franchise-expansion.html" data-capability-link="franchise-expansion" data-i18n="nav.business.franchise">Franchise & F&B</a>
             <a href="en/capabilities/legal-advisory.html" data-capability-link="legal-advisory" data-i18n="nav.business.legal">Company & Licensing</a>
@@ -380,11 +395,11 @@
           </div>
         </div>
         <div class="nav-group">
-          <a class="nav-trigger" href="#home-proof" data-home-panel-trigger="proof" data-i18n="nav.record">Track Record</a>
+          <a class="nav-trigger" href="#proof" data-i18n="nav.record">Track Record</a>
           <div class="nav-panel" aria-label="Track record submenu">
-            <a href="#home-proof" data-home-panel-trigger="proof" data-i18n="nav.record.current">Operating Numbers</a>
-            <a href="#home-partner" data-home-panel-trigger="partner" data-i18n="nav.record.flow">Execution Flow</a>
-            <a href="site-map.html#entry-problems" data-i18n="nav.record.guides">Vietnam Entry Guides</a>
+            <a href="#proof" data-i18n="nav.record.current">Operating Numbers</a>
+            <a href="#execution-flow" data-i18n="nav.record.flow">Execution Flow</a>
+            <a href="#seo-landings" data-i18n="nav.record.guides">Vietnam Entry Guides</a>
           </div>
         </div>
         <div class="nav-group">
@@ -396,191 +411,74 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center gap-2">
-        <div class="flex rounded-sm border border-line bg-fog p-1" aria-label="Language selector">
-          <button class="language-button rounded-sm px-3 py-2 text-xs font-extrabold text-slatecopy" type="button" data-lang-button="en" aria-pressed="true">EN</button>
-          <button class="language-button rounded-sm px-3 py-2 text-xs font-extrabold text-slatecopy" type="button" data-lang-button="ko" aria-pressed="false">KR</button>
-        </div>
-      </div>
     </nav>
   </header>
 
-  <main class="pt-[73px]">
-    <section class="home-screen relative overflow-hidden bg-fog">
-      <div class="mx-auto grid h-full max-w-7xl gap-5 px-5 py-5 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
-        <aside class="flex min-h-0 flex-col justify-between rounded-sm border border-line bg-white p-5 shadow-firm">
-          <div>
-            <p class="section-label mb-5" data-i18n="hero.eyebrow">Local partner for Vietnam entry</p>
-            <h1 class="font-headline text-3xl font-bold leading-[1.08] text-ink lg:text-5xl" data-i18n="hero.title">A local execution partner for brands entering Vietnam.</h1>
-            <p class="mt-5 text-sm leading-7 text-slatecopy lg:text-base" data-i18n="hero.body">Globos Holdings connects company setup, licensing, store operations, distribution, Shopee, TikTok Shop, ERP, and POS into one practical Vietnam operating structure.</p>
-          </div>
-
-          <dl class="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-line bg-line">
-            <div class="bg-fog p-4">
-              <dt class="text-xs font-bold uppercase text-slatecopy" data-i18n="stats.started">Founded</dt>
-              <dd class="mt-2 font-headline text-2xl font-bold text-navy">2024</dd>
-            </div>
-            <div class="bg-fog p-4">
-              <dt class="text-xs font-bold uppercase text-slatecopy" data-i18n="stats.operating">Stores in operation</dt>
-              <dd class="mt-2 font-headline text-2xl font-bold text-navy" data-i18n="stats.stores">8 stores</dd>
-            </div>
-            <div class="bg-fog p-4">
-              <dt class="text-xs font-bold uppercase text-slatecopy" data-i18n="stats.partners">Local partners</dt>
-              <dd class="mt-2 font-headline text-2xl font-bold text-navy" data-i18n="stats.partnerCount">20+ firms</dd>
-            </div>
-            <div class="bg-fog p-4">
-              <dt class="text-xs font-bold uppercase text-slatecopy" data-i18n="stats.target">2030 target</dt>
-              <dd class="mt-2 font-headline text-2xl font-bold text-navy" data-i18n="stats.targetStores">300 stores</dd>
-            </div>
-          </dl>
-
-          <div class="mt-5 grid gap-3">
-            <div class="rounded-sm bg-[#071a31] p-4 text-white">
-              <p class="text-xs font-extrabold uppercase text-brass" data-i18n="home.promise.label">What we do</p>
-              <p class="mt-2 text-sm font-bold leading-6" data-i18n="home.promise.body">Local partner structure for setup, operation, sales channels, systems, and scale.</p>
-            </div>
-            <div class="grid gap-3 sm:grid-cols-3">
-              <div class="rounded-sm border border-line p-3">
-                <p class="text-xs font-extrabold uppercase text-cobalt">CEO</p>
-                <p class="mt-1 font-headline text-base font-bold">ANDRE AHN</p>
-              </div>
-              <div class="rounded-sm border border-line p-3">
-                <p class="text-xs font-extrabold uppercase text-cobalt">CGO</p>
-                <p class="mt-1 font-headline text-base font-bold">ALEX JANG</p>
-              </div>
-              <div class="rounded-sm border border-line p-3">
-                <p class="text-xs font-extrabold uppercase text-cobalt">COO</p>
-                <p class="mt-1 font-headline text-base font-bold">DANIEL LEE</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-5 grid gap-3 sm:grid-cols-3">
-            <button class="primary-action inline-flex items-center justify-center gap-2 rounded-sm bg-navy px-4 py-3 text-sm font-extrabold text-white" type="button" data-home-panel-trigger="partner">
-              <span data-i18n="hero.primary">View local partnership</span>
+  <main class="pt-[74px] lg:pt-[149px]">
+    <section class="home-screen home-hero-bg relative text-white">
+      <div class="mx-auto flex h-full max-w-7xl flex-col justify-center px-5 py-8 lg:px-8">
+        <div class="max-w-4xl">
+          <p class="mb-6 inline-flex items-center gap-3 text-xs font-extrabold uppercase text-brass">
+            <span class="h-px w-10 bg-brass"></span>
+            <span data-i18n="hero.eyebrow">Local partner for Vietnam entry</span>
+          </p>
+          <h1 class="font-headline text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl" data-i18n="hero.title">A local execution partner for brands entering Vietnam.</h1>
+          <p class="mt-6 max-w-3xl text-base leading-8 text-white/82 lg:text-xl" data-i18n="hero.body">Globos Holdings connects company setup, licensing, store operations, distribution, Shopee, TikTok Shop, ERP, and POS into one practical Vietnam operating structure.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="primary-action inline-flex items-center justify-center gap-3 rounded-sm bg-brass px-8 py-4 text-sm font-extrabold text-ink hover:bg-white" href="contact.html">
+              <span data-i18n="hero.cta.primary">Start a consultation</span>
               <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
-            </button>
-            <button class="secondary-action inline-flex items-center justify-center gap-2 rounded-sm border border-line bg-white px-4 py-3 text-sm font-extrabold text-navy" type="button" data-home-panel-trigger="business">
-              <span data-i18n="hero.secondary">View business areas</span>
+            </a>
+            <a class="secondary-action inline-flex items-center justify-center gap-3 rounded-sm bg-white/12 px-8 py-4 text-sm font-extrabold text-white ring-1 ring-white/30 hover:bg-white/18" href="#capabilities">
+              <span data-i18n="hero.cta.secondary">Explore business areas</span>
               <span class="material-symbols-outlined text-lg" aria-hidden="true">grid_view</span>
-            </button>
-            <a class="secondary-action inline-flex items-center justify-center gap-2 rounded-sm border border-line bg-white px-4 py-3 text-sm font-extrabold text-navy" href="contact.html">
-              <span data-i18n="home.contact">Contact</span>
-              <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
             </a>
           </div>
-        </aside>
+        </div>
 
-        <section class="relative min-h-0 overflow-hidden rounded-sm bg-[#071a31] p-5 text-white shadow-firm" aria-label="Globos Holdings company map">
-          <div class="absolute inset-0 opacity-25" style="background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 42px 42px;"></div>
-          <div class="relative z-10 flex h-full min-h-0 flex-col">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <p class="text-xs font-extrabold uppercase text-brass" data-i18n="home.map.label">Company at a glance</p>
-                <h2 class="mt-2 font-headline text-2xl font-bold lg:text-3xl" data-i18n="home.map.title">Globos Holdings in one operating map.</h2>
-              </div>
-              <div class="rounded-sm border border-white/15 px-4 py-3 text-right">
-                <p class="text-xs text-white/50" data-i18n="visual.model">2030 vision</p>
-                <p class="font-headline text-xl font-bold text-brass" data-i18n="visual.growth">8 to 300</p>
-              </div>
-            </div>
-
-            <div class="relative mt-5 rounded-sm border border-white/12 bg-white/[0.06] p-4">
-              <div class="home-map-line hidden lg:block"></div>
-              <div class="grid gap-3 lg:grid-cols-5">
-                <button class="home-node rounded-sm border border-white/10 bg-white/10 p-4 text-left" type="button" data-home-panel-trigger="partner">
-                  <span class="material-symbols-outlined text-brass" aria-hidden="true">domain_add</span>
-                  <p class="mt-3 text-xs font-extrabold uppercase text-white/45">01</p>
-                  <h3 class="mt-1 font-headline text-lg font-bold" data-i18n="home.node.setup">Setup</h3>
-                  <p class="mt-2 text-xs leading-5 text-white/58" data-i18n="home.node.setup.body">Entity, licensing, permits.</p>
-                </button>
-                <button class="home-node rounded-sm border border-white/10 bg-white/10 p-4 text-left" type="button" data-home-panel-trigger="partner">
-                  <span class="material-symbols-outlined text-mint" aria-hidden="true">storefront</span>
-                  <p class="mt-3 text-xs font-extrabold uppercase text-white/45">02</p>
-                  <h3 class="mt-1 font-headline text-lg font-bold" data-i18n="home.node.operate">Operate</h3>
-                  <p class="mt-2 text-xs leading-5 text-white/58" data-i18n="home.node.operate.body">Stores, staff, SOP.</p>
-                </button>
-                <button class="home-node rounded-sm border border-white/10 bg-white/10 p-4 text-left" type="button" data-home-panel-trigger="business">
-                  <span class="material-symbols-outlined text-brass" aria-hidden="true">shopping_bag</span>
-                  <p class="mt-3 text-xs font-extrabold uppercase text-white/45">03</p>
-                  <h3 class="mt-1 font-headline text-lg font-bold" data-i18n="home.node.sell">Sell</h3>
-                  <p class="mt-2 text-xs leading-5 text-white/58" data-i18n="home.node.sell.body">Distribution, Shopee, TikTok.</p>
-                </button>
-                <button class="home-node rounded-sm border border-white/10 bg-white/10 p-4 text-left" type="button" data-home-panel-trigger="proof">
-                  <span class="material-symbols-outlined text-mint" aria-hidden="true">database</span>
-                  <p class="mt-3 text-xs font-extrabold uppercase text-white/45">04</p>
-                  <h3 class="mt-1 font-headline text-lg font-bold" data-i18n="home.node.system">Measure</h3>
-                  <p class="mt-2 text-xs leading-5 text-white/58" data-i18n="home.node.system.body">ERP, POS, delivery.</p>
-                </button>
-                <button class="home-node rounded-sm border border-white/10 bg-white/10 p-4 text-left" type="button" data-home-panel-trigger="proof">
-                  <span class="material-symbols-outlined text-brass" aria-hidden="true">trending_up</span>
-                  <p class="mt-3 text-xs font-extrabold uppercase text-white/45">05</p>
-                  <h3 class="mt-1 font-headline text-lg font-bold" data-i18n="home.node.scale">Scale</h3>
-                  <p class="mt-2 text-xs leading-5 text-white/58" data-i18n="home.node.scale.body">300 stores, 50 partners.</p>
-                </button>
-              </div>
-            </div>
-
-            <div class="mt-5 grid min-h-0 flex-1 gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-              <div class="grid gap-3">
-                <button class="path-card rounded-sm bg-white p-4 text-left text-ink" type="button" data-home-panel-trigger="about">
-                  <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="nav.about">About</p>
-                  <h3 class="mt-2 font-headline text-xl font-bold" data-i18n="home.card.about">Leadership, mission, organization.</h3>
-                </button>
-                <button class="path-card rounded-sm bg-white p-4 text-left text-ink" type="button" data-home-panel-trigger="partner">
-                  <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="nav.partnership">Local Partnership</p>
-                  <h3 class="mt-2 font-headline text-xl font-bold" data-i18n="home.card.partner">Plan-to-execution gap control.</h3>
-                </button>
-                <button class="path-card rounded-sm bg-white p-4 text-left text-ink" type="button" data-home-panel-trigger="business">
-                  <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="nav.business">Business Areas</p>
-                  <h3 class="mt-2 font-headline text-xl font-bold" data-i18n="home.card.business">Franchise, F&B, beauty, ecommerce, systems.</h3>
-                </button>
-              </div>
-
-              <div class="rounded-sm border border-white/12 bg-white/[0.08] p-5">
-                <article class="home-panel" data-home-panel="overview">
-                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="home.panel.overview.label">Operating summary</p>
-                  <h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="home.panel.overview.title">A Vietnam entry partner with stores, systems, and partner network.</h3>
-                  <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="home.panel.overview.body">Globos Holdings is built for brands that need someone local to set the base, run the work, read the numbers, and expand the business.</p>
-                  <div class="mt-5 grid gap-2 sm:grid-cols-2">
-                    <p class="rounded-sm bg-white/10 p-3 text-sm font-bold" data-i18n="home.tag1">Company and licensing</p>
-                    <p class="rounded-sm bg-white/10 p-3 text-sm font-bold" data-i18n="home.tag2">Direct store operations</p>
-                    <p class="rounded-sm bg-white/10 p-3 text-sm font-bold" data-i18n="home.tag3">Shopee and TikTok Shop</p>
-                    <p class="rounded-sm bg-white/10 p-3 text-sm font-bold" data-i18n="home.tag4">ERP, POS, delivery app</p>
-                  </div>
-                </article>
-                <article class="home-panel" data-home-panel="about" hidden>
-                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="leadership.eyebrow">Leadership & organization</p>
-                  <h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="home.panel.about.title">Three co-founders, one operating organization.</h3>
-                  <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="home.panel.about.body">CEO Andre Ahn, CGO Alex Jang, and COO Daniel Lee lead strategy, growth, and field operations with dedicated brand, consulting, marketing, finance, HR, and legal support teams.</p>
-                  <a class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-brass" href="site-map.html#company"><span data-i18n="home.panel.more">View details</span><span class="material-symbols-outlined text-base">north_east</span></a>
-                </article>
-                <article class="home-panel" data-home-panel="partner" hidden>
-                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="why.eyebrow">Why a local partner matters</p>
-                  <h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="why.title">The gap between plan and execution appears locally.</h3>
-                  <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="why.body">Licensing, supply chains, stores, online channels, and settlement are connected decisions. A brand needs a local partner that can set priorities, align people, and manage the sequence.</p>
-                  <a class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-brass" href="site-map.html#local-partner"><span data-i18n="home.panel.more">View details</span><span class="material-symbols-outlined text-base">north_east</span></a>
-                </article>
-                <article class="home-panel" data-home-panel="business" hidden>
-                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="services.eyebrow">Our services</p>
-                  <h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="home.panel.business.title">Choose the business area your company needs now.</h3>
-                  <div class="mt-4 grid gap-2 sm:grid-cols-2">
-                    <a class="rounded-sm bg-white/10 p-3 text-sm font-bold text-white" href="en/capabilities/franchise-expansion.html" data-capability-link="franchise-expansion" data-i18n="nav.business.franchise">Franchise & F&B</a>
-                    <a class="rounded-sm bg-white/10 p-3 text-sm font-bold text-white" href="en/capabilities/legal-advisory.html" data-capability-link="legal-advisory" data-i18n="nav.business.legal">Company & Licensing</a>
-                    <a class="rounded-sm bg-white/10 p-3 text-sm font-bold text-white" href="en/capabilities/marketing-services.html" data-capability-link="marketing-services" data-i18n="nav.business.marketing">Shopee & TikTok Marketing</a>
-                    <a class="rounded-sm bg-white/10 p-3 text-sm font-bold text-white" href="en/capabilities/it-systems-development.html" data-capability-link="it-systems-development" data-i18n="nav.business.systems">ERP, POS & Delivery</a>
-                  </div>
-                </article>
-                <article class="home-panel" data-home-panel="proof" hidden>
-                  <p class="text-xs font-extrabold uppercase text-brass" data-i18n="proof.eyebrow">Track record</p>
-                  <h3 class="mt-3 font-headline text-2xl font-bold" data-i18n="home.panel.proof.title">2024 start. 8 stores. 20+ partners. 2030 target of 300 stores.</h3>
-                  <p class="mt-4 text-sm leading-7 text-white/68" data-i18n="home.panel.proof.body">The operating base includes in-house ERP, SaaS POS, delivery app readiness, store routines, and a local partner network.</p>
-                  <a class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-brass" href="site-map.html#proof"><span data-i18n="home.panel.more">View details</span><span class="material-symbols-outlined text-base">north_east</span></a>
-                </article>
-              </div>
-            </div>
+        <div class="mt-8 max-w-5xl rounded-sm bg-white/95 p-4 text-ink shadow-firm lg:p-5">
+          <div class="grid gap-3 lg:grid-cols-[1.15fr_repeat(4,0.85fr)]">
+            <a class="hero-service-card path-card rounded-sm border border-line p-4 text-left text-ink" href="#local-partner">
+              <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="home.promise.label">What we do</p>
+              <h2 class="mt-2 font-headline text-xl font-bold" data-i18n="home.promise.body">Local partner structure for setup, operation, sales channels, systems, and scale.</h2>
+            </a>
+            <a class="hero-service-card path-card rounded-sm border border-line p-4 text-left text-ink" href="en/capabilities/franchise-expansion.html" data-capability-link="franchise-expansion">
+              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">storefront</span>
+              <h3 class="mt-3 font-headline text-lg font-bold" data-i18n="nav.business.franchise">Franchise & F&B</h3>
+            </a>
+            <a class="hero-service-card path-card rounded-sm border border-line p-4 text-left text-ink" href="en/capabilities/legal-advisory.html" data-capability-link="legal-advisory">
+              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">gavel</span>
+              <h3 class="mt-3 font-headline text-lg font-bold" data-i18n="nav.business.legal">Company & Licensing</h3>
+            </a>
+            <a class="hero-service-card path-card rounded-sm border border-line p-4 text-left text-ink" href="en/capabilities/marketing-services.html" data-capability-link="marketing-services">
+              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">shopping_bag</span>
+              <h3 class="mt-3 font-headline text-lg font-bold" data-i18n="nav.business.marketing">Shopee & TikTok Marketing</h3>
+            </a>
+            <a class="hero-service-card path-card rounded-sm border border-line p-4 text-left text-ink" href="en/capabilities/it-systems-development.html" data-capability-link="it-systems-development">
+              <span class="material-symbols-outlined text-cobalt" aria-hidden="true">database</span>
+              <h3 class="mt-3 font-headline text-lg font-bold" data-i18n="nav.business.systems">ERP, POS & Delivery</h3>
+            </a>
           </div>
-        </section>
+        </div>
+
+        <dl class="mt-5 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-sm bg-white/20 text-white ring-1 ring-white/20 lg:grid-cols-4">
+          <div class="bg-white/10 p-4">
+            <dt class="text-xs font-bold uppercase text-white/58" data-i18n="stats.started">Founded</dt>
+            <dd class="mt-2 font-headline text-2xl font-bold">2024</dd>
+          </div>
+          <div class="bg-white/10 p-4">
+            <dt class="text-xs font-bold uppercase text-white/58" data-i18n="stats.operating">Stores in operation</dt>
+            <dd class="mt-2 font-headline text-2xl font-bold" data-i18n="stats.stores">8 stores</dd>
+          </div>
+          <div class="bg-white/10 p-4">
+            <dt class="text-xs font-bold uppercase text-white/58" data-i18n="stats.partners">Local partners</dt>
+            <dd class="mt-2 font-headline text-2xl font-bold" data-i18n="stats.partnerCount">20+ firms</dd>
+          </div>
+          <div class="bg-white/10 p-4">
+            <dt class="text-xs font-bold uppercase text-white/58" data-i18n="stats.target">2030 target</dt>
+            <dd class="mt-2 font-headline text-2xl font-bold" data-i18n="stats.targetStores">300 stores</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -1087,11 +985,14 @@
         'nav.contact.consult': 'Consultation',
         'nav.contact.email': 'Email',
         'nav.contact.sitemap': 'Site Map',
+        'top.focus': 'Vietnam market entry',
         'hero.eyebrow': 'Local partner for Vietnam entry',
         'hero.title': 'A local execution partner for brands entering Vietnam.',
         'hero.body': 'Globos Holdings connects company setup, licensing, store operations, distribution, Shopee, TikTok Shop, ERP, and POS into one practical Vietnam operating structure.',
         'hero.primary': 'View local partnership',
         'hero.secondary': 'View business areas',
+        'hero.cta.primary': 'Start a consultation',
+        'hero.cta.secondary': 'Explore business areas',
         'hero.selector.label': 'Select your current priority.',
         'hero.option.franchise': 'Franchise or F&B expansion',
         'hero.option.franchise.body': 'Store launch and multi-unit expansion standards.',
@@ -1367,11 +1268,14 @@
         'nav.contact.consult': '상담 문의',
         'nav.contact.email': '이메일',
         'nav.contact.sitemap': '사이트맵',
+        'top.focus': '베트남 시장 진출',
         'hero.eyebrow': '베트남 진출에 필요한 로컬 파트너',
         'hero.title': '베트남 진출을 준비하는 브랜드를 위한 로컬 실행 파트너.',
         'hero.body': 'Globos Holdings는 법인·인허가부터 점포 운영, 유통·소싱, 쇼피·틱톡샵, ERP·POS까지 하나의 현지 실행 구조로 연결합니다.',
         'hero.primary': '로컬 파트너십 보기',
         'hero.secondary': '제공 가능 영역 보기',
+        'hero.cta.primary': '전문가 상담 바로가기',
+        'hero.cta.secondary': '제공 영역 보기',
         'hero.selector.label': '현재 검토 중인 우선 과제.',
         'hero.option.franchise': '프랜차이즈·외식 진출',
         'hero.option.franchise.body': '현지 매장 오픈 및 다점포 확장 기준.',
@@ -1649,30 +1553,46 @@
       });
     }
 
-    function setHomePanel(panelName) {
-      const targetPanel = document.querySelector(`[data-home-panel="${panelName}"]`) ? panelName : 'overview';
-      document.querySelectorAll('[data-home-panel]').forEach((panel) => {
-        panel.hidden = panel.dataset.homePanel !== targetPanel;
+    const detailSectionIds = new Set([
+      'entry-models',
+      'why-globos',
+      'local-partner',
+      'capabilities',
+      'operating-system',
+      'execution-flow',
+      'proof',
+      'leadership',
+      'mission-vision',
+      'organization',
+      'seo-landings'
+    ]);
+
+    function openDetailSection(hash) {
+      const id = hash.replace('#', '');
+      if (!detailSectionIds.has(id)) return false;
+      document.body.classList.remove('home-page');
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ block: 'start' });
       });
-      document.querySelectorAll('[data-home-panel-trigger]').forEach((trigger) => {
-        trigger.setAttribute('aria-pressed', String(trigger.dataset.homePanelTrigger === targetPanel));
-      });
+      return true;
     }
 
     document.querySelectorAll('[data-lang-button]').forEach((button) => {
       button.addEventListener('click', () => setLanguage(button.dataset.langButton));
     });
 
-    document.querySelectorAll('[data-home-panel-trigger]').forEach((trigger) => {
-      trigger.addEventListener('click', (event) => {
-        event.preventDefault();
-        setHomePanel(trigger.dataset.homePanelTrigger);
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        openDetailSection(link.getAttribute('href'));
       });
     });
 
+    window.addEventListener('hashchange', () => {
+      openDetailSection(window.location.hash);
+    });
+
     setLanguage(activeLanguage);
-    const initialPanel = window.location.hash.replace('#home-', '');
-    setHomePanel(initialPanel || 'overview');
+    openDetailSection(window.location.hash);
   </script>
 </body>
 </html>
