@@ -60,6 +60,14 @@
             .nav-group:hover .nav-panel, .nav-group:focus-within .nav-panel { opacity: 1; visibility: visible; transform: translateY(0); }
             .nav-panel a { display: block; border-radius: 0.125rem; padding: .75rem .85rem; font-size: .8125rem; font-weight: 700; color: #5c6672; white-space: nowrap; }
             .nav-panel a:hover, .nav-panel a:focus-visible { color: #002147; background: #f4f6f7; outline: none; }
+            .mobile-menu-button { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid #d8dde3; background: #fff; color: #002147; transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease; }
+            .mobile-menu-button:hover, .mobile-menu-button:focus-visible { border-color: #002147; background: #f4f6f7; transform: translateY(-1px); outline: none; }
+            .mobile-nav-panel { max-height: calc(100dvh - 73px); overflow-y: auto; border-top: 1px solid #d8dde3; background: rgba(255,255,255,.98); box-shadow: 0 20px 60px rgba(7,26,49,.12); }
+            .mobile-nav-panel[hidden] { display: none !important; }
+            .mobile-nav-panel a { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #edf0f3; padding: .95rem 1.25rem; font-size: .9375rem; font-weight: 800; color: #071a31; }
+            .mobile-nav-panel a:hover, .mobile-nav-panel a:focus-visible { background: #f4f6f7; color: #0b4d8f; outline: none; }
+            body.mobile-nav-open { overflow: hidden; }
+            @media (min-width: 1024px) { .mobile-menu-button, .mobile-nav-panel { display: none !important; } }
             @keyframes landingBar { from { transform: scaleX(.52); opacity: .58; } to { transform: scaleX(1); opacity: 1; } }
             @keyframes landingPulse { 0%, 100% { opacity: .45; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
             @media (prefers-reduced-motion: reduce) { .landing-bar, .landing-pulse { animation: none; } }
@@ -215,8 +223,20 @@
                   </div>
                 </div>
               </div>
-              <a class="rounded-sm border border-line bg-fog px-4 py-2 text-xs font-extrabold text-navy hover:border-navy" href="../../ko/vietnam-company-registration/">한국어</a>
+              <div class="flex items-center gap-2">
+                <a class="rounded-sm border border-line bg-fog px-4 py-2 text-xs font-extrabold text-navy hover:border-navy" href="../../ko/vietnam-company-registration/">한국어</a>
+                <button class="mobile-menu-button lg:hidden" type="button" data-mobile-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation">
+                  <span class="material-symbols-outlined text-xl" aria-hidden="true">menu</span>
+                </button>
+              </div>
             </nav>
+            <div id="mobile-menu" class="mobile-nav-panel lg:hidden" data-mobile-menu hidden>
+              <a href="../../index.html?lang=en#leadership"><span>About</span><span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span></a>
+              <a href="../../index.html?lang=en#local-partner"><span>Local Partnership</span><span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span></a>
+              <a href="../../index.html?lang=en#capabilities"><span>Business Areas</span><span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span></a>
+              <a href="../../index.html?lang=en#proof"><span>Track Record</span><span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span></a>
+              <a href="../../contact.html"><span>Contact</span><span class="material-symbols-outlined text-lg" aria-hidden="true">north_east</span></a>
+            </div>
           </header>
           <main>
             <section class="bg-white">
@@ -425,5 +445,25 @@
               </div>
             </div>
           </footer>
+          <script>
+            const mobileToggle = document.querySelector('[data-mobile-toggle]');
+            const mobileMenu = document.querySelector('[data-mobile-menu]');
+            function closeMobileMenu() {
+              if (!mobileMenu || !mobileToggle) return;
+              mobileMenu.hidden = true;
+              mobileToggle.setAttribute('aria-expanded', 'false');
+              mobileToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+              document.body.classList.remove('mobile-nav-open');
+            }
+            mobileToggle?.addEventListener('click', () => {
+              const willOpen = mobileMenu.hidden;
+              mobileMenu.hidden = !willOpen;
+              mobileToggle.setAttribute('aria-expanded', String(willOpen));
+              mobileToggle.querySelector('.material-symbols-outlined').textContent = willOpen ? 'close' : 'menu';
+              document.body.classList.toggle('mobile-nav-open', willOpen);
+            });
+            document.querySelectorAll('[data-mobile-menu] a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+            window.addEventListener('resize', () => { if (window.innerWidth >= 1024) closeMobileMenu(); });
+          </script>
         </body>
         </html>

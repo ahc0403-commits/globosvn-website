@@ -204,6 +204,53 @@
       background: #f4f6f7;
       outline: none;
     }
+    .mobile-menu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid #d8dde3;
+      background: #fff;
+      color: #002147;
+      transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    }
+    .mobile-menu-button:hover,
+    .mobile-menu-button:focus-visible {
+      border-color: #002147;
+      background: #f4f6f7;
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .mobile-nav-panel {
+      max-height: calc(100dvh - 75px);
+      overflow-y: auto;
+      border-top: 1px solid #d8dde3;
+      background: rgba(255, 255, 255, .98);
+      box-shadow: 0 20px 60px rgba(7, 26, 49, .12);
+    }
+    .mobile-nav-panel[hidden] {
+      display: none !important;
+    }
+    .mobile-nav-panel a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #edf0f3;
+      padding: 0.95rem 1.25rem;
+      font-size: 0.9375rem;
+      font-weight: 800;
+      color: #071a31;
+    }
+    .mobile-nav-panel a:hover,
+    .mobile-nav-panel a:focus-visible {
+      background: #f4f6f7;
+      color: #0b4d8f;
+      outline: none;
+    }
+    body.mobile-nav-open {
+      overflow: hidden;
+    }
     .operating-cockpit {
       min-height: 500px;
     }
@@ -291,11 +338,48 @@
     }
     @media (max-width: 1023px) {
       body.home-page,
-      body.home-page main,
-      .home-screen {
+      body.home-page main {
         height: auto;
-        min-height: 100dvh;
         overflow: auto;
+      }
+      .home-screen {
+        min-height: calc(100dvh - 75px);
+        height: auto;
+        overflow: hidden;
+      }
+      .home-hero-bg {
+        background-position: 62% center;
+      }
+      .org-branch::before,
+      .org-branch::after {
+        display: none;
+      }
+    }
+    @media (min-width: 1024px) {
+      .mobile-menu-button,
+      .mobile-nav-panel {
+        display: none !important;
+      }
+    }
+    @media (max-width: 767px) {
+      body.home-page {
+        height: 100dvh;
+        overflow: hidden;
+      }
+      body.home-page main {
+        height: 100dvh;
+        overflow: hidden;
+      }
+      .home-screen {
+        min-height: calc(100dvh - 75px);
+        height: calc(100dvh - 75px);
+      }
+      .home-hero-bg {
+        background-image:
+          linear-gradient(90deg, rgba(3, 14, 31, .86), rgba(3, 14, 31, .68)),
+          linear-gradient(0deg, rgba(3, 14, 31, .42), rgba(3, 14, 31, .08)),
+          url('assets/images/generated/home-execution-command.webp');
+        background-position: 66% center;
       }
     }
     @keyframes dashboardCycle {
@@ -356,6 +440,9 @@
           <button class="language-button rounded-sm px-3 py-2 text-xs font-extrabold text-slatecopy" type="button" data-lang-button="ko" aria-pressed="false">KR</button>
         </div>
         <a class="hidden rounded-sm bg-navy px-6 py-3 text-sm font-extrabold text-white transition-colors hover:bg-cobalt sm:inline-flex" href="contact.html" data-i18n="nav.inquiry">Get in Touch</a>
+        <button class="mobile-menu-button lg:hidden" type="button" data-mobile-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation">
+          <span class="material-symbols-outlined text-xl" aria-hidden="true">menu</span>
+        </button>
       </div>
     </div>
     <nav class="border-t border-line/80" aria-label="Primary navigation">
@@ -404,6 +491,28 @@
         </div>
       </div>
     </nav>
+    <div id="mobile-menu" class="mobile-nav-panel lg:hidden" data-mobile-menu hidden>
+      <a href="#leadership" data-mobile-link>
+        <span data-i18n="nav.about">About</span>
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+      </a>
+      <a href="#local-partner" data-mobile-link>
+        <span data-i18n="nav.partnership">Local Partnership</span>
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+      </a>
+      <a href="#capabilities" data-mobile-link>
+        <span data-i18n="nav.business">Business Areas</span>
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+      </a>
+      <a href="#proof" data-mobile-link>
+        <span data-i18n="nav.record">Track Record</span>
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+      </a>
+      <a href="contact.html" data-mobile-link>
+        <span data-i18n="nav.contact">Contact</span>
+        <span class="material-symbols-outlined text-lg" aria-hidden="true">north_east</span>
+      </a>
+    </div>
   </header>
 
   <main class="pt-[74px] lg:pt-[149px]">
@@ -1553,6 +1662,8 @@
     const queryLanguage = new URLSearchParams(window.location.search).get('lang');
     const savedLanguage = localStorage.getItem('globos-language');
     let activeLanguage = supportedLanguages.includes(queryLanguage) ? queryLanguage : (supportedLanguages.includes(savedLanguage) ? savedLanguage : 'en');
+    const mobileToggle = document.querySelector('[data-mobile-toggle]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
 
     function setLanguage(language) {
       activeLanguage = supportedLanguages.includes(language) ? language : 'en';
@@ -1577,6 +1688,9 @@
       document.querySelectorAll('[data-capability-link]').forEach((link) => {
         link.setAttribute('href', `${activeLanguage}/capabilities/${link.dataset.capabilityLink}.html`);
       });
+      if (mobileToggle) {
+        mobileToggle.setAttribute('aria-label', activeLanguage === 'ko' ? '메뉴 열기' : 'Open navigation');
+      }
     }
 
     const detailSectionIds = new Set([
@@ -1593,14 +1707,33 @@
       'seo-landings'
     ]);
 
+    function closeMobileMenu() {
+      if (!mobileMenu || !mobileToggle) return;
+      mobileMenu.hidden = true;
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+      document.body.classList.remove('mobile-nav-open');
+    }
+
+    function toggleMobileMenu() {
+      if (!mobileMenu || !mobileToggle) return;
+      const willOpen = mobileMenu.hidden;
+      mobileMenu.hidden = !willOpen;
+      mobileToggle.setAttribute('aria-expanded', String(willOpen));
+      mobileToggle.querySelector('.material-symbols-outlined').textContent = willOpen ? 'close' : 'menu';
+      document.body.classList.toggle('mobile-nav-open', willOpen);
+    }
+
     function openDetailSection(hash) {
       const id = hash.replace('#', '');
       if (!detailSectionIds.has(id)) return false;
+      closeMobileMenu();
       document.body.classList.remove('home-page');
       requestAnimationFrame(() => requestAnimationFrame(() => {
         scrollToDetailSection(id);
         window.setTimeout(() => scrollToDetailSection(id), 180);
         window.setTimeout(() => scrollToDetailSection(id), 700);
+        window.setTimeout(() => scrollToDetailSection(id), 1200);
       }));
       return true;
     }
@@ -1615,6 +1748,18 @@
 
     document.querySelectorAll('[data-lang-button]').forEach((button) => {
       button.addEventListener('click', () => setLanguage(button.dataset.langButton));
+    });
+
+    mobileToggle?.addEventListener('click', toggleMobileMenu);
+
+    document.querySelectorAll('[data-mobile-link]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (!link.getAttribute('href')?.startsWith('#')) closeMobileMenu();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) closeMobileMenu();
     });
 
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
