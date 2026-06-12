@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Globos Holdings | Vietnam Market Entry, Franchise Expansion & Store Operations</title>
-  <meta name="description" content="Globos Holdings helps brands enter Vietnam with 8 active stores, 2 Korea collaboration projects, in-house ERP, SaaS POS, delivery app readiness, and a 2030 target of 300 stores and 30 collaboration brands/partners." />
+  <meta name="description" content="Globos Holdings helps brands enter Vietnam with 8 active stores, 2 Korea collaboration projects, in-house ERP, SaaS POS, delivery app readiness, and a 2030 target of 300 stores and 60 cumulative Vietnam-entry collaborations." />
   <meta name="keywords" content="Vietnam market entry, Vietnam business expansion, Vietnam franchise expansion, 베트남 진출, 베트남 사업 진출, 베트남 프랜차이즈 진출, 베트남 유통 문의, 베트남 물류 유통, 베트남 법인 설립, 베트남 POS 시스템" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.globos.world/" />
@@ -52,7 +52,10 @@
     };
   </script>
   <style>
-    :root { color-scheme: light; }
+    :root {
+      color-scheme: light;
+      --active-header-height: 149px;
+    }
     * { letter-spacing: 0 !important; }
     body {
       font-family: 'Montserrat', sans-serif;
@@ -71,6 +74,12 @@
     body.home-page main > section:not(.home-screen),
     body.home-page > footer {
       display: none !important;
+    }
+    body:not(.home-page) main > section:not(.home-screen) {
+      scroll-margin-top: var(--active-header-height);
+    }
+    body:not(.home-page) main > section:not(.home-screen) > .mx-auto {
+      width: 100%;
     }
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
@@ -359,6 +368,11 @@
       .mobile-menu-button,
       .mobile-nav-panel {
         display: none !important;
+      }
+      body:not(.home-page) main > section:not(.home-screen) {
+        display: flex;
+        align-items: center;
+        min-height: calc(100dvh - var(--active-header-height));
       }
     }
     @media (max-width: 767px) {
@@ -850,7 +864,7 @@
             <div class="rounded-sm border border-line bg-white p-6">
               <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="proof.card4.label">2030 vision</p>
               <p class="mt-3 font-headline text-4xl font-bold text-navy" data-i18n="proof.card4.value">300 stores</p>
-              <p class="mt-3 text-sm text-slatecopy" data-i18n="proof.card4.body">30 collaboration brands/partners.</p>
+              <p class="mt-3 text-sm text-slatecopy" data-i18n="proof.card4.body">60 cumulative Vietnam-entry collaborations.</p>
             </div>
           </div>
         </div>
@@ -875,7 +889,7 @@
             <article class="rounded-sm bg-brass p-6 text-ink shadow-firm">
               <p class="text-xs font-extrabold uppercase text-ink/55" data-i18n="vision.label">Vision</p>
               <h3 class="mt-4 font-headline text-2xl font-bold" data-i18n="vision.title">Build a 300-store Vietnam platform by 2030.</h3>
-              <p class="mt-4 text-sm leading-7 text-ink/70" data-i18n="vision.body">Grow from 8 operating stores and 2 Korea collaboration projects into a 300-store, 30-brand/partner operating platform for Korean and global brands.</p>
+              <p class="mt-4 text-sm leading-7 text-ink/70" data-i18n="vision.body">Grow from 8 operating stores and 2 Korea collaboration projects into a 300-store, 60-collaboration Vietnam operating platform.</p>
             </article>
           </div>
         </div>
@@ -886,46 +900,71 @@
               <p class="text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.label">Growth roadmap</p>
               <h3 class="mt-2 font-headline text-2xl font-bold text-ink" data-i18n="roadmap.note">Store network and Korea collaboration pipeline</h3>
             </div>
-            <p class="text-sm font-bold text-slatecopy">2025-2030</p>
+            <p class="text-sm font-bold text-slatecopy" data-i18n="roadmap.range">2026-2030 target path</p>
           </div>
-          <div class="relative grid gap-3 lg:grid-cols-6">
-            <div class="absolute left-8 right-8 top-7 hidden h-px bg-line lg:block" aria-hidden="true"></div>
-            <article class="relative rounded-sm border border-line bg-white p-4 shadow-sm">
-              <span class="absolute left-4 top-[1.35rem] hidden h-3 w-3 rounded-full border border-brass bg-brass shadow-[0_0_0_6px_rgba(200,164,93,.16)] lg:block" aria-hidden="true"></span>
-              <p class="pl-0 font-headline text-2xl font-bold text-navy lg:pl-7">2025</p>
-              <p class="mt-3 text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.2025.label">Founded</p>
-              <p class="mt-1 text-sm font-bold leading-6 text-ink" data-i18n="roadmap.2025.value">Company founded</p>
-            </article>
-            <article class="relative rounded-sm border border-line bg-white p-4 shadow-sm">
-              <span class="absolute left-4 top-[1.35rem] hidden h-3 w-3 rounded-full border border-brass bg-brass shadow-[0_0_0_6px_rgba(200,164,93,.16)] lg:block" aria-hidden="true"></span>
-              <p class="pl-0 font-headline text-2xl font-bold text-navy lg:pl-7">2026</p>
-              <p class="mt-3 text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.2026.label">Operating base</p>
-              <p class="mt-1 text-sm font-bold leading-6 text-ink" data-i18n="roadmap.2026.value">8 stores · 2 Korea projects</p>
-            </article>
-            <article class="relative rounded-sm border border-line bg-white p-4 shadow-sm">
-              <span class="absolute left-4 top-[1.35rem] hidden h-3 w-3 rounded-full border border-line bg-white shadow-[0_0_0_6px_rgba(216,221,227,.4)] lg:block" aria-hidden="true"></span>
-              <p class="pl-0 font-headline text-2xl font-bold text-navy lg:pl-7">2027</p>
-              <p class="mt-3 text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.2027.label">Expansion</p>
-              <p class="mt-1 text-sm font-bold leading-6 text-ink" data-i18n="roadmap.2027.value">30 stores · 6 partners</p>
-            </article>
-            <article class="relative rounded-sm border border-line bg-white p-4 shadow-sm">
-              <span class="absolute left-4 top-[1.35rem] hidden h-3 w-3 rounded-full border border-line bg-white shadow-[0_0_0_6px_rgba(216,221,227,.4)] lg:block" aria-hidden="true"></span>
-              <p class="pl-0 font-headline text-2xl font-bold text-navy lg:pl-7">2028</p>
-              <p class="mt-3 text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.2028.label">Scale stage</p>
-              <p class="mt-1 text-sm font-bold leading-6 text-ink" data-i18n="roadmap.2028.value">80 stores · 12 partners</p>
-            </article>
-            <article class="relative rounded-sm border border-line bg-white p-4 shadow-sm">
-              <span class="absolute left-4 top-[1.35rem] hidden h-3 w-3 rounded-full border border-line bg-white shadow-[0_0_0_6px_rgba(216,221,227,.4)] lg:block" aria-hidden="true"></span>
-              <p class="pl-0 font-headline text-2xl font-bold text-navy lg:pl-7">2029</p>
-              <p class="mt-3 text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.2029.label">Acceleration</p>
-              <p class="mt-1 text-sm font-bold leading-6 text-ink" data-i18n="roadmap.2029.value">160 stores · 20 partners</p>
-            </article>
-            <article class="relative rounded-sm border border-brass bg-[#fff7e3] p-4 shadow-sm">
-              <span class="absolute left-4 top-[1.35rem] hidden h-3 w-3 rounded-full border border-brass bg-brass shadow-[0_0_0_6px_rgba(200,164,93,.2)] lg:block" aria-hidden="true"></span>
-              <p class="pl-0 font-headline text-2xl font-bold text-navy lg:pl-7">2030</p>
-              <p class="mt-3 text-xs font-extrabold uppercase text-cobalt" data-i18n="roadmap.2030.label">Target</p>
-              <p class="mt-1 text-sm font-bold leading-6 text-ink" data-i18n="roadmap.2030.value">300 stores · 30 partners</p>
-            </article>
+          <div class="overflow-x-auto pb-2">
+            <div class="min-w-[760px] overflow-hidden rounded-sm border border-line bg-white shadow-sm">
+              <div class="grid grid-cols-[220px_repeat(5,minmax(96px,1fr))] border-b border-line bg-[#071a31] text-white">
+                <div class="p-4 text-xs font-extrabold uppercase text-white/58" data-i18n="roadmap.metric">Metric</div>
+                <div class="p-4 text-center font-headline text-xl font-bold">2026</div>
+                <div class="p-4 text-center font-headline text-xl font-bold">2027</div>
+                <div class="p-4 text-center font-headline text-xl font-bold">2028</div>
+                <div class="p-4 text-center font-headline text-xl font-bold">2029</div>
+                <div class="p-4 text-center font-headline text-xl font-bold text-brass">2030</div>
+              </div>
+              <div class="grid grid-cols-[220px_repeat(5,minmax(96px,1fr))] border-b border-line">
+                <div class="border-r border-line p-4">
+                  <p class="text-sm font-extrabold text-ink" data-i18n="roadmap.stores.label">Total stores</p>
+                  <p class="mt-1 text-xs font-bold text-slatecopy" data-i18n="roadmap.stores.note">Owned stores, F/C</p>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">20</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 7%"></span></div>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">50</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 17%"></span></div>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">100</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 33%"></span></div>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">200</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-cobalt" style="width: 67%"></span></div>
+                </div>
+                <div class="bg-[#fff7e3] p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">300</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-brass" style="width: 100%"></span></div>
+                </div>
+              </div>
+              <div class="grid grid-cols-[220px_repeat(5,minmax(96px,1fr))] bg-fog/70">
+                <div class="border-r border-line p-4">
+                  <p class="text-sm font-extrabold text-ink" data-i18n="roadmap.collab.label">Vietnam-entry collaborations (cumulative)</p>
+                  <p class="mt-1 text-xs font-bold text-slatecopy" data-i18n="roadmap.collab.note">Brands / partners</p>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">5</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 8%"></span></div>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">15</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 25%"></span></div>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">30</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 50%"></span></div>
+                </div>
+                <div class="border-r border-line p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">45</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-mint" style="width: 75%"></span></div>
+                </div>
+                <div class="bg-[#fff7e3] p-4">
+                  <p class="font-headline text-3xl font-bold text-navy">60</p>
+                  <div class="mt-4 h-2 rounded-full bg-line"><span class="block h-full rounded-full bg-brass" style="width: 100%"></span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1034,7 +1073,7 @@
       <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div>
           <p class="text-xs font-extrabold uppercase text-white/50" data-i18n="footerProof.label">Operating proof stays visible</p>
-          <p class="mt-2 max-w-3xl font-headline text-3xl font-bold" data-i18n="footerProof.text">Founded in 2025. 8 stores operating. 2 Korea collaboration projects. 2030 target of 300 stores and 30 collaboration brands/partners. in-house ERP. SaaS POS. Delivery app base.</p>
+          <p class="mt-2 max-w-3xl font-headline text-3xl font-bold" data-i18n="footerProof.text">Founded in 2025. 8 stores operating. 2 Korea collaboration projects. 2030 target of 300 stores and 60 cumulative Vietnam-entry collaborations. in-house ERP. SaaS POS. Delivery app base.</p>
         </div>
         <a class="primary-action inline-flex items-center justify-center gap-2 rounded-sm bg-brass px-6 py-4 text-sm font-extrabold text-navy" href="contact.html">
           <span data-i18n="footerProof.button">Go to inquiry</span>
@@ -1127,7 +1166,7 @@
         'home.node.system': 'Measure',
         'home.node.system.body': 'ERP, POS, delivery.',
         'home.node.scale': 'Scale',
-        'home.node.scale.body': '300 stores, 30 brands/partners.',
+        'home.node.scale.body': '300 stores, 60 cumulative collaborations.',
         'home.card.about': 'Leadership, mission, organization.',
         'home.card.partner': 'Plan-to-execution gap control.',
         'home.card.business': 'Franchise, F&B, beauty, ecommerce, systems.',
@@ -1146,19 +1185,25 @@
         'home.panel.proof.body': 'The operating base includes in-house ERP, SaaS POS, delivery app readiness, store routines, and a local partner network.',
         'home.panel.more': 'View details',
         'roadmap.label': 'Growth roadmap',
-        'roadmap.note': 'Store network and Korea collaboration pipeline',
+        'roadmap.note': 'Store network and Vietnam-entry collaboration pipeline',
+        'roadmap.range': '2026-2030 target path',
+        'roadmap.metric': 'Metric',
+        'roadmap.stores.label': 'Total stores',
+        'roadmap.stores.note': 'Owned stores, F/C',
+        'roadmap.collab.label': 'Vietnam-entry collaborations (cumulative)',
+        'roadmap.collab.note': 'Brands / partners',
         'roadmap.2025.label': 'Founded',
         'roadmap.2025.value': 'Company founded',
-        'roadmap.2026.label': 'Operating base',
-        'roadmap.2026.value': '8 stores · 2 Korea projects',
+        'roadmap.2026.label': '2026',
+        'roadmap.2026.value': '20 stores · 5 collaborations',
         'roadmap.2027.label': 'Expansion',
-        'roadmap.2027.value': '30 stores · 6 partners',
+        'roadmap.2027.value': '50 stores · 15 collaborations',
         'roadmap.2028.label': 'Scale stage',
-        'roadmap.2028.value': '80 stores · 12 partners',
+        'roadmap.2028.value': '100 stores · 30 collaborations',
         'roadmap.2029.label': 'Acceleration',
-        'roadmap.2029.value': '160 stores · 20 partners',
+        'roadmap.2029.value': '200 stores · 45 collaborations',
         'roadmap.2030.label': 'Target',
-        'roadmap.2030.value': '300 stores · 30 partners',
+        'roadmap.2030.value': '300 stores · 60 collaborations',
         'stats.started': 'Founded',
         'stats.operating': 'Stores in operation',
         'stats.stores': '8 stores',
@@ -1187,7 +1232,7 @@
         'screen.roadmap.title': 'From operating proof to a 300-store network.',
         'screen.roadmap.step1': 'Vietnam operations launched.',
         'screen.roadmap.step2': '8 stores and 2 Korea collaboration projects operational.',
-        'screen.roadmap.step3': '300 stores and 30 collaboration brands/partners.',
+        'screen.roadmap.step3': '300 stores and 60 cumulative Vietnam-entry collaborations.',
         'tower.eyebrow': 'Local partner',
         'tower.title': 'Vietnam business needs a local partner that moves on the ground.',
         'tower.body': 'Globos Holdings connects entity setup, licensing, stores, distribution, Shopee, TikTok Shop, ERP, POS, and local partners into one practical execution route.',
@@ -1277,7 +1322,7 @@
         'proof.card3.body': 'Korea collaboration projects.',
         'proof.card4.label': '2030 target',
         'proof.card4.value': '300 stores',
-        'proof.card4.body': '30 collaboration brands/partners.',
+        'proof.card4.body': '60 cumulative Vietnam-entry collaborations.',
         'leadership.eyebrow': 'Leadership & organization',
         'leadership.title': 'Leadership and organization built around execution.',
         'leadership.body': 'The management team brings together corporate food business, franchise development, store operations, and Vietnam execution experience.',
@@ -1286,7 +1331,7 @@
         'mission.body': 'We integrate every element of market entry—legal, commercial, operational, technological—into one cohesive local operation.',
         'vision.label': 'Vision',
         'vision.title': 'A 300-store Vietnam operating network by 2030.',
-        'vision.body': 'From 8 stores and 2 Korea collaboration projects today to a Vietnam operating network of 300 stores and 30 collaboration brands/partners.',
+        'vision.body': 'From 8 stores and 2 Korea collaboration projects today to a Vietnam operating network of 300 stores and 60 cumulative Vietnam-entry collaborations.',
         'leaders.andre.role': 'CEO / Co-Founder & Co-President',
         'leaders.andre.body': '15+ years in Korean food industry leadership. 4 years as Vietnam country head. Oversees governance, strategic partnerships, and market-entry architecture.',
         'leaders.alex.role': 'CGO / Co-Founder & Co-President',
@@ -1353,7 +1398,7 @@
         'seo.note.label': 'How to use',
         'seo.note.body': 'Select the topic closest to your current priority. Each guide connects that issue to a practical operating route.',
         'footerProof.label': 'Globos Holdings at a glance',
-        'footerProof.text': 'Founded in 2025. 8 stores under management. 2 Korea collaboration projects. Proprietary ERP, SaaS POS, and delivery infrastructure. 2030 target: 300 stores, 30 collaboration brands/partners.',
+        'footerProof.text': 'Founded in 2025. 8 stores under management. 2 Korea collaboration projects. Proprietary ERP, SaaS POS, and delivery infrastructure. 2030 target: 300 stores, 60 cumulative Vietnam-entry collaborations.',
         'footerProof.button': 'Contact us',
         'footer.body': 'Vietnam market entry, franchise expansion, store operations, sourcing, legal advisory, digital commerce, ERP, SaaS POS, and delivery infrastructure.',
         'footer.sitemap': 'Site map',
@@ -1424,7 +1469,7 @@
         'home.node.system': '측정',
         'home.node.system.body': 'ERP, POS, 배달.',
         'home.node.scale': '확장',
-        'home.node.scale.body': '300개 점포, 협업 브랜드/파트너 30개.',
+        'home.node.scale.body': '300개 점포, 베트남 진출 협업 누적 60개.',
         'home.card.about': '경영진, 비전, 조직도.',
         'home.card.partner': '계획과 실행의 Gap 관리.',
         'home.card.business': '프랜차이즈, F&B, 뷰티, 이커머스, 시스템.',
@@ -1443,19 +1488,25 @@
         'home.panel.proof.body': '자체 ERP, SaaS POS, 배달앱 기반, 점포 운영 루틴, 현지 파트너 네트워크를 운영 기반으로 보유하고 있습니다.',
         'home.panel.more': '자세히 보기',
         'roadmap.label': '성장 로드맵',
-        'roadmap.note': '점포망과 협업 파이프라인',
+        'roadmap.note': '점포망과 베트남 진출 협업 파이프라인',
+        'roadmap.range': '2026-2030 목표 경로',
+        'roadmap.metric': '구분',
+        'roadmap.stores.label': '총 점포수',
+        'roadmap.stores.note': '직영점, F/C',
+        'roadmap.collab.label': '베트남 진출 협업(누적)',
+        'roadmap.collab.note': '브랜드 / 파트너',
         'roadmap.2025.label': '설립',
         'roadmap.2025.value': '회사 설립',
-        'roadmap.2026.label': '운영 기반',
-        'roadmap.2026.value': '8개 점포 · 협업 2개',
+        'roadmap.2026.label': '2026',
+        'roadmap.2026.value': '20개 점포 · 협업 5개',
         'roadmap.2027.label': '확장 시작',
-        'roadmap.2027.value': '30개 점포 · 협업 6개',
+        'roadmap.2027.value': '50개 점포 · 협업 15개',
         'roadmap.2028.label': '성장 단계',
-        'roadmap.2028.value': '80개 점포 · 협업 12개',
+        'roadmap.2028.value': '100개 점포 · 협업 30개',
         'roadmap.2029.label': '스케일업',
-        'roadmap.2029.value': '160개 점포 · 협업 20개',
+        'roadmap.2029.value': '200개 점포 · 협업 45개',
         'roadmap.2030.label': '목표',
-        'roadmap.2030.value': '300개 점포 · 협업 30개',
+        'roadmap.2030.value': '300개 점포 · 협업 60개',
         'stats.started': '설립',
         'stats.operating': '운영 점포',
         'stats.stores': '8개',
@@ -1484,7 +1535,7 @@
         'screen.roadmap.title': '8개 점포에서 300개 점포 운영망으로.',
         'screen.roadmap.step1': '2025년 회사 설립.',
         'screen.roadmap.step2': '8개 점포·한국 협업 프로젝트 2개 운영 중.',
-        'screen.roadmap.step3': '300개 점포·협업 브랜드/파트너 30개 목표.',
+        'screen.roadmap.step3': '300개 점포·베트남 진출 협업 누적 60개 목표.',
         'tower.eyebrow': '로컬 파트너',
         'tower.title': '베트남 사업에는 현장에서 움직이는 로컬 파트너가 필요합니다.',
         'tower.body': 'Globos Holdings는 법인, 인허가, 점포, 유통, 쇼피·틱톡샵, ERP·POS를 하나의 실행 경로로 연결합니다.',
@@ -1574,7 +1625,7 @@
         'proof.card3.body': '한국 협업 프로젝트.',
         'proof.card4.label': '2030 목표',
         'proof.card4.value': '300개 점포',
-        'proof.card4.body': '협업 브랜드/파트너 30개.',
+        'proof.card4.body': '베트남 진출 협업 누적 60개.',
         'leadership.eyebrow': '회사소개',
         'leadership.title': '경영진과 조직은 실행 중심으로 구성되어 있습니다.',
         'leadership.body': '경영진은 한국 식품 대기업, 프랜차이즈 본사, 베트남 현지 사업 운영 경험을 바탕으로 시장 진입과 확장을 총괄합니다.',
@@ -1583,7 +1634,7 @@
         'mission.body': '법무, 상업, 운영, 기술을 현지 실행 구조 안에서 연결합니다.',
         'vision.label': 'Vision',
         'vision.title': '2030년 베트남 300개 점포 운영망 구축.',
-        'vision.body': '현재 8개 점포와 한국 협업 프로젝트 2개를 기반으로, 300개 점포와 협업 브랜드/파트너 30개 규모의 현지 운영망을 목표로 합니다.',
+        'vision.body': '현재 8개 점포와 한국 협업 프로젝트 2개를 기반으로, 300개 점포와 베트남 진출 협업 누적 60개 규모의 현지 운영망을 목표로 합니다.',
         'leaders.andre.role': 'CEO / Co-Founder & Co-President',
         'leaders.andre.body': '한국 식품 대기업 15년 이상 근무. 베트남 주재원 4년. 거버넌스, 전략적 파트너십, 진출 아키텍처 총괄.',
         'leaders.alex.role': 'CGO / Co-Founder & Co-President',
@@ -1650,7 +1701,7 @@
         'seo.note.label': '활용 방법',
         'seo.note.body': '현재 검토 중인 주제를 선택하면 관련 실행 범위와 다음 단계로 연결됩니다.',
         'footerProof.label': 'Globos Holdings 요약',
-        'footerProof.text': '2025년 설립. 8개 점포 운영. 한국 협업 프로젝트 2개. 자체 ERP·SaaS POS·배달 인프라. 2030년 목표: 300개 점포, 협업 브랜드/파트너 30개.',
+        'footerProof.text': '2025년 설립. 8개 점포 운영. 한국 협업 프로젝트 2개. 자체 ERP·SaaS POS·배달 인프라. 2030년 목표: 300개 점포, 베트남 진출 협업 누적 60개.',
         'footerProof.button': '문의하기',
         'footer.body': '베트남 시장 진출, 프랜차이즈 확장, 점포 운영, 소싱, 법무 자문, 디지털 커머스, ERP, SaaS POS, 배달 인프라.',
         'footer.sitemap': '사이트맵',
@@ -1691,6 +1742,7 @@
       if (mobileToggle) {
         mobileToggle.setAttribute('aria-label', activeLanguage === 'ko' ? '메뉴 열기' : 'Open navigation');
       }
+      syncHeaderHeight();
     }
 
     const detailSectionIds = new Set([
@@ -1706,6 +1758,13 @@
       'organization',
       'seo-landings'
     ]);
+
+    function syncHeaderHeight() {
+      const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+      if (headerHeight > 0) {
+        document.documentElement.style.setProperty('--active-header-height', `${headerHeight}px`);
+      }
+    }
 
     function closeMobileMenu() {
       if (!mobileMenu || !mobileToggle) return;
@@ -1728,6 +1787,7 @@
       const id = hash.replace('#', '');
       if (!detailSectionIds.has(id)) return false;
       closeMobileMenu();
+      syncHeaderHeight();
       document.body.classList.remove('home-page');
       requestAnimationFrame(() => requestAnimationFrame(() => {
         scrollToDetailSection(id);
@@ -1760,6 +1820,7 @@
 
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 1024) closeMobileMenu();
+      syncHeaderHeight();
     });
 
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -1776,6 +1837,7 @@
       openDetailSection(window.location.hash);
     });
 
+    syncHeaderHeight();
     setLanguage(activeLanguage);
     openDetailSection(window.location.hash);
   </script>
