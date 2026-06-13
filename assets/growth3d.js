@@ -31,10 +31,12 @@ const BUILDING_DENSITY = Math.max(1, Math.min(14,
   Math.round(STORE_SCALE * EXTRA_BUILDING_DENSITY)));
 const LIGHT_BOOST = Math.min(1.55, 1 + (STORE_SCALE - 1) * 0.25);
 const FLOW_DOTS = Math.min(9, 2 + Math.ceil(BUILDING_DENSITY / 2));
-const INITIAL_DIST_MUL = 2.0;                  // 첫 화면은 베트남 전체가 안정적으로 보이는 거리
-const FINAL_DIST_MUL = 1.62;                   // 최종도 전체 윤곽을 유지하는 상부 줌
-const BUILDING_FOOTPRINT_MUL = 4;
-const BUILDING_HEIGHT_MUL = 4;
+const FINAL_MAP_VIEWPORT_FILL = 0.5;           // 최종 프레임은 지도 전체가 화면 절반 수준
+const FINAL_DIST_MUL = 1 / FINAL_MAP_VIEWPORT_FILL;
+const INITIAL_DIST_MUL = FINAL_DIST_MUL + 0.35; // 첫 화면은 베트남 전체가 안정적으로 보이는 거리
+const BUILDING_FOOTPRINT_MUL = 1.15;
+const BUILDING_HEIGHT_MUL = 1.45;
+const BUILDING_CLUSTER_MUL = 0.5;
 
 let _seed = 20260612;
 function rng(){ _seed|=0; _seed=_seed+0x6D2B79F5|0;
@@ -52,6 +54,26 @@ const VN = [[175,8],[205,4],[232,14],[252,30],[244,46],[270,52],[292,78],[285,10
 [270,488],[262,452],[248,418],[234,388],[218,356],[202,328],[190,300],[172,272],
 [150,248],[128,228],[102,212],[78,198],[58,178],[40,150],[28,124],[18,100],
 [34,80],[28,58],[50,44],[74,42],[96,30],[120,22],[148,12]];
+
+const VN_WORLD = VN.map(([x, y]) => W(x, y));
+function pointInVietnam(x, z) {
+  let inside = false;
+  for (let i = 0, j = VN_WORLD.length - 1; i < VN_WORLD.length; j = i++) {
+    const [xi, zi] = VN_WORLD[i];
+    const [xj, zj] = VN_WORLD[j];
+    const crosses = ((zi > z) !== (zj > z)) &&
+      (x < (xj - xi) * (z - zi) / ((zj - zi) || 1e-9) + xi);
+    if (crosses) inside = !inside;
+  }
+  return inside;
+}
+function pointWithInsetInVietnam(x, z, inset) {
+  return pointInVietnam(x, z) &&
+    pointInVietnam(x - inset, z - inset) &&
+    pointInVietnam(x + inset, z - inset) &&
+    pointInVietnam(x - inset, z + inset) &&
+    pointInVietnam(x + inset, z + inset);
+}
 
 /* 도시: [지도x, 지도y, 점등연도(0-base), 빌딩수, 규모] */
 const CITIES = [
@@ -305,7 +327,7 @@ const cityNodes = CITIES.map(([mx, my, year, nBld, size], ci) => {
   // 빌딩: stores 최종 목표가 커질수록 밀도도 같이 증가
   const builds = [];
   const visualBldCount = Math.max(2, Math.round(nBld * BUILDING_DENSITY));
-  const cluster = size * (0.55 + BUILDING_DENSITY * 0.145);
+  const cluster = size * (0.55 + BUILDING_DENSITY * 0.145) * BUILDING_CLUSTER_MUL;
   for (let b = 0; b < visualBldCount; b++) {
     const isHub = ci === 0;
     const m = new THREE.Mesh(boxGeo, isHub ? buildMatAmber : buildMatBlue);
@@ -313,7 +335,18 @@ const cityNodes = CITIES.map(([mx, my, year, nBld, size], ci) => {
     const d = (0.08 + rng() * 0.11) * BUILDING_FOOTPRINT_MUL;
     m.scale.set(w, (0.018 + rng() * 0.026) * BUILDING_HEIGHT_MUL, d);
     m.rotation.y = (rng() - 0.5) * 0.45;
-    m.position.set((rng() - 0.5) * cluster, 0, (rng() - 0.5) * cluster);
+    const inset = Math.max(w, d) * 0.68;
+    let ox = 0, oz = 0;
+    for (let attempt = 0; attempt < 18; attempt++) {
+      const candidateX = (rng() - 0.5) * cluster;
+      const candidateZ = (rng() - 0.5) * cluster;
+      if (pointWithInsetInVietnam(wx + candidateX, wz + candidateZ, inset)) {
+        ox = candidateX;
+        oz = candidateZ;
+        break;
+      }
+    }
+    m.position.set(ox, 0, oz);
 
     const winMat = isHub ? windowMatAmber : windowMatBlue;
     const windowStrip = new THREE.Mesh(new THREE.PlaneGeometry(0.44, 0.72), winMat);
@@ -393,7 +426,7 @@ const twinkles = new THREE.Points(twGeo, twMat);
 scene.add(twinkles);
 
 /* ---------------- 카메라: 베트남 전체를 유지하는 상부 줌 ---------------- */
-const camState = { distMul: INITIAL_DIST_MUL, targetZ: 0.0, azim: -0.018, el: 1.48, orbit: 0 };
+const camState = { distMul: INITIAL_DIST_MUL, targetZ: 0.0, azim: -0.012, el: 1.50, orbit: 0 };
 let baseDist = 22;
 function frameCamera() {
   const aspect = root.clientWidth / Math.max(root.clientHeight, 1);
@@ -458,10 +491,10 @@ CONFIG.years.forEach((_, i) => {
   const k = (i + 1) / N;
   tl.to(camState, {
     distMul: INITIAL_DIST_MUL - (INITIAL_DIST_MUL - FINAL_DIST_MUL) * k,
-    targetZ: 0.0 + 0.24 * k,
-    el:      1.48 - 0.045 * k,
-    azim:    -0.018 + 0.025 * k,
-    orbit:    Math.sin(k * Math.PI) * 0.006,
+    targetZ: 0.0 + 0.12 * k,
+    el:      1.50 - 0.028 * k,
+    azim:    -0.012 + 0.016 * k,
+    orbit:    Math.sin(k * Math.PI) * 0.004,
     duration: Y, ease: "power1.inOut" }, t);
 });
 
