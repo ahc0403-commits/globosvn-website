@@ -40,11 +40,44 @@
 #growth-bg canvas {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 100%;
   opacity: 1;              /* 밝기 — 전면 텍스트와 겹치면 .7~.9로 */
   filter: saturate(1.18) contrast(1.08) brightness(1.08);
+}
+
+#growth-bg .static-vietnam-map {
+  position: absolute;
+  top: 8%;
+  right: 22%;
+  z-index: 1;
+  width: auto;
+  height: 82%;
+  opacity: .48;
+  pointer-events: none;
+  overflow: visible;
+  filter:
+    drop-shadow(0 0 28px rgba(70, 130, 255, .26))
+    drop-shadow(0 0 80px rgba(12, 74, 180, .34));
+}
+
+#growth-bg .static-vietnam-map .land {
+  fill: rgba(31, 84, 157, .72);
+  stroke: rgba(150, 196, 255, .62);
+  stroke-width: 1.1;
+}
+
+#growth-bg .static-vietnam-map .network {
+  fill: none;
+  stroke: rgba(205, 169, 91, .28);
+  stroke-width: 1;
+  stroke-dasharray: 4 7;
+}
+
+#growth-bg .static-vietnam-map .node {
+  fill: rgba(214, 176, 94, .96);
+  filter: drop-shadow(0 0 8px rgba(214, 176, 94, .78));
 }
 
 /* 이전 배경 HUD가 캐시에 남아도 숫자 오버레이는 보이지 않게 차단 */
@@ -72,7 +105,7 @@ body.home-page .hud-side,
   display: none !important;
 }
 
-#growth-bg > :not(canvas):not(.veil-vignette):not(.veil-loop):not(.fps) {
+#growth-bg > :not(canvas):not(.static-vietnam-map):not(.veil-vignette):not(.veil-loop):not(.fps) {
   display: none !important;
 }
 
@@ -90,6 +123,7 @@ body.home-page .hud-side,
   z-index: 8;
   background: #060d1f;
   opacity: 0;
+  display: none !important;
 }
 
 /* FPS 디버그 미터 (?debug=1) */

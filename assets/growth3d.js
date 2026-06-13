@@ -120,6 +120,29 @@ const LINKS = [
 
 /* ---------------- 기본 셋업 ---------------- */
 const root = document.getElementById("growth-bg");
+if (!root) return;
+
+function injectStaticVietnamMap() {
+  if (root.querySelector(".static-vietnam-map")) return;
+  const path = VN.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ") + " Z";
+  const cityMarks = CITIES.map(([x, y, year], i) => {
+    const r = i === 0 ? 4.4 : Math.max(1.9, 3.2 - year * 0.12);
+    return `<circle class="node" cx="${x}" cy="${y}" r="${r}"></circle>`;
+  }).join("");
+  const network = LINKS.map(([a, b]) => {
+    const A = CITIES[a], B = CITIES[b];
+    return `<path class="network" d="M${A[0]} ${A[1]} Q${(A[0] + B[0]) / 2} ${(A[1] + B[1]) / 2 - 28} ${B[0]} ${B[1]}"></path>`;
+  }).join("");
+  root.insertAdjacentHTML("afterbegin", `
+    <svg class="static-vietnam-map" viewBox="0 0 380 790" aria-hidden="true" focusable="false">
+      <path class="land" d="${path}"></path>
+      ${network}
+      ${cityMarks}
+    </svg>
+  `);
+}
+injectStaticVietnamMap();
+
 function purgeGrowthHud() {
   if (!root) return;
   root.querySelectorAll(
@@ -134,8 +157,17 @@ function purgeGrowthHud() {
   });
 }
 purgeGrowthHud();
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true,
-  powerPreference: "low-power" });
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true,
+    powerPreference: "low-power" });
+} catch (err) {
+  root.classList.add("growth-webgl-fallback");
+  return;
+}
+renderer.domElement.addEventListener("webglcontextlost", () => {
+  root.classList.add("growth-webgl-fallback");
+}, false);
 renderer.shadowMap.enabled = false;                       // 그림자 비활성
 let DPR = Math.min(window.devicePixelRatio || 1, 2);
 renderer.setPixelRatio(DPR);
@@ -617,6 +649,8 @@ function resize() {
 }
 window.addEventListener("resize", resize);
 resize();
+updateCamera(0);
+renderer.render(scene, camera);
 
 if (reduced) { tl.progress(1).pause();
   gsap.set(veil, { opacity: 0 }); gsap.set(finale, { opacity: 1 });
