@@ -24,14 +24,15 @@ const S = 0.02, CX = 190, CY = 395, TOP = 0.3;   // 지도 두께 0.3
 const W = (x, y) => [(x - CX) * S, (y - CY) * S]; // [wx, wz]
 const BASE_FINAL_STORES = 500;
 const STORE_SCALE = CONFIG.stores[CONFIG.stores.length - 1] / BASE_FINAL_STORES;
-const MAP_AREA_BOOST = 6;                       // 화면상 지도 점유 면적 대폭 확대
-const MAP_CAMERA_FILL = 1 / Math.sqrt(MAP_AREA_BOOST);
+const MAP_AREA_BOOST = 3;                       // 직전 대비 지도 점유 면적 약 50% 축소
+const MAP_CAMERA_FILL = 1;
 const EXTRA_BUILDING_DENSITY = 4.4;
 const BUILDING_DENSITY = Math.max(1, Math.min(14,
   Math.round(STORE_SCALE * EXTRA_BUILDING_DENSITY)));
 const LIGHT_BOOST = Math.min(1.55, 1 + (STORE_SCALE - 1) * 0.25);
 const FLOW_DOTS = Math.min(9, 2 + Math.ceil(BUILDING_DENSITY / 2));
-const FINAL_DIST_MUL = 0.055;                  // 시작 화면은 크게, 피날레 근접감은 유지
+const INITIAL_DIST_MUL = 2.0;                  // 첫 화면은 베트남 전체가 안정적으로 보이는 거리
+const FINAL_DIST_MUL = 1.62;                   // 최종도 전체 윤곽을 유지하는 상부 줌
 const BUILDING_FOOTPRINT_MUL = 4;
 const BUILDING_HEIGHT_MUL = 4;
 
@@ -119,6 +120,11 @@ renderer.setPixelRatio(DPR);
 root.prepend(renderer.domElement);
 renderer.domElement.style.opacity = CONFIG.baseOpacity;
 purgeGrowthHud();
+new MutationObserver(purgeGrowthHud).observe(root, {
+  childList: true,
+  subtree: true,
+  characterData: true
+});
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(0x0a142e, 30, 80);
@@ -386,15 +392,15 @@ const twMat = new THREE.PointsMaterial({ color: 0x9fc4ff, size: 0.05,
 const twinkles = new THREE.Points(twGeo, twMat);
 scene.add(twinkles);
 
-/* ---------------- 카메라: 2.5D 내려다보기 + 호치민 향해 천천히 줌인 ---------------- */
-const camState = { distMul: 1.0, targetZ: -2.5, azim: -0.06, el: 1.18, orbit: 0 };
+/* ---------------- 카메라: 베트남 전체를 유지하는 상부 줌 ---------------- */
+const camState = { distMul: INITIAL_DIST_MUL, targetZ: 0.0, azim: -0.018, el: 1.48, orbit: 0 };
 let baseDist = 22;
 function frameCamera() {
   const aspect = root.clientWidth / Math.max(root.clientHeight, 1);
   camera.aspect = aspect;
   const halfH = 8.6, halfW = 4.2;                  // 지도 + 여백
   const t = Math.tan(THREE.MathUtils.degToRad(45 / 2));
-  baseDist = Math.max(halfH / t, halfW / (t * aspect)) * 1.06 * MAP_CAMERA_FILL;
+  baseDist = Math.max(halfH / t, halfW / (t * aspect)) * 1.08 * MAP_CAMERA_FILL;
   camera.updateProjectionMatrix();
 }
 function updateCamera(t) {
@@ -448,14 +454,14 @@ CONFIG.years.forEach((_, i) => {
   tl.to(wave.material, { opacity: 0, duration: Y * 0.75,
     ease: "power1.in" }, t + Y * 0.25);
 
-  // 카메라: 시작부터 지도가 크게 보이도록 잡고, 호치민 빌딩숲까지 다이브
+  // 카메라: 시작은 베트남 전체, 끝은 전체 윤곽을 최대한 유지하는 상부 줌
   const k = (i + 1) / N;
   tl.to(camState, {
-    distMul: 1.0 - (1.0 - FINAL_DIST_MUL) * k,
-    targetZ: -2.5 + 7.96 * k,                // 북부(-2.5) → 호치민(5.46)
-    el:      1.18 - 0.30 * k,                // 더 가까운 피날레에서 지형을 읽을 수 있게 부감 유지
-    azim:    -0.06 + 0.12 * k,
-    orbit:    Math.sin(k * Math.PI) * 0.035,
+    distMul: INITIAL_DIST_MUL - (INITIAL_DIST_MUL - FINAL_DIST_MUL) * k,
+    targetZ: 0.0 + 0.24 * k,
+    el:      1.48 - 0.045 * k,
+    azim:    -0.018 + 0.025 * k,
+    orbit:    Math.sin(k * Math.PI) * 0.006,
     duration: Y, ease: "power1.inOut" }, t);
 });
 
