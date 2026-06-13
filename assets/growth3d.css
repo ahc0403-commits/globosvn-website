@@ -11,7 +11,7 @@
     radial-gradient(ellipse 70% 62% at 48% 54%, rgba(35,72,135,.82) 0%, rgba(9,20,46,0) 62%),
     linear-gradient(180deg, #071126 0%, #0c1734 46%, #050b1b 100%);
   overflow: hidden;
-  font-family: "Pretendard", -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--globos-font-body, "Source Han Serif K", -apple-system, "Segoe UI", serif);
 }
 #growth-bg::before,
 #growth-bg::after {

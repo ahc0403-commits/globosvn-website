@@ -1,10 +1,20 @@
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'Source Han Serif K';
+  src: url('./fonts/SourceHanSerifKR-EN.woff2') format('woff2');
+  font-weight: 250 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  --globos-font-display: 'Clash Display', 'Plus Jakarta Sans', 'Pretendard', sans-serif;
-  --globos-font-body: 'Plus Jakarta Sans', 'Pretendard', sans-serif;
-  --globos-font-korean: 'Pretendard', sans-serif;
+  --globos-font-display: 'Source Han Serif K', serif;
+  --globos-font-body: 'Source Han Serif K', serif;
+  --globos-font-korean: 'Source Han Serif K', serif;
+}
+
+html[lang='en'] :where(body, body *):not(.material-symbols-outlined),
+html[lang='ko'] :where(body, body *):not(.material-symbols-outlined) {
+  font-family: var(--globos-font-body) !important;
 }
 
 body,
