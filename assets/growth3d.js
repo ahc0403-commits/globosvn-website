@@ -31,9 +31,9 @@ const BUILDING_DENSITY = Math.max(1, Math.min(14,
   Math.round(STORE_SCALE * EXTRA_BUILDING_DENSITY)));
 const LIGHT_BOOST = Math.min(1.55, 1 + (STORE_SCALE - 1) * 0.25);
 const FLOW_DOTS = Math.min(9, 2 + Math.ceil(BUILDING_DENSITY / 2));
-const FINAL_MAP_VIEWPORT_FILL = 0.5;           // 최종 프레임은 지도 전체가 화면 절반 수준
+const FINAL_MAP_VIEWPORT_FILL = 2.05;          // 최종 프레임은 지도 세로가 화면 위아래를 채우는 수준
 const FINAL_DIST_MUL = 1 / FINAL_MAP_VIEWPORT_FILL;
-const INITIAL_DIST_MUL = FINAL_DIST_MUL + 0.35; // 첫 화면은 베트남 전체가 안정적으로 보이는 거리
+const INITIAL_DIST_MUL = 2.35;                 // 현재 시작 초점 유지
 const BUILDING_FOOTPRINT_MUL = 1.15;
 const BUILDING_HEIGHT_MUL = 1.45;
 const BUILDING_CLUSTER_MUL = 0.5;
